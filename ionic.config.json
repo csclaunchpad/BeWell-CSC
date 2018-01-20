@@ -1,0 +1,8 @@
+{
+  "name": "bewell",
+  "app_id": "f8126248",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
