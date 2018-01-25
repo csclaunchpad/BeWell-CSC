@@ -1,0 +1,62 @@
+<md-content>
+	<div layout="column" layout-align="center center" layout-padding>
+		<div layout="column" ng-show="pageElements.invalidPin">
+			<div>
+				{{pageElements.pinAlreadyInUse}}!
+			</div>
+
+		</div>
+		<div layout="column">
+			<div>
+				{{pageElements.firstName}}
+			</div>
+			<div>
+				<input type="text" ng-model="userInput.firstName" name="firstName"><br>
+			</div>
+		</div>
+		
+		<div layout="column">
+			<div>
+				{{pageElements.pin}}
+			</div>
+			<div>
+				<input type="text" ng-model="userInput.pin" name="pin" maxlength="6"><br>
+			</div>
+		</div>
+		
+		<div layout="column">
+			<div>
+				{{pageElements.gender}}
+			</div>
+			<div>
+				<md-select ng-model="userInput.gender">
+					<md-option>{{pageElements.male}}</md-option>
+					<md-option>{{pageElements.female}}</md-option>
+					<md-option>{{pageElements.other}}</md-option>
+				</md-select>
+			</div>
+		</div>
+		
+		<div layout="column">
+			<div>
+				{{pageElements.securityQuestion}}
+			</div>
+			<div>
+				<input type="text" ng-model="userInput.question" name="question" maxlength="50"><br>
+			</div>
+		</div>
+		
+		<div layout="column">
+			<div>
+				{{pageElements.answer}}
+			</div>
+			<div>
+				<input type="text" ng-model="userInput.answer" name="answer" maxlength="50"><br>
+			</div>
+		</div>
+		
+		<div layout="row">
+			<md-button class="md-raised md-primary" ng-click="submitUser()">{{pageElements.createUser}}</md-button>
+		</div>
+	</div>
+</md-content>

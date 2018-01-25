@@ -1,0 +1,69 @@
+<md-content>
+	<div style="margin-top: 10%" layout="column" layout-align="center center">
+		
+		<div layout="row" ng-show="pageElements.invalidLoginPin" aria-label="{{pageElements.invalidLoginPin}}">
+			{{pageElements.invalidPinText}}!
+		</div>
+		
+		<div layout="row" flex>
+			<input type="text" ng-model="userInput.pin" name="pin" aria-label="userInput.pin"><br>
+		</div>
+	
+		<div flex layout="row">
+			<div flex>
+				<md-button class="md-raised" ng-click="addNumbers(1)" aria-label="{{pageElements.one}}">1</md-button>
+			</div>
+			<div flex>
+				<md-button class="md-raised" ng-click="addNumbers(2)" aria-label="{{pageElements.two}}">2</md-button>
+			</div>
+			<div flex>
+				<md-button class="md-raised" ng-click="addNumbers(3)" aria-label="{{pageElements.three}}">3</md-button>
+			</div>
+		</div>
+		<div layout="row">
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(4)" aria-label="{{pageElements.four}}">4</md-button>
+			</div>
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(5)" aria-label="{{pageElements.five}}">5</md-button>
+			</div>
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(6)" aria-label="{{pageElements.six}}">6</md-button>
+			</div>
+		</div>
+		<div layout="row">
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(7)" aria-label="{{pageElements.seven}}">7</md-button>
+			</div>
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(8)" aria-label="{{pageElements.eight}}">8</md-button>
+			</div>
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(9)" aria-label="{{pageElements.nine}}">9</md-button>
+			</div>
+		</div>
+		<div layout="row">
+			<div>
+				<md-button class="md-raised" ng-click="addNumbers(0)" aria-label="{{pageElements.zero}}">0</md-button>
+			</div>
+			<div>
+				<md-button class="md-raised" ng-click="removeNumbers()" aria-label="{{pageElements.backText}}">{{pageElements.backText}}</md-button>
+			</div>
+
+		</div>
+		<div layout="row">
+			<div layout-align="start center">
+				<md-button class="md-raised md-primary" ng-click="login()" aria-label="{{pageElements.loginText}}">{{pageElements.loginText}}</md-button>
+			</div>
+			<div layout-align="end center">
+				<md-button class="md-raised md-primary" ng-click="forgotPin()" aria-label="{{pageElements.forgotMyPinText}}">{{pageElements.forgotMyPinText}}</md-button>
+			</div>
+		</div>
+		<div layout="row">
+			<div>
+				<md-button class="md-raised md-primary" ng-click="newUser()" aria-label="{{pageElements.createNewUserText}}">{{pageElements.createNewUserText}}</md-button>
+			</div>
+		</div>
+	</div>
+
+</md-content>

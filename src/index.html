@@ -34,20 +34,38 @@
   
   
 </head>
-<body ng-cloak>
+    <body ng-cloak>
 
-  <!-- Ionic's root component and where the app will load -->
-  <ion-app></ion-app>
+      <!-- Ionic's root component and where the app will load -->
+    <ion-app>
 
-  <!-- The polyfills js is generated during the build process -->
-  <script src="build/polyfills.js"></script>
 
-  <!-- The vendor js is generated during the build process
-       It contains all of the dependencies in node_modules -->
-  <script src="build/vendor.js"></script>
 
-  <!-- The main bundle js is generated during the build process -->
-  <script src="build/main.js"></script>
 
-</body>
+
+
+
+        <div ui-view="partials"></div>
+        <h1> test </h1>
+
+
+
+
+
+    </ion-app>
+
+      <!-- The polyfills js is generated during the build process -->
+      <script src="build/polyfills.js"></script>
+
+      <!-- The vendor js is generated during the build process
+           It contains all of the dependencies in node_modules -->
+      <script src="build/vendor.js"></script>
+
+      <!-- The main bundle js is generated during the build process -->
+      <script src="build/main.js"></script>
+
+      
+
+
+    </body>
 </html>

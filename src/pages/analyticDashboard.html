@@ -1,0 +1,89 @@
+<md-content ng-cloak>
+	<div layout="column">
+		<md-card flex="50" class="slider" id="slider">
+			<!-- Question Selection -->
+			<div layout="row">
+				<div layout="row" layout-padding layout-align="start center" flex>
+					<div layout="row">
+						<div class="moodText" layout="column" layout-padding>
+							<md-checkbox class="md-primary" ng-model="userInput.moodCheckbox" aria-label="{{pageElements.moodCheckboxAL}}">
+								{{pageElements.moodText}}
+							</md-checkbox>
+						</div>
+						<div class="sleepText" layout="column" layout-padding>
+							<md-checkbox class="md-primary" ng-model="userInput.sleepCheckbox" aria-label="{{pageElements.sleepCheckboxAL}}">
+								{{pageElements.sleepText}}
+							</md-checkbox>
+						</div>
+
+						<div class="stressText" layout="column" layout-padding>
+							<md-checkbox class="md-primary" ng-model="userInput.stressCheckbox" aria-label="{{pageElements.stressCheckboxAL}}">
+								{{pageElements.stressText}}
+							</md-checkbox>
+						</div>
+						<div class="dietText" layout="column" layout-padding>
+							<md-checkbox class="md-primary" ng-model="userInput.dietCheckbox" aria-label="{{pageElements.dietCheckboxAL}}">
+								{{pageElements.dietText}}
+							</md-checkbox>
+						</div>
+					</div>
+				</div>
+			</div>		
+		</md-card>
+		
+		<div flex ng-show="!pageElements.loadComplete && pageElements.loadStarted && !pageElements.hideAllElements">
+			<md-progress-linear md-mode="indeterminate"></md-progress-linear>
+		</div>
+		
+		<md-card ng-show="pageElements.hideAllElements" layout-align="center center">
+			<div aria-label="{{pageElements.noCheckinsFoundAL}}">
+				{{pageElements.noCheckinsFound}}!
+			</div>
+		</md-card>
+		
+		<!-- Graph -->
+		<md-card>
+			<div layout="row">
+				<div id="chartDiv" layout-fill>
+					<canvas id="mainChart"></canvas>
+				</div>	
+			</div>
+		</md-card>
+			
+		<div layout="row"  layout-align="center center">
+			<div layout="column" class="dietBackground" layout-align="center center">
+				<div aria-label="{{pageElements.dietScoreAverageAL}} {{dietScoreAverage}}">
+					<strong>{{pageElements.dietText}}:<br></strong> {{dietScoreAverage}}
+				</div>
+			</div>
+			<div layout="column" class="moodBackground" layout-align="center center">
+				<div aria-label="{{pageElements.moodScoreAverageAL}} {{moodScoreAverage}}">
+					<strong>{{pageElements.moodText}}:<br></strong> {{moodScoreAverage}}
+				</div>
+			</div>
+			<div layout="row" class="stressBackground" layout-align="center center">
+				<div aria-label="{{pageElements.stressScoreAverageAL}} {{stressScoreAverage}}">
+					<strong>{{pageElements.stressText}}:<br></strong> {{stressScoreAverage}}
+				</div>
+			</div>
+			<div layout="row" class="sleepBackground" layout-align="center center">
+				<div aria-label="{{pageElements.sleepScoreAverageAL}} {{sleepScoreAverage}}">
+					<strong>{{pageElements.sleepText}}:<br></strong> {{sleepScoreAverage}}
+				</div>
+			</div>					
+		</div>		
+				
+		<div layout="column" layout-align="center center"  style="height: 100%;">
+			<div layout-padding aria-label="From Date">
+				<md-datepicker ng-model="userInput.fromDate" md-max-date="userInput.toDate" md-placeholder="Enter date"></md-datepicker>
+			</div>
+			<div layout-padding class="md-datePicker-align" aria-label="To Date">
+				<md-datepicker ng-model="userInput.toDate" md-min-date="userInput.fromDate" md-placeholder="Enter date"></md-datepicker>
+			</div>
+			<div layout="row">
+				<md-button class="md-raised md-primary buttonBold" ng-click="generateChart(userInput.fromDate, userInput.toDate, false)" aria-label="{{pageElements.toDateAL}}">{{pageElements.generateText}}</md-button>
+				<md-button class="md-raised md-primary buttonBold" ng-click="redirectToCheckinLog()" aria-label="{{pageElements.fromDateAL}}">{{pageElements.checkinLogText}}</md-button>
+			</div>
+		</div>		
+	</div>
+</md-content>
