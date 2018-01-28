@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>CheckinLogInfo</ion-title>
+  </ion-navbar>
+</ion-header>
+<!--
+<md-content layout-align="start center" layout="column">
+
+    <img src="imgs/feelings/face{{checkinTotal}}.png" class="feelingImg"/>
+
+    <div layout="row" layout-align="center">
+        <div aria-label="{{pageElements.previousAL}}" class="navArrowBtn" ng-class="{'disabled': !hasPrev}" ng-click="prevEntry()">
+            <img src="imgs/leftArrow.png" class="arrow">
+        </div>
+        <div aria-label="{{pageElements.nextAL}}" class="navArrowBtn" ng-class="{'disabled': !hasNext}" ng-click="nextEntry()">
+            <img src="imgs/rightArrow.png" class="arrow">
+        </div>
+    </div>
+
+    <h3>{{pageElements.onText}} {{entry.date | date: 'longDate'}}, {{pageElements.youWereFeelingText}}</h3>
+
+	<div layout="row"  layout-align="center center">
+		<div layout="column" class="dietBackground" layout-align="center center">
+			<div aria-label="{{pageElements.dietText}}: {{entry.dietScore}}">
+				<strong>{{pageElements.dietText}}<br></strong> {{entry.dietScore}}
+			</div>
+		</div>
+		<div layout="column" class="moodBackground" layout-align="center center">
+			<div aria-label="{{pageElements.moodText}}: {{entry.moodScore}}" layout-align="center center">
+				<strong>{{pageElements.moodText}}<br></strong> {{entry.moodScore}}
+			</div>
+		</div>
+		<div layout="row" class="stressBackground" layout-align="center center">
+			<div aria-label="{{pageElements.stressText}}: {{entry.stressScore}}">
+				<strong>{{pageElements.stressText}}<br></strong> {{entry.stressScore}}
+			</div>
+		</div>
+		<div layout="row" class="sleepBackground" layout-align="center center">
+			<div aria-label="{{pageElements.sleepText}}: {{entry.sleepScore}}">
+				<strong>{{pageElements.sleepText}}<br></strong> {{entry.sleepScore}}
+			</div>
+		</div>					
+	</div>
+					
+	
+	<!-- Center doesn't work atm -->
+<!--	<div layout="row" flex layout-align="center center">
+		<div flex aria-label="Notes: {{entry.entryNote}}">
+			<p ng-show="notesProvided" ng-bind="entry.entryNote" class="descriptionText"></p>
+			<p ng-show="!notesProvided" class="descriptionText">{{pageElements.noNotesText}}</p>
+		</div>
+	</div>
+</md-content>
+-->

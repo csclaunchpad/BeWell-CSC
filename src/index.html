@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>BeWell CSC-SCC</title>
+  <title>Ionic App</title>
   <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
@@ -26,46 +26,25 @@
         .catch(err => console.error('Error', err));
     }
   </script>-->
-  <!-- Stylesheets ionic default -->
+
   <link href="build/main.css" rel="stylesheet">
 
-  <!-- Stylesheets CSC LaunchPad (TJ 21-01-2018) -->
-  <link rel="stylesheet/less" type="text/css" href="less/default.less" />
-  
-  
 </head>
-    <body ng-cloak>
+<body>
 
-      <!-- Ionic's root component and where the app will load -->
-    <ion-app>
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
 
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
 
+  <!-- The vendor js is generated during the build process
+       It contains all of the dependencies in node_modules -->
+  <script src="build/vendor.js"></script>
 
+  <!-- The main bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
 
-
-
-
-        <div ui-view="partials"></div>
-        <h1> test </h1>
-
-
-
-
-
-    </ion-app>
-
-      <!-- The polyfills js is generated during the build process -->
-      <script src="build/polyfills.js"></script>
-
-      <!-- The vendor js is generated during the build process
-           It contains all of the dependencies in node_modules -->
-      <script src="build/vendor.js"></script>
-
-      <!-- The main bundle js is generated during the build process -->
-      <script src="build/main.js"></script>
-
-      
-
-
-    </body>
+  
+</body>
 </html>

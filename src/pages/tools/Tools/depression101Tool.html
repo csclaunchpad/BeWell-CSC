@@ -1,0 +1,16 @@
+<md-content>
+	<div layout="column" layout-align="center center">
+		<div layout="row" aria-label="{{pageElements.depressionFactText}}">
+			{{pageElements.depressionFactText}}
+		</div>
+		
+		<div layout="row" aria-label="{{pageElements.factText}} {{pageElements.fact}}">
+			{{pageElements.factText}} {{pageElements.fact}}
+		</div>
+		
+		<div layout="row">
+			<md-button class="md-raised md-primary" ng-click="nextFact()" aria-label="{{pageElements.nextFactText}}">{{pageElements.nextFactText}}</md-button>
+		</div>
+	</div>
+
+</md-content>
