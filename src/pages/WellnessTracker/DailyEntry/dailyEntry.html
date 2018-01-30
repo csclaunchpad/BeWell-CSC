@@ -12,38 +12,39 @@
     <div text-center>
         <img src="../../assets/imgs/feelings/face10.png" class="feelingImg"/>
     </div>
-    
-    <ion-item>
-        <ion-range min="0" max="100" [(ngModel)]="mood" color="secondary">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-right>100</ion-label>
-        </ion-range>
-    </ion-item>    
-    
-    <ion-item>
-        <ion-range min="0" max="100" [(ngModel)]="sleep" color="secondary">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-right>100</ion-label>
-        </ion-range>
-    </ion-item>
 
-    <ion-item>
-        <ion-range min="0" max="100" [(ngModel)]="diet" color="secondary">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-right>100</ion-label>
-        </ion-range>
-    </ion-item>
-
-    <ion-item>
-        <ion-range min="0" max="100" [(ngModel)]="stress" color="secondary">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-right>100</ion-label>
-        </ion-range>
-    </ion-item>    
+    <ion-list> 
+        <ion-item>
+            <ion-range min="0" max="10" [(ngModel)]="mood" color="secondary" pin="true">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>10</ion-label>
+            </ion-range>
+        </ion-item>    
     
+        <ion-item>
+            <ion-range min="0" max="10" [(ngModel)]="sleep" color="secondary" pin="true">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>10</ion-label>
+            </ion-range>
+        </ion-item>
+
+        <ion-item>
+            <ion-range min="0" max="10" [(ngModel)]="diet" color="secondary" pin="true">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>10</ion-label>
+            </ion-range>
+        </ion-item>
+
+        <ion-item>
+            <ion-range min="0" max="10" [(ngModel)]="stress" color="secondary" pin="true">
+                <ion-label range-left>0</ion-label>
+                <ion-label range-right>10</ion-label>
+            </ion-range>
+        </ion-item>    
+    </ion-list>
     
 
-    <button ion-button secondary menuToggle>Toggle Menu</button>
+    <button ion-button block>Aidez moi / Help Me</button>
 </ion-content>
 
 <!-- <md-content>
