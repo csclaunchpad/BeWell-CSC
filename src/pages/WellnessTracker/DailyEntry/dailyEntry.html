@@ -9,15 +9,39 @@
 
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-  <img src="../../assets/imgs/feelings/face10.png" class="feelingImg"/>
-  <p>
-   Daily Entry 
-  </p>
+    <img src="../../assets/imgs/feelings/face10.png" class="feelingImg"/>
   
-  
+  <ion-item>
+    <ion-range min="0" max="100" [(ngModel)]="mood" color="secondary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+  </ion-item>    
+    
+  <ion-item>
+    <ion-range min="0" max="100" [(ngModel)]="sleep" color="secondary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+  </ion-item>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-item>
+    <ion-range min="0" max="100" [(ngModel)]="diet" color="secondary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="0" max="100" [(ngModel)]="stress" color="secondary">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+  </ion-item>    
+    
+    
+
+    <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
 
 <!-- <md-content>

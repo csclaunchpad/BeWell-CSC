@@ -1,11 +1,27 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+
+
+export class BasicPage {
+  brightness: number = 20;
+  contrast: number = 0;
+  warmth: number = 1300;
+  structure: any = { lower: 33, upper: 60 };
+  text: number = 0;
+}
+
+
 @Component({
   selector: 'page-dailyEntry',
   templateUrl: 'dailyEntry.html'
 })
 export class DailyEntry {
+  brightness: number = 20;
+  contrast: number = 0;
+  warmth: number = 1300;
+  structure: any = { lower: 33, upper: 60 };
+  text: number = 0;    
   selectedItem: any;
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
