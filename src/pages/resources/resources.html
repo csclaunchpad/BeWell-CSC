@@ -11,19 +11,26 @@
     <h3 class="title">Choose the resource list that applies.</h3>
 
     
-    <a href="#resources/employee" class="buttonLink">
-        <button ion-button>CSC Employee</button>
+    <a href=Employee class="buttonLink">
+        <button ion-button block [navPush]="employee">CSC Employee</button>
     </a>
     
-    <a href="#resources/employeeFamily" class="buttonLink">
-        <button ion-button>CSC Employee Family</button>
+    <a href="./pages/Resources/employeeFamily" class="buttonLink">
+        <button ion-button block [navPush]="empfamily">CSC Employee Family</button>
     </a>
     
-    <a href="#resources/public" class="buttonLink">
-        <button ion-button>Public</button>
+    <a href="./pages/Resources/public" class="buttonLink">
+        <button ion-button block [navPush]="public">Public</button>
     </a>
     
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block>Aidez moi / Help Me</button>
+  </ion-toolbar>
+</ion-footer>
+
 <!--
 <md-content layout="column" layout-align="start center" class="resources">
 
