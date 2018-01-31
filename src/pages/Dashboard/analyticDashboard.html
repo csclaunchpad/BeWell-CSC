@@ -8,13 +8,77 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+ 
 
-  <p>
-   Dashboard
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-card>
+  <ion-card-header>
+
+<ion-item>
+      <ion-icon  name="cloud-upload" item-start></ion-icon>
+   Wellness Entries
+   <ion-badge item-end>{{dataService.wellness.length}}</ion-badge>
+</ion-item>
+
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item ion-item *ngFor="let wellness of dataService.wellness" >
+      <ion-icon name="happy" item-start></ion-icon>
+     Mood Data: {{wellness.moodScore}}
+    </button>
+  </ion-list>
+</ion-card>
+
+
+<ion-card>
+  <ion-card-header>
+
+<ion-item>
+      <ion-icon  name="happy" item-start></ion-icon>
+ Add an Entry
+   
+</ion-item>
+
+  </ion-card-header>
+
+  <ion-list>
+  
+  <ion-label >Mood</ion-label>
+ <ion-range [(ngModel)]="moodScore" min="1" max="5">
+    <ion-icon range-left small name="sad"></ion-icon>
+    <ion-icon range-right name="happy"></ion-icon>
+  </ion-range>
+
+  <ion-label >Sleep</ion-label>
+ <ion-range [(ngModel)]="sleepScore" min="1" max="5">
+    <ion-icon range-left small name="sunny"></ion-icon>
+    <ion-icon range-right name="moon"></ion-icon>
+  </ion-range>
+
+  <ion-label >Stress</ion-label>
+ <ion-range [(ngModel)]="stressScore" min="1" max="5">
+    <ion-icon range-left small name="add"></ion-icon>
+    <ion-icon range-right name="remove"></ion-icon>
+  </ion-range>
+
+  <ion-label >Diet</ion-label>
+ <ion-range [(ngModel)]="dietScore" min="1" max="5">
+    <ion-icon range-left small name="pizza"></ion-icon>
+    <ion-icon range-right name="bicycle"></ion-icon>
+  </ion-range>
+
+
+  <ion-item>
+    <ion-label floating>Notes</ion-label>
+    <ion-input [(ngModel)]="entryNote" type="text"></ion-input>
+  </ion-item>
+
+<button ion-button full color="primary"   (click)="submitWellness()">Submit Wellness Score</button>
+
+
+  </ion-list>
+</ion-card>
 </ion-content>
 
 
@@ -23,6 +87,7 @@
     <button ion-button block>Aidez moi / Help Me</button>
   </ion-toolbar>
 </ion-footer>
+
 
 
 <!--  <md-content ng-cloak> 
@@ -53,7 +118,6 @@
 								{{pageElements.sleepText}}
 							</md-checkbox>
 						</div>
-
 						<div class="stressText" layout="column" layout-padding>
 							<md-checkbox class="md-primary" ng-model="userInput.stressCheckbox" aria-label="{{pageElements.stressCheckboxAL}}">
 								{{pageElements.stressText}}
@@ -68,7 +132,6 @@
 <!--					</div>
 				</div>
 			</div>		
-
           <!--      </md-card> -->
 <!--                </ion-card-content>
         </ion-card>
@@ -131,3 +194,5 @@
 <!--	</div>
 </ion-content>
 <!-- </md-content>  -->
+
+

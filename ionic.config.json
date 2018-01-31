@@ -1,6 +1,6 @@
 {
-  "name": "bewell",
-  "app_id": "f8126248",
+  "name": "wellness",
+  "app_id": "68fd7c69",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

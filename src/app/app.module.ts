@@ -20,6 +20,14 @@ import { Settings } from '../pages/Settings/settings';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
+//plugins
+import { HttpModule } from '@angular/http';
+
+//providers
+import { DataServiceProvider } from '../providers/data-service/data-service';
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -40,6 +48,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -61,7 +70,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataServiceProvider
+]
 })
 export class AppModule {}

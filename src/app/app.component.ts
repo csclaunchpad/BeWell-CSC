@@ -7,13 +7,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 //import { ListPage } from '../pages/list/list';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
+//import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
-import {CSCContacts} from '../pages/Resources/CscContacts/cscContacts';
-import { Employee } from '../pages/Resources/Employee/employee';
-import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
-import { Public } from '../pages/Resources/Public/public';
+//import {CSCContacts} from '../pages/Resources/CscContacts/cscContacts';
+//import { Employee } from '../pages/Resources/Employee/employee';
+//import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
+//import { Public } from '../pages/Resources/Public/public';
 import { Tools } from '../pages/Tools/toolStore';
 import { Settings } from '../pages/Settings/settings';
 
