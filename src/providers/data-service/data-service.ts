@@ -32,6 +32,9 @@ private uuidsubscription: string = "cf22320c-c988-4350-a591-3b3f9b34999f";
       };
   };
 
+
+//adds an entry in the SQL Server database
+//You can push any JSONdata variable to the database.  if you wwant different element types, just update the wellness type variable accordingly
 wellness_tracker_add(moodScore:number, sleepScore: number, stressScore: number, dietScore: number, entryNote:string)
 {
     try
@@ -48,7 +51,7 @@ wellness_tracker_add(moodScore:number, sleepScore: number, stressScore: number, 
     }
 }
 
-
+//pull the list of wellness elements from the SQL Server database
 wellness_tracker_list(elementtype:string)
 {
   var link = 'https://countboard.com/mhapp/mhapp_elements_list_app.php';
@@ -56,7 +59,7 @@ wellness_tracker_list(elementtype:string)
   return this.http.post(link, data).map(res => res.json());
 }
 
-
+//generic AJAX function
   //generic async function
   async(link:string, data:string)
   {

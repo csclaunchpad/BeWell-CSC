@@ -15,6 +15,7 @@ export class Dashboard {
   constructor(public navCtrl: NavController,  public dataService: DataServiceProvider) 
 
   {
+  	//automatically load the wellness tracker listing when the page arrives
       this.dataService.wellness_tracker_list("wellness").subscribe((response)=> 
         {
           this.dataService.wellness = response;
@@ -25,6 +26,8 @@ export class Dashboard {
         });
   }
 
+
+//define the variables to link with the ngModel in the main page
   private moodScore:number = 1;
   private sleepScore:number = 1;
   private stressScore:number = 1;
@@ -32,7 +35,7 @@ export class Dashboard {
   private entryNote:string = "";
 
   
-
+//a simple function to submit the scores into the database
 submitWellness()
 {
       this.dataService.wellness_tracker_add(this.moodScore, this.sleepScore, this.stressScore, this.dietScore, this.entryNote).subscribe((response)=> 
