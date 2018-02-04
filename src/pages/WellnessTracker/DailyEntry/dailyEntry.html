@@ -9,42 +9,54 @@
 
 
 <ion-content padding>
+
     <div text-center>
-        <img src="../../assets/imgs/feelings/face10.png" class="feelingImg"/>
+        <img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">         
     </div>
 
     <ion-list> 
+
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="moodScore" color="secondary" pin="true">
+            <ion-range min="0" max="10" [(ngModel)]="moodScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Mood</ion-label>
             </ion-range>
         </ion-item>    
     
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="sleepScore" color="secondary" pin="true">
+            <ion-range min="0" max="10" [(ngModel)]="sleepScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Sleep</ion-label>
             </ion-range>
         </ion-item>
 
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="dietScore" color="secondary" pin="true">
+            <ion-range min="0" max="10" [(ngModel)]="dietScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Diet</ion-label>
             </ion-range>
         </ion-item>
 
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="stressScore" color="secondary" pin="true">
+            <ion-range min="0" max="10" [(ngModel)]="stressScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Stress</ion-label>
             </ion-range>
-        </ion-item>    
+        </ion-item> 
+        
+        <ion-item>
+            <ion-label floating>What on your mind?</ion-label>
+            <ion-input [(ngModel)]="entryNote" type="text" whatsOnYourMindText></ion-input>
+        </ion-item>        
+        
+        <ion-item>
+          <button ion-button full color="primary" (click)="submitWellness()">Submit Wellness Score</button>
+        </ion-item>
+
     </ion-list>
     
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
 </ion-footer>
 
 <!-- <md-content>
@@ -65,16 +77,16 @@
 	</div>
 
     <md-slider aria-label="{{pageElements.moodSliderAL}}" flex min="1" max="10" ng-model="moodScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-labe="{{pageElements.moodSentenceText}}">{{pageElements.moodSentenceText}}</h3>
+    <h3 class="sliderHeader" aria-label="{{pageElements.moodSentenceText}}">{{pageElements.moodSentenceText}}</h3>
 
     <md-slider aria-label="{{pageElements.sleepSliderAL}}" flex min="1" max="10" ng-model="sleepScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-labe="{{pageElements.sleepSentenceText}}">{{pageElements.sleepSentenceText}}</h3>
+    <h3 class="sliderHeader" aria-label="{{pageElements.sleepSentenceText}}">{{pageElements.sleepSentenceText}}</h3>
 	
     <md-slider aria-label="{{pageElements.dietSliderAL}}" flex min="1" max="10" ng-model="dietScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-labe="{{pageElements.dietSentenceText}}">{{pageElements.dietSentenceText}}</h3>
+    <h3 class="sliderHeader" aria-label="{{pageElements.dietSentenceText}}">{{pageElements.dietSentenceText}}</h3>
 
     <md-slider aria-label="{{pageElements.stressSliderAL}}" flex min="1" max="10" ng-model="stressScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-labe="{{pageElements.stressSentenceText}}">{{pageElements.stressSentenceText}}</h3>	
+    <h3 class="sliderHeader" aria-label="{{pageElements.stressSentenceText}}">{{pageElements.stressSentenceText}}</h3>	
 
     <md-input-container class="md-block descriptionContainer">
         <label aria-label="{{pageElements.whatsOnYourMindAL}}">{{pageElements.whatsOnYourMindText}}</label>

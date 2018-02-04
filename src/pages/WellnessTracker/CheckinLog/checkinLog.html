@@ -8,19 +8,58 @@
 </ion-header>
 
 
+<ion-content padding>
+
+    <button ion-button block [navPush]="dailyentry">Add New Entry</button>
+
+    <ion-list>
+
+        <button ion-item class="fullbutton" *ngFor="let wellness of dataService.wellness" >
+            <ion-card>
+                <ion-row layout-align="center center" flex="60">
+
+                    <ion-col class="moodBackground" layout-align="center center">
+                        {{wellness.moodScore}}
+                        <strong>Mood</strong>
+                    </ion-col>
+
+                    <ion-col class="dietBackground" layout-align="center center">
+                        {{wellness.dietScore}}
+                        <strong>Diet</strong>
+                    </ion-col>                
+
+                    <ion-col class="sleepBackground" layout-align="center center">
+                        {{wellness.sleepScore}}
+                        <strong>Sleep</strong>
+                    </ion-col>                
+
+                    <ion-col class="stressBackground" layout-align="center center">
+                        {{wellness.stressScore}}
+                        <strong>Stress</strong>
+                    </ion-col>
+
+                </ion-row>
+<!--
+                <ion-icon name="Wellness" item-start></ion-icon>
+                Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}
+
+-->
+            </ion-card>
+        </button>
+
+
+
+    </ion-list>    
+    
+</ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <button ion-button block>Aidez moi / Help Me</button>
   </ion-toolbar>
 </ion-footer>
-<!--
-<md-content >
-    <div layout="row" layout-align="end center">
-        <a href="#dailyEntry">
-            <md-button class="md-raised md-primary" aria-label="{{pageElements.addNewEntryAL}}">{{pageElements.addNewEntryText}}</md-button>
-        </a>
-    </div>
 
+<!--
     <md-card>
         <a ng-hide="entries == null" ng-repeat="entry in entries" href="#checkinLogInfo/{{::entry.entryID}}" class="entryItem">
             <md-card>

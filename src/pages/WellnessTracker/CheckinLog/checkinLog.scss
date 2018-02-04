@@ -1,3 +1,58 @@
 page-checkinLog {
 
+    .fullbutton{
+        padding: 0;
+    }    
+    
+    /* Wellness Tracker Entry Colours */
+.moodText {
+	color: #FF9800;
+}
+
+.stressText {
+	color: #D32F2F;
+}
+
+.dietText { 
+	color: #4CAF50;
+}
+
+.sleepText {
+	color: #01579B;
+}
+
+.moodBackground {
+	min-width: 60px;
+	colour: #000000;
+	border-style: none;
+	border-width: 2px 1px 2px 1px;
+	height:100%;
+	background: linear-gradient(210deg, #33ccff, #FFFFFF); /* Standard syntax (must be last) */
+}
+
+.stressBackground {
+	min-width: 60px;
+	colour: #000000;
+	border-style: none;
+	height:100%;
+	background: linear-gradient(210deg, #ff3333, #FFFFFF); /* Standard syntax (must be last) */
+}
+
+.dietBackground {
+	min-width: 60px;
+	colour: #000000;
+	border-style: none;
+	border-width: 2px 1px 2px 2px;
+	height:100%;
+	background: linear-gradient(210deg, #66ff66, #FFFFFF); /* Standard syntax (must be last) */
+}
+
+.sleepBackground {
+	min-width: 60px;
+	colour: #000000;
+	border-style: none;
+	border-width: 2px 2px 2px 1px;
+	height:100%;
+	background: linear-gradient(210deg, #3366ff, #FFFFFF); /* Standard syntax (must be last) */
+}
 }

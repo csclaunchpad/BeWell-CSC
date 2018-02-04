@@ -10,7 +10,7 @@ import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 //import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
-//import {CSCContacts} from '../pages/Resources/CscContacts/cscContacts';
+//import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
 //import { Employee } from '../pages/Resources/Employee/employee';
 //import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
 //import { Public } from '../pages/Resources/Public/public';
@@ -39,7 +39,7 @@ export class MyApp {
       { title: 'Dashboard', component: Dashboard },
       { title: 'Daily Entry', component: DailyEntry },
 //      { title: 'Daily Log', component: CheckinLogInfo },
-      { title: 'Checking Log', component: CheckinLog },
+      { title: 'Checkin Log', component: CheckinLog },
       { title: 'Resources', component: Resources },
 //      { title: 'Contacts', component: CSCContacts },      // Not needed on main menu
 //      { title: 'Employee', component: Employee },

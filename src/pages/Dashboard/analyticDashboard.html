@@ -23,7 +23,7 @@
   </ion-card-header>
 
   <ion-list>
-    <button ion-item ion-item *ngFor="let wellness of dataService.wellness" >
+    <button ion-item *ngFor="let wellness of dataService.wellness" >
       <ion-icon name="happy" item-start></ion-icon>
      Mood Data: {{wellness.moodScore}}
     </button>
