@@ -8,6 +8,7 @@ import { Toast } from '@ionic-native/toast';
   selector: 'page-add-data',
   templateUrl: 'add-Data.html',
 })
+
 export class AddDataPage {
 
   data = { date:"", type:"", description:"", amount:0 };

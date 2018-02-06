@@ -8,7 +8,7 @@ import { Toast } from '@ionic-native/toast';
 
 
 import { MyApp } from './app.component';
-//import { HomePage } from '../pages/home/home';
+import { HomePage } from '../pages/home/home';
 //import { ListPage } from '../pages/list/list';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
@@ -30,13 +30,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from '@angular/http';
 
 //providers
+//JSON Service Provider
 import { DataServiceProvider } from '../providers/data-service/data-service';
 
+//SQL Service Providers
+import { AddDataPage } from '../providers/SQLiteDataServices/Add-Data/add-Data';    
+import { EditDataPage } from '../providers/SQLiteDataServices/Edit-Data/edit-Data';
 
 @NgModule({
   declarations: [
     MyApp,
-//    HomePage,
+    HomePage,
 //    ListPage,
     Dashboard,
     DailyEntry,
@@ -58,7 +62,7 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-//    HomePage,
+    HomePage,
 //    ListPage,
     Dashboard,
     DailyEntry,
@@ -77,6 +81,8 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataServiceProvider,
+    AddDataPage,    //Added for SQLite TJ
+    EditDataPage,   //Added for SQLite TJ
     SQLite,         //Added for SQLite TJ
     Toast           //Added for SQLite TJ 
     ]

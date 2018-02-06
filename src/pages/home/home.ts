@@ -4,7 +4,7 @@ import { NavController } from 'ionic-angular';
 //services for SQLite FEB 2018
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { AddDataPage } from '../../providers/SQLiteDataServices/Add-Data/add-Data';
-import {EditDataPage} from '../../providers/SQLiteDataServices/Edit-Data/edit-Data';
+import { EditDataPage } from '../../providers/SQLiteDataServices/Edit-Data/edit-Data';
 
 
 @Component({
