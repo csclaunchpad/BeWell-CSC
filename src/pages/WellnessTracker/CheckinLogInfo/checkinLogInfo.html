@@ -7,11 +7,31 @@
   </ion-navbar>
 </ion-header>
 
+<ion-content padding>
+
+    <div text-center>
+        <img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">         
+    </div>
+<!--    
+    <div layout="row" layout-align="center">
+        <div aria-label="{{pageElements.previousAL}}" class="navArrowBtn" ng-class="{'disabled': !hasPrev}" ng-click="prevEntry()">
+            <img src="imgs/leftArrow.png" class="arrow">
+        </div>
+        <div aria-label="{{pageElements.nextAL}}" class="navArrowBtn" ng-class="{'disabled': !hasNext}" ng-click="nextEntry()">
+            <img src="imgs/rightArrow.png" class="arrow">
+        </div>
+    </div>
+-->
+   
+    
+</ion-content>
+
 <ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
 </ion-footer>
+
 <!--
 <md-content layout-align="start center" layout="column">
 

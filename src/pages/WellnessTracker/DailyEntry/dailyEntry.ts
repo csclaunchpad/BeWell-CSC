@@ -4,20 +4,28 @@ import { NavController } from 'ionic-angular';
 //services
 import { DataServiceProvider } from '../../../providers/data-service/data-service';
 
+//services for SQLite FEB 2018
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { AddDataPage } from '../../../providers/SQLiteDataServices/Add-Data/add-Data';
+import {EditDataPage} from '../../../providers/SQLiteDataServices/Edit-Data/edit-Data';
+
 
 @Component({
   selector: 'page-dailyEntry',
   templateUrl: 'dailyEntry.html'
 })
 export class DailyEntry {
-    public moodScore:number = 5;
-    public sleepScore:number = 5;
-    public dietScore:number = 5;
-    public stressScore:number = 5;
-    public totalScore:number = 10;
-    public entryNote:string = "";
+
+    userRecord: any = [];
+    entryDate:string ="";
+    moodScore:number = 5;
+    sleepScore:number = 5;
+    dietScore:number = 5;
+    stressScore:number = 5;
+    totalScore:number = 10;
+    entryNote:string = "";
         
-    constructor(public navCtrl: NavController, public dataService: DataServiceProvider ) {
+    constructor(public navCtrl: NavController, private sqlite: SQLite, public dataService: DataServiceProvider ) {
         
   	//automatically load the wellness tracker listing when the page arrives
         this.dataService.wellness_tracker_list("wellness").subscribe((response)=> 
@@ -27,9 +35,14 @@ export class DailyEntry {
           //convert the JSON text to a JSON object so you can reference it as wellness.moodScore in the ngFor
       		for (var a = 0; a < response.length;a++)
 	      		{this.dataService.wellness[a] = JSON.parse(this.dataService.wellness[a].jsondata);}
-        });
-    }
 
+        
+        });
+        
+    }
+    
+    
+    
     //a simple function to submit the scores into the database
     submitWellness()
     {
@@ -41,7 +54,7 @@ export class DailyEntry {
             //load the latest version from the DB
             this.dataService.wellness_tracker_list("wellness").subscribe((response2)=> 
             {
-        	this.dataService.wellness = response2;
+                this.dataService.wellness = response2;
                 //convert the JSON text to a JSON object so you can reference it as wellness.moodScore in the ngFor
       		for (var a = 0; a < response2.length;a++)
                     {this.dataService.wellness[a] = JSON.parse(this.dataService.wellness[a].jsondata);}
@@ -50,6 +63,11 @@ export class DailyEntry {
         });
 
     }
+
+// Given a number, this method will reverse it. 10 = 1, 9 = 2, 8 = 3, 7 = 4, 6 = 5, 5 = 6, 4 = 7, 3 = 8, 2 = 9, 1 = 10
+    reverseScore(score) 
+    { return ((10 - score) + 1); }
+    
     calcTotalScore()
     {
         this.totalScore = (((this.moodScore+this.sleepScore+this.dietScore+this.stressScore)/40)*10);

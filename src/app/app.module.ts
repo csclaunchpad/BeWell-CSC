@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
+// imports for SQL lite 
+import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
+
+
 import { MyApp } from './app.component';
 //import { HomePage } from '../pages/home/home';
 //import { ListPage } from '../pages/list/list';
@@ -71,7 +76,10 @@ import { DataServiceProvider } from '../providers/data-service/data-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataServiceProvider
-]
+    DataServiceProvider,
+    SQLite,         //Added for SQLite TJ
+    Toast           //Added for SQLite TJ 
+    ]
+    
 })
 export class AppModule {}

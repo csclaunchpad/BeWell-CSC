@@ -25677,3 +25677,185 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-checkinLog {
+  /* Wellness Tracker Entry Colours */
+}
+
+page-checkinLog .fullbutton {
+  padding: 0;
+}
+
+page-checkinLog .moodText {
+  color: #FF9800;
+}
+
+page-checkinLog .stressText {
+  color: #D32F2F;
+}
+
+page-checkinLog .dietText {
+  color: #4CAF50;
+}
+
+page-checkinLog .sleepText {
+  color: #01579B;
+}
+
+page-checkinLog .moodBackground {
+  min-width: 60px;
+  colour: #000000;
+  border-style: none;
+  border-width: 2px 1px 2px 1px;
+  height: 100%;
+  background: linear-gradient(210deg, #33ccff, #FFFFFF);
+  /* Standard syntax (must be last) */
+}
+
+page-checkinLog .stressBackground {
+  min-width: 60px;
+  colour: #000000;
+  border-style: none;
+  height: 100%;
+  background: linear-gradient(210deg, #ff3333, #FFFFFF);
+  /* Standard syntax (must be last) */
+}
+
+page-checkinLog .dietBackground {
+  min-width: 60px;
+  colour: #000000;
+  border-style: none;
+  border-width: 2px 1px 2px 2px;
+  height: 100%;
+  background: linear-gradient(210deg, #66ff66, #FFFFFF);
+  /* Standard syntax (must be last) */
+}
+
+page-checkinLog .sleepBackground {
+  min-width: 60px;
+  colour: #000000;
+  border-style: none;
+  border-width: 2px 2px 2px 1px;
+  height: 100%;
+  background: linear-gradient(210deg, #3366ff, #FFFFFF);
+  /* Standard syntax (must be last) */
+}
+
+page-checkinLogInfo {
+  /* ------ checkinLogInfo.html ------*/
+  /* Angular Datepicker */
+  /* ------ Page Elements ------ */
+  /* Custom Carousel CSS */
+}
+
+page-checkinLogInfo .dateHeader {
+  font-size: 1.25em;
+}
+
+page-checkinLogInfo .scoreTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+page-checkinLogInfo .scoreHeader {
+  font-size: 1.25em;
+}
+
+page-checkinLogInfo .scoreValue {
+  font-size: 2.0em;
+  font-weight: bold;
+}
+
+page-checkinLogInfo .md-datePicker-align {
+  margin-top: 8px;
+}
+
+page-checkinLogInfo .notesHeader {
+  font-weight: bold;
+  font-size: 1.10em;
+}
+
+page-checkinLogInfo .notesContent {
+  font-size: 1.0em;
+}
+
+page-checkinLogInfo .md-datepicker-input-container {
+  width: 85%;
+}
+
+page-checkinLogInfo .buttonBold {
+  font-weight: bold;
+}
+
+page-checkinLogInfo .arrowSize {
+  width: 50px;
+  height: 50px;
+}
+
+page-checkinLogInfo .slider {
+  /*	overflow-y: hidden;*/
+  max-height: 500px;
+  /* approximate max height */
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  /*	padding: 25px; */
+}
+
+page-checkinLogInfo .slider.closed {
+  max-height: 0;
+}
+
+page-checkinLogInfo .carouselButton {
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  background: #333;
+  padding: 5px 10px;
+  color: #eee;
+  margin-top: 130px;
+}
+
+/******************************************************************************* 
+* Author: Janak Alford, Tim Jodoin, Justin Wams
+* Date: Feb 3, 2018
+* Application: CSC-Mental Health Application
+* Framework: Ionic
+*
+* Header for SCSS page-dailyEntry, Daily Entry module
+* SCSS (Sassy Casscading Style Sheets) Follow the following implementation
+* The SCSS is imported into each .ts page by using the following command syntax
+* @Component({
+*  selector: 'page-dailyEntry',
+*  templateUrl: 'dailyEntry.html'
+* })
+*
+* The above initiates the module style file structure for the component
+*
+* Glossary
+* Classes are referenced as .classname{}
+* Tags are referenced as tagname{}
+* Styles are referenced to the page when encapsulated in 
+* 
+* page-pagename{
+*      .classname{
+*         size: 100%;
+*      }
+*      tagname{
+*          size: 100%;
+*      }
+* }
+*
+*******************************************************************************/
+page-dailyEntry .feelingImg {
+  width: 40%;
+  height: auto;
+}
+
+page-dailyEntry .slider {
+  padding: 0;
+  margin-top: -10px;
+}
