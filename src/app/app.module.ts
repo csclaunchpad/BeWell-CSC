@@ -3,8 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 // imports for SQL lite 
-import { SQLite } from '@ionic-native/sqlite';
-import { Toast } from '@ionic-native/toast';
+//import { SQLite } from '@ionic-native/sqlite';
+//import { Toast } from '@ionic-native/toast';
 
 
 import { MyApp } from './app.component';
@@ -15,10 +15,10 @@ import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
-import {CSCContacts} from '../pages/Resources/CscContacts/cscContacts';
-import {Employee} from '../pages/Resources/Employee/employee';
-import {EmployeeFam} from '../pages/Resources/EmployeeFamily/employeeFamily';
-import {Public} from '../pages/Resources/Public/public';
+import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
+import { Employee } from '../pages/Resources/Employee/employee';
+import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
+import { Public } from '../pages/Resources/Public/public';
 import { Tools } from '../pages/Tools/toolStore';
 import { Settings } from '../pages/Settings/settings';
 
@@ -34,8 +34,8 @@ import { HttpModule } from '@angular/http';
 import { DataServiceProvider } from '../providers/data-service/data-service';
 
 //SQL Service Providers
-import { AddDataPage } from '../providers/SQLiteDataServices/Add-Data/add-Data';    
-import { EditDataPage } from '../providers/SQLiteDataServices/Edit-Data/edit-Data';
+//import { AddDataPage } from '../providers/SQLiteDataServices/Add-Data/add-Data';    
+//import { EditDataPage } from '../providers/SQLiteDataServices/Edit-Data/edit-Data';
 
 @NgModule({
   declarations: [
@@ -52,8 +52,10 @@ import { EditDataPage } from '../providers/SQLiteDataServices/Edit-Data/edit-Dat
     EmployeeFam,
     Public,
     Tools,
-    Settings
-  ],
+    Settings,
+//    AddDataPage,    //Added for SQLite TJ
+//    EditDataPage   //Added for SQLite TJ
+    ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
@@ -74,17 +76,19 @@ import { EditDataPage } from '../providers/SQLiteDataServices/Edit-Data/edit-Dat
     EmployeeFam,
     Public,    
     Tools,
-    Settings    
-  ],
+    Settings,    
+//    AddDataPage,    //Added for SQLite TJ
+//    EditDataPage   //Added for SQLite TJ
+    ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DataServiceProvider,
-    AddDataPage,    //Added for SQLite TJ
-    EditDataPage,   //Added for SQLite TJ
-    SQLite,         //Added for SQLite TJ
-    Toast           //Added for SQLite TJ 
+//    AddDataPage,    //Added for SQLite TJ
+//    EditDataPage,   //Added for SQLite TJ
+//    SQLite,         //Added for SQLite TJ
+//    Toast           //Added for SQLite TJ 
     ]
     
 })

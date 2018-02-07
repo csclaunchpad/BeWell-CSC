@@ -3,8 +3,8 @@ import { NavController } from 'ionic-angular';
 
 //services for SQLite FEB 2018
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-import { AddDataPage } from '../../providers/SQLiteDataServices/Add-Data/add-Data';
-import { EditDataPage } from '../../providers/SQLiteDataServices/Edit-Data/edit-Data';
+//import { AddDataPage } from '../../providers/SQLiteDataServices/Add-Data/add-Data';
+//import { EditDataPage } from '../../providers/SQLiteDataServices/Edit-Data/edit-Data';
 
 
 @Component({
@@ -61,15 +61,15 @@ export class HomePage {
         }).catch(e => console.log(e));
     }
 
-    addData() {
-        this.navCtrl.push(AddDataPage);
-    }
+//    addData() {
+//        this.navCtrl.push(AddDataPage);
+//    }
 
-    editData(rowid) {
-        this.navCtrl.push(EditDataPage, {
-            rowid:rowid
-        });
-    }
+//    editData(rowid) {
+//        this.navCtrl.push(EditDataPage, {
+//            rowid:rowid
+//        });
+//    }
 
     deleteData(rowid) {
         this.sqlite.create({name: 'wellness.db', location: 'default'}).then((db: SQLiteObject) => {

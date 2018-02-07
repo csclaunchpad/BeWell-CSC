@@ -5,9 +5,9 @@ import { NavController } from 'ionic-angular';
 import { DataServiceProvider } from '../../../providers/data-service/data-service';
 
 //services for SQLite FEB 2018
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-import { AddDataPage } from '../../../providers/SQLiteDataServices/Add-Data/add-Data';
-import {EditDataPage} from '../../../providers/SQLiteDataServices/Edit-Data/edit-Data';
+//import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+//import { AddDataPage } from '../../../providers/SQLiteDataServices/Add-Data/add-Data';
+//import {EditDataPage} from '../../../providers/SQLiteDataServices/Edit-Data/edit-Data';
 
 
 @Component({
@@ -25,7 +25,7 @@ export class DailyEntry {
     totalScore:number = 10;
     entryNote:string = "";
         
-    constructor(public navCtrl: NavController, private sqlite: SQLite, public dataService: DataServiceProvider ) {
+    constructor(public navCtrl: NavController,/* private sqlite: SQLite,*/ public dataService: DataServiceProvider ) {
         
   	//automatically load the wellness tracker listing when the page arrives
         this.dataService.wellness_tracker_list("wellness").subscribe((response)=> 

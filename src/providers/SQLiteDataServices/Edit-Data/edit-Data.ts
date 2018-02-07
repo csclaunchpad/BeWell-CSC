@@ -1,3 +1,5 @@
+/*
+
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
@@ -11,7 +13,7 @@ import { Toast } from '@ionic-native/toast';
 
 export class EditDataPage {
 
-  data = { rowid:0, date:"", type:"", description:"", amount:0 };
+  private data: any = { rowid:0, date:"", type:"", description:"", amount:0 };
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -86,3 +88,5 @@ export class EditDataPage {
   }
 
 }
+
+*/

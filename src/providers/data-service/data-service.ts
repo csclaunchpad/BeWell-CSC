@@ -26,11 +26,11 @@ private uuidsubscription: string = "cf22320c-c988-4350-a591-3b3f9b34999f";
 
 
 //sort a json array by its property field alphabetically
-   sortByProperty(property) {
-      return function (x, y) {
-          return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
-      };
-  };
+    sortByProperty(property) {
+        return function (x, y) {
+            return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
+        };
+    };
 
 
 //adds an entry in the SQL Server database
@@ -39,24 +39,24 @@ wellness_tracker_add(moodScore:number, sleepScore: number, stressScore: number, 
 {
     try
     {
-      var timeNow = new Date().toISOString();
-      var link = 'https://countboard.com/mhapp/mhapp_element_create_app.php';
-      var jsondata = JSON.stringify({ moodScore: moodScore, sleepScore:sleepScore, stressScore: stressScore, dietScore: dietScore, entryNote:entryNote, dateEntered:timeNow });
-      var data = JSON.stringify({uuidsubscription: this.uuidsubscription, elementtype: 'wellness', name:"Wellness Tracker Entry",description:"Optional Description Field",jsondata:jsondata});
-      return this.http.post(link, data).map(res => res.json());
+        var timeNow = new Date().toISOString();
+        var link = 'https://countboard.com/mhapp/mhapp_element_create_app.php';
+        var jsondata = JSON.stringify({ moodScore: moodScore, sleepScore:sleepScore, stressScore: stressScore, dietScore: dietScore, entryNote:entryNote, dateEntered:timeNow });
+        var data = JSON.stringify({uuidsubscription: this.uuidsubscription, elementtype: 'wellness', name:"Wellness Tracker Entry",description:"Optional Description Field",jsondata:jsondata});
+        return this.http.post(link, data).map(res => res.json());
     }
     catch(err)
     {
-      alert("An error was found: " + err);
+        alert("An error was found: " + err);
     }
 }
 
 //pull the list of wellness elements from the SQL Server database
 wellness_tracker_list(elementtype:string)
 {
-  var link = 'https://countboard.com/mhapp/mhapp_elements_list_app.php';
-  var data = JSON.stringify({uuidsubscription: this.uuidsubscription, elementtype: elementtype});
-  return this.http.post(link, data).map(res => res.json());
+    var link = 'https://countboard.com/mhapp/mhapp_elements_list_app.php';
+    var data = JSON.stringify({uuidsubscription: this.uuidsubscription, elementtype: elementtype});
+    return this.http.post(link, data).map(res => res.json());
 }
 
 //generic AJAX function
