@@ -1,11 +1,9 @@
-/*
-
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-edit-data',
   templateUrl: 'edit-Data.html',
@@ -88,5 +86,3 @@ export class EditDataPage {
   }
 
 }
-
-*/

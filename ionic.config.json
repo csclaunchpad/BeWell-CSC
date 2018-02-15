@@ -1,6 +1,6 @@
 {
-  "name": "wellness",
-  "app_id": "68fd7c69",
+  "name": "sqltest",
+  "app_id": "cb05cc0e",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}

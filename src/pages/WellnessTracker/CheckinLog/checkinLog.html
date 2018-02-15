@@ -13,8 +13,30 @@
     <button ion-button block [navPush]="dailyentry">Add New Entry</button>
 
     <ion-list>
-
-        <button ion-item class="fullbutton" *ngFor="let wellness of dataService.wellness" >
+        
+    <ion-item-sliding *ngFor="let userRecord of wellness; let i=index">
+      <ion-item nopadding>
+        <p>
+          <span>{{userRecord.entryDate}}</span><br>
+          Mood Score: {{userRecord.moodScore}}<br>
+          Note: {{userRecord.entryNote}}
+        </p>
+        <h3 item-end>
+          Amount: ${{userRecord.totalScore}}
+        </h3>
+      </ion-item>
+<!--      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="editData(userRecord.rowid)">
+          <ion-icon name="paper"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteData(userRecord.rowid)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+-->
+    </ion-item-sliding>
+        
+<!--        <button ion-item class="fullbutton" *ngFor="let wellness of dataService.wellness" >
             <ion-card>
                 <ion-row layout-align="center center" flex="60">
 
@@ -45,7 +67,7 @@
 
             </ion-card>
         </button>
-
+-->
 
 
     </ion-list>    

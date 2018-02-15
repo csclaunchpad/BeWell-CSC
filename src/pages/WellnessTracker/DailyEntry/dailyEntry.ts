@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-
-//services
-import { DataServiceProvider } from '../../../providers/data-service/data-service';
-
-//services for SQLite FEB 2018
-//import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-//import { AddDataPage } from '../../../providers/SQLiteDataServices/Add-Data/add-Data';
-//import {EditDataPage} from '../../../providers/SQLiteDataServices/Edit-Data/edit-Data';
-
+import { NavController, NavParams } from 'ionic-angular';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
+import { Toast } from '@ionic-native/toast';
 
 @Component({
   selector: 'page-dailyEntry',
@@ -16,63 +9,62 @@ import { DataServiceProvider } from '../../../providers/data-service/data-servic
 })
 export class DailyEntry {
 
-    userRecord: any = [];
-    entryDate:string ="";
-    moodScore:number = 5;
-    sleepScore:number = 5;
-    dietScore:number = 5;
-    stressScore:number = 5;
-    totalScore:number = 10;
-    entryNote:string = "";
+    data = { entryDate:"", moodScore:5, sleepScore:5, dietScore:5, stressScore:5, totalScore:10, entryNote:""};
         
-    constructor(public navCtrl: NavController,/* private sqlite: SQLite,*/ public dataService: DataServiceProvider ) {
-        
-  	//automatically load the wellness tracker listing when the page arrives
-        this.dataService.wellness_tracker_list("wellness").subscribe((response)=> 
-        {
-            this.dataService.wellness = response;
-
-          //convert the JSON text to a JSON object so you can reference it as wellness.moodScore in the ngFor
-      		for (var a = 0; a < response.length;a++)
-	      		{this.dataService.wellness[a] = JSON.parse(this.dataService.wellness[a].jsondata);}
-
-        
-        });
-        
-    }
+    constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private sqlite: SQLite,
+    private toast: Toast) {}
     
-    
-    
-    //a simple function to submit the scores into the database
-    submitWellness()
-    {
-        this.dataService.wellness_tracker_add(this.moodScore, this.sleepScore, this.stressScore, this.dietScore, this.entryNote).subscribe((response)=> 
-        {
-            alert("Score Submitted");
-            console.log(response);
-
-            //load the latest version from the DB
-            this.dataService.wellness_tracker_list("wellness").subscribe((response2)=> 
-            {
-                this.dataService.wellness = response2;
-                //convert the JSON text to a JSON object so you can reference it as wellness.moodScore in the ngFor
-      		for (var a = 0; a < response2.length;a++)
-                    {this.dataService.wellness[a] = JSON.parse(this.dataService.wellness[a].jsondata);}
-            });
+    saveData() {
+        this.sqlite.create({ name: 'wellnessdb1.db', location: 'default' }).then((db: SQLiteObject) => {
+            db.executeSql('INSERT INTO wellnesstracker VALUES(NULL,?,?,?,?,?,?,?)',
+            [this.data.entryDate,
+            this.data.moodScore,
+            this.data.sleepScore,
+            this.data.dietScore,
+            this.data.stressScore,
+            this.data.totalScore,
+            this.data.entryNote]).then(res => {
+                console.log(res);
+                this.toast.show('Data saved', '5000', 'center').subscribe(
+                toast => {
+                    this.navCtrl.popToRoot();
+                }
+                );
+            })
             
+/// Left off here - Continue             
+            
+        .catch(e => {
+            console.log(e);
+            this.toast.show(e, '5000', 'center').subscribe(
+            toast => {
+                console.log(toast);
+            }
+          );
         });
-
+        
+    }).catch(e => {
+      console.log(e);
+      this.toast.show(e, '5000', 'center').subscribe(
+        toast => {
+          console.log(toast);
+            }
+        );
+        });
     }
-
+        
 // Given a number, this method will reverse it. 10 = 1, 9 = 2, 8 = 3, 7 = 4, 6 = 5, 5 = 6, 4 = 7, 3 = 8, 2 = 9, 1 = 10
-    reverseScore(score) 
-    { return ((10 - score) + 1); }
+//    reverseScore(score) 
+//    { 
+//       return ((10 - score) + 1); 
+//    }
     
     calcTotalScore()
     {
-        this.totalScore = (((this.moodScore+this.sleepScore+this.dietScore+this.stressScore)/40)*10);
+        this.data.totalScore = (((this.data.moodScore+this.data.sleepScore+this.data.dietScore+this.data.stressScore)/40)*10);
     }
-
 }
 //define the variables to link with the ngModel in the main page
     

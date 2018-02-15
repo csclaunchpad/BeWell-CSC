@@ -2,94 +2,54 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-// imports for SQL lite 
-//import { SQLite } from '@ionic-native/sqlite';
-//import { Toast } from '@ionic-native/toast';
-
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-//import { ListPage } from '../pages/list/list';
-import { Dashboard } from '../pages/Dashboard/analyticDashboard';
-import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
+//import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
-import { Resources } from '../pages/Resources/resources';
-import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
-import { Employee } from '../pages/Resources/Employee/employee';
-import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
-import { Public } from '../pages/Resources/Public/public';
-import { Tools } from '../pages/Tools/toolStore';
-import { Settings } from '../pages/Settings/settings';
+
+import { ListPage } from '../pages/list/list';
+import { AddDataPage } from '../pages/add-data/add-data';
+import { EditDataPage } from '../pages/edit-data/edit-data';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { SQLite } from '@ionic-native/sqlite';
+import { Toast } from '@ionic-native/toast';
 
-//plugins
-import { HttpModule } from '@angular/http';
-
-//providers
-//JSON Service Provider
-import { DataServiceProvider } from '../providers/data-service/data-service';
-
-//SQL Service Providers
-//import { AddDataPage } from '../providers/SQLiteDataServices/Add-Data/add-Data';    
-//import { EditDataPage } from '../providers/SQLiteDataServices/Edit-Data/edit-Data';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-//    ListPage,
-    Dashboard,
-    DailyEntry,
-    CheckinLogInfo,
+//    DailyEntry,
     CheckinLog,
-    Resources,
-    CSCContacts,
-    Employee,
-    EmployeeFam,
-    Public,
-    Tools,
-    Settings,
-//    AddDataPage,    //Added for SQLite TJ
-//    EditDataPage   //Added for SQLite TJ
-    ],
+    ListPage,
+    AddDataPage,
+    EditDataPage
+    
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-//    ListPage,
-    Dashboard,
-    DailyEntry,
-    CheckinLogInfo,
+//    DailyEntry,
     CheckinLog,
-    Resources,
-    CSCContacts,
-    Employee,
-    EmployeeFam,
-    Public,    
-    Tools,
-    Settings,    
-//    AddDataPage,    //Added for SQLite TJ
-//    EditDataPage   //Added for SQLite TJ
-    ],
+    ListPage,
+    AddDataPage,
+    EditDataPage    
+  ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataServiceProvider,
-//    AddDataPage,    //Added for SQLite TJ
-//    EditDataPage,   //Added for SQLite TJ
-//    SQLite,         //Added for SQLite TJ
-//    Toast           //Added for SQLite TJ 
-    ]
-    
+    SQLite,
+    Toast
+  ]
 })
 export class AppModule {}

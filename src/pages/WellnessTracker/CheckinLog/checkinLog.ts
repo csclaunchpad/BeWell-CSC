@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { CheckinLogInfo } from '../CheckinLogInfo/checkinLogInfo';
+import { NavController, NavParams } from 'ionic-angular';
+//import { CheckinLogInfo } from '../CheckinLogInfo/checkinLogInfo';
 import { DailyEntry } from '../DailyEntry/dailyEntry';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
+import { Toast } from '@ionic-native/toast';
 
-import { DataServiceProvider } from '../../../providers/data-service/data-service';
+//import { DataServiceProvider } from '../../../providers/data-service/data-service';
 
 
 
@@ -13,11 +15,16 @@ import { DataServiceProvider } from '../../../providers/data-service/data-servic
 })
 
 export class CheckinLog {
-    checkinLogInfo = CheckinLogInfo;
+//    checkinLogInfo = CheckinLogInfo;
         dailyentry = DailyEntry;
 
-    constructor(public navCtrl: NavController, public dataService: DataServiceProvider) {
-    }
+    constructor(public navCtrl: NavController, 
+    public navParams: NavParams,
+    private sqlite: SQLite,
+    private toast: Toast) {}
+
+
+
 
 /*
  * //------------------ Checkin Log Controller Controller --------------------

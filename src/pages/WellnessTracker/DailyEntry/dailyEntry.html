@@ -11,47 +11,47 @@
 <ion-content padding>
 
     <div text-center>
-        <img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">         
+        <img src="../../assets/imgs/feelings/face10.png" class="feelingImg">         
     </div>
 
+    <form (ngSubmit)="saveData()" >
     <ion-list> 
-
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="moodScore" color="secondary" pin="true" class="slider">
+            <ion-range min="0" max="10" [(ngModel)]="data.moodScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Mood</ion-label>
             </ion-range>
         </ion-item>    
     
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="sleepScore" color="secondary" pin="true" class="slider">
+            <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Sleep</ion-label>
             </ion-range>
         </ion-item>
 
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="dietScore" color="secondary" pin="true" class="slider">
+            <ion-range min="0" max="10" [(ngModel)]="data.dietScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Diet</ion-label>
             </ion-range>
         </ion-item>
 
-
         <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="stressScore" color="secondary" pin="true" class="slider">
+            <ion-range min="0" max="10" [(ngModel)]="data.stressScore" color="secondary" pin="true" class="slider">
                 <ion-label range-left>Stress</ion-label>
             </ion-range>
         </ion-item> 
  
-
         <ion-item>
             <ion-label floating>What on your mind?</ion-label>
-            <ion-input [(ngModel)]="entryNote" type="text" whatsOnYourMindText></ion-input>
+            <ion-input [(ngModel)]="data.entryNote" type="text" whatsOnYourMindText></ion-input>
         </ion-item>        
         
         <ion-item>
-          <button ion-button full color="primary" (click)="submitWellness()">Submit Wellness Score</button>
+          <button ion-button type="submit" full>Submit Wellness Score</button>
         </ion-item>
 
     </ion-list>
+        
+    </form>
     
 </ion-content>
 

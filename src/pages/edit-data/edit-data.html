@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Edit Data</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h2>Edit Data</h2>
+    <form (ngSubmit)="updateData()">
+        <ion-item>
+            <ion-label>Date</ion-label>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Mood</ion-label>
+            <ion-input type="number" placeholder="Mood" [(ngModel)]="data.moodScore" name="moodScore" required="" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Sleep</ion-label>
+            <ion-input type="number" placeholder="Sleep" [(ngModel)]="data.sleepScore" name="sleepScore" required="" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Diet</ion-label>
+            <ion-input type="number" placeholder="Diet" [(ngModel)]="data.dietScore" name="dietScore" required="" ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Stress</ion-label>
+            <ion-input type="number" placeholder="Stress" [(ngModel)]="data.stressScore" name="stressScore" required="" ></ion-input>
+        </ion-item>
+        
+        
+        <ion-item>
+            <ion-label>Entry Note</ion-label>
+            <ion-input type="text" placeholder="Entry Note" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>
+        </ion-item>
+        
+        <ion-input type="hidden" [(ngModel)]="data.rowid" name="rowid"></ion-input>
+
+        <button ion-button type="submit" block>Update Data</button>
+        
+    </form>
+</ion-content>
