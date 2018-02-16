@@ -1,104 +1,60 @@
 <ion-header>
+
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>DailyEntry</ion-title>
+    <ion-title>Daily Entry</ion-title>
   </ion-navbar>
-</ion-header>
 
+</ion-header>
 
 <ion-content padding>
 
     <div text-center>
         <img src="../../assets/imgs/feelings/face10.png" class="feelingImg">         
     </div>
-
-    <form (ngSubmit)="saveData()" >
-    <ion-list> 
-        <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="data.moodScore" color="secondary" pin="true" class="slider">
-                <ion-label range-left>Mood</ion-label>
-            </ion-range>
-        </ion-item>    
     
-        <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" color="secondary" pin="true" class="slider">
-                <ion-label range-left>Sleep</ion-label>
-            </ion-range>
-        </ion-item>
+  <form (ngSubmit)="saveData()">
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+    </ion-item>
 
-        <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="data.dietScore" color="secondary" pin="true" class="slider">
-                <ion-label range-left>Diet</ion-label>
-            </ion-range>
-        </ion-item>
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Mood</ion-label>
+        </ion-range>
+    </ion-item>      
 
-        <ion-item>
-            <ion-range min="0" max="10" [(ngModel)]="data.stressScore" color="secondary" pin="true" class="slider">
-                <ion-label range-left>Stress</ion-label>
-            </ion-range>
-        </ion-item> 
- 
-        <ion-item>
-            <ion-label floating>What on your mind?</ion-label>
-            <ion-input [(ngModel)]="data.entryNote" type="text" whatsOnYourMindText></ion-input>
-        </ion-item>        
-        
-        <ion-item>
-          <button ion-button type="submit" full>Submit Wellness Score</button>
-        </ion-item>
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Diet</ion-label>
+        </ion-range>
+    </ion-item> 
 
-    </ion-list>
-        
-    </form>
-    
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Sleep</ion-label>
+        </ion-range>
+    </ion-item> 
+
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Mood</ion-label>
+        </ion-range>
+    </ion-item>       
+      
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>
+    </ion-item>
+      
+    <ion-item>
+      <ion-label>Amount</ion-label>
+      <ion-input type="number" placeholder="Amount" [(ngModel)]="data.amount" name="amount" required="" ></ion-input>
+    </ion-item>
+      
+    <button ion-button type="submit" block>Save Data</button>
+  </form>
 </ion-content>
-
-<ion-footer>
-    <ion-toolbar>
-        <button ion-button block>Aidez moi / Help Me</button>
-    </ion-toolbar>
-</ion-footer>
-
-<!-- <md-content>
-    <p>Trial 1 </p>
- </md-content> 
--->
-
-
-<!--
-<md-content layout-align="start center" layout="column" class="wt dailyEntry">
-
-    <img src="imgs/feelings/face{{totalScore}}.png" class="feelingImg"/>
-	
-	<div layout="row" layout-padding layout-align="center center">
-		<h2 class="sliderHeader" aria-label="{{pageElements.sliderHeaderText}}">
-			{{pageElements.sliderHeaderText}}
-		</h2>
-	</div>
-
-    <md-slider aria-label="{{pageElements.moodSliderAL}}" flex min="1" max="10" ng-model="moodScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-label="{{pageElements.moodSentenceText}}">{{pageElements.moodSentenceText}}</h3>
-
-    <md-slider aria-label="{{pageElements.sleepSliderAL}}" flex min="1" max="10" ng-model="sleepScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-label="{{pageElements.sleepSentenceText}}">{{pageElements.sleepSentenceText}}</h3>
-	
-    <md-slider aria-label="{{pageElements.dietSliderAL}}" flex min="1" max="10" ng-model="dietScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-label="{{pageElements.dietSentenceText}}">{{pageElements.dietSentenceText}}</h3>
-
-    <md-slider aria-label="{{pageElements.stressSliderAL}}" flex min="1" max="10" ng-model="stressScore" class="slider md-primary" md-discrete></md-slider>
-    <h3 class="sliderHeader" aria-label="{{pageElements.stressSentenceText}}">{{pageElements.stressSentenceText}}</h3>	
-
-    <md-input-container class="md-block descriptionContainer">
-        <label aria-label="{{pageElements.whatsOnYourMindAL}}">{{pageElements.whatsOnYourMindText}}</label>
-        <textarea ng-model="entryNote" md-maxlength="500" maxlength="500" class="descriptionText"></textarea>
-    </md-input-container>
-
-    <div>
-        <md-button class="md-raised md-primary" ng-click="saveEntry()" aria-label="{{pageElements.doneText}}">{{pageElements.doneText}}</md-button>
-    </div>
-
-</md-content>
-
--->

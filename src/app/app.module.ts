@@ -4,11 +4,15 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-//import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-//import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
+import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+import { Resources } from '../pages/Resources/resources';
+import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
+import { Employee } from '../pages/Resources/Employee/employee';
+import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
+import { Public } from '../pages/Resources/Public/public';
 
-import { ListPage } from '../pages/list/list';
-import { AddDataPage } from '../pages/add-data/add-data';
+//import { AddDataPage } from '../pages/add-data/add-data';
 import { EditDataPage } from '../pages/edit-data/edit-data';
 
 
@@ -23,10 +27,14 @@ import { Toast } from '@ionic-native/toast';
   declarations: [
     MyApp,
     HomePage,
-//    DailyEntry,
-//    CheckinLog,
-    ListPage,
-    AddDataPage,
+    DailyEntry,
+    CheckinLog,
+    Resources,
+    CSCContacts,
+    Employee,
+    EmployeeFam,
+    Public,
+//    AddDataPage,
     EditDataPage
     
   ],
@@ -38,10 +46,14 @@ import { Toast } from '@ionic-native/toast';
   entryComponents: [
     MyApp,
     HomePage,
-//    DailyEntry,
-//    CheckinLog,
-    ListPage,
-    AddDataPage,
+    DailyEntry,
+    CheckinLog,
+    Resources,
+    CSCContacts,
+    Employee,
+    EmployeeFam,
+    Public,
+//    AddDataPage,
     EditDataPage    
   ],
   providers: [

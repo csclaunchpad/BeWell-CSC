@@ -4,39 +4,19 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>CheckinLog</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="addData()">
+                <ion-icon name="add-circle"></ion-icon>
+            </button>
+        </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-
-    <button ion-button block [navPush]="dailyentry">Add New Entry</button>
-
     <ion-list>
-        
-    <ion-item-sliding *ngFor="let userRecord of wellness; let i=index">
-      <ion-item nopadding>
-        <p>
-          <span>{{userRecord.entryDate}}</span><br>
-          Type: {{userRecord.moodScore}}<br>
-          {{userRecord.entryNote}}
-        </p>
-        <h3 item-end>
-          Amount: ${{userRecord.totalScore}}
-        </h3>
-      </ion-item>
-<!--      <ion-item-options side="right">
-        <button ion-button color="primary" (click)="editData(userRecord.rowid)">
-          <ion-icon name="paper"></ion-icon>
-        </button>
-        <button ion-button color="danger" (click)="deleteData(userRecord.rowid)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
--->
-    </ion-item-sliding>
-        
-<!--        <button ion-item class="fullbutton" *ngFor="let wellness of dataService.wellness" >
+    <ion-item-sliding *ngFor="let wellness of userRecords; let i=index">
+        <ion-item nopadding>
             <ion-card>
                 <ion-row layout-align="center center" flex="60">
 
@@ -66,10 +46,10 @@
                 Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}
 
             </ion-card>
-        </button>
--->
 
-
+        </ion-item>
+      <!--  </button> -->
+    </ion-item-sliding>
     </ion-list>    
     
 </ion-content>
@@ -79,69 +59,3 @@
     <button ion-button block>Aidez moi / Help Me</button>
   </ion-toolbar>
 </ion-footer>
-
-<!--
-    <md-card>
-        <a ng-hide="entries == null" ng-repeat="entry in entries" href="#checkinLogInfo/{{::entry.entryID}}" class="entryItem">
-            <md-card>
-				<!-- Card Body -->
-<!--				<div layout="row">
-				
-					<!-- Date Space -->
-<!--					<div layout="row" layout-align="start center" flex="20">
-						<div flex aria-label="{{pageElements.dateEnteredAL}}: {{entry.dateEntered}}">
-							<strong>{{pageElements.dateText}}<br></strong> {{entry.dateEntered}}
-						</div>
-					</div>
-				
-					<!-- Question Score Space -->
-<!--					<div layout="row" layout-align="center center" flex="60">
-						<div layout="row" class="dietBackground" layout-align="center center">
-							<div aria-label="{{pageElements.dietScoreAL}}: {{entry.dietScore}}">
-								<strong>{{pageElements.dietText}}<br></strong> {{entry.dietScore}}
-							</div>
-						</div>
-						<div layout="row" class="moodBackground" layout-align="center center">
-							<div aria-label="{{pageElements.moodScoreAL}}: {{entry.moodScore}}">
-								<strong>{{pageElements.moodText}}<br></strong> {{entry.moodScore}}
-							</div>
-						</div>
-						<div layout="row" class="stressBackground" layout-align="center center">
-							<div aria-label="{{pageElements.stressScoreAL}}: {{entry.stressScore}}">
-								<strong>{{pageElements.stressText}}<br></strong> {{entry.stressScore}}
-							</div>
-						</div>
-						<div layout="row" class="sleepBackground" layout-align="center center">
-							<div aria-label="{{pageElements.sleepScoreAL}}: {{entry.sleepScore}}">
-								<strong>{{pageElements.sleepText}}<br></strong> {{entry.sleepScore}}
-							</div>
-						</div>
-						
-						
-					</div>
-					
-					<!-- Total Score Space -->
-<!--					<div layout="row" layout-align="end center" flex="20">
-						<div>
-							<div aria-label="{{pageElements.veryLowText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore <= 10"><strong></strong> {{pageElements.veryLowText}} <br>({{entry.entryScore}})</div>
-							<div aria-label="{{pageElements.lowText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 11 && entry.entryScore <= 30"><strong></strong> {{pageElements.lowText}} ({{entry.entryScore}})</div>
-							<div aria-label="{{pageElements.roughText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 31 && entry.entryScore <= 40"><strong></strong> {{pageElements.roughText}} ({{entry.entryScore}})</div>
-							<div aria-label="{{pageElements.decentText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 41 && entry.entryScore <= 50"><strong></strong> {{pageElements.decentText}} ({{entry.entryScore}})</div>
-							<div aria-label="{{pageElements.goodText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 51 && entry.entryScore <= 60"><strong></strong> {{pageElements.goodText}} ({{entry.entryScore}})</div>
-							<div aria-label="{{pageElements.veryGoodText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 61 && entry.entryScore <= 75"><strong></strong> {{pageElements.veryGoodText}} ({{entry.entryScore}})</div>
-							<div aria-label="{{pageElements.amazingText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 76"><strong></strong> {{pageElements.amazingText}} ({{entry.entryScore}})</div>
-						</div>
-					</div>
-				</div>
-            </md-card>
-        </a>
-        <md-card ng-show="entries == null">
-            <md-card-title>
-                <md-card-title-text aria-label="{{pageElements.loadingText}}">
-                    <span>{{pageElements.loadingText}}</span>
-                </md-card-title-text>
-            </md-card-title>
-        </md-card>
-    </md-card>
-</md-content>
--->

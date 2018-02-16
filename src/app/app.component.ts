@@ -4,11 +4,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-//import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-//import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
+import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+import {Resources } from '../pages/Resources/resources';
 
-import { ListPage } from '../pages/list/list';
-import { AddDataPage } from '../pages/add-data/add-data';
+//import { AddDataPage } from '../pages/add-data/add-data';
 import { EditDataPage } from '../pages/edit-data/edit-data';
 
 
@@ -28,10 +28,10 @@ export class MyApp {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-//      { title: 'Daily Entry', component: DailyEntry },
-//      { title: 'Checkin Log', component: CheckinLog },
-      { title: 'List', component: ListPage },
-      { title: 'Add Data', component: AddDataPage },
+      { title: 'Daily Entry', component: DailyEntry },
+      { title: 'Checkin Log', component: CheckinLog },
+//      { title: 'Add Data', component: AddDataPage },
+      { title: 'Resorces', component: Resources },
       { title: 'Edit Data', component: EditDataPage }
 
         ];

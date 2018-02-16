@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-import { AddDataPage } from '../add-data/add-data';
-//import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry';
+//import { AddDataPage } from '../add-data/add-data';
+import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry';
 
 import { EditDataPage } from '../edit-data/edit-data';
 
@@ -66,7 +66,7 @@ export class HomePage {
     }
 
     addData() {
-      this.navCtrl.push(AddDataPage);
+      this.navCtrl.push(DailyEntry);
     }
 
     editData(rowid) {
