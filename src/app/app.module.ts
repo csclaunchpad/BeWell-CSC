@@ -5,7 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 //import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+//import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 
 import { ListPage } from '../pages/list/list';
 import { AddDataPage } from '../pages/add-data/add-data';
@@ -24,7 +24,7 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     HomePage,
 //    DailyEntry,
-    CheckinLog,
+//    CheckinLog,
     ListPage,
     AddDataPage,
     EditDataPage
@@ -39,7 +39,7 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     HomePage,
 //    DailyEntry,
-    CheckinLog,
+//    CheckinLog,
     ListPage,
     AddDataPage,
     EditDataPage    

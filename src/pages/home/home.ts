@@ -1,83 +1,91 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { NavController } from 'ionic-angular';
 
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { AddDataPage } from '../add-data/add-data';
+//import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry';
+
 import { EditDataPage } from '../edit-data/edit-data';
 
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
-
 export class HomePage {
 
-    userRecord: any = [];
-    entryDate:string ="";
-    moodScore:number = 5;
-    sleepScore:number = 5;
-    dietScore:number = 5;
-    stressScore:number = 5;
-    totalScore:number = 10;
-    entryNote:string = "";
+    userRecords: any = [];
+    totalIncome = 0;
+    totalExpense = 0;
+    balance = 0;
 
-    constructor(public navCtrl: NavController,
-                public navParams: NavParams,
-                private sqlite: SQLite ) {}
+
+    constructor(public navCtrl: NavController, private sqlite: SQLite) {
+
+    }
 
     ionViewDidLoad() {
-        this.getData();
+      this.getData();
     }
 
     ionViewWillEnter() {
-        this.getData();
+      this.getData();
     }
 
     getData() {
-        this.sqlite.create({
-        name: 'wellnessdb1.db',
+      this.sqlite.create({
+        name: 'ionicdb5.db',
         location: 'default'
-        }).then((db: SQLiteObject) => {
-            db.executeSql('CREATE TABLE IF NOT EXISTS wellnesstracker(rowid INTEGER PRIMARY KEY, entryDate TEXT, moodScore INT, sleepScore INT, dietScore INT, stressScore INT, totalScore INT, entryNote TEXT)', {})
-            .then(res => console.log('Executed SQL'))
-            .catch(e => console.log(e));
-            db.executeSql('SELECT * FROM userRecord ORDER BY rowid DESC', {})
-            .then(res => {
-                this.userRecord = [];
-                for(var i=0; i<res.rows.length; i++) {
-                    this.userRecord.push({ rowid:res.rows.item(i).rowid,
-                    entryDate:res.rows.item(i).entryDate,
-                    moodScore:res.rows.item(i).moodScore,
-                    sleepScore:res.rows.item(i).sleepScore,
-                    dietScore:res.rows.item(i).dietScore,
-                    stressScore:res.rows.item(i).stressScore,
-                    totalScore:res.rows.item(i).totalScore,
-                    entryNote:res.rows.item(i).entryNote })
-                }
-            }).catch(e => console.log(e));
-        }).catch(e => console.log(e));  
+      }).then((db: SQLiteObject) => {
+        db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
+        .then(res => console.log('Executed SQL'))
+        .catch(e => console.log(e));
+        db.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
+        .then(res => {
+          this.userRecords = [];
+          for(var i=0; i<res.rows.length; i++) {
+            this.userRecords.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,moodScore:res.rows.item(i).moodScore,dietScore:res.rows.item(i).dietScore,sleepScore:res.rows.item(i).sleepScore,stressScore:res.rows.item(i).stressScore,entryNote:res.rows.item(i).entryNote,amount:res.rows.item(i).amount})
+          }
+        })
+        .catch(e => console.log(e));
+        db.executeSql('SELECT SUM(amount) AS totalIncome FROM wellness WHERE type="Income"', {})
+        .then(res => {
+          if(res.rows.length>0) {
+            this.totalIncome = parseInt(res.rows.item(0).totalIncome);
+            this.balance = this.totalIncome-this.totalExpense;
+          }
+        })
+        .catch(e => console.log(e));
+        db.executeSql('SELECT SUM(amount) AS totalExpense FROM wellness WHERE type="Expense"', {})
+        .then(res => {
+          if(res.rows.length>0) {
+            this.totalExpense = parseInt(res.rows.item(0).totalExpense);
+            this.balance = this.totalIncome-this.totalExpense;
+          }
+        })
+      }).catch(e => console.log(e));
     }
 
     addData() {
-        this.navCtrl.push(AddDataPage);
+      this.navCtrl.push(AddDataPage);
     }
 
     editData(rowid) {
-        this.navCtrl.push(EditDataPage, { rowid:rowid });
+      this.navCtrl.push(EditDataPage, {
+        rowid:rowid
+      });
     }
 
-/*    deleteData(rowid) {
-        this.sqlite.create({
-            name: 'wellnessdb1.db',
-            location: 'default'
-        }).then((db: SQLiteObject) => {
-        db.executeSql('DELETE FROM wellnesstracker WHERE rowid=?', [rowid])
+    deleteData(rowid) {
+      this.sqlite.create({
+        name: 'ionicdb5.db',
+        location: 'default'
+      }).then((db: SQLiteObject) => {
+        db.executeSql('DELETE FROM wellness WHERE rowid=?', [rowid])
         .then(res => {
-            console.log(res);
-            this.getData();
+          console.log(res);
+          this.getData();
         })
         .catch(e => console.log(e));
-        }).catch(e => console.log(e));
+      }).catch(e => console.log(e));
     }
-*/
 }

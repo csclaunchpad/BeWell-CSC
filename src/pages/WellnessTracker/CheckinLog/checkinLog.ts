@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 //import { CheckinLogInfo } from '../CheckinLogInfo/checkinLogInfo';
-import { DailyEntry } from '../DailyEntry/dailyEntry';
+//import { DailyEntry } from '../DailyEntry/dailyEntry';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
 import { Toast } from '@ionic-native/toast';
 
@@ -16,7 +16,7 @@ import { Toast } from '@ionic-native/toast';
 
 export class CheckinLog {
 //    checkinLogInfo = CheckinLogInfo;
-        dailyentry = DailyEntry;
+//        dailyntry = DailyEntry;
 
     constructor(public navCtrl: NavController, 
     public navParams: NavParams,

@@ -9,7 +9,17 @@ import { Toast } from '@ionic-native/toast';
 })
 export class DailyEntry {
 
-    data = { entryDate:"", moodScore:5, sleepScore:5, dietScore:5, stressScore:5, totalScore:10, entryNote:""};
+    data = { entryDate:"", moodScore:5, sleepScore:5, dietScore:5, stressScore:5, totalScore:10, entryNote:"",};
+/*
+    userRecord: any = [];
+    entryDate:string ="";
+    moodScore:number = 5;
+    sleepScore:number = 5;
+    dietScore:number = 5;
+    stressScore:number = 5;
+    totalScore:number = 10;
+    entryNote:string = "";
+*/
         
     constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -17,8 +27,8 @@ export class DailyEntry {
     private toast: Toast) {}
     
     saveData() {
-        this.sqlite.create({ name: 'wellnessdb1.db', location: 'default' }).then((db: SQLiteObject) => {
-            db.executeSql('INSERT INTO wellnesstracker VALUES(NULL,?,?,?,?,?,?,?)',
+        this.sqlite.create({ name: 'wellness.db', location: 'default' }).then((db: SQLiteObject) => {
+            db.executeSql('INSERT INTO userRecord VALUES(NULL,?,?,?,?,?,?)',
             [this.data.entryDate,
             this.data.moodScore,
             this.data.sleepScore,

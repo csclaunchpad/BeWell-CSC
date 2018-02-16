@@ -5,7 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 //import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+//import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 
 import { ListPage } from '../pages/list/list';
 import { AddDataPage } from '../pages/add-data/add-data';
@@ -29,7 +29,7 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
 //      { title: 'Daily Entry', component: DailyEntry },
-      { title: 'Checkin Log', component: CheckinLog },
+//      { title: 'Checkin Log', component: CheckinLog },
       { title: 'List', component: ListPage },
       { title: 'Add Data', component: AddDataPage },
       { title: 'Edit Data', component: EditDataPage }

@@ -10,7 +10,7 @@ import { Toast } from '@ionic-native/toast';
 })
 export class EditDataPage {
 
-      data = { rowid:0, entryDate:"", moodScore:5, sleepScore:5, dietScore:5, stressScore:5, totalScore:10, entryNote:""};
+  data = { rowid:0, date:"", moodScore:0, dietScore:0, sleepScore:0, stressScore:0, entryNote:"", amount:0 };
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -21,19 +21,20 @@ export class EditDataPage {
 
   getCurrentData(rowid) {
     this.sqlite.create({
-      name: 'wellnessdb1.db',
+      name: 'ionicdb5.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('SELECT * FROM wellnesstracker WHERE rowid=?', [rowid])
+      db.executeSql('SELECT * FROM wellness WHERE rowid=?', [rowid])
         .then(res => {
           if(res.rows.length > 0) {
             this.data.rowid = res.rows.item(0).rowid;
-            this.data.entryDate = res.rows.item(0).entryDate;
+            this.data.date = res.rows.item(0).date;
             this.data.moodScore = res.rows.item(0).moodScore;
-            this.data.sleepScore = res.rows.item(0).sleepScore;
             this.data.dietScore = res.rows.item(0).dietScore;
-            this.data.stressScore = res.rows.item(0).stressScore;  
+            this.data.sleepScore = res.rows.item(0).sleepScore;
+            this.data.stressScore = res.rows.item(0).stressScore;
             this.data.entryNote = res.rows.item(0).entryNote;
+            this.data.amount = res.rows.item(0).amount;
           }
         })
         .catch(e => {
@@ -56,18 +57,10 @@ export class EditDataPage {
 
   updateData() {
     this.sqlite.create({
-      name: 'wellnessdb1.db',
+      name: 'ionicdb5.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('UPDATE wellnesstracker SET entryDate=?,moodScore=?,sleepScore=?,dietScore=?,stressScore=?,totalScore=?,entryNote=? WHERE rowid=?',
-      [this.data.entryDate,
-      this.data.moodScore,
-      this.data.sleepScore,
-      this.data.dietScore,
-      this.data.stressScore,
-      this.data.totalScore,
-      this.data.entryNote,
-      this.data.rowid])
+      db.executeSql('UPDATE wellness SET date=?,moodScore=?,dietScore=?,sleepScore=?,description=?,amount=? WHERE rowid=?',[this.data.date,this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote,this.data.amount,this.data.rowid])
         .then(res => {
           console.log(res);
           this.toast.show('Data updated', '5000', 'center').subscribe(
