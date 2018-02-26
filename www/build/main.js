@@ -1,197 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 102:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddDataPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-//@IonicPage()
-var AddDataPage = (function () {
-    function AddDataPage(navCtrl, navParams, sqlite, toast) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.sqlite = sqlite;
-        this.toast = toast;
-        this.data = { entryDate: "", moodScore: 5, sleepScore: 5, dietScore: 5, stressScore: 5, totalScore: 10, entryNote: "" };
-    }
-    AddDataPage.prototype.saveData = function () {
-        var _this = this;
-        this.sqlite.create({
-            name: 'wellnessdb1.db',
-            location: 'default'
-        }).then(function (db) {
-            db.executeSql('INSERT INTO wellnesstracker VALUES(NULL,?,?,?,?,?,?,?)', [_this.data.entryDate,
-                _this.data.moodScore,
-                _this.data.sleepScore,
-                _this.data.dietScore,
-                _this.data.stressScore,
-                _this.data.totalScore,
-                _this.data.entryNote])
-                .then(function (res) {
-                console.log(res);
-                _this.toast.show('Data saved', '5000', 'center').subscribe(function (toast) {
-                    _this.navCtrl.popToRoot();
-                });
-            })
-                .catch(function (e) {
-                console.log(e);
-                _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
-                    console.log(toast);
-                });
-            });
-        }).catch(function (e) {
-            console.log(e);
-            _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
-                console.log(toast);
-            });
-        });
-    };
-    AddDataPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-add-data',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\add-data\add-data.html"*/'<ion-header>\n    <ion-navbar>\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Add Data</ion-title>\n    </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n    <h2>Add Data</h2>\n    <form (ngSubmit)="saveData()">\n\n        <ion-item>\n            <ion-label>Date</ion-label>\n            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Mood</ion-label>\n            <ion-input type="number" placeholder="Mood" [(ngModel)]="data.moodScore" name="moodScore" required="" ></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Sleep</ion-label>\n            <ion-input type="number" placeholder="Sleep" [(ngModel)]="data.sleepScore" name="sleepScore" required="" ></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Diet</ion-label>\n            <ion-input type="number" placeholder="Diet" [(ngModel)]="data.dietScore" name="dietScore" required="" ></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Diet</ion-label>\n            <ion-input type="number" placeholder="Stress" [(ngModel)]="data.stressScore" name="stressScore" required="" ></ion-input>\n        </ion-item>        \n        \n        <ion-item>\n            <ion-label>Description</ion-label>\n            <ion-input type="text" placeholder="Whats on your mind?" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>\n        </ion-item>\n\n        <button ion-button type="submit" block>Save Data</button>\n    </form>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\add-data\add-data.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__["a" /* Toast */]])
-    ], AddDataPage);
-    return AddDataPage;
-}());
-
-//# sourceMappingURL=add-data.js.map
-
-/***/ }),
-
-/***/ 103:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditDataPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__ = __webpack_require__(33);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-//@IonicPage()
-var EditDataPage = (function () {
-    function EditDataPage(navCtrl, navParams, sqlite, toast) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.sqlite = sqlite;
-        this.toast = toast;
-        this.data = { rowid: 0, entryDate: "", moodScore: 5, sleepScore: 5, dietScore: 5, stressScore: 5, totalScore: 10, entryNote: "" };
-        this.getCurrentData(navParams.get("rowid"));
-    }
-    EditDataPage.prototype.getCurrentData = function (rowid) {
-        var _this = this;
-        this.sqlite.create({
-            name: 'wellnessdb1.db',
-            location: 'default'
-        }).then(function (db) {
-            db.executeSql('SELECT * FROM wellnesstracker WHERE rowid=?', [rowid])
-                .then(function (res) {
-                if (res.rows.length > 0) {
-                    _this.data.rowid = res.rows.item(0).rowid;
-                    _this.data.entryDate = res.rows.item(0).entryDate;
-                    _this.data.moodScore = res.rows.item(0).moodScore;
-                    _this.data.sleepScore = res.rows.item(0).sleepScore;
-                    _this.data.dietScore = res.rows.item(0).dietScore;
-                    _this.data.stressScore = res.rows.item(0).stressScore;
-                    _this.data.entryNote = res.rows.item(0).entryNote;
-                }
-            })
-                .catch(function (e) {
-                console.log(e);
-                _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
-                    console.log(toast);
-                });
-            });
-        }).catch(function (e) {
-            console.log(e);
-            _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
-                console.log(toast);
-            });
-        });
-    };
-    EditDataPage.prototype.updateData = function () {
-        var _this = this;
-        this.sqlite.create({
-            name: 'wellnessdb1.db',
-            location: 'default'
-        }).then(function (db) {
-            db.executeSql('UPDATE wellnesstracker SET entryDate=?,moodScore=?,sleepScore=?,dietScore=?,stressScore=?,totalScore=?,entryNote=? WHERE rowid=?', [_this.data.entryDate,
-                _this.data.moodScore,
-                _this.data.sleepScore,
-                _this.data.dietScore,
-                _this.data.stressScore,
-                _this.data.totalScore,
-                _this.data.entryNote,
-                _this.data.rowid])
-                .then(function (res) {
-                console.log(res);
-                _this.toast.show('Data updated', '5000', 'center').subscribe(function (toast) {
-                    _this.navCtrl.popToRoot();
-                });
-            })
-                .catch(function (e) {
-                console.log(e);
-                _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
-                    console.log(toast);
-                });
-            });
-        }).catch(function (e) {
-            console.log(e);
-            _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
-                console.log(toast);
-            });
-        });
-    };
-    EditDataPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-edit-data',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\edit-data\edit-data.html"*/'<ion-header>\n    <ion-navbar>\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Edit Data</ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Edit Data</h2>\n    <form (ngSubmit)="updateData()">\n        <ion-item>\n            <ion-label>Date</ion-label>\n            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Mood</ion-label>\n            <ion-input type="number" placeholder="Mood" [(ngModel)]="data.moodScore" name="moodScore" required="" ></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Sleep</ion-label>\n            <ion-input type="number" placeholder="Sleep" [(ngModel)]="data.sleepScore" name="sleepScore" required="" ></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Diet</ion-label>\n            <ion-input type="number" placeholder="Diet" [(ngModel)]="data.dietScore" name="dietScore" required="" ></ion-input>\n        </ion-item>\n\n        <ion-item>\n            <ion-label>Stress</ion-label>\n            <ion-input type="number" placeholder="Stress" [(ngModel)]="data.stressScore" name="stressScore" required="" ></ion-input>\n        </ion-item>\n        \n        \n        <ion-item>\n            <ion-label>Entry Note</ion-label>\n            <ion-input type="text" placeholder="Entry Note" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>\n        </ion-item>\n        \n        <ion-input type="hidden" [(ngModel)]="data.rowid" name="rowid"></ion-input>\n\n        <button ion-button type="submit" block>Update Data</button>\n        \n    </form>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\edit-data\edit-data.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__["a" /* Toast */]])
-    ], EditDataPage);
-    return EditDataPage;
-}());
-
-//# sourceMappingURL=edit-data.js.map
-
-/***/ }),
-
-/***/ 114:
+/***/ 113:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -204,11 +13,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 113;
 
 /***/ }),
 
-/***/ 155:
+/***/ 154:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -221,21 +30,19 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 155;
+webpackEmptyAsyncContext.id = 154;
 
 /***/ }),
 
-/***/ 198:
+/***/ 197:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__add_data_add_data__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__edit_data_edit_data__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(41);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -248,23 +55,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+//import { AddDataPage } from '../add-data/add-data';
 
-
-
+//import { EditDataPage } from '../edit-data/edit-data';
 var HomePage = (function () {
-    function HomePage(navCtrl, navParams, sqlite, toast) {
+    function HomePage(navCtrl, sqlite) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
         this.sqlite = sqlite;
-        this.toast = toast;
-        this.userRecord = [];
-        this.entryDate = "";
-        this.moodScore = 5;
-        this.sleepScore = 5;
-        this.dietScore = 5;
-        this.stressScore = 5;
-        this.totalScore = 10;
-        this.entryNote = "";
+        this.userRecords = [];
+        this.totalIncome = 0;
+        this.totalExpense = 0;
+        this.balance = 0;
     }
     HomePage.prototype.ionViewDidLoad = function () {
         this.getData();
@@ -275,42 +76,59 @@ var HomePage = (function () {
     HomePage.prototype.getData = function () {
         var _this = this;
         this.sqlite.create({
-            name: 'wellnessdb1.db',
+            name: 'ionicdb5.db',
             location: 'default'
         }).then(function (db) {
-            db.executeSql('CREATE TABLE IF NOT EXISTS wellnesstracker(rowid INTEGER PRIMARY KEY, entryDate TEXT, moodScore INT, sleepScore INT, dietScore INT, stressScore INT, totalScore INT, entryNote TEXT)', {})
+            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
                 .then(function (res) { return console.log('Executed SQL'); })
                 .catch(function (e) { return console.log(e); });
-            db.executeSql('SELECT * FROM userRecord ORDER BY rowid DESC', {})
+            db.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
                 .then(function (res) {
-                _this.userRecord = [];
+                _this.userRecords = [];
                 for (var i = 0; i < res.rows.length; i++) {
-                    _this.userRecord.push({ rowid: res.rows.item(i).rowid,
-                        entryDate: res.rows.item(i).entryDate,
-                        moodScore: res.rows.item(i).moodScore,
-                        sleepScore: res.rows.item(i).sleepScore,
-                        dietScore: res.rows.item(i).dietScore,
-                        stressScore: res.rows.item(i).stressScore,
-                        totalScore: res.rows.item(i).totalScore,
-                        entryNote: res.rows.item(i).entryNote });
+                    _this.userRecords.push({ rowid: res.rows.item(i).rowid, date: res.rows.item(i).date, moodScore: res.rows.item(i).moodScore, dietScore: res.rows.item(i).dietScore, sleepScore: res.rows.item(i).sleepScore, stressScore: res.rows.item(i).stressScore, entryNote: res.rows.item(i).entryNote, amount: res.rows.item(i).amount });
                 }
-            }).catch(function (e) { return console.log(e); });
+            })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT SUM(amount) AS totalIncome FROM wellness WHERE type="Income"', {})
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.totalIncome = parseInt(res.rows.item(0).totalIncome);
+                    _this.balance = _this.totalIncome - _this.totalExpense;
+                }
+            })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT SUM(amount) AS totalExpense FROM wellness WHERE type="Expense"', {})
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.totalExpense = parseInt(res.rows.item(0).totalExpense);
+                    _this.balance = _this.totalIncome - _this.totalExpense;
+                }
+            });
         }).catch(function (e) { return console.log(e); });
     };
     HomePage.prototype.addData = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__add_data_add_data__["a" /* AddDataPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */]);
     };
-    HomePage.prototype.editData = function (rowid) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__edit_data_edit_data__["a" /* EditDataPage */], { rowid: rowid });
+    HomePage.prototype.deleteData = function (rowid) {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('DELETE FROM wellness WHERE rowid=?', [rowid])
+                .then(function (res) {
+                console.log(res);
+                _this.getData();
+            })
+                .catch(function (e) { return console.log(e); });
+        }).catch(function (e) { return console.log(e); });
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\home.html"*/'<ion-header>\n    <ion-navbar>\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>Home</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="addData()">\n                <ion-icon name="add-circle"></ion-icon>\n            </button>\n        </ion-buttons>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <h2>Checkins</h2>\n    <ion-list>\n        <ion-item-sliding *ngFor="let wellnesstracker of userRecord; let i=index">\n            <ion-item nopadding>\n            <p>\n                <span>{{wellnesstracker.entryDate}}</span><br>\n                Type: {{wellnesstracker.moodScore}}<br>\n                {{wellnesstracker.entryNote}}\n            </p>\n            <h3 item-end>\n                Amount: ${{wellnesstracker.totalScore}}\n            </h3>\n            </ion-item>\n            <ion-item-options side="right">\n                <button ion-button color="primary" (click)="editData(wellnesstracker.rowid)">\n                   <ion-icon name="paper"></ion-icon>\n                </button>\n                <button ion-button color="danger" (click)="deleteData(wellnesstracker.rowid)">\n                    <ion-icon name="trash"></ion-icon>\n                </button>\n            </ion-item-options>\n        </ion-item-sliding>\n    </ion-list>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n        <ion-title>Balance: ${{balance}}</ion-title>\n    </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Home\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addData()">\n        <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n            \n            <header role="banner"></header>\n            <ion-col>\n                <h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>\n                <button ion-button ng-click="setLanguage(\'en\')" aria-label="English" ><strong>English</strong></button> <BR>\n                <button ion-button href="#/terms-en" aria-label="Terms and Conditions" >Terms and Conditions</button> \n            </ion-col>\n\n            <ion-col>\n                <div flex lang="fr" layout="column">\n                    <h2 class="md-display-1" aria-label="App Santé mentale">App Santé Mentale</h2>\n                    <button ion-button ng-click="setLanguage(\'fr\')" aria-label="Français" ><strong>Français</strong></button> <BR>\n                    <button ion-button href="#/terms-fr" aria-label="Termes et Conditions" >Termes et Conditions</button>                     \n                </div>\n            </ion-col>\n        \n        </ion-row>     \n        <br class="clearfix" />\n       <p class="text-center ver" aria-label="Version 1.0"><small>Version 1.0</small></p>\n\n    </ion-grid>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button block>Aidez moi / Help Me</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__["a" /* Toast */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */]])
     ], HomePage);
     return HomePage;
 }());
@@ -319,16 +137,14 @@ var HomePage = (function () {
 
 /***/ }),
 
-/***/ 199:
+/***/ 198:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckinLog; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Login; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__DailyEntry_dailyEntry__ = __webpack_require__(277);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_toast__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -340,28 +156,137 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+//import { AddDataPage } from '../add-data/add-data';
+//import { EditDataPage } from '../edit-data/edit-data';
+var Login = (function () {
+    function Login(navCtrl, sqlite) {
+        this.navCtrl = navCtrl;
+        this.sqlite = sqlite;
+    }
+    Login = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\login.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n        <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>\n\n      Login\n\n    </ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    \n\n    \n\n<!--\n\n    <h2>Password</h2>\n\n    <ion-item>\n\n        <ion-input type="password" placeholder="Password Input"></ion-input>\n\n    </ion-item>\n\n    \n\n    <ion-row>\n\n        \n\n        <div layout-align="start center">\n\n            <button ion-button ng-click="login()">Login</button>\n\n	</div>\n\n\n\n        <div layout-align="end center">\n\n            <button ion-button ng-click="forgotPin()">Forgot Pin</button>\n\n	</div>\n\n        \n\n    </ion-row>\n\n        \n\n    <ion-row>\n\n\n\n        <div>\n\n            <button ion-button ng-click="newUser()">Create User</button>\n\n        </div>\n\n\n\n    </ion-row>\n\n-->\n\n\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\login.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */]])
+    ], Login);
+    return Login;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 199:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CheckinLog; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__edit_data_edit_data__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__DailyEntry_dailyEntry__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__ = __webpack_require__(28);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+//
+//import { AddDataPage } from '../../add-data/add-data';
+
 //import { CheckinLogInfo } from '../CheckinLogInfo/checkinLogInfo';
 
  //services for SQLite FEB 2018
-
+//import { Toast } from '@ionic-native/toast';
 //import { DataServiceProvider } from '../../../providers/data-service/data-service';
 var CheckinLog = (function () {
-    function CheckinLog(navCtrl, navParams, sqlite, toast) {
+    function CheckinLog(navCtrl, navParams, sqlite) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.sqlite = sqlite;
-        this.toast = toast;
         //    checkinLogInfo = CheckinLogInfo;
-        this.dailyentry = __WEBPACK_IMPORTED_MODULE_2__DailyEntry_dailyEntry__["a" /* DailyEntry */];
+        //        dailyntry = DailyEntry;
+        this.userRecords = [];
+        this.totalIncome = 0;
+        this.totalExpense = 0;
+        this.balance = 0;
     }
+    CheckinLog.prototype.ionViewDidLoad = function () {
+        this.getData();
+    };
+    CheckinLog.prototype.ionViewWillEnter = function () {
+        this.getData();
+    };
+    CheckinLog.prototype.getData = function () {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
+                .then(function (res) { return console.log('Executed SQL'); })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
+                .then(function (res) {
+                _this.userRecords = [];
+                for (var i = 0; i < res.rows.length; i++) {
+                    _this.userRecords.push({ rowid: res.rows.item(i).rowid, date: res.rows.item(i).date, moodScore: res.rows.item(i).moodScore, dietScore: res.rows.item(i).dietScore, sleepScore: res.rows.item(i).sleepScore, stressScore: res.rows.item(i).stressScore, entryNote: res.rows.item(i).entryNote, amount: res.rows.item(i).amount });
+                }
+            })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT SUM(amount) AS totalIncome FROM wellness WHERE type="Income"', {})
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.totalIncome = parseInt(res.rows.item(0).totalIncome);
+                    _this.balance = _this.totalIncome - _this.totalExpense;
+                }
+            })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT SUM(amount) AS totalExpense FROM wellness WHERE type="Expense"', {})
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.totalExpense = parseInt(res.rows.item(0).totalExpense);
+                    _this.balance = _this.totalIncome - _this.totalExpense;
+                }
+            });
+        }).catch(function (e) { return console.log(e); });
+    };
+    CheckinLog.prototype.addData = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__DailyEntry_dailyEntry__["a" /* DailyEntry */]);
+    };
+    CheckinLog.prototype.editData = function (rowid) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__edit_data_edit_data__["a" /* EditDataPage */], {
+            rowid: rowid
+        });
+    };
+    CheckinLog.prototype.deleteData = function (rowid) {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('DELETE FROM wellness WHERE rowid=?', [rowid])
+                .then(function (res) {
+                console.log(res);
+                _this.getData();
+            })
+                .catch(function (e) { return console.log(e); });
+        }).catch(function (e) { return console.log(e); });
+    };
     CheckinLog = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkinLog',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>CheckinLog</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <button ion-button block [navPush]="dailyentry">Add New Entry</button>\n\n\n\n    <ion-list>\n\n        \n\n    <ion-item-sliding *ngFor="let userRecord of wellness; let i=index">\n\n      <ion-item nopadding>\n\n        <p>\n\n          <span>{{userRecord.entryDate}}</span><br>\n\n          Mood Score: {{userRecord.moodScore}}<br>\n\n          Note: {{userRecord.entryNote}}\n\n        </p>\n\n        <h3 item-end>\n\n          Amount: ${{userRecord.totalScore}}\n\n        </h3>\n\n      </ion-item>\n\n<!--      <ion-item-options side="right">\n\n        <button ion-button color="primary" (click)="editData(userRecord.rowid)">\n\n          <ion-icon name="paper"></ion-icon>\n\n        </button>\n\n        <button ion-button color="danger" (click)="deleteData(userRecord.rowid)">\n\n          <ion-icon name="trash"></ion-icon>\n\n        </button>\n\n      </ion-item-options>\n\n-->\n\n    </ion-item-sliding>\n\n        \n\n<!--        <button ion-item class="fullbutton" *ngFor="let wellness of dataService.wellness" >\n\n            <ion-card>\n\n                <ion-row layout-align="center center" flex="60">\n\n\n\n                    <ion-col class="moodBackground" layout-align="center center">\n\n                        {{wellness.moodScore}}\n\n                        <strong>Mood</strong>\n\n                    </ion-col>\n\n\n\n                    <ion-col class="dietBackground" layout-align="center center">\n\n                        {{wellness.dietScore}}\n\n                        <strong>Diet</strong>\n\n                    </ion-col>                \n\n\n\n                    <ion-col class="sleepBackground" layout-align="center center">\n\n                        {{wellness.sleepScore}}\n\n                        <strong>Sleep</strong>\n\n                    </ion-col>                \n\n\n\n                    <ion-col class="stressBackground" layout-align="center center">\n\n                        {{wellness.stressScore}}\n\n                        <strong>Stress</strong>\n\n                    </ion-col>\n\n\n\n                </ion-row>\n\n\n\n                <ion-icon name="Wellness" item-start></ion-icon>\n\n                Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}\n\n\n\n            </ion-card>\n\n        </button>\n\n-->\n\n\n\n\n\n    </ion-list>    \n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n<!--\n\n    <md-card>\n\n        <a ng-hide="entries == null" ng-repeat="entry in entries" href="#checkinLogInfo/{{::entry.entryID}}" class="entryItem">\n\n            <md-card>\n\n				<!-- Card Body -->\n\n<!--				<div layout="row">\n\n				\n\n					<!-- Date Space -->\n\n<!--					<div layout="row" layout-align="start center" flex="20">\n\n						<div flex aria-label="{{pageElements.dateEnteredAL}}: {{entry.dateEntered}}">\n\n							<strong>{{pageElements.dateText}}<br></strong> {{entry.dateEntered}}\n\n						</div>\n\n					</div>\n\n				\n\n					<!-- Question Score Space -->\n\n<!--					<div layout="row" layout-align="center center" flex="60">\n\n						<div layout="row" class="dietBackground" layout-align="center center">\n\n							<div aria-label="{{pageElements.dietScoreAL}}: {{entry.dietScore}}">\n\n								<strong>{{pageElements.dietText}}<br></strong> {{entry.dietScore}}\n\n							</div>\n\n						</div>\n\n						<div layout="row" class="moodBackground" layout-align="center center">\n\n							<div aria-label="{{pageElements.moodScoreAL}}: {{entry.moodScore}}">\n\n								<strong>{{pageElements.moodText}}<br></strong> {{entry.moodScore}}\n\n							</div>\n\n						</div>\n\n						<div layout="row" class="stressBackground" layout-align="center center">\n\n							<div aria-label="{{pageElements.stressScoreAL}}: {{entry.stressScore}}">\n\n								<strong>{{pageElements.stressText}}<br></strong> {{entry.stressScore}}\n\n							</div>\n\n						</div>\n\n						<div layout="row" class="sleepBackground" layout-align="center center">\n\n							<div aria-label="{{pageElements.sleepScoreAL}}: {{entry.sleepScore}}">\n\n								<strong>{{pageElements.sleepText}}<br></strong> {{entry.sleepScore}}\n\n							</div>\n\n						</div>\n\n						\n\n						\n\n					</div>\n\n					\n\n					<!-- Total Score Space -->\n\n<!--					<div layout="row" layout-align="end center" flex="20">\n\n						<div>\n\n							<div aria-label="{{pageElements.veryLowText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore <= 10"><strong></strong> {{pageElements.veryLowText}} <br>({{entry.entryScore}})</div>\n\n							<div aria-label="{{pageElements.lowText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 11 && entry.entryScore <= 30"><strong></strong> {{pageElements.lowText}} ({{entry.entryScore}})</div>\n\n							<div aria-label="{{pageElements.roughText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 31 && entry.entryScore <= 40"><strong></strong> {{pageElements.roughText}} ({{entry.entryScore}})</div>\n\n							<div aria-label="{{pageElements.decentText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 41 && entry.entryScore <= 50"><strong></strong> {{pageElements.decentText}} ({{entry.entryScore}})</div>\n\n							<div aria-label="{{pageElements.goodText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 51 && entry.entryScore <= 60"><strong></strong> {{pageElements.goodText}} ({{entry.entryScore}})</div>\n\n							<div aria-label="{{pageElements.veryGoodText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 61 && entry.entryScore <= 75"><strong></strong> {{pageElements.veryGoodText}} ({{entry.entryScore}})</div>\n\n							<div aria-label="{{pageElements.amazingText}}: {{entry.entryScore}}" flex ng-show="entry.entryScore >= 76"><strong></strong> {{pageElements.amazingText}} ({{entry.entryScore}})</div>\n\n						</div>\n\n					</div>\n\n				</div>\n\n            </md-card>\n\n        </a>\n\n        <md-card ng-show="entries == null">\n\n            <md-card-title>\n\n                <md-card-title-text aria-label="{{pageElements.loadingText}}">\n\n                    <span>{{pageElements.loadingText}}</span>\n\n                </md-card-title-text>\n\n            </md-card-title>\n\n        </md-card>\n\n    </md-card>\n\n</md-content>\n\n-->\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/
+            selector: 'page-checkinLog',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>CheckinLog</ion-title>\n\n        <ion-buttons end>\n\n            <button ion-button icon-only (click)="addData()">\n\n                <ion-icon name="add-circle"></ion-icon>\n\n            </button>\n\n        </ion-buttons>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n    <ion-item-sliding *ngFor="let wellness of userRecords; let i=index">\n\n        <ion-item nopadding>\n\n            <ion-card>\n\n                <ion-row layout-align="center center" flex="60">\n\n\n\n                    <ion-col class="moodBackground" layout-align="center center">\n\n                        {{wellness.moodScore}}\n\n                        <strong>Mood</strong>\n\n                    </ion-col>\n\n\n\n                    <ion-col class="dietBackground" layout-align="center center">\n\n                        {{wellness.dietScore}}\n\n                        <strong>Diet</strong>\n\n                    </ion-col>                \n\n\n\n                    <ion-col class="sleepBackground" layout-align="center center">\n\n                        {{wellness.sleepScore}}\n\n                        <strong>Sleep</strong>\n\n                    </ion-col>                \n\n\n\n                    <ion-col class="stressBackground" layout-align="center center">\n\n                        {{wellness.stressScore}}\n\n                        <strong>Stress</strong>\n\n                    </ion-col>\n\n\n\n                </ion-row>\n\n\n\n                <ion-icon name="Wellness" item-start></ion-icon>\n\n                Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}\n\n\n\n            </ion-card>\n\n\n\n        </ion-item>\n\n      <!--  </button> -->\n\n    </ion-item-sliding>\n\n    </ion-list>    \n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite__["a" /* SQLite */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_toast__["a" /* Toast */]])
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__["a" /* SQLite */]])
     ], CheckinLog);
     return CheckinLog;
 }());
@@ -374,9 +299,13 @@ var CheckinLog = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Resources; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CscContacts_cscContacts__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Employee_employee__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__EmployeeFamily_employeeFamily__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Public_public__ = __webpack_require__(204);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -388,8 +317,86 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-var ListPage = (function () {
-    function ListPage(navCtrl, navParams) {
+
+
+
+
+var Resources = (function () {
+    function Resources(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.cscContacts = __WEBPACK_IMPORTED_MODULE_2__CscContacts_cscContacts__["a" /* CSCContacts */];
+        this.employee = __WEBPACK_IMPORTED_MODULE_3__Employee_employee__["a" /* Employee */];
+        this.empfamily = __WEBPACK_IMPORTED_MODULE_4__EmployeeFamily_employeeFamily__["a" /* EmployeeFam */];
+        this.public = __WEBPACK_IMPORTED_MODULE_5__Public_public__["a" /* Public */];
+    }
+    Resources = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-resources',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\resources.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Resources</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    \n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n    \n\n        <button ion-button block [navPush]="employee">CSC Employee</button>\n\n\n\n        <button ion-button block [navPush]="empfamily">CSC Employee Family</button>\n\n    \n\n        <button ion-button block [navPush]="public">Public</button>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\resources.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], Resources);
+    return Resources;
+}());
+
+//# sourceMappingURL=resources.js.map
+
+/***/ }),
+
+/***/ 201:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CSCContacts; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CSCContacts = (function () {
+    function CSCContacts(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    CSCContacts = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-cscContacts',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\CscContacts\cscContacts.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>CSCContacts</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n<!--\n\n<div ng-controller="ResourcesCtrl as ctrl" ng-cloak>\n\n	<md-content class="md-padding">\n\n		<form ng-submit="$event.preventDefault()">\n\n			<md-autocomplete\n\n		          md-selected-item="ctrl.selectedItem"\n\n		          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"\n\n		          md-search-text="ctrl.searchText"\n\n		          md-items="item in ctrl.querySearch(ctrl.searchText)"\n\n		          md-item-text="item.name"\n\n		          md-min-length="0"\n\n		          placeholder="Search for ...">\n\n		        <md-item-template>\n\n		          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.name}}</span>\n\n		        </md-item-template>\n\n		        <md-not-found>\n\n		          No resource matching "{{ctrl.searchText}}" were found.\n\n		        </md-not-found>\n\n		    </md-autocomplete>\n\n       		<md-switch flex ng-model="gpsState" ng-change="updateList(gpsState)" ng-if="isGPSEnabled()" aria-label="gps">GPS Results <span>({{getProvince()}})</span></md-switch>\n\n	    </form>      \n\n	    <md-list md-whiteframe="3">\n\n	      <md-list-item class="md-2-line" ng-repeat="item in ctrl.querySearch(ctrl.searchText)">\n\n	      	<ng-md-icon class="md-avatar-icon" icon="person"></ng-md-icon>\n\n	        <div class="md-list-item-text">\n\n	          <h3>{{item.name}}</h3>\n\n	          <p>{{item.region_en}} / {{item.secion_en}}</p>\n\n	        </div>\n\n	          <md-menu class="md-secondary">\n\n			    <md-button class="md-icon-button">\n\n			      <ng-md-icon icon="more_vert" style="fill: gray"></ng-md-icon>\n\n			    </md-button>\n\n			    <md-menu-content width="2">\n\n			      <md-menu-item>\n\n			        <md-button ng-click="showInfoMessage(\'A call will be placed\')">\n\n			        	<ng-md-icon icon="call" style="fill: gray"></ng-md-icon>&nbsp;Call\n\n			        </md-button>\n\n			      </md-menu-item>\n\n			      <md-menu-item>\n\n			        <md-button ng-click="showInfoMessage(\'An email will be sent\')">\n\n			         	<ng-md-icon icon="email" style="fill: gray"></ng-md-icon>&nbsp;E-mail\n\n			        </md-button>\n\n			      </md-menu-item>\n\n			    </md-menu-content>\n\n			  </md-menu>\n\n	        <md-divider ng-if="!$last"></md-divider>\n\n	      </md-list-item>\n\n	    </md-list>\n\n  	</md-content>		\n\n</div>\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\CscContacts\cscContacts.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], CSCContacts);
+    return CSCContacts;
+}());
+
+//# sourceMappingURL=cscContacts.js.map
+
+/***/ }),
+
+/***/ 202:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Employee; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Employee = (function () {
+    function Employee(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         // If we navigated to this page, we will have an item available as a nav param
@@ -406,34 +413,229 @@ var ListPage = (function () {
             });
         }
     }
-    ListPage_1 = ListPage;
-    ListPage.prototype.itemTapped = function (event, item) {
+    Employee_1 = Employee;
+    Employee.prototype.itemTapped = function (event, item) {
         // That's right, we're pushing to ourselves!
-        this.navCtrl.push(ListPage_1, {
+        this.navCtrl.push(Employee_1, {
             item: item
         });
     };
-    ListPage = ListPage_1 = __decorate([
+    Employee = Employee_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\list\list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\list\list.html"*/
+            selector: 'page-employee',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Employee\employee.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Employee</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    \n\n    <a href="./pages/Resources/employee.html" class="buttonLink">\n\n        <button ion-button block>Employee Assistance Program</button>\n\n    </a>\n\n    <a href="./pages/Resources/employee.html" class="buttonLink">\n\n        <button ion-button block>Harassment Prevention Program</button>\n\n    </a>\n\n    <a href="./pages/Resources/employee" class="buttonLink">\n\n        <button ion-button block>Harassment Hot line</button>\n\n    </a>\n\n    <a href="./pages/Resources/employee" class="buttonLink">\n\n        <button ion-button block>National Attendance Management Program</button>\n\n    </a>    \n\n    <a href="./pages/Resources/employee" class="buttonLink">\n\n        <button ion-button block>Critical Incident Stress Management</button>\n\n    </a>\n\n    <a href="./pages/Resources/employee" class="buttonLink">\n\n        <button ion-button block>Occupational Health and Safety</button>\n\n    </a>\n\n    <a href="./pages/Resources/employee" class="buttonLink">\n\n        <button ion-button block>Return to Work Program</button>\n\n    </a>\n\n    <a href="./pages/Resources/employee" class="buttonLink">\n\n        <button ion-button block>CSC Contacts by Email</button>\n\n    </a>\n\n    <a href="https://www.sunlife.ca/" class="buttonLink">\n\n        <button ion-button block>Sunlife</button>\n\n    </a>\n\n   \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n<!--\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <md-button class="md-primary md-raised">Employee Assistance Program</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Prevention Program</md-button>\n\n    <md-button class="md-primary md-raised">National Attendance Management Program</md-button>\n\n    <md-button class="md-primary md-raised">Critical Incident Stress Management</md-button>\n\n    <md-button class="md-primary md-raised">Occupational Health and Safety</md-button>\n\n    <md-button class="md-primary md-raised">Return to Work Program</md-button>\n\n    <md-button class="md-primary md-raised">CSC Contacts by Email</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Hot line</md-button>\n\n	\n\n	<a href="href="https://www.sunlife.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="https://www.sunlife.ca/" >Sunlife</md-button>\n\n    </a>\n\n	\n\n	\n\n	\n\n\n\n</md-content>\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Employee\employee.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
-    ], ListPage);
-    return ListPage;
-    var ListPage_1;
+    ], Employee);
+    return Employee;
+    var Employee_1;
 }());
 
-//# sourceMappingURL=list.js.map
+//# sourceMappingURL=employee.js.map
 
 /***/ }),
 
-/***/ 201:
+/***/ 203:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmployeeFam; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var EmployeeFam = (function () {
+    function EmployeeFam(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    EmployeeFam = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-family',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\EmployeeFamily\employeeFamily.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>EmployeeFam</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <a href=Employee class="buttonLink">\n\n        <button ion-button block >Employee Assistance Program</button>\n\n    </a>\n\n    \n\n    <a href="https://www.canada.ca/en/public-health/services/mental-health-services.html" class="buttonLink">\n\n        <button ion-button block >Mental Health Service</button>\n\n    </a>\n\n    \n\n    <a href="./pages/Resources/public" class="buttonLink">\n\n        <button ion-button block >CSC Family Support Number</button>\n\n    </a>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\EmployeeFamily\employeeFamily.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */]])
+    ], EmployeeFam);
+    return EmployeeFam;
+}());
+
+//# sourceMappingURL=employeeFamily.js.map
+
+/***/ }),
+
+/***/ 204:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Public; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var Public = (function () {
+    function Public(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        // If we navigated to this page, we will have an item available as a nav param
+        this.selectedItem = navParams.get('item');
+        // Let's populate this page with some filler content for funzies
+        this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+            'american-football', 'boat', 'bluetooth', 'build'];
+        this.items = [];
+        for (var i = 1; i < 11; i++) {
+            this.items.push({
+                title: 'Item ' + i,
+                note: 'This is item #' + i,
+                icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+            });
+        }
+    }
+    Public_1 = Public;
+    Public.prototype.itemTapped = function (event, item) {
+        // That's right, we're pushing to ourselves!
+        this.navCtrl.push(Public_1, {
+            item: item
+        });
+    };
+    Public = Public_1 = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-public',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Public\public.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Public</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n<!--\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <a href="tel:911" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="tel:911">911</md-button>\n\n    </a>\n\n\n\n	<a href="http://ottawa.cmha.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="http://ottawa.cmha.ca/">Canadian Mental Health Association (CMHA)</md-button>\n\n    </a>\n\n	\n\n	<a href="tel:618161979" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="tel:618161979">Call a friend</md-button>\n\n    </a>\n\n	\n\n</md-content>\n\n-->\n\n\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Public\public.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], Public);
+    return Public;
+    var Public_1;
+}());
+
+//# sourceMappingURL=public.js.map
+
+/***/ }),
+
+/***/ 205:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SQLTester; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(41);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+//import { AddDataPage } from '../add-data/add-data';
+
+//import { EditDataPage } from '../edit-data/edit-data';
+var SQLTester = (function () {
+    function SQLTester(navCtrl, sqlite) {
+        this.navCtrl = navCtrl;
+        this.sqlite = sqlite;
+        this.userRecords = [];
+        this.totalIncome = 0;
+        this.totalExpense = 0;
+        this.balance = 0;
+    }
+    SQLTester.prototype.ionViewDidLoad = function () {
+        this.getData();
+    };
+    SQLTester.prototype.ionViewWillEnter = function () {
+        this.getData();
+    };
+    SQLTester.prototype.getData = function () {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
+                .then(function (res) { return console.log('Executed SQL'); })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
+                .then(function (res) {
+                _this.userRecords = [];
+                for (var i = 0; i < res.rows.length; i++) {
+                    _this.userRecords.push({ rowid: res.rows.item(i).rowid, date: res.rows.item(i).date, moodScore: res.rows.item(i).moodScore, dietScore: res.rows.item(i).dietScore, sleepScore: res.rows.item(i).sleepScore, stressScore: res.rows.item(i).stressScore, entryNote: res.rows.item(i).entryNote, amount: res.rows.item(i).amount });
+                }
+            })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT SUM(amount) AS totalIncome FROM wellness WHERE type="Income"', {})
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.totalIncome = parseInt(res.rows.item(0).totalIncome);
+                    _this.balance = _this.totalIncome - _this.totalExpense;
+                }
+            })
+                .catch(function (e) { return console.log(e); });
+            db.executeSql('SELECT SUM(amount) AS totalExpense FROM wellness WHERE type="Expense"', {})
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.totalExpense = parseInt(res.rows.item(0).totalExpense);
+                    _this.balance = _this.totalIncome - _this.totalExpense;
+                }
+            });
+        }).catch(function (e) { return console.log(e); });
+    };
+    SQLTester.prototype.addData = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */]);
+    };
+    SQLTester.prototype.deleteData = function (rowid) {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('DELETE FROM wellness WHERE rowid=?', [rowid])
+                .then(function (res) {
+                console.log(res);
+                _this.getData();
+            })
+                .catch(function (e) { return console.log(e); });
+        }).catch(function (e) { return console.log(e); });
+    };
+    SQLTester = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'sqltester-home',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\SQLTester\sqltester.html"*/'\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      Checkin Log\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addData()">\n        <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>Wellness List DB Test</h2>\n  <ion-list>\n    <ion-item-sliding *ngFor="let wellness of userRecords; let i=index">\n      <ion-item nopadding>\n        <p>\n          <span>{{wellness.date}}</span><br>\n          Mood: {{wellness.moodScore}}<br>\n          Diet: {{wellness.dietScore}}<br>\n          Sleep: {{wellness.sleepScore}}<br>\n          Stress: {{wellness.stressScore}}<br>\n          {{wellness.entryNote}}\n        </p>\n        <h3 item-end>\n          Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}\n        </h3>\n      </ion-item>\n      <ion-item-options side="right">\n        <button ion-button color="primary" (click)="editData(wellness.rowid)">\n          <ion-icon name="paper"></ion-icon>\n        </button>\n        <button ion-button color="danger" (click)="deleteData(wellness.rowid)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n      </ion-item-options>\n    </ion-item-sliding>\n  </ion-list>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button block>Aidez moi / Help Me</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\SQLTester\sqltester.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */]])
+    ], SQLTester);
+    return SQLTester;
+}());
+
+//# sourceMappingURL=sqltester.js.map
+
+/***/ }),
+
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(225);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -441,24 +643,29 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 225:
+/***/ 230:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(268);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_add_data_add_data__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_edit_data_edit_data__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ionic_native_sqlite__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_toast__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_login__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Resources_CscContacts_cscContacts__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_Resources_Employee_employee__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_Resources_EmployeeFamily_employeeFamily__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_Resources_Public_public__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_SQLTester_sqltester__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_sqlite__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_toast__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -470,11 +677,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 
 
 
 
+
+
+
+
+
+//import { AddDataPage } from '../pages/add-data/add-data';
+//import { EditDataPage } from '../pages/edit-data/edit-data';
 
 
 
@@ -487,11 +700,15 @@ var AppModule = (function () {
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-                //    DailyEntry,
-                __WEBPACK_IMPORTED_MODULE_5__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_add_data_add_data__["a" /* AddDataPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_edit_data_edit_data__["a" /* EditDataPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_login__["a" /* Login */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__["a" /* Resources */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_SQLTester_sqltester__["a" /* SQLTester */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_Resources_CscContacts_cscContacts__["a" /* CSCContacts */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_Resources_Employee_employee__["a" /* Employee */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_Resources_EmployeeFamily_employeeFamily__["a" /* EmployeeFam */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_Resources_Public_public__["a" /* Public */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -503,18 +720,22 @@ var AppModule = (function () {
             entryComponents: [
                 __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
                 __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-                //    DailyEntry,
-                __WEBPACK_IMPORTED_MODULE_5__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */],
-                __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */],
-                __WEBPACK_IMPORTED_MODULE_7__pages_add_data_add_data__["a" /* AddDataPage */],
-                __WEBPACK_IMPORTED_MODULE_8__pages_edit_data_edit_data__["a" /* EditDataPage */]
+                __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_login__["a" /* Login */],
+                __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */],
+                __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */],
+                __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__["a" /* Resources */],
+                __WEBPACK_IMPORTED_MODULE_13__pages_SQLTester_sqltester__["a" /* SQLTester */],
+                __WEBPACK_IMPORTED_MODULE_9__pages_Resources_CscContacts_cscContacts__["a" /* CSCContacts */],
+                __WEBPACK_IMPORTED_MODULE_10__pages_Resources_Employee_employee__["a" /* Employee */],
+                __WEBPACK_IMPORTED_MODULE_11__pages_Resources_EmployeeFamily_employeeFamily__["a" /* EmployeeFam */],
+                __WEBPACK_IMPORTED_MODULE_12__pages_Resources_Public_public__["a" /* Public */],
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_9__ionic_native_status_bar__["a" /* StatusBar */],
-                __WEBPACK_IMPORTED_MODULE_10__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_14__ionic_native_status_bar__["a" /* StatusBar */],
+                __WEBPACK_IMPORTED_MODULE_15__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_11__ionic_native_sqlite__["a" /* SQLite */],
-                __WEBPACK_IMPORTED_MODULE_12__ionic_native_toast__["a" /* Toast */]
+                __WEBPACK_IMPORTED_MODULE_16__ionic_native_sqlite__["a" /* SQLite */],
+                __WEBPACK_IMPORTED_MODULE_17__ionic_native_toast__["a" /* Toast */]
             ]
         })
     ], AppModule);
@@ -525,20 +746,21 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 268:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_add_data_add_data__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_edit_data_edit_data__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_login__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_SQLTester_sqltester__ = __webpack_require__(205);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -553,11 +775,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-//import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 
 
 
 
+
+//import { AddDataPage } from '../pages/add-data/add-data';
+//import { EditDataPage } from '../pages/edit-data/edit-data';
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.platform = platform;
@@ -568,11 +792,12 @@ var MyApp = (function () {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            //      { title: 'Daily Entry', component: DailyEntry },
-            { title: 'Checkin Log', component: __WEBPACK_IMPORTED_MODULE_5__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */] },
-            { title: 'List', component: __WEBPACK_IMPORTED_MODULE_6__pages_list_list__["a" /* ListPage */] },
-            { title: 'Add Data', component: __WEBPACK_IMPORTED_MODULE_7__pages_add_data_add_data__["a" /* AddDataPage */] },
-            { title: 'Edit Data', component: __WEBPACK_IMPORTED_MODULE_8__pages_edit_data_edit_data__["a" /* EditDataPage */] }
+            { title: 'Daily Entry', component: __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */] },
+            { title: 'Checkin Log', component: __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */] },
+            { title: 'SQL Tester', component: __WEBPACK_IMPORTED_MODULE_9__pages_SQLTester_sqltester__["a" /* SQLTester */] },
+            //      { title: 'Add Data', component: AddDataPage },
+            { title: 'Resorces', component: __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__["a" /* Resources */] },
+            { title: 'Log In', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_login__["a" /* Login */] }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -605,15 +830,15 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 277:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DailyEntry; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EditDataPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -625,26 +850,131 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
- //services for SQLite FEB 2018
 
+
+//@IonicPage()
+var EditDataPage = (function () {
+    function EditDataPage(navCtrl, navParams, sqlite, toast) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.sqlite = sqlite;
+        this.toast = toast;
+        this.data = { rowid: 0, date: "", moodScore: 0, dietScore: 0, sleepScore: 0, stressScore: 0, entryNote: "", amount: 0 };
+        this.getCurrentData(navParams.get("rowid"));
+    }
+    EditDataPage.prototype.getCurrentData = function (rowid) {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('SELECT * FROM wellness WHERE rowid=?', [rowid])
+                .then(function (res) {
+                if (res.rows.length > 0) {
+                    _this.data.rowid = res.rows.item(0).rowid;
+                    _this.data.date = res.rows.item(0).date;
+                    _this.data.moodScore = res.rows.item(0).moodScore;
+                    _this.data.dietScore = res.rows.item(0).dietScore;
+                    _this.data.sleepScore = res.rows.item(0).sleepScore;
+                    _this.data.stressScore = res.rows.item(0).stressScore;
+                    _this.data.entryNote = res.rows.item(0).entryNote;
+                    _this.data.amount = res.rows.item(0).amount;
+                }
+            })
+                .catch(function (e) {
+                console.log(e);
+                _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
+                    console.log(toast);
+                });
+            });
+        }).catch(function (e) {
+            console.log(e);
+            _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
+                console.log(toast);
+            });
+        });
+    };
+    EditDataPage.prototype.updateData = function () {
+        var _this = this;
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('UPDATE wellness SET date=?,moodScore=?,dietScore=?,sleepScore=?,description=?,amount=? WHERE rowid=?', [_this.data.date, _this.data.moodScore, _this.data.dietScore, _this.data.sleepScore, _this.data.stressScore, _this.data.entryNote, _this.data.amount, _this.data.rowid])
+                .then(function (res) {
+                console.log(res);
+                _this.toast.show('Data updated', '5000', 'center').subscribe(function (toast) {
+                    _this.navCtrl.popToRoot();
+                });
+            })
+                .catch(function (e) {
+                console.log(e);
+                _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
+                    console.log(toast);
+                });
+            });
+        }).catch(function (e) {
+            console.log(e);
+            _this.toast.show(e, '5000', 'center').subscribe(function (toast) {
+                console.log(toast);
+            });
+        });
+    };
+    EditDataPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-edit-data',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\edit-data\edit-data.html"*/'<!DOCTYPE html>\n<!--\nTo change this license header, choose License Headers in Project Properties.\nTo change this template file, choose Tools | Templates\nand open the template in the editor.\n-->\n<ion-header>\n\n  <ion-navbar>\n         <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Edit Data</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n  <h2>Edit Data</h2>\n  <form (ngSubmit)="updateData()">\n    <ion-item>\n      <ion-label>Date</ion-label>\n      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>\n    </ion-item>\n      \n    <ion-item>\n      <ion-label>mood</ion-label>\n      <ion-input type="number" placeholder="moodScore" [(ngModel)]="data.moodScore" name="moodScore" required="" ></ion-input>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Diet</ion-label>\n      <ion-input type="number" placeholder="dietScore" [(ngModel)]="data.dietScore" name="dietScore" required="" ></ion-input>\n    </ion-item>\n      \n    <ion-item>\n      <ion-label>Sleep</ion-label>\n      <ion-input type="number" placeholder="sleepScore" [(ngModel)]="data.sleepScore" name="sleepScore" required="" ></ion-input>\n    </ion-item>      \n\n    <ion-item>\n      <ion-label>Stress</ion-label>\n      <ion-input type="number" placeholder="stressScore" [(ngModel)]="data.stressScore" name="stressScore" required="" ></ion-input>\n    </ion-item>\n      \n    <ion-item>\n      <ion-label>Description</ion-label>\n      <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>\n    </ion-item>\n      \n    <ion-item>\n      <ion-label>Amount</ion-label>\n      <ion-input type="number" placeholder="Amount" [(ngModel)]="data.amount" name="amount" required="" ></ion-input>\n    </ion-item>\n    <ion-input type="hidden" [(ngModel)]="data.rowid" name="rowid"></ion-input>\n    <button ion-button type="submit" block>Update Data</button>\n  </form>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\edit-data\edit-data.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */],
+            __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__["a" /* Toast */]])
+    ], EditDataPage);
+    return EditDataPage;
+}());
+
+//# sourceMappingURL=edit-data.js.map
+
+/***/ }),
+
+/***/ 41:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DailyEntry; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__ = __webpack_require__(102);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+//@IonicPage()
 var DailyEntry = (function () {
     function DailyEntry(navCtrl, navParams, sqlite, toast) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.sqlite = sqlite;
         this.toast = toast;
-        this.data = { entryDate: "", moodScore: 5, sleepScore: 5, dietScore: 5, stressScore: 5, totalScore: 10, entryNote: "" };
+        this.data = { date: "", moodScore: 5, dietScore: 5, sleepScore: 5, stressScore: 5, entryNote: "" };
     }
     DailyEntry.prototype.saveData = function () {
         var _this = this;
-        this.sqlite.create({ name: 'wellnessdb1.db', location: 'default' }).then(function (db) {
-            db.executeSql('INSERT INTO wellnesstracker VALUES(NULL,?,?,?,?,?,?,?)', [_this.data.entryDate,
-                _this.data.moodScore,
-                _this.data.sleepScore,
-                _this.data.dietScore,
-                _this.data.stressScore,
-                _this.data.totalScore,
-                _this.data.entryNote]).then(function (res) {
+        this.sqlite.create({
+            name: 'ionicdb5.db',
+            location: 'default'
+        }).then(function (db) {
+            db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)', [_this.data.date, _this.data.moodScore, _this.data.dietScore, _this.data.sleepScore, _this.data.stressScore, _this.data.entryNote])
+                .then(function (res) {
                 console.log(res);
                 _this.toast.show('Data saved', '5000', 'center').subscribe(function (toast) {
                     _this.navCtrl.popToRoot();
@@ -663,17 +993,9 @@ var DailyEntry = (function () {
             });
         });
     };
-    // Given a number, this method will reverse it. 10 = 1, 9 = 2, 8 = 3, 7 = 4, 6 = 5, 5 = 6, 4 = 7, 3 = 8, 2 = 9, 1 = 10
-    //    reverseScore(score) 
-    //    { 
-    //       return ((10 - score) + 1); 
-    //    }
-    DailyEntry.prototype.calcTotalScore = function () {
-        this.data.totalScore = (((this.data.moodScore + this.data.sleepScore + this.data.dietScore + this.data.stressScore) / 40) * 10);
-    };
     DailyEntry = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dailyEntry',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>DailyEntry</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n    <div text-center>\n\n        <img src="../../assets/imgs/feelings/face10.png" class="feelingImg">         \n\n    </div>\n\n\n\n    <form (ngSubmit)="saveData()" >\n\n    <ion-list> \n\n        <ion-item>\n\n            <ion-range min="0" max="10" [(ngModel)]="data.moodScore" color="secondary" pin="true" class="slider">\n\n                <ion-label range-left>Mood</ion-label>\n\n            </ion-range>\n\n        </ion-item>    \n\n    \n\n        <ion-item>\n\n            <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" color="secondary" pin="true" class="slider">\n\n                <ion-label range-left>Sleep</ion-label>\n\n            </ion-range>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-range min="0" max="10" [(ngModel)]="data.dietScore" color="secondary" pin="true" class="slider">\n\n                <ion-label range-left>Diet</ion-label>\n\n            </ion-range>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-range min="0" max="10" [(ngModel)]="data.stressScore" color="secondary" pin="true" class="slider">\n\n                <ion-label range-left>Stress</ion-label>\n\n            </ion-range>\n\n        </ion-item> \n\n \n\n        <ion-item>\n\n            <ion-label floating>What on your mind?</ion-label>\n\n            <ion-input [(ngModel)]="data.entryNote" type="text" whatsOnYourMindText></ion-input>\n\n        </ion-item>        \n\n        \n\n        <ion-item>\n\n          <button ion-button type="submit" full>Submit Wellness Score</button>\n\n        </ion-item>\n\n\n\n    </ion-list>\n\n        \n\n    </form>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <button ion-button block>Aidez moi / Help Me</button>\n\n    </ion-toolbar>\n\n</ion-footer>\n\n\n\n<!-- <md-content>\n\n    <p>Trial 1 </p>\n\n </md-content> \n\n-->\n\n\n\n\n\n<!--\n\n<md-content layout-align="start center" layout="column" class="wt dailyEntry">\n\n\n\n    <img src="imgs/feelings/face{{totalScore}}.png" class="feelingImg"/>\n\n	\n\n	<div layout="row" layout-padding layout-align="center center">\n\n		<h2 class="sliderHeader" aria-label="{{pageElements.sliderHeaderText}}">\n\n			{{pageElements.sliderHeaderText}}\n\n		</h2>\n\n	</div>\n\n\n\n    <md-slider aria-label="{{pageElements.moodSliderAL}}" flex min="1" max="10" ng-model="moodScore" class="slider md-primary" md-discrete></md-slider>\n\n    <h3 class="sliderHeader" aria-label="{{pageElements.moodSentenceText}}">{{pageElements.moodSentenceText}}</h3>\n\n\n\n    <md-slider aria-label="{{pageElements.sleepSliderAL}}" flex min="1" max="10" ng-model="sleepScore" class="slider md-primary" md-discrete></md-slider>\n\n    <h3 class="sliderHeader" aria-label="{{pageElements.sleepSentenceText}}">{{pageElements.sleepSentenceText}}</h3>\n\n	\n\n    <md-slider aria-label="{{pageElements.dietSliderAL}}" flex min="1" max="10" ng-model="dietScore" class="slider md-primary" md-discrete></md-slider>\n\n    <h3 class="sliderHeader" aria-label="{{pageElements.dietSentenceText}}">{{pageElements.dietSentenceText}}</h3>\n\n\n\n    <md-slider aria-label="{{pageElements.stressSliderAL}}" flex min="1" max="10" ng-model="stressScore" class="slider md-primary" md-discrete></md-slider>\n\n    <h3 class="sliderHeader" aria-label="{{pageElements.stressSentenceText}}">{{pageElements.stressSentenceText}}</h3>	\n\n\n\n    <md-input-container class="md-block descriptionContainer">\n\n        <label aria-label="{{pageElements.whatsOnYourMindAL}}">{{pageElements.whatsOnYourMindText}}</label>\n\n        <textarea ng-model="entryNote" md-maxlength="500" maxlength="500" class="descriptionText"></textarea>\n\n    </md-input-container>\n\n\n\n    <div>\n\n        <md-button class="md-raised md-primary" ng-click="saveEntry()" aria-label="{{pageElements.doneText}}">{{pageElements.doneText}}</md-button>\n\n    </div>\n\n\n\n</md-content>\n\n\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/
+            selector: 'page-dailyEntry',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Daily Entry</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <div text-center>\n\n        <img src="../../assets/imgs/feelings/face10.png" class="feelingImg">         \n\n    </div>\n\n    \n\n  <form (ngSubmit)="saveData()">\n\n    <ion-item>\n\n      <ion-label>Date</ion-label>\n\n      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>\n\n    </ion-item>\n\n\n\n    <ion-item>\n\n        <ion-range min="0" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="secondary" pin="true" class="slider">\n\n            <ion-label range-left>Mood</ion-label>\n\n        </ion-range>\n\n    </ion-item>      \n\n\n\n    <ion-item>\n\n        <ion-range min="0" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="secondary" pin="true" class="slider">\n\n            <ion-label range-left>Diet</ion-label>\n\n        </ion-range>\n\n    </ion-item> \n\n\n\n    <ion-item>\n\n        <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="secondary" pin="true" class="slider">\n\n            <ion-label range-left>Sleep</ion-label>\n\n        </ion-range>\n\n    </ion-item> \n\n\n\n    <ion-item>\n\n        <ion-range min="0" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="secondary" pin="true" class="slider">\n\n            <ion-label range-left>Mood</ion-label>\n\n        </ion-range>\n\n    </ion-item>       \n\n      \n\n    <ion-item>\n\n      <ion-label>Description</ion-label>\n\n      <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>\n\n    </ion-item>\n\n  \n\n      \n\n    <button ion-button type="submit" block>Save Data</button>\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */],
@@ -683,36 +1005,9 @@ var DailyEntry = (function () {
     return DailyEntry;
 }());
 
-//define the variables to link with the ngModel in the main page
-//    		$scope.updatePicture = function(totalScore, moodScore, sleepScore, dietScore, scoreManager, stressScore) {
-//			totalScore = ((parseInt(moodScore) + parseInt(sleepScore) + parseInt(dietScore) + parseInt(stressScore)) / 4); //Added by JW
-//		}
-//		
-//		$scope.$watch(function( totalScore, moodScore, sleepScore, dietScore, scoreManager, stressScore) { return moodScore },
-//			function(totalScore, moodScore, sleepScore, dietScore, scoreManager, stressScore) {
-//				totalScore = ((parseInt(moodScore) + parseInt(sleepScore) + parseInt(dietScore) + parseInt(stressScore)) / 4).toFixed(0); //Added by JW
-//
-//			}
-//		);
-//		$scope.$watch(function(scope) { return $scope.sleepScore },
-//			function() {
-//				$scope.totalScore = ((parseInt($scope.moodScore) + parseInt($scope.sleepScore) + parseInt($scope.dietScore) + scoreManager.reverseScore(parseInt($scope.stressScore))) / 4).toFixed(0); //Added by JW
-//			}
-//		);
-//		$scope.$watch(function(scope) { return $scope.stressScore },
-//			function() {
-//				$scope.totalScore = ((parseInt($scope.moodScore) + parseInt($scope.sleepScore) + parseInt($scope.dietScore) + scoreManager.reverseScore(parseInt($scope.stressScore))) / 4).toFixed(0); //Added by JW
-//			}
-//		);
-//		$scope.$watch(function(scope) { return $scope.dietScore },
-//			function() {
-//				$scope.totalScore = ((parseInt($scope.moodScore) + parseInt($scope.sleepScore) + parseInt($scope.dietScore) + scoreManager.reverseScore(parseInt($scope.stressScore))) / 4).toFixed(0); //Added by JW
-//			}
-//		);
-//}
 //# sourceMappingURL=dailyEntry.js.map
 
 /***/ })
 
-},[201]);
+},[206]);
 //# sourceMappingURL=main.js.map

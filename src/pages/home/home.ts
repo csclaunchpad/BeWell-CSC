@@ -5,7 +5,7 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 //import { AddDataPage } from '../add-data/add-data';
 import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry';
 
-import { EditDataPage } from '../edit-data/edit-data';
+//import { EditDataPage } from '../edit-data/edit-data';
 
 @Component({
     selector: 'page-home',
@@ -69,11 +69,6 @@ export class HomePage {
       this.navCtrl.push(DailyEntry);
     }
 
-    editData(rowid) {
-      this.navCtrl.push(EditDataPage, {
-        rowid:rowid
-      });
-    }
 
     deleteData(rowid) {
       this.sqlite.create({
@@ -88,4 +83,13 @@ export class HomePage {
         .catch(e => console.log(e));
       }).catch(e => console.log(e));
     }
+    
+    //------------------ Home Controller --------------------
+//    (translationService){
+//	this.setLanguage = function(language) {
+//		localStorage.setItem("languageFlag", language);
+//		$window.location.href = "Login";
+//	}
+//    }]);
+    
 }

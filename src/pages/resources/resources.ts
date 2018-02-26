@@ -7,7 +7,7 @@ import { Public } from './Public/public';
 
 @Component({
   selector: 'page-resources',
-  templateUrl: 'Resources.html'
+  templateUrl: 'resources.html'
 })
 export class Resources {
     cscContacts = CSCContacts;

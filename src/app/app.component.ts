@@ -4,12 +4,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
+import { Login } from '../pages/home/Login/login';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
-import {Resources } from '../pages/Resources/resources';
+import { Resources } from '../pages/Resources/resources';
+import { SQLTester } from '../pages/SQLTester/sqltester';
+
+
 
 //import { AddDataPage } from '../pages/add-data/add-data';
-import { EditDataPage } from '../pages/edit-data/edit-data';
+//import { EditDataPage } from '../pages/edit-data/edit-data';
 
 
 @Component({
@@ -30,9 +34,10 @@ export class MyApp {
       { title: 'Home', component: HomePage },
       { title: 'Daily Entry', component: DailyEntry },
       { title: 'Checkin Log', component: CheckinLog },
+      { title: 'SQL Tester', component: SQLTester },
 //      { title: 'Add Data', component: AddDataPage },
       { title: 'Resorces', component: Resources },
-      { title: 'Edit Data', component: EditDataPage }
+      { title: 'Log In', component: Login }
 
         ];
 

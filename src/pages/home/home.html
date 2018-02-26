@@ -1,11 +1,10 @@
-
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
         <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      Checkin Log
+      Home
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addData()">
@@ -16,36 +15,33 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Wellness List DB Test</h2>
-  <ion-list>
-    <ion-item-sliding *ngFor="let wellness of userRecords; let i=index">
-      <ion-item nopadding>
-        <p>
-          <span>{{wellness.date}}</span><br>
-          Mood: {{wellness.moodScore}}<br>
-          Diet: {{wellness.dietScore}}<br>
-          Sleep: {{wellness.sleepScore}}<br>
-          Stress: {{wellness.stressScore}}<br>
-          {{wellness.entryNote}}
-        </p>
-        <h3 item-end>
-          Amount: ${{wellness.amount}}
-        </h3>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button color="primary" (click)="editData(wellness.rowid)">
-          <ion-icon name="paper"></ion-icon>
-        </button>
-        <button ion-button color="danger" (click)="deleteData(wellness.rowid)">
-          <ion-icon name="trash"></ion-icon>
-        </button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
+    <ion-grid>
+        <ion-row>
+            
+            <header role="banner"></header>
+            <ion-col>
+                <h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>
+                <button ion-button ng-click="setLanguage('en')" aria-label="English" ><strong>English</strong></button> <BR>
+                <button ion-button href="#/terms-en" aria-label="Terms and Conditions" >Terms and Conditions</button> 
+            </ion-col>
+
+            <ion-col>
+                <div flex lang="fr" layout="column">
+                    <h2 class="md-display-1" aria-label="App Santé mentale">App Santé Mentale</h2>
+                    <button ion-button ng-click="setLanguage('fr')" aria-label="Français" ><strong>Français</strong></button> <BR>
+                    <button ion-button href="#/terms-fr" aria-label="Termes et Conditions" >Termes et Conditions</button>                     
+                </div>
+            </ion-col>
+        
+        </ion-row>     
+        <br class="clearfix" />
+       <p class="text-center ver" aria-label="Version 1.0"><small>Version 1.0</small></p>
+
+    </ion-grid>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title>Balance: ${{balance}}</ion-title>
+    <button ion-button block>Aidez moi / Help Me</button>
   </ion-toolbar>
 </ion-footer>

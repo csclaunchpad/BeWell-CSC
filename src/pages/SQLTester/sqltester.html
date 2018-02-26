@@ -1,0 +1,51 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Checkin Log
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addData()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Wellness List DB Test</h2>
+  <ion-list>
+    <ion-item-sliding *ngFor="let wellness of userRecords; let i=index">
+      <ion-item nopadding>
+        <p>
+          <span>{{wellness.date}}</span><br>
+          Mood: {{wellness.moodScore}}<br>
+          Diet: {{wellness.dietScore}}<br>
+          Sleep: {{wellness.sleepScore}}<br>
+          Stress: {{wellness.stressScore}}<br>
+          {{wellness.entryNote}}
+        </p>
+        <h3 item-end>
+          Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}
+        </h3>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary" (click)="editData(wellness.rowid)">
+          <ion-icon name="paper"></ion-icon>
+        </button>
+        <button ion-button color="danger" (click)="deleteData(wellness.rowid)">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block>Aidez moi / Help Me</button>
+  </ion-toolbar>
+</ion-footer>

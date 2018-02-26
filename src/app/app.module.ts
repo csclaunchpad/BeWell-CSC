@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { Login } from '../pages/home/Login/login';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
@@ -11,9 +12,11 @@ import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
 import { Employee } from '../pages/Resources/Employee/employee';
 import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
 import { Public } from '../pages/Resources/Public/public';
+import { SQLTester } from '../pages/SQLTester/sqltester';
+
 
 //import { AddDataPage } from '../pages/add-data/add-data';
-import { EditDataPage } from '../pages/edit-data/edit-data';
+//import { EditDataPage } from '../pages/edit-data/edit-data';
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -27,15 +30,17 @@ import { Toast } from '@ionic-native/toast';
   declarations: [
     MyApp,
     HomePage,
+    Login,
     DailyEntry,
     CheckinLog,
     Resources,
+    SQLTester,
     CSCContacts,
     Employee,
     EmployeeFam,
     Public,
 //    AddDataPage,
-    EditDataPage
+//    EditDataPage
     
   ],
   imports: [
@@ -46,15 +51,17 @@ import { Toast } from '@ionic-native/toast';
   entryComponents: [
     MyApp,
     HomePage,
+    Login,
     DailyEntry,
     CheckinLog,
     Resources,
+    SQLTester,
     CSCContacts,
     Employee,
     EmployeeFam,
     Public,
 //    AddDataPage,
-    EditDataPage    
+//    EditDataPage    
   ],
   providers: [
     StatusBar,
