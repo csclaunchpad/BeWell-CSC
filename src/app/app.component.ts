@@ -9,6 +9,7 @@ import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
 import { SQLTester } from '../pages/SQLTester/sqltester';
+import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 
 
 
@@ -35,6 +36,7 @@ export class MyApp {
       { title: 'Daily Entry', component: DailyEntry },
       { title: 'Checkin Log', component: CheckinLog },
       { title: 'SQL Tester', component: SQLTester },
+		  { title: 'Analytic Dashboard', component: Dashboard },
 //      { title: 'Add Data', component: AddDataPage },
       { title: 'Resorces', component: Resources },
       { title: 'Log In', component: Login }

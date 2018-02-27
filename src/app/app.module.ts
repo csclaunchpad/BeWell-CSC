@@ -13,7 +13,7 @@ import { Employee } from '../pages/Resources/Employee/employee';
 import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
 import { Public } from '../pages/Resources/Public/public';
 import { SQLTester } from '../pages/SQLTester/sqltester';
-
+import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 
 //import { AddDataPage } from '../pages/add-data/add-data';
 //import { EditDataPage } from '../pages/edit-data/edit-data';
@@ -35,6 +35,7 @@ import { Toast } from '@ionic-native/toast';
     CheckinLog,
     Resources,
     SQLTester,
+	Dashboard,
     CSCContacts,
     Employee,
     EmployeeFam,
@@ -56,6 +57,7 @@ import { Toast } from '@ionic-native/toast';
     CheckinLog,
     Resources,
     SQLTester,
+	Dashboard,
     CSCContacts,
     Employee,
     EmployeeFam,
