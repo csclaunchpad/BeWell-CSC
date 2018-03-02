@@ -1,0 +1,75 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			Recover User
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-grid>
+		<!-- Phase 1 -->
+		<ion-row *ngIf="phase1">
+		
+			<!-- Name not found flag -->
+			<ion-col *ngIf="inputNotFound">
+				We couldn't find that name!
+			</ion-col>
+			
+			<!-- First name label and input field -->
+			<ion-col>
+				<ion-label color="primary">What is the name of the account you're trying to recover?</ion-label>
+				<ion-input placeholder="First Name" [(ngModel)]="firstName"></ion-input>
+			</ion-col>
+			
+			<!-- Find name button -->
+			<ion-col>
+				<button ion-button (click)="submitPhase1()">Find Name</button>
+			</ion-col>
+		</ion-row>
+		
+		<!-- Phase 2 -->
+		<ion-row *ngIf="phase2">
+		
+			<!-- Incorrect answer flag -->
+			<ion-col *ngIf="incorrectInput">
+				That isn't the answer!
+			</ion-col>
+			
+			<!-- Security question, security answer label, and input field -->
+			<ion-col>
+				{{securityQuestion}}
+				<ion-label color="primary">What is the answer to the following security question?</ion-label>
+				<ion-input placeholder="Security Answer" [(ngModel)]="securityAnswer"></ion-input>
+			</ion-col>
+			
+			<!-- Submit answer button -->
+			<ion-col>
+				<button ion-button (click)="submitPhase2()">Submit Answer</button>
+			</ion-col>
+		</ion-row>
+		
+		<!-- Phase 3 -->
+		<ion-row *ngIf="phase3">
+		
+			<!-- Invalid pin length flag -->
+			<ion-col *ngIf="invalidPin">
+				Your pin needs to be between 4 and 6 characters!
+			</ion-col>
+			
+			<!-- Pin label and input field -->
+			<ion-col>
+				<ion-label color="primary">Please enter your new pin</ion-label>
+				<ion-input placeholder="4-6 Character Pin" [(ngModel)]="pin"></ion-input>
+			</ion-col>
+			
+			<!-- Set new pin button -->
+			<ion-col>
+				<button ion-button (click)="submitPhase3()">Set new pin</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

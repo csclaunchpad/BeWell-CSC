@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
+import { Login } from '../../home/Login/login/login';
+import { Storage } from '@ionic/storage';
 
 import * as moment from 'moment';
 
@@ -14,10 +16,13 @@ export class DailyEntry {
 
   data = { date:"", moodScore:5, dietScore:5, sleepScore:5, stressScore:5, entryNote:"" };
 
-  constructor(public navCtrl: NavController,
-    public navParams: NavParams,
-    private sqlite: SQLite,
-    private toast: Toast) {}
+	constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private toast: Toast, private storage: Storage) {
+		this.storage.get("userID").then((value) => {
+			if(value == null) {
+				this.navCtrl.setRoot(Login);
+			}
+		});
+	}
 
   saveData() {
     this.sqlite.create({

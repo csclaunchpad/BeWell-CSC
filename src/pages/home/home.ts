@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+import { Storage } from '@ionic/storage';
+import { Login } from './Login/login/login';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-//import { AddDataPage } from '../add-data/add-data';
 import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry';
-
-//import { EditDataPage } from '../edit-data/edit-data';
 
 @Component({
     selector: 'page-home',
@@ -18,10 +18,20 @@ export class HomePage {
     totalExpense = 0;
     balance = 0;
 
-
-    constructor(public navCtrl: NavController, private sqlite: SQLite) {
-
+    constructor(public navCtrl: NavController, private sqlite: SQLite, private storage: Storage) {
+		
+		this.storage.get("userID").then((value) => {
+			if(value == null) {
+				this.navCtrl.setRoot(Login);
+			}
+		});
     }
+	
+	test() {
+		this.storage.get("userID").then((value) => {
+			console.log(value);
+		});
+	}
 
     ionViewDidLoad() {
       this.getData();

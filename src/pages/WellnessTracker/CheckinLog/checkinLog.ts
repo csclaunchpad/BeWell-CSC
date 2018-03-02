@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-//
-//import { AddDataPage } from '../../add-data/add-data';
 import { EditDataPage } from '../../edit-data/edit-data';
-
-//import { CheckinLogInfo } from '../CheckinLogInfo/checkinLogInfo';
 import { DailyEntry } from '../DailyEntry/dailyEntry';
-
+import { Login } from '../../home/Login/login/login';
+import { Storage } from '@ionic/storage';
 
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
-//import { Toast } from '@ionic-native/toast';
-
-//import { DataServiceProvider } from '../../../providers/data-service/data-service';
-
-
 
 @Component({
   selector: 'page-checkinLog',
@@ -29,9 +21,13 @@ export class CheckinLog {
     balance = 0;
 
 
-    constructor(public navCtrl: NavController, 
-    public navParams: NavParams,
-    private sqlite: SQLite) {}
+    constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private storage: Storage) {
+		this.storage.get("userID").then((value) => {
+			if(value == null) {
+				this.navCtrl.setRoot(Login);
+			}
+		});
+	}
 
 
 ionViewDidLoad() {

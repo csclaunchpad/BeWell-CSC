@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { Login } from '../pages/home/Login/login';
+import { Login } from '../pages/home/Login/login/login';
+import { NewUser } from '../pages/home/Login/newUser/newUser';
+import { RecoverUser } from '../pages/home/Login/recoverUser/recoverUser';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
@@ -14,10 +17,7 @@ import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
 import { Public } from '../pages/Resources/Public/public';
 import { SQLTester } from '../pages/SQLTester/sqltester';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
-
-//import { AddDataPage } from '../pages/add-data/add-data';
-//import { EditDataPage } from '../pages/edit-data/edit-data';
-
+import { SignOut } from '../pages/home/Login/signout/signout';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,6 +31,9 @@ import { Toast } from '@ionic-native/toast';
     MyApp,
     HomePage,
     Login,
+	SignOut,
+	NewUser,
+	RecoverUser,
     DailyEntry,
     CheckinLog,
     Resources,
@@ -39,38 +42,40 @@ import { Toast } from '@ionic-native/toast';
     CSCContacts,
     Employee,
     EmployeeFam,
-    Public,
+    Public
 //    AddDataPage,
 //    EditDataPage
     
   ],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(MyApp),
-  ],
-  bootstrap: [IonicApp],
-  entryComponents: [
-    MyApp,
-    HomePage,
-    Login,
-    DailyEntry,
-    CheckinLog,
-    Resources,
-    SQLTester,
-	Dashboard,
-    CSCContacts,
-    Employee,
-    EmployeeFam,
-    Public,
-//    AddDataPage,
-//    EditDataPage    
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SQLite,
-    Toast
-  ]
+	imports: [
+		BrowserModule,
+		IonicModule.forRoot(MyApp),
+		IonicStorageModule.forRoot()
+	],
+	bootstrap: [IonicApp],
+	entryComponents: [
+		MyApp,
+		HomePage,
+		Login,
+		SignOut,
+		NewUser,
+		RecoverUser,
+		DailyEntry,
+		CheckinLog,
+		Resources,
+		SQLTester,
+		Dashboard,
+		CSCContacts,
+		Employee,
+		EmployeeFam,
+		Public   
+	],
+	providers: [
+		StatusBar,
+		SplashScreen,
+		{provide: ErrorHandler, useClass: IonicErrorHandler},
+		SQLite,
+		Toast
+	]
 })
 export class AppModule {}

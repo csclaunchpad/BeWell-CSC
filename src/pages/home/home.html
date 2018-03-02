@@ -1,7 +1,7 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton="true" >
     <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
+        <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
     <ion-title>
       Home
@@ -21,7 +21,7 @@
             <header role="banner"></header>
             <ion-col>
                 <h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>
-                <button ion-button ng-click="setLanguage('en')" aria-label="English" ><strong>English</strong></button> <BR>
+                <button ion-button (click)="test()" aria-label="English" ><strong>English</strong></button> <BR>
                 <button ion-button href="#/terms-en" aria-label="Terms and Conditions" >Terms and Conditions</button> 
             </ion-col>
 
