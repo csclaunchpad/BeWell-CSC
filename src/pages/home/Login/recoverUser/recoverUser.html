@@ -1,33 +1,33 @@
-<ion-header>
+<ion-header *ngIf="pageElementsLoaded">
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
 		<ion-title>
-			Recover User
+			{{pageElements.recoverUserText}}
 		</ion-title>
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 	<ion-grid>
 		<!-- Phase 1 -->
 		<ion-row *ngIf="phase1">
 		
 			<!-- Name not found flag -->
 			<ion-col *ngIf="inputNotFound">
-				We couldn't find that name!
+				{{pageElements.cantFindNameText}}
 			</ion-col>
 			
 			<!-- First name label and input field -->
 			<ion-col>
-				<ion-label color="primary">What is the name of the account you're trying to recover?</ion-label>
-				<ion-input placeholder="First Name" [(ngModel)]="firstName"></ion-input>
+				<ion-label color="primary">{{pageElements.nameOfAccountText}}</ion-label>
+				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>
 			</ion-col>
 			
 			<!-- Find name button -->
 			<ion-col>
-				<button ion-button (click)="submitPhase1()">Find Name</button>
+				<button ion-button (click)="submitPhase1()">{{pageElements.findNameText}}</button>
 			</ion-col>
 		</ion-row>
 		
@@ -36,19 +36,19 @@
 		
 			<!-- Incorrect answer flag -->
 			<ion-col *ngIf="incorrectInput">
-				That isn't the answer!
+				{{pageElements.wrongAnswerText}}
 			</ion-col>
 			
 			<!-- Security question, security answer label, and input field -->
 			<ion-col>
 				{{securityQuestion}}
-				<ion-label color="primary">What is the answer to the following security question?</ion-label>
-				<ion-input placeholder="Security Answer" [(ngModel)]="securityAnswer"></ion-input>
+				<ion-label color="primary">{{pageElements.answerToQuestionText}}</ion-label>
+				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>
 			</ion-col>
 			
 			<!-- Submit answer button -->
 			<ion-col>
-				<button ion-button (click)="submitPhase2()">Submit Answer</button>
+				<button ion-button (click)="submitPhase2()">{{pageElements.submitAnswerText}}</button>
 			</ion-col>
 		</ion-row>
 		
@@ -57,18 +57,18 @@
 		
 			<!-- Invalid pin length flag -->
 			<ion-col *ngIf="invalidPin">
-				Your pin needs to be between 4 and 6 characters!
+				{{pageElements.invalidPinText}}
 			</ion-col>
 			
 			<!-- Pin label and input field -->
 			<ion-col>
-				<ion-label color="primary">Please enter your new pin</ion-label>
-				<ion-input placeholder="4-6 Character Pin" [(ngModel)]="pin"></ion-input>
+				<ion-label color="primary">{{pageElements.enterNewPinText}}</ion-label>
+				<ion-input placeholder="{{pageElements.characterLengthText}}" [(ngModel)]="pin"></ion-input>
 			</ion-col>
 			
 			<!-- Set new pin button -->
 			<ion-col>
-				<button ion-button (click)="submitPhase3()">Set new pin</button>
+				<button ion-button (click)="submitPhase3()">{{pageElements.setNewPinText}}</button>
 			</ion-col>
 		</ion-row>
 	</ion-grid>

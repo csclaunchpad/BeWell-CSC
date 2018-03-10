@@ -1,10 +1,17 @@
-// Base Imports
+// ------------------------- Mandatory imports for all pages ------------------------- //
+// Import for localStorage
+import { Storage } from '@ionic/storage';
 
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+// Import for Translation Service
+import { TranslationService } from './../../../../assets/services/translationService';
 
 // Import for SQLite3
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+
+// ------------------------- Page Specific Imports ------------------------- //
+
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 @Component({
     selector: 'page-recoverUser',
@@ -12,6 +19,22 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 })
 
 export class RecoverUser {
+	
+	// ------------------------- Mandatory variables for all pages ------------------------- //
+	
+	// The actual content of the page, fetched via translationService.ts
+	private pageElements: Object;
+	
+	// Controls whether our view is loaded based off of if pageElements has been loaded
+	private pageElementsLoaded: boolean = false;
+	
+	// Stores our SQLite3 table data
+	private userRecords: any = [];
+	
+	// Our persistent connection to our DB which is set in initDB()
+	private openDatabase: SQLiteObject;
+	
+	// ------------------------- Page Specific Variables ------------------------- //
 	
 	// Our references to our view
 	private firstName: String;
@@ -28,13 +51,21 @@ export class RecoverUser {
 	private inputNotFound: boolean;
 	private invalidPin: boolean;
 	
-	// Stores our SQLite3 table data
-	private userRecords: any = [];
+	constructor(public navCtrl: NavController, private sqlite: SQLite, private storage: Storage, private translationService: TranslationService) {
+		this.configuration();
+    }
 	
-	// Our persistent connection to our DB which is set in initDB()
-	private openDatabase: SQLiteObject;
-	
-	constructor(public navCtrl: NavController, private sqlite: SQLite) {
+	configuration() {
+		
+		// Fetch the content from our language translation service
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
+			if(value != null) {
+				this.pageElements = this.translationService.load("recoverUser.html", value);
+				this.pageElementsLoaded = true;
+			} else {
+				// Handle null language flag
+			}
+		});
 		
 		// Set our initial flags
 		this.phase1 = true;
@@ -48,7 +79,7 @@ export class RecoverUser {
 		
 		// Initialize our DB
 		this.initDB();
-    }
+	}
 	
 	// Phase 1: Grab first name and check to see if it exists in our DB
 	submitPhase1() {

@@ -1,19 +1,31 @@
-// Angular/Ionic Imports
+// ------------------------- Mandatory imports for all pages ------------------------- //
 
+// Component Imports
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { ElementRef, ViewChild } from '@angular/core';
-import { AlertController } from 'ionic-angular';
+import { NavController, Content } from 'ionic-angular';
+
+// Local Storage Imports
 import { Storage } from '@ionic/storage';
 
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
+
+// Import for Translation Service
+import { TranslationService } from './../../assets/services/translationService';
+
+// ------------------------- Page Specific Imports ------------------------- //
+
+// Accessible DOM Imports
+import { ElementRef, ViewChild } from '@angular/core';
+
+// Alert Imports
+import { AlertController } from 'ionic-angular';
+
+// Page Imports
 import { Login } from '../home/Login/login/login';
 
 // JS Imports
 import * as moment from 'moment';
 import * as Chart from 'chart.js';
-
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
-
 
 @Component({
   selector: 'page-analyticDashboard',
@@ -21,7 +33,23 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQL
 })
 
 export class Dashboard {
+	
+	// ------------------------- Mandatory variables for all pages ------------------------- 
 
+	// Stores our DB results for scores
+	private userRecords: any = [];
+	
+	// Persistent reference to our DB
+	private openDatabase: SQLiteObject;
+	
+	// The actual content of the page, fetched via translationService.ts
+	private pageElements: Object;
+	
+	// Controls whether our view is loaded based off of if pageElements has been loaded
+	private pageElementsLoaded: boolean = false;
+	
+	// ------------------------- Page Specific Variables ------------------------- //
+	
 	// Fetch the canvas element that we're storing our chart in
 	@ViewChild('mainChart') pageElement: ElementRef; 
 	
@@ -31,15 +59,8 @@ export class Dashboard {
 	// Public declaration for our chart
 	private mainChart: any;
 	
-	// Stores our DB results for scores
-	private userRecords: any = [];
-	
 	// Mood = 0, sleep = 1, stress = 2, diet = 3 
 	private graphColours: any = ["#FF9800", "#01579B", "#D32F2F", "#4CAF50"];
-	
-	// Persistent reference to our DB
-	private openDatabase: SQLiteObject;
-	
 	
 	// Initializing references to our view
 	moodCheckbox: boolean;
@@ -49,19 +70,34 @@ export class Dashboard {
 	fromDate: Date;
 	toDate: Date;
 	
-	constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage) {
+	constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage, private translationService: TranslationService) {
 		
+		this.authenticate();
+		this.configuration();
+	}
+	
+	authenticate() {
 		// Grabs login flag, if null, redirect to login page
 		this.storage.get("userID").then((value) => {
 			if(value == null) {
 				this.navCtrl.setRoot(Login);
 			}
 		});
-		
-		this.navCtrl = navCtrl;
-		
-		// Initialize our DB
-		this.initDB();
+	}
+	
+	configuration() {
+		// Fetch the content from our language translation service
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
+			if(value != null) {
+				this.pageElements = this.translationService.load("analyticDashboard.html", value);
+				this.pageElementsLoaded = true;
+			} else {
+				// Handle null language flag
+			}
+			
+			// Initialize our DB
+			this.initDB();
+		});		
 	}
 	
 	// Shows alert based on the title, subtitle, and button text supplied
@@ -150,6 +186,7 @@ export class Dashboard {
 			// ----------- Query DB and build graph objects ----------- //
 			
 			this.openDatabase.executeSql(query, {}).then(res => {
+				
 				// Our Graph Data
 				var graphDataSets = [];
 				
@@ -294,11 +331,11 @@ export class Dashboard {
 			
 			this.openDatabase = db;
 			
-			db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
+			this.openDatabase.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
 			.then(res => console.log('Executed SQL'))
 			.catch(e => console.log(e));
 			
-			db.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
+			this.openDatabase.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
 				.then(res => {
 					this.userRecords = [];
 					for(var i=0; i<res.rows.length; i++) {

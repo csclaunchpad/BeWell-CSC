@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header *ngIf="pageElementsLoaded">
   <ion-navbar>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>CheckinLog</ion-title>
+    <ion-title>{{pageElements.checkinLogText}}</ion-title>
         <ion-buttons end>
             <button ion-button icon-only (click)="addData()">
                 <ion-icon name="add-circle"></ion-icon>
@@ -12,50 +12,50 @@
   </ion-navbar>
 </ion-header>
 
-
-<ion-content padding>
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header" style="margin: 0">
     <ion-list>
-    <ion-item-sliding *ngFor="let wellness of userRecords; let i=index">
-        <ion-item nopadding>
-            <ion-card>
-                <ion-row layout-align="center center" flex="60">
+		<ion-item-sliding *ngFor="let wellness of userRecords; let i=index" (click)="redirectToCheckinLogInfo(wellness.rowid)">
+			<ion-item nopadding>
+				<ion-card>
+					<ion-row layout-align="center center" flex="60">
 
-                    <ion-col class="moodBackground" layout-align="center center">
-                        {{wellness.moodScore}}
-                        <strong>Mood</strong>
-                    </ion-col>
+						<ion-col class="moodBackground" layout-align="center center">
+							{{wellness.moodScore}}
+							<strong>{{pageElements.moodText}}</strong>
+						</ion-col>
 
-                    <ion-col class="dietBackground" layout-align="center center">
-                        {{wellness.dietScore}}
-                        <strong>Diet</strong>
-                    </ion-col>                
+						<ion-col class="dietBackground" layout-align="center center">
+							{{wellness.dietScore}}
+							<strong>{{pageElements.dietText}}</strong>
+						</ion-col>                
 
-                    <ion-col class="sleepBackground" layout-align="center center">
-                        {{wellness.sleepScore}}
-                        <strong>Sleep</strong>
-                    </ion-col>                
+						<ion-col class="sleepBackground" layout-align="center center">
+							{{wellness.sleepScore}}
+							<strong>{{pageElements.sleepText}}</strong>
+						</ion-col>                
 
-                    <ion-col class="stressBackground" layout-align="center center">
-                        {{wellness.stressScore}}
-                        <strong>Stress</strong>
-                    </ion-col>
+						<ion-col class="stressBackground" layout-align="center center">
+							{{wellness.stressScore}}
+							<strong>{{pageElements.stressText}}</strong>
+						</ion-col>
 
-                </ion-row>
-
-                <ion-icon name="Wellness" item-start></ion-icon>
-                Wellness Score:{{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}
-
-            </ion-card>
-
-        </ion-item>
-      <!--  </button> -->
-    </ion-item-sliding>
-    </ion-list>    
-    
+					</ion-row>
+					<ion-row>
+						<ion-col col-6>
+							{{pageElements.wellnessScoreText}}: {{(wellness.moodScore+wellness.stressScore+wellness.dietScore+wellness.stressScore)*2}}
+						</ion-col>
+						<ion-col col-6>
+							{{wellness.date}}
+						</ion-col>
+					</ion-row>
+				</ion-card>
+			</ion-item>
+		</ion-item-sliding>
+    </ion-list>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
+    <button ion-button block>Aidez moi! / Help me!</button>
   </ion-toolbar>
 </ion-footer>

@@ -1,28 +1,50 @@
-// Base Imports
+// ------------------------- Mandatory imports for all pages ------------------------- //
 
+// Local Storage Imports
+import { Storage } from '@ionic/storage';
+
+// Component Imports
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-// Import for alerts
-import { AlertController } from 'ionic-angular';
-
-// Import for localStorage
-import { Storage } from '@ionic/storage';
-
-// Import for SQLite3
+// SQLite3 Imports
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
-// Page imports
+// Import for Translation Service
+import { TranslationService } from './../../../../assets/services/translationService';
+
+// ------------------------- Page Specific Imports ------------------------- //
+
+// Animation Imports
+import { trigger, state, style, transition, animate, keyframes } from '@angular/core';
+
+// Alert Controller Imports
+import { AlertController, MenuController } from 'ionic-angular';
+
+// Page Imports
 import { NewUser } from '../newUser/newUser'; // newUser.html
 import { RecoverUser } from '../recoverUser/recoverUser'; // recoverUser.html
 import { HomePage } from '../../home'; // home.html
 
 @Component({
     selector: 'page-login',
-    templateUrl: 'login.html'
+    templateUrl: 'login.html',
+	animations: [
+		trigger('fade', [
+			state('visible', style({
+				opacity: 1
+			})),
+			state('invisible', style({
+				opacity: 0.1
+			})),
+			transition('visible <=> invisible', animate('200ms linear'))
+		])
+	]
 })
 
 export class Login {
+
+	// ------------------------- Mandatory variables for all pages ------------------------- //
 
 	// Stores our SQLite3 table data
 	private userRecords: any = [];
@@ -30,13 +52,27 @@ export class Login {
 	// Our persistent connection to our DB which is set in initDB()
 	private openDatabase: SQLiteObject;
 	
+	// The actual content of the page, fetched via translationService.ts
+	private pageElements: Object;
+	
+	// Controls whether our view is loaded based off of if pageElements has been loaded
+	private pageElementsLoaded: boolean = false;
+	
+	// ------------------------- Page Specific Variables ------------------------- //
+	
 	// Our references to our view
 	private pin: string;
 	private firstName: string;
 	private userID: string;
+
+	private fadeState: String = 'visible';
 	
-    constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage) {
-		console.log("Login Page, userID: " + storage.get("userID"));
+    constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage, private menu: MenuController, private translationService: TranslationService) {	
+		this.authenticate();
+		this.configuration();
+	}
+	
+	authenticate() {
 		
 		// Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 		this.storage.get("userID").then((value) => {
@@ -44,10 +80,27 @@ export class Login {
 				this.navCtrl.setRoot(HomePage);
 			}
 		});
+	}
+	
+	configuration() {
 		
+		// Fetch the content from our language translation service
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
+			if(value != null) {
+				this.pageElements = this.translationService.load("login.html", value);
+				this.pageElementsLoaded = true;
+				console.log(this.pageElements);
+			} else {
+				// Handle null language flag
+			}
+		});
+		
+		this.toggleFade();
+		this.menu.swipeEnable(false);
+
 		// Call initDB without the login flag
 		this.initDB(false);
-    }
+	}
 
 	// Redirect the user to newUser.html
 	newUser() {
@@ -84,7 +137,7 @@ export class Login {
 			if(this.userRecords != null) {
 				
 				// Iterate through our records variable, if we have a match, take in the userID and return true
-				for(var i = 0; i < this.userRecords.length; i++) {
+				for(var i = 0; i < this.userRecords.length; i++) {				
 					if(this.userRecords[i].pin.toLowerCase() == this.pin.toLowerCase() && this.userRecords[i].firstName.toLowerCase() == this.firstName.toLowerCase()) {
 						this.userID = this.userRecords[i].rowid;
 						return true;
@@ -154,5 +207,9 @@ export class Login {
 					
 			}).catch(e => console.log(e));
 		}).catch(e => console.log(e));
+	}
+	
+	toggleFade() {
+		this.fadeState = (this.fadeState == 'visible') ? 'invisible' : 'visible';   
 	}
 }

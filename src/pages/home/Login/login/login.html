@@ -1,68 +1,55 @@
 <ion-header>
-	<ion-navbar>
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
-		<ion-title>
-			Login
-		</ion-title>
-	</ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="height: 100%; vertical-align: middle" *ngIf="pageElementsLoaded">
+	<!--<div [@fade]="fadeState">-->
 	<ion-grid>
-		
-		<!-- First Name Header -->
 		<ion-row>
-			<ion-col>
-				<h2>First Name</h2>
+			<ion-col col-12 text-center>
+				<span>{{pageElements.firstNameText}}</span>
 			</ion-col>
 		</ion-row>
 		
-		<!-- First Name Input Field -->
 		<ion-row>
-			<ion-col>
+			<ion-col col-12 text-center>
 				<ion-item>
-					<ion-input type="text" placeholder="First Name" [(ngModel)]="firstName"></ion-input>
+					<ion-input type="text" placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		
-		<!-- Password Header -->
 		<ion-row>
-			<ion-col>
-				<h2>Password</h2>
+			<ion-col col-12 text-center>
+				{{pageElements.passwordText}}
 			</ion-col>
 		</ion-row>
 		
-		<!-- Password Input Field -->
 		<ion-row>
-			<ion-col>
+			<ion-col col-12 text-center>
 				<ion-item>
-					<ion-input type="password" placeholder="4-6 Character Pin" [(ngModel)]="pin"></ion-input>
+					<ion-input type="text" placeholder="{{pageElements.passwordText}}" [(ngModel)]="pin"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		
-		<!-- Our Buttons -->
-		<ion-row align-items-center>
-			<ion-col col-auto>
-				<div layout-align="start center">
-					<button ion-button (click)="login()">Login</button>
-				</div>
-			</ion-col>
-			<ion-col col-auto>
-				<div layout-align="end center">
-					<button ion-button (click)="recoverUser()">Forgot Pin</button>
-				</div>
+		<ion-row>
+			<ion-col col-12 text-center>
+				<button ion-button (click)="login()">{{pageElements.loginText}}</button>
 			</ion-col>
 		</ion-row>
+		
 		<ion-row>
-			<ion-col>
-				<div>
-					<button ion-button (click)="newUser()">Create User</button>
-				</div>
+		
+			<ion-col col-6 text-center>
+				<button ion-button (click)="newUser()">{{pageElements.createUserText}}</button>
+			</ion-col>
+			
+			<ion-col col-6 text-center>
+				<button ion-button (click)="recoverUser()">{{pageElements.forgotPinText}}</button>
 			</ion-col>
 		</ion-row>
 	</ion-grid>
+	<!--</div>-->
+	<button ion-button (click)="toggleFade()">Toggle</button>
 </ion-content>

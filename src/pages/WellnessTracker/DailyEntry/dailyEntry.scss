@@ -39,7 +39,11 @@ page-dailyEntry {
     .slider{
         padding: 0;
         margin-top: -10px;
-        
     }
     
+	.has-header {
+		top: 44px;
+		position:absolute;
+		width: 100%;
+	}
 }

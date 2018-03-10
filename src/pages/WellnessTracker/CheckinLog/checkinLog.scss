@@ -55,4 +55,10 @@ page-checkinLog {
 	height:100%;
 	background: linear-gradient(210deg, #3366ff, #FFFFFF); /* Standard syntax (must be last) */
     }
+	
+	.has-header {
+		top: 44px;
+		position:absolute;
+		width: 100%;
+	}
 }

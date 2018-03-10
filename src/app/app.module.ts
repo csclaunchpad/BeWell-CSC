@@ -1,15 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 
+import { TranslationService } from '../assets/services/translationService';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
+import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { NewUser } from '../pages/home/Login/newUser/newUser';
 import { RecoverUser } from '../pages/home/Login/recoverUser/recoverUser';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
+import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
 import { Resources } from '../pages/Resources/resources';
 import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
 import { Employee } from '../pages/Resources/Employee/employee';
@@ -33,22 +38,22 @@ import { Toast } from '@ionic-native/toast';
     Login,
 	SignOut,
 	NewUser,
+	LanguageSelection,
 	RecoverUser,
     DailyEntry,
     CheckinLog,
+	CheckinLogInfo,
     Resources,
     SQLTester,
 	Dashboard,
     CSCContacts,
     Employee,
     EmployeeFam,
-    Public
-//    AddDataPage,
-//    EditDataPage
-    
+    Public    
   ],
 	imports: [
 		BrowserModule,
+		//BrowserAnimationsModule,
 		IonicModule.forRoot(MyApp),
 		IonicStorageModule.forRoot()
 	],
@@ -60,19 +65,22 @@ import { Toast } from '@ionic-native/toast';
 		SignOut,
 		NewUser,
 		RecoverUser,
+		LanguageSelection,
 		DailyEntry,
 		CheckinLog,
+		CheckinLogInfo,
 		Resources,
 		SQLTester,
 		Dashboard,
 		CSCContacts,
 		Employee,
 		EmployeeFam,
-		Public   
+		Public
 	],
 	providers: [
 		StatusBar,
 		SplashScreen,
+		TranslationService,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 		SQLite,
 		Toast

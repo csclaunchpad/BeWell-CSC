@@ -1,10 +1,15 @@
 // Base Imports
-
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+// Import for localStorage
+import { Storage } from '@ionic/storage';
+
 // Import for SQLite3
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+
+// Import for Translation Service
+import { TranslationService } from './../../../../assets/services/translationService';
 
 @Component({
     selector: 'page-newUser',
@@ -32,7 +37,24 @@ export class NewUser {
 	// Stores our SQLite3 table data
 	private userRecords: any = [];
 	
-	constructor(public navCtrl: NavController, private sqlite: SQLite) {
+	// The actual content of the page, fetched via translationService.ts
+	private pageElements: Object;
+	
+	// Controls whether our view is loaded based off of if pageElements has been loaded
+	private pageElementsLoaded: boolean = false;
+	
+	constructor(public navCtrl: NavController, private sqlite: SQLite, private storage: Storage, private translationService: TranslationService) {
+		
+		// Fetch the content from our language translation service
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
+			if(value != null) {
+				this.pageElements = this.translationService.load("newUser.html", value);
+				this.pageElementsLoaded = true;
+				console.log(this.pageElements);
+			} else {
+				// Handle null language flag
+			}
+		});
 		
 		// Initialize our view variables
 		this.firstName = "";
@@ -48,6 +70,8 @@ export class NewUser {
 		
 		// Initialize our DB
 		this.initDB();
+		
+		
     }
 	
 	createUser() {

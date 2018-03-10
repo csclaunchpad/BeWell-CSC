@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
+import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
@@ -24,7 +25,7 @@ import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = Login;
+  rootPage: any = LanguageSelection;
 
   pages: Array<{title: string, component: any}>;
 

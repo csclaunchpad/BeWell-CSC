@@ -1,29 +1,62 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>CheckinLogInfo</ion-title>
-  </ion-navbar>
+<ion-header *ngIf="pageElementsLoaded">
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>{{pageElements.checkinLogInfoText}}</ion-title>
+	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="height: 100%" *ngIf="pageElementsLoaded && dataLoaded">
 
-    <div text-center>
-        <img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">         
-    </div>
-<!--    
-    <div layout="row" layout-align="center">
-        <div aria-label="{{pageElements.previousAL}}" class="navArrowBtn" ng-class="{'disabled': !hasPrev}" ng-click="prevEntry()">
-            <img src="imgs/leftArrow.png" class="arrow">
-        </div>
-        <div aria-label="{{pageElements.nextAL}}" class="navArrowBtn" ng-class="{'disabled': !hasNext}" ng-click="nextEntry()">
-            <img src="imgs/rightArrow.png" class="arrow">
-        </div>
-    </div>
--->
-   
-    
+    <ion-grid>
+		<ion-row text-center>
+			<ion-col>
+				<img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">
+			</ion-col>
+		</ion-row>
+		
+		<ion-row text-center>
+			<ion-col>
+				{{pageElements.dateText}}: {{userRecords.date}}
+			</ion-col>
+		</ion-row>
+		
+		<ion-row text-center>
+			<ion-col>
+				{{userRecords.description}}
+			</ion-col>
+		</ion-row>
+		
+		<ion-row text-center>
+			<ion-col col-4>
+				{{pageElements.moodText}}: {{userRecords.moodScore}}
+			</ion-col>
+			
+			<ion-col col-4 offset-4>
+				{{pageElements.dietText}}: {{userRecords.dietScore}}
+			</ion-col>
+		</ion-row>
+		
+		<ion-row text-center>
+			<ion-col col-4>
+				{{pageElements.sleepText}}: {{userRecords.sleepScore}}
+			</ion-col>
+			
+			<ion-col col-4 offset-4>
+				{{pageElements.stressText}}: {{userRecords.stressScore}}
+			</ion-col>
+		</ion-row>
+		
+		<ion-row text-center>
+			<ion-col>
+				<button ion-button block>{{pageElements.editText}}</button>
+			</ion-col>
+			<ion-col>
+				<button ion-button block>{{pageElements.deleteText}}</button>
+			</ion-col>
+		</ion-row>
+    </ion-grid>
 </ion-content>
 
 <ion-footer>
