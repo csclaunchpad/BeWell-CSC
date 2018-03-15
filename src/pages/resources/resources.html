@@ -1,26 +1,34 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Resources</ion-title>
-  </ion-navbar>
+<ion-header *ngIf="pageElementsLoaded">
+    
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-    
-    <h3 class="title">Choose the resource list that applies.</h3>
-    
-        <button ion-button block [navPush]="employee">CSC Employee</button>
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+	<ion-spinner></ion-spinner>
+</div>
 
-        <button ion-button block [navPush]="empfamily">CSC Employee Family</button>
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+
+             
+    <h3 class="title">{{pageElements.resPageText}}</h3>
     
-        <button ion-button block [navPush]="public">Public</button>
+        <button ion-button block [navPush]="employee">{{pageElements.buttonText1}}</button>
+
+        <button ion-button block [navPush]="empfamily">{{pageElements.buttonText2}}</button>
+    
+        <button ion-button block [navPush]="public">{{pageElements.buttonText1}}</button>
     
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
 </ion-footer>

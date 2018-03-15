@@ -1,58 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Employee</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Employee</ion-title>
+    </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
+
+    <button ion-button block (click)="JumpToLink(clObj)"> Crisis Hotline </button>
     
-    <a href="./pages/Resources/employee.html" class="buttonLink">
-        <button ion-button block>Employee Assistance Program</button>
-    </a>
-    <a href="./pages/Resources/employee.html" class="buttonLink">
-        <button ion-button block>Harassment Prevention Program</button>
-    </a>
-    <a href="./pages/Resources/employee" class="buttonLink">
-        <button ion-button block>Harassment Hot line</button>
-    </a>
-    <a href="./pages/Resources/employee" class="buttonLink">
-        <button ion-button block>National Attendance Management Program</button>
-    </a>    
-    <a href="./pages/Resources/employee" class="buttonLink">
-        <button ion-button block>Critical Incident Stress Management</button>
-    </a>
-    <a href="./pages/Resources/employee" class="buttonLink">
-        <button ion-button block>Occupational Health and Safety</button>
-    </a>
-    <a href="./pages/Resources/employee" class="buttonLink">
-        <button ion-button block>Return to Work Program</button>
-    </a>
-    <a href="./pages/Resources/employee" class="buttonLink">
-        <button ion-button block>CSC Contacts by Email</button>
-    </a>
-    <a href="https://www.sunlife.ca/" class="buttonLink">
-        <button ion-button block>Sunlife</button>
-    </a>
+    <button ion-button block (click)="JumpToLink(eapObj)"> Employee Assistance Program </button>
+    
+    <button ion-button block (click)="JumpToLink(cmhaObj)"> CAN Mental Health Association </button>
+    
+    <button ion-button block (click)="JumpToLink(cismObj)"> Critical Incident Stress Management </button>
+
+    <button ion-button block (click)="JumpToLink(rmrObj)"> Road to Mental Readiness </button>
+    
+    <button ion-button block (click)="JumpToLink(rwpObj)"> Return to Work Program </button>
+    
+    <button ion-button block (click)="JumpToLink(ohsObj)"> Occupational Health and Safety </button>
+    
+    <button ion-button block (click)="JumpToLink(hppObj)"> Harassment Prevention Program </button>
+
+    <button ion-button block (click)="JumpToLink(hhlObj)"> Harassment Hot line </button>
+
+    <button ion-button block (click)="JumpToLink(sunObj)"> Sunlife </button>
    
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
 </ion-footer>
 
 
-<ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
-</ion-footer>
 <!--
+
 <md-content layout="column" layout-align="start center" class="resources">
 
     <h3 class="title">Choose the resource list that applies.</h3>
@@ -66,12 +53,10 @@
     <md-button class="md-primary md-raised">CSC Contacts by Email</md-button>
     <md-button class="md-primary md-raised">Harassment Hot line</md-button>
 	
-	<a href="href="https://www.sunlife.ca/" class="buttonLink">
+    <a href="href="https://www.sunlife.ca/" class="buttonLink">
         <md-button class="md-primary md-raised" href="https://www.sunlife.ca/" >Sunlife</md-button>
     </a>
 	
-	
-	
-
 </md-content>
+
 -->

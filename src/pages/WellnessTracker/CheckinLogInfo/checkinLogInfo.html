@@ -7,7 +7,12 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding style="height: 100%" *ngIf="pageElementsLoaded && dataLoaded">
+<!-- Loading Div -->
+<div *ngIf="!pageElementsLoaded">
+	<ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding style="height: 100%" *ngIf="pageElementsLoaded" class="has-header">
 
     <ion-grid>
 		<ion-row text-center>
@@ -24,7 +29,7 @@
 		
 		<ion-row text-center>
 			<ion-col>
-				{{userRecords.description}}
+				{{userRecords.entryNote}}
 			</ion-col>
 		</ion-row>
 		

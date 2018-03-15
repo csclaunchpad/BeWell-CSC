@@ -4,26 +4,40 @@
 
 <ion-content>
     <ion-grid>
-        <ion-row>
-            
-            <header role="banner"></header>
-            <ion-col>
-                <h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>
-                <button ion-button (click)="setLanguage('en')" aria-label="English"><strong>English</strong></button> <BR>
-                <button ion-button href="#/terms-en" aria-label="Terms and Conditions" >Terms and Conditions</button> 
-            </ion-col>
-
-            <ion-col>
-                <div flex lang="fr" layout="column">
-                    <h2 class="md-display-1" aria-label="App Santé mentale">App Santé Mentale</h2>
-                    <button ion-button (click)="setLanguage('fr')" aria-label="Français" ><strong>Français</strong></button> <BR>
-                    <button ion-button href="#/terms-fr" aria-label="Termes et Conditions" >Termes et Conditions</button>                     
-                </div>
-            </ion-col>
-        
-        </ion-row>     
-        <br class="clearfix" />
-       <p class="text-center ver" aria-label="Version 1.0"><small>Version 1.0</small></p>
-
+        <ion-row text-center style="margin-top: 15%">
+			<ion-col text-center>
+				<h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>
+			</ion-col>
+		</ion-row>
+		<ion-row text-center>
+			<ion-col>
+				<button ion-button (click)="setLanguage('en')" aria-label="English"><strong>English</strong></button>
+			</ion-col>
+		</ion-row>
+		<ion-row text-center>
+			<ion-col>
+				<button ion-button href="../../assets/Content/7102606_EN_MHApp_TermsConditions_Draft_v2.0_2018-02-23.pdf" aria-label="Terms and Conditions" >Terms and Conditions</button> 
+			</ion-col>
+		</ion-row>
+		<ion-row text-center style="margin-top: 20%">
+			<ion-col>
+				<h2 class="md-display-1" aria-label="App Santé mentale">App Santé Mentale</h2>
+			</ion-col>
+		</ion-row>
+		<ion-row text-center>
+			<ion-col>
+				<button ion-button (click)="setLanguage('fr')" aria-label="Français" ><strong>Français</strong></button>
+			</ion-col>
+		</ion-row>
+		
+		<ion-row text-center>
+			<ion-col>
+				<button ion-button href="../../assets/Content/7102606_EN_MHApp_TermsConditions_Draft_v2.0_2018-02-23.pdf" aria-label="Termes et Conditions" >Termes et Conditions</button>  
+			</ion-col>
+		</ion-row>  
     </ion-grid>
 </ion-content>
+
+<ion-footer text-center>
+	<span class="" aria-label="Version 1.0"><small>Version 1.0</small></span>
+</ion-footer>

@@ -2,17 +2,16 @@
 
 </ion-header>
 
-<ion-content padding style="height: 100%; vertical-align: middle" *ngIf="pageElementsLoaded">
-	<!--<div [@fade]="fadeState">-->
+<ion-content padding *ngIf="pageElementsLoaded">
 	<ion-grid>
 		<ion-row>
-			<ion-col col-12 text-center>
-				<span>{{pageElements.firstNameText}}</span>
+			<ion-col text-center>
+				{{pageElements.firstNameText}}
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
-			<ion-col col-12 text-center>
+			<ion-col text-center>
 				<ion-item>
 					<ion-input type="text" placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>
 				</ion-item>
@@ -20,21 +19,21 @@
 		</ion-row>
 		
 		<ion-row>
-			<ion-col col-12 text-center>
-				{{pageElements.passwordText}}
+			<ion-col text-center>
+				{{pageElements.pinText}}
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
-			<ion-col col-12 text-center>
+			<ion-col text-center>
 				<ion-item>
-					<ion-input type="text" placeholder="{{pageElements.passwordText}}" [(ngModel)]="pin"></ion-input>
+					<ion-input type="text" placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
-			<ion-col col-12 text-center>
+			<ion-col text-center>
 				<button ion-button (click)="login()">{{pageElements.loginText}}</button>
 			</ion-col>
 		</ion-row>
@@ -50,6 +49,5 @@
 			</ion-col>
 		</ion-row>
 	</ion-grid>
-	<!--</div>-->
-	<button ion-button (click)="toggleFade()">Toggle</button>
+	<!--<button ion-button (click)="toggleFade()">Toggle</button>-->
 </ion-content>

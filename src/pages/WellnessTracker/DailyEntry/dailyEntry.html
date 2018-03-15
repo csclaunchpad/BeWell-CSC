@@ -1,42 +1,47 @@
 <ion-header *ngIf="pageElementsLoaded">
 
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{pageElements.dailyEntryText}}</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.dailyEntryText}}</ion-title>
+    </ion-navbar>
 
 </ion-header>
+
+<!-- Loading Div -->
+<div *ngIf="!pageElementsLoaded">
+	<ion-spinner></ion-spinner>
+</div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 
     <div text-center>
-        <img src="../../../assets/imgs/feelings/face10.png" class="feelingImg">         
+        <img src="../../../assets/imgs/feelings/face{{data.moodScore}}.png" class="feelingImg">         
     </div>
     
   <form (ngSubmit)="saveData()">
 
     <ion-item>
-        <ion-range min="0" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="secondary" pin="true" class="slider" (ionChange)="updateScores()">
+        <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">
             <ion-label range-left>{{pageElements.moodText}}</ion-label>
         </ion-range>
     </ion-item>      
 
     <ion-item>
-        <ion-range min="0" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="secondary" pin="true" class="slider" (ionChange)="updateScores()">
+        <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">
             <ion-label range-left>{{pageElements.dietText}}</ion-label>
         </ion-range>
     </ion-item> 
 
     <ion-item>
-        <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="secondary" pin="true" class="slider" (ionChange)="updateScores()">
+        <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">
             <ion-label range-left>{{pageElements.sleepText}}</ion-label>
         </ion-range>
     </ion-item> 
 
     <ion-item>
-        <ion-range min="0" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="secondary" pin="true" class="slider" (ionChange)="updateScores()">
+        <ion-range min="1" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">
             <ion-label range-left>{{pageElements.stressText}}</ion-label>
         </ion-range>
     </ion-item>       

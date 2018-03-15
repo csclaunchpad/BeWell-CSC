@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Daily Entry</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <div text-center>
+        <img src="../../assets/imgs/feelings/face10.png" class="feelingImg">         
+    </div>
+    
+  <form (ngSubmit)="saveData()">
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date" name="date" required=""></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Mood</ion-label>
+        </ion-range>
+    </ion-item>      
+
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Diet</ion-label>
+        </ion-range>
+    </ion-item> 
+
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Sleep</ion-label>
+        </ion-range>
+    </ion-item> 
+
+    <ion-item>
+        <ion-range min="0" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="secondary" pin="true" class="slider">
+            <ion-label range-left>Mood</ion-label>
+        </ion-range>
+    </ion-item>       
+      
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>
+    </ion-item>
+      
+    <ion-item>
+      <ion-label>Amount</ion-label>
+      <ion-input type="number" placeholder="Amount" [(ngModel)]="data.amount" name="amount" required="" ></ion-input>
+    </ion-item>
+      
+    <button ion-button type="submit" block>Save Data</button>
+  </form>
+</ion-content>

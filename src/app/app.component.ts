@@ -5,19 +5,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
+
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
-import { SQLTester } from '../pages/SQLTester/sqltester';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
+import { Updates } from '../pages/updates/updates';
 
-
-
-//import { AddDataPage } from '../pages/add-data/add-data';
-//import { EditDataPage } from '../pages/edit-data/edit-data';
-
+//import { Tools } from '../pages/tools/tools';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,8 +23,9 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = LanguageSelection;
+//    rootPage: any = Resources;
 
-  pages: Array<{title: string, component: any}>;
+    pages: Array<{title: string, component: any}>;
 
 	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
 		this.initializeApp();
@@ -37,9 +35,10 @@ export class MyApp {
 			{ title: 'Home', component: HomePage },
 			{ title: 'Daily Entry', component: DailyEntry },
 			{ title: 'Checkin Log', component: CheckinLog },
-			{ title: 'SQL Tester', component: SQLTester },
 			{ title: 'Analytic Dashboard', component: Dashboard },
 			{ title: 'Resources', component: Resources },
+//			{ title: 'Tools', component: Tools },
+			{ title: 'Update Log', component: Updates },
 			{ title: 'Sign out', component: SignOut }
 		];
 	}

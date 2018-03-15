@@ -41,7 +41,6 @@ export class CheckinLogInfo {
 	// ------------------------- Page Specific Variables ------------------------- //
 	
 	private checkinLogID: string;
-	private dataLoaded: boolean = false;
 	
 	constructor(public navCtrl: NavController, private navParams: NavParams, private storage: Storage, private translationService: TranslationService, private sqlite: SQLite) {
 		
@@ -55,7 +54,6 @@ export class CheckinLogInfo {
 		var languageFlag = this.storage.get("languageFlag").then((value) => {
 			if(value != null) {
 				this.pageElements = this.translationService.load("checkinLogInfo.html", value);
-				this.pageElementsLoaded = true;
 				console.log(this.pageElements);
 			} else {
 				console.log("No language flag set");
@@ -90,7 +88,6 @@ export class CheckinLogInfo {
 					console.log(this.checkinLogID);
 					this.userRecords = res.rows.item(0);
 					console.log(this.userRecords);
-					this.dataLoaded = true;
 				})
 			.catch(e => console.log(e));
 		}).catch(e => console.log(e));

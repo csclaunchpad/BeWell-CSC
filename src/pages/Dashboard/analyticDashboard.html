@@ -1,69 +1,80 @@
-<ion-header *ngIf="pageElementsLoaded">
-	<ion-navbar>
-		<button ion-button menuToggle>
-			<ion-icon name="menu"></ion-icon>
-		</button>
-		<ion-title>{{pageElements.dashboardText}}</ion-title>
-	</ion-navbar>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{pageElements.dashboardText}}</ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content class="has-header">
-	<ion-grid *ngIf="pageElementsLoaded">
-		<ion-row>
-			<ion-col col-md-5>
-				<ion-item>
-					<ion-label>{{pageElements.fromDateText}}</ion-label>
-					<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fromDate"></ion-datetime>
-				</ion-item>
-			</ion-col>
-			<ion-col col-md-5 offset-md-2>
-				<ion-item>
-					<ion-label>{{pageElements.toDateText}}</ion-label>
-					<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="toDate"></ion-datetime>
-				</ion-item>
-			</ion-col>
-		</ion-row>	
+
+<ion-content padding>
+    <ion-grid>
 	
-		<ion-row>
-			<ion-col>
-				<ion-item>
-					<ion-label>{{pageElements.moodText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="moodCheckbox"></ion-checkbox>
-				</ion-item>
-			</ion-col>
-			<ion-col>
-				<ion-item>
-					<ion-label>{{pageElements.dietText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="dietCheckbox"></ion-checkbox>
-				</ion-item>
-			</ion-col>
-			<ion-col>
-				<ion-item>
-					<ion-label>{{pageElements.stressText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="stressCheckbox"></ion-checkbox>
-				</ion-item>
-			</ion-col>
-			<ion-col>
-				<ion-item>
-					<ion-label>{{pageElements.sleepText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="sleepCheckbox"></ion-checkbox>
-				</ion-item>
-			</ion-col>
-		</ion-row>
+	<ion-row>
+            <ion-col col-md-5>
+		<ion-item>
+                    <ion-label>{{pageElements.fromDateText}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fromDate"></ion-datetime>
+		</ion-item>
+            </ion-col>
+            <ion-col col-md-5 offset-md-2>
+                <ion-item>
+                    <ion-label>{{pageElements.toDateText}}</ion-label>
+                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="toDate"></ion-datetime>
+		</ion-item>
+            </ion-col>
+	</ion-row>	
+	
+	<ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label>{{pageElements.moodText}}</ion-label>
+                    <ion-checkbox color="dark" checked="false" [(ngModel)]="moodCheckbox"></ion-checkbox>
+		</ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label>{{pageElements.moodText}}</ion-label>
+                    <ion-checkbox color="dark" checked="false" [(ngModel)]="dietCheckbox"></ion-checkbox>
+		</ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label>{{pageElements.moodText}}</ion-label>
+                    <ion-checkbox color="dark" checked="false" [(ngModel)]="stressCheckbox"></ion-checkbox>
+		</ion-item>
+            </ion-col>
+		<ion-col>
+                    <ion-item>
+                        <ion-label>{{pageElements.moodText}}</ion-label>
+			<ion-checkbox color="dark" checked="false" [(ngModel)]="sleepCheckbox"></ion-checkbox>
+                    </ion-item>
+		</ion-col>
+	</ion-row>
 		
-		<ion-row class="border">
-			<ion-col>
-				<div layout="row">
-					<div id="chartDiv" #chartDiv>
-						<canvas id="mainChart" #mainChart width="100%" height="100%"></canvas>
-					</div>	
-				</div>
-			</ion-col>
-		</ion-row>
+	<ion-row class="border">
+            <ion-col>
+                <div layout="row">
+                    <div id="chartDiv" #chartDiv>
+                        <canvas id="mainChart" #mainChart width="100%" height="100%"></canvas>
+                    </div>	
+                </div>
+            </ion-col>
+	</ion-row>
 		
-		<ion-row>
-			<ion-col>
-				<button ion-button (click)="generate(fromDate, toDate)">{{pageElements.generateText}}</button>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
+	<ion-row>
+            <ion-col>
+		<button ion-button (click)="generate(fromDate, toDate)">Generate</button>
+            </ion-col>
+	</ion-row>
+    </ion-grid> 
+    
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar>
+    <button ion-button block>Aidez moi / Help Me</button>
+  </ion-toolbar>
+</ion-footer>

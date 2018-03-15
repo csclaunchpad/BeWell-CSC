@@ -25,11 +25,13 @@ import { AlertController, MenuController } from 'ionic-angular';
 import { NewUser } from '../newUser/newUser'; // newUser.html
 import { RecoverUser } from '../recoverUser/recoverUser'; // recoverUser.html
 import { HomePage } from '../../home'; // home.html
+import { DailyEntry } from '../../../WellnessTracker/DailyEntry/dailyEntry'; // home.html
+
 
 @Component({
     selector: 'page-login',
-    templateUrl: 'login.html',
-	animations: [
+    templateUrl: 'login.html'
+	/*animations: [
 		trigger('fade', [
 			state('visible', style({
 				opacity: 1
@@ -39,7 +41,7 @@ import { HomePage } from '../../home'; // home.html
 			})),
 			transition('visible <=> invisible', animate('200ms linear'))
 		])
-	]
+	]*/
 })
 
 export class Login {
@@ -65,7 +67,7 @@ export class Login {
 	private firstName: string;
 	private userID: string;
 
-	private fadeState: String = 'visible';
+	//private fadeState: String = 'visible';
 	
     constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage, private menu: MenuController, private translationService: TranslationService) {	
 		this.authenticate();
@@ -94,9 +96,6 @@ export class Login {
 				// Handle null language flag
 			}
 		});
-		
-		this.toggleFade();
-		this.menu.swipeEnable(false);
 
 		// Call initDB without the login flag
 		this.initDB(false);
@@ -164,7 +163,7 @@ export class Login {
 			
 			// Set our login flag in localStorage and then redirect to the home page
 			this.storage.set("userID", this.userID);
-			this.navCtrl.setRoot(HomePage);
+			this.navCtrl.setRoot(DailyEntry);
 		
 		// If not found
 		} else {
@@ -209,7 +208,7 @@ export class Login {
 		}).catch(e => console.log(e));
 	}
 	
-	toggleFade() {
+	/*toggleFade() {
 		this.fadeState = (this.fadeState == 'visible') ? 'invisible' : 'visible';   
-	}
+	}*/
 }

@@ -18,6 +18,7 @@ import { TranslationService } from './../../../assets/services/translationServic
 
 // Page Imports
 import { Login } from '../../home/Login/login/login';
+import { CheckinLog } from '../CheckinLog/checkinLog';
 
 // Moment (Date framework) Import
 import * as moment from 'moment';
@@ -36,6 +37,8 @@ export class DailyEntry {
 	
 	// Controls whether our view is loaded based off of if pageElements has been loaded
 	private pageElementsLoaded: boolean = false;
+	
+	private userID: string;
 	
 	// ------------------------- Page Specific Variables ------------------------- //
 	
@@ -62,6 +65,7 @@ export class DailyEntry {
 			if(value == null) {
 				this.navCtrl.setRoot(Login);
 			}
+			this.userID = value;
 		});	
 	}
 	
@@ -74,12 +78,12 @@ export class DailyEntry {
       name: 'ionicdb5.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
+      db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.userID, moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
         .then(res => {
           console.log(res);
           this.toast.show('Data saved', '5000', 'center').subscribe(
             toast => {
-              this.navCtrl.popToRoot();
+              this.navCtrl.setRoot(CheckinLog);
             }
           );
         })

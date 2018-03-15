@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage';
 // Import for SQLite3
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 
+
 export class TranslationService {
 
     constructor() {
@@ -25,7 +26,7 @@ export class TranslationService {
 				case "login.html": {
 					return {
 						firstNameText: "First Name",
-						passwordText: "Password",
+						pinText: "Pin",
 						createUserText: "Create User",
 						loginText: "Login",
 						forgotPinText: "Forgot Pin"
@@ -107,7 +108,7 @@ export class TranslationService {
 				}
 				
 				case "checkinLogInfo.html": {
-					return {
+                                    return {
 						checkinLogInfoText: "Check in Log Info",
 						dateText: "Date",
 						moodText: "Mood",
@@ -116,15 +117,23 @@ export class TranslationService {
 						stressText: "Stress",
 						editText: "Edit",
 						deleteText: "Delete"
-					}
+                                    }
 				}
-				
+
+				case "resources.html": {
+                                    return {
+					resourceTitleText: "Resources",
+                                        resPageText: "Choose the resource list that applies to you",
+                                   	buttonText1: "CSC EMPLOYEE",
+					buttonText2: "CSC EMPLOYEE FAMILY",
+					buttonText3: "PUBLIC"
+                                    }
+				}
+                                                                				
 				default: {
 					return {}
 				}
 			}
-
-
 
 		
 		} else if(languageFlag == "fr") {
@@ -133,7 +142,7 @@ export class TranslationService {
 				case "login.html": {
 					return {
 						firstNameText: "Prénom",
-						passwordText: "Mot de passe",
+						pinText: "épingle",
 						createUserText: "Créer un utilisateur",
 						loginText: "S'identifier",
 						forgotPinText: "Pin oublié"
@@ -224,6 +233,16 @@ export class TranslationService {
 					}
 				}
 				
+				case "resources.html": {
+					return {
+						ResourceTitleText: "Ressources",
+                                                resPageText: "Choisissez la liste de ressources qui vous concerne",
+                                   		buttonText1: "SCC EMPLOYÉ",
+						buttonText2: "SCC FAMILLE D'EMPLOYÉS",
+						buttonText3: "PUBLIQUE"
+					}
+				}
+                                    
 				default: {
 					return {}
 				}

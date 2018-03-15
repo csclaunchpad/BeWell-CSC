@@ -20,9 +20,10 @@ import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
 import { Employee } from '../pages/Resources/Employee/employee';
 import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
 import { Public } from '../pages/Resources/Public/public';
-import { SQLTester } from '../pages/SQLTester/sqltester';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { SignOut } from '../pages/home/Login/signout/signout';
+import { Updates } from '../pages/updates/updates';
+//import { Tools } from '../pages/tools/tools';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -30,26 +31,26 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
 
-
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     Login,
-	SignOut,
-	NewUser,
-	LanguageSelection,
-	RecoverUser,
+    SignOut,
+    NewUser,
+    LanguageSelection,
+    RecoverUser,
     DailyEntry,
+    Updates,
+//    Tools,
     CheckinLog,
-	CheckinLogInfo,
+    CheckinLogInfo,
     Resources,
-    SQLTester,
-	Dashboard,
+    Dashboard,
     CSCContacts,
     Employee,
     EmployeeFam,
-    Public    
+    Public
   ],
 	imports: [
 		BrowserModule,
@@ -68,9 +69,10 @@ import { Toast } from '@ionic-native/toast';
 		LanguageSelection,
 		DailyEntry,
 		CheckinLog,
+		Updates,
+//		Tools,
 		CheckinLogInfo,
 		Resources,
-		SQLTester,
 		Dashboard,
 		CSCContacts,
 		Employee,
