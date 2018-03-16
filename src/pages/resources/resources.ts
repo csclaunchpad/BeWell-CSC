@@ -43,8 +43,8 @@ export class Resources {
 	this.authenticate();
         this.configuration();
     }
-    authenticate() {
-		
+    
+    authenticate() {		
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
@@ -53,12 +53,13 @@ export class Resources {
             this.userID = value;
 	});
     }
+    
     configuration() {
 		
         // Fetch the content from our language translation service
 	var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
-                this.pageElements = this.translationService.load("resource.html", value);
+                this.pageElements = this.translationService.load("resources.html", value);
 		this.pageElementsLoaded = true;
 		console.log(this.pageElements);
             } 
@@ -66,5 +67,6 @@ export class Resources {
                 console.log("No language flag set");
             }			
 	});
-    }    
+    }
+        
 }

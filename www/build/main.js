@@ -90,7 +90,7 @@ var HomePage = (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar hideBackButton="true" >\n    <button ion-button menuToggle>\n        <ion-icon name="menu" persistent="true"></ion-icon>\n    </button>\n    <ion-title>\n      Home\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addData()">\n        <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n		<ion-row>\n			<ion-col>\n				Placeholder for dashboard\n			</ion-col>\n		</ion-row>\n    </ion-grid>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button block>Aidez moi / Help Me</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar hideBackButton="true" >\n    <button ion-button menuToggle>\n        <ion-icon name="menu" persistent="true"></ion-icon>\n    </button>\n    <ion-title>\n      Home\n    </ion-title>\n    <ion-buttons end>\n      <button ion-button icon-only (click)="addData()">\n        <ion-icon name="add-circle"></ion-icon>\n      </button>\n    </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n		<ion-row>\n			<ion-col>\n				Placeholder for dashboard\n			</ion-col>\n		</ion-row>\n    </ion-grid>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <button ion-button block>Aidez moi / Help Me</button>\n  </ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], HomePage);
@@ -241,7 +241,7 @@ var CheckinLog = (function () {
     };
     CheckinLog = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkinLog',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/'<ion-header *ngIf="pageElementsLoaded">\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{pageElements.checkinLogText}}</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="addData()">\n                <ion-icon name="add-circle"></ion-icon>\n            </button>\n        </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<!-- Loading Div -->\n<div *ngIf="!pageElementsLoaded">\n	<ion-spinner></ion-spinner>\n</div>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header" style="margin: 0">\n    <ion-list>\n        <ion-item-sliding *ngFor="let wellness of userRecords; let i=index" (click)="redirectToCheckinLogInfo(wellness.rowid)">\n            <ion-item nopadding>\n                <ion-card>\n                    <ion-row layout-align="center center" flex="60">\n\n                        <ion-col class="moodBackground" layout-align="center center">\n                            <strong>{{pageElements.moodText}}: </strong>{{wellness.moodScore}}\n                        </ion-col>\n\n                        <ion-col class="dietBackground" layout-align="center center">\n                            <strong>{{pageElements.dietText}}: </strong>{{wellness.dietScore}}\n                        </ion-col>                \n\n                        <ion-col class="sleepBackground" layout-align="center center">\n                            <strong>{{pageElements.sleepText}}: </strong>{{wellness.sleepScore}}\n                        </ion-col>                \n\n                        <ion-col class="stressBackground" layout-align="center center">\n                            <strong>{{pageElements.stressText}}: </strong>{{wellness.stressScore}}\n                        </ion-col>\n\n                    </ion-row>\n                    <ion-row>\n                        <ion-col col-6>\n                            {{pageElements.wellnessScoreText}}: {{wellness.totalScore}}\n                        </ion-col>\n                        <ion-col col-6>\n                            {{wellness.date}}\n                        </ion-col>\n                    </ion-row>\n                                    \n                </ion-card>\n            </ion-item>\n        </ion-item-sliding>\n    </ion-list>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n        <button ion-button block>Aidez moi! / Help me!</button>\n    </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/
+            selector: 'page-checkinLog',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/'<ion-header *ngIf="pageElementsLoaded">\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>{{pageElements.checkinLogText}}</ion-title>\n        <ion-buttons end>\n            <button ion-button icon-only (click)="addData()">\n                <ion-icon name="add-circle"></ion-icon>\n            </button>\n        </ion-buttons>\n  </ion-navbar>\n</ion-header>\n\n<!-- Loading Div -->\n<div *ngIf="!pageElementsLoaded">\n	<ion-spinner></ion-spinner>\n</div>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header" style="margin: 0">\n    <ion-list>\n        <ion-item-sliding *ngFor="let wellness of userRecords; let i=index" (click)="redirectToCheckinLogInfo(wellness.rowid)">\n            <ion-item nopadding>\n                <ion-card>\n                    <ion-row layout-align="center center" flex="60">\n\n                        <ion-col class="moodBackground" layout-align="center center">\n                            <strong>{{pageElements.moodText}}: </strong>{{wellness.moodScore}}\n                        </ion-col>\n\n                        <ion-col class="dietBackground" layout-align="center center">\n                            <strong>{{pageElements.dietText}}: </strong>{{wellness.dietScore}}\n                        </ion-col>                \n\n                        <ion-col class="sleepBackground" layout-align="center center">\n                            <strong>{{pageElements.sleepText}}: </strong>{{wellness.sleepScore}}\n                        </ion-col>                \n\n                        <ion-col class="stressBackground" layout-align="center center">\n                            <strong>{{pageElements.stressText}}: </strong>{{wellness.stressScore}}\n                        </ion-col>\n\n                    </ion-row>\n                    <ion-row>\n                        <ion-col col-6>\n                            {{pageElements.wellnessScoreText}}: {{wellness.totalScore}}\n                        </ion-col>\n                        <ion-col col-6>\n                            {{wellness.date}}\n                        </ion-col>\n                    </ion-row>\n                                    \n                </ion-card>\n            </ion-item>\n        </ion-item-sliding>\n    </ion-list>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n        <button ion-button block>Aidez moi! / Help me!</button>\n    </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\WellnessTracker\CheckinLog\checkinLog.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__assets_services_translationService__["a" /* TranslationService */]])
     ], CheckinLog);
@@ -462,7 +462,7 @@ var Login = (function () {
     };
     Login = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\login\login.html"*/'<ion-header>\n\n</ion-header>\n\n<ion-content padding *ngIf="pageElementsLoaded">\n	<ion-grid>\n		<ion-row>\n			<ion-col text-center>\n				{{pageElements.firstNameText}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				<ion-item>\n					<ion-input type="text" placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>\n				</ion-item>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				{{pageElements.pinText}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				<ion-item>\n					<ion-input type="text" placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>\n				</ion-item>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				<button ion-button (click)="login()">{{pageElements.loginText}}</button>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n		\n			<ion-col col-6 text-center>\n				<button ion-button (click)="newUser()">{{pageElements.createUserText}}</button>\n			</ion-col>\n			\n			<ion-col col-6 text-center>\n				<button ion-button (click)="recoverUser()">{{pageElements.forgotPinText}}</button>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n	<!--<button ion-button (click)="toggleFade()">Toggle</button>-->\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\login\login.html"*/
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\login\login.html"*/'<ion-header>\n\n</ion-header>\n\n<ion-content padding *ngIf="pageElementsLoaded">\n	<ion-grid>\n		<ion-row>\n			<ion-col text-center>\n				{{pageElements.firstNameText}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				<ion-item>\n					<ion-input type="text" placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>\n				</ion-item>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				{{pageElements.pinText}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				<ion-item>\n					<ion-input type="text" placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>\n				</ion-item>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n			<ion-col text-center>\n				<button ion-button (click)="login()">{{pageElements.loginText}}</button>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row>\n		\n			<ion-col col-6 text-center>\n				<button ion-button (click)="newUser()">{{pageElements.createUserText}}</button>\n			</ion-col>\n			\n			<ion-col col-6 text-center>\n				<button ion-button (click)="recoverUser()">{{pageElements.forgotPinText}}</button>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n	<!--<button ion-button (click)="toggleFade()">Toggle</button>-->\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\login\login.html"*/
             /*animations: [
                 trigger('fade', [
                     state('visible', style({
@@ -612,7 +612,7 @@ var NewUser = (function () {
     };
     NewUser = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-newUser',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\newUser\newUser.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title>\n			New User\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n	\n	<ion-grid>\n		<!-- Name already used flag -->	\n		<ion-row *ngIf="firstNameFound">\n			<ion-col>\n				{{pageElements.firstNameFoundText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- Name cannot be blank flag -->\n		<ion-row *ngIf="invalidName">\n			<ion-col>\n				{{pageElements.invalidNameText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- First name label and input field -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.firstNameText}}</ion-label>\n				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Invalid pin length flag -->\n		<ion-row *ngIf="invalidPinLength">\n			<ion-col>\n				<!-- {{pageElements.invalidPinLengthText}} -->\n			</ion-col>\n		</ion-row>\n		\n		<!-- Pin label and input field -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.pinText}}</ion-label>\n				<ion-input placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Blank security question flag -->\n		<ion-row *ngIf="invalidSecurityQuestion">\n			<ion-col>\n				{{pageElements.invalidSecurityQuestionText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- Security question label and input field -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.securityQuestionText}}</ion-label> \n				<ion-input placeholder="{{pageElements.securityQuestionText}}" [(ngModel)]="securityQuestion"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Blank security answer flag -->\n		<ion-row *ngIf="invalidSecurityAnswer">\n			<ion-col>\n				{{pageElements.invalidSecurityAnswerText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- Security answer label and input flag -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.securityAnswerText}}</ion-label>\n				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Create user button -->\n		<ion-row>\n			<ion-col>\n				<button ion-button (click)="createUser()">{{pageElements.createUserText}}</button>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\newUser\newUser.html"*/
+            selector: 'page-newUser',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\newUser\newUser.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title>\n			New User\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n	\n	<ion-grid>\n		<!-- Name already used flag -->	\n		<ion-row *ngIf="firstNameFound">\n			<ion-col>\n				{{pageElements.firstNameFoundText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- Name cannot be blank flag -->\n		<ion-row *ngIf="invalidName">\n			<ion-col>\n				{{pageElements.invalidNameText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- First name label and input field -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.firstNameText}}</ion-label>\n				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Invalid pin length flag -->\n		<ion-row *ngIf="invalidPinLength">\n			<ion-col>\n				<!-- {{pageElements.invalidPinLengthText}} -->\n			</ion-col>\n		</ion-row>\n		\n		<!-- Pin label and input field -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.pinText}}</ion-label>\n				<ion-input placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Blank security question flag -->\n		<ion-row *ngIf="invalidSecurityQuestion">\n			<ion-col>\n				{{pageElements.invalidSecurityQuestionText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- Security question label and input field -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.securityQuestionText}}</ion-label> \n				<ion-input placeholder="{{pageElements.securityQuestionText}}" [(ngModel)]="securityQuestion"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Blank security answer flag -->\n		<ion-row *ngIf="invalidSecurityAnswer">\n			<ion-col>\n				{{pageElements.invalidSecurityAnswerText}}\n			</ion-col>\n		</ion-row>\n		\n		<!-- Security answer label and input flag -->\n		<ion-row>\n			<ion-col>\n				<ion-label color="primary">{{pageElements.securityAnswerText}}</ion-label>\n				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Create user button -->\n		<ion-row>\n			<ion-col>\n				<button ion-button (click)="createUser()">{{pageElements.createUserText}}</button>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\newUser\newUser.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__assets_services_translationService__["a" /* TranslationService */]])
     ], NewUser);
@@ -760,7 +760,7 @@ var RecoverUser = (function () {
     };
     RecoverUser = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["m" /* Component */])({
-            selector: 'page-recoverUser',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\recoverUser\recoverUser.html"*/'<ion-header *ngIf="pageElementsLoaded">\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title>\n			{{pageElements.recoverUserText}}\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n	<ion-grid>\n		<!-- Phase 1 -->\n		<ion-row *ngIf="phase1">\n		\n			<!-- Name not found flag -->\n			<ion-col *ngIf="inputNotFound">\n				{{pageElements.cantFindNameText}}\n			</ion-col>\n			\n			<!-- First name label and input field -->\n			<ion-col>\n				<ion-label color="primary">{{pageElements.nameOfAccountText}}</ion-label>\n				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>\n			</ion-col>\n			\n			<!-- Find name button -->\n			<ion-col>\n				<button ion-button (click)="submitPhase1()">{{pageElements.findNameText}}</button>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Phase 2 -->\n		<ion-row *ngIf="phase2">\n		\n			<!-- Incorrect answer flag -->\n			<ion-col *ngIf="incorrectInput">\n				{{pageElements.wrongAnswerText}}\n			</ion-col>\n			\n			<!-- Security question, security answer label, and input field -->\n			<ion-col>\n				{{securityQuestion}}\n				<ion-label color="primary">{{pageElements.answerToQuestionText}}</ion-label>\n				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>\n			</ion-col>\n			\n			<!-- Submit answer button -->\n			<ion-col>\n				<button ion-button (click)="submitPhase2()">{{pageElements.submitAnswerText}}</button>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Phase 3 -->\n		<ion-row *ngIf="phase3">\n		\n			<!-- Invalid pin length flag -->\n			<ion-col *ngIf="invalidPin">\n				{{pageElements.invalidPinText}}\n			</ion-col>\n			\n			<!-- Pin label and input field -->\n			<ion-col>\n				<ion-label color="primary">{{pageElements.enterNewPinText}}</ion-label>\n				<ion-input placeholder="{{pageElements.characterLengthText}}" [(ngModel)]="pin"></ion-input>\n			</ion-col>\n			\n			<!-- Set new pin button -->\n			<ion-col>\n				<button ion-button (click)="submitPhase3()">{{pageElements.setNewPinText}}</button>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\recoverUser\recoverUser.html"*/
+            selector: 'page-recoverUser',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\recoverUser\recoverUser.html"*/'<ion-header *ngIf="pageElementsLoaded">\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title>\n			{{pageElements.recoverUserText}}\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n	<ion-grid>\n		<!-- Phase 1 -->\n		<ion-row *ngIf="phase1">\n		\n			<!-- Name not found flag -->\n			<ion-col *ngIf="inputNotFound">\n				{{pageElements.cantFindNameText}}\n			</ion-col>\n			\n			<!-- First name label and input field -->\n			<ion-col>\n				<ion-label color="primary">{{pageElements.nameOfAccountText}}</ion-label>\n				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>\n			</ion-col>\n			\n			<!-- Find name button -->\n			<ion-col>\n				<button ion-button (click)="submitPhase1()">{{pageElements.findNameText}}</button>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Phase 2 -->\n		<ion-row *ngIf="phase2">\n		\n			<!-- Incorrect answer flag -->\n			<ion-col *ngIf="incorrectInput">\n				{{pageElements.wrongAnswerText}}\n			</ion-col>\n			\n			<!-- Security question, security answer label, and input field -->\n			<ion-col>\n				{{securityQuestion}}\n				<ion-label color="primary">{{pageElements.answerToQuestionText}}</ion-label>\n				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>\n			</ion-col>\n			\n			<!-- Submit answer button -->\n			<ion-col>\n				<button ion-button (click)="submitPhase2()">{{pageElements.submitAnswerText}}</button>\n			</ion-col>\n		</ion-row>\n		\n		<!-- Phase 3 -->\n		<ion-row *ngIf="phase3">\n		\n			<!-- Invalid pin length flag -->\n			<ion-col *ngIf="invalidPin">\n				{{pageElements.invalidPinText}}\n			</ion-col>\n			\n			<!-- Pin label and input field -->\n			<ion-col>\n				<ion-label color="primary">{{pageElements.enterNewPinText}}</ion-label>\n				<ion-input placeholder="{{pageElements.characterLengthText}}" [(ngModel)]="pin"></ion-input>\n			</ion-col>\n			\n			<!-- Set new pin button -->\n			<ion-col>\n				<button ion-button (click)="submitPhase3()">{{pageElements.setNewPinText}}</button>\n			</ion-col>\n		</ion-row>\n	</ion-grid>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\recoverUser\recoverUser.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_0__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1__assets_services_translationService__["a" /* TranslationService */]])
     ], RecoverUser);
@@ -860,7 +860,7 @@ var CheckinLogInfo = (function () {
     };
     CheckinLogInfo = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-checkinLogInfo',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLogInfo\checkinLogInfo.html"*/'<ion-header *ngIf="pageElementsLoaded">\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title>{{pageElements.checkinLogInfoText}}</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<!-- Loading Div -->\n<div *ngIf="!pageElementsLoaded">\n	<ion-spinner></ion-spinner>\n</div>\n\n<ion-content padding style="height: 100%" *ngIf="pageElementsLoaded" class="has-header">\n\n    <ion-grid>\n		<ion-row text-center>\n			<ion-col>\n				<img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				{{pageElements.dateText}}: {{userRecords.date}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				{{userRecords.entryNote}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col col-4>\n				{{pageElements.moodText}}: {{userRecords.moodScore}}\n			</ion-col>\n			\n			<ion-col col-4 offset-4>\n				{{pageElements.dietText}}: {{userRecords.dietScore}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col col-4>\n				{{pageElements.sleepText}}: {{userRecords.sleepScore}}\n			</ion-col>\n			\n			<ion-col col-4 offset-4>\n				{{pageElements.stressText}}: {{userRecords.stressScore}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button block>{{pageElements.editText}}</button>\n			</ion-col>\n			<ion-col>\n				<button ion-button block>{{pageElements.deleteText}}</button>\n			</ion-col>\n		</ion-row>\n    </ion-grid>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n        <button ion-button block>Aidez moi / Help Me</button>\n    </ion-toolbar>\n</ion-footer>\n\n<!--\n<md-content layout-align="start center" layout="column">\n\n    <img src="imgs/feelings/face{{checkinTotal}}.png" class="feelingImg"/>\n\n    <div layout="row" layout-align="center">\n        <div aria-label="{{pageElements.previousAL}}" class="navArrowBtn" ng-class="{\'disabled\': !hasPrev}" ng-click="prevEntry()">\n            <img src="imgs/leftArrow.png" class="arrow">\n        </div>\n        <div aria-label="{{pageElements.nextAL}}" class="navArrowBtn" ng-class="{\'disabled\': !hasNext}" ng-click="nextEntry()">\n            <img src="imgs/rightArrow.png" class="arrow">\n        </div>\n    </div>\n\n    <h3>{{pageElements.onText}} {{entry.date | date: \'longDate\'}}, {{pageElements.youWereFeelingText}}</h3>\n\n	<div layout="row"  layout-align="center center">\n		<div layout="column" class="dietBackground" layout-align="center center">\n			<div aria-label="{{pageElements.dietText}}: {{entry.dietScore}}">\n				<strong>{{pageElements.dietText}}<br></strong> {{entry.dietScore}}\n			</div>\n		</div>\n		<div layout="column" class="moodBackground" layout-align="center center">\n			<div aria-label="{{pageElements.moodText}}: {{entry.moodScore}}" layout-align="center center">\n				<strong>{{pageElements.moodText}}<br></strong> {{entry.moodScore}}\n			</div>\n		</div>\n		<div layout="row" class="stressBackground" layout-align="center center">\n			<div aria-label="{{pageElements.stressText}}: {{entry.stressScore}}">\n				<strong>{{pageElements.stressText}}<br></strong> {{entry.stressScore}}\n			</div>\n		</div>\n		<div layout="row" class="sleepBackground" layout-align="center center">\n			<div aria-label="{{pageElements.sleepText}}: {{entry.sleepScore}}">\n				<strong>{{pageElements.sleepText}}<br></strong> {{entry.sleepScore}}\n			</div>\n		</div>					\n	</div>\n					\n	\n	<!-- Center doesn\'t work atm -->\n<!--	<div layout="row" flex layout-align="center center">\n		<div flex aria-label="Notes: {{entry.entryNote}}">\n			<p ng-show="notesProvided" ng-bind="entry.entryNote" class="descriptionText"></p>\n			<p ng-show="!notesProvided" class="descriptionText">{{pageElements.noNotesText}}</p>\n		</div>\n	</div>\n</md-content>\n-->\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\CheckinLogInfo\checkinLogInfo.html"*/
+            selector: 'page-checkinLogInfo',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\WellnessTracker\CheckinLogInfo\checkinLogInfo.html"*/'<ion-header *ngIf="pageElementsLoaded">\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu"></ion-icon>\n		</button>\n		<ion-title>{{pageElements.checkinLogInfoText}}</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<!-- Loading Div -->\n<div *ngIf="!pageElementsLoaded">\n	<ion-spinner></ion-spinner>\n</div>\n\n<ion-content padding style="height: 100%" *ngIf="pageElementsLoaded" class="has-header">\n\n    <ion-grid>\n		<ion-row text-center>\n			<ion-col>\n				<img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				{{pageElements.dateText}}: {{userRecords.date}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				{{userRecords.entryNote}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col col-4>\n				{{pageElements.moodText}}: {{userRecords.moodScore}}\n			</ion-col>\n			\n			<ion-col col-4 offset-4>\n				{{pageElements.dietText}}: {{userRecords.dietScore}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col col-4>\n				{{pageElements.sleepText}}: {{userRecords.sleepScore}}\n			</ion-col>\n			\n			<ion-col col-4 offset-4>\n				{{pageElements.stressText}}: {{userRecords.stressScore}}\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button block>{{pageElements.editText}}</button>\n			</ion-col>\n			<ion-col>\n				<button ion-button block>{{pageElements.deleteText}}</button>\n			</ion-col>\n		</ion-row>\n    </ion-grid>\n</ion-content>\n\n<ion-footer>\n    <ion-toolbar>\n        <button ion-button block>Aidez moi / Help Me</button>\n    </ion-toolbar>\n</ion-footer>\n\n<!--\n<md-content layout-align="start center" layout="column">\n\n    <img src="imgs/feelings/face{{checkinTotal}}.png" class="feelingImg"/>\n\n    <div layout="row" layout-align="center">\n        <div aria-label="{{pageElements.previousAL}}" class="navArrowBtn" ng-class="{\'disabled\': !hasPrev}" ng-click="prevEntry()">\n            <img src="imgs/leftArrow.png" class="arrow">\n        </div>\n        <div aria-label="{{pageElements.nextAL}}" class="navArrowBtn" ng-class="{\'disabled\': !hasNext}" ng-click="nextEntry()">\n            <img src="imgs/rightArrow.png" class="arrow">\n        </div>\n    </div>\n\n    <h3>{{pageElements.onText}} {{entry.date | date: \'longDate\'}}, {{pageElements.youWereFeelingText}}</h3>\n\n	<div layout="row"  layout-align="center center">\n		<div layout="column" class="dietBackground" layout-align="center center">\n			<div aria-label="{{pageElements.dietText}}: {{entry.dietScore}}">\n				<strong>{{pageElements.dietText}}<br></strong> {{entry.dietScore}}\n			</div>\n		</div>\n		<div layout="column" class="moodBackground" layout-align="center center">\n			<div aria-label="{{pageElements.moodText}}: {{entry.moodScore}}" layout-align="center center">\n				<strong>{{pageElements.moodText}}<br></strong> {{entry.moodScore}}\n			</div>\n		</div>\n		<div layout="row" class="stressBackground" layout-align="center center">\n			<div aria-label="{{pageElements.stressText}}: {{entry.stressScore}}">\n				<strong>{{pageElements.stressText}}<br></strong> {{entry.stressScore}}\n			</div>\n		</div>\n		<div layout="row" class="sleepBackground" layout-align="center center">\n			<div aria-label="{{pageElements.sleepText}}: {{entry.sleepScore}}">\n				<strong>{{pageElements.sleepText}}<br></strong> {{entry.sleepScore}}\n			</div>\n		</div>					\n	</div>\n					\n	\n	<!-- Center doesn\'t work atm -->\n<!--	<div layout="row" flex layout-align="center center">\n		<div flex aria-label="Notes: {{entry.entryNote}}">\n			<p ng-show="notesProvided" ng-bind="entry.entryNote" class="descriptionText"></p>\n			<p ng-show="!notesProvided" class="descriptionText">{{pageElements.noNotesText}}</p>\n		</div>\n	</div>\n</md-content>\n-->\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\WellnessTracker\CheckinLogInfo\checkinLogInfo.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_4__assets_services_translationService__["a" /* TranslationService */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_sqlite__["a" /* SQLite */]])
     ], CheckinLogInfo);
@@ -1102,6 +1102,57 @@ var TranslationService = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguageSelection; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_Login_login_login__ = __webpack_require__(20);
+// Angular/Ionic Imports
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var LanguageSelection = (function () {
+    function LanguageSelection(navCtrl, storage) {
+        this.navCtrl = navCtrl;
+        this.storage = storage;
+    }
+    // Set the language cookie, and then redirect to login.html
+    LanguageSelection.prototype.setLanguage = function (language) {
+        var _this = this;
+        this.storage.set("languageFlag", language).then(function (value) {
+            _this.storage.get("languageFlag").then(function (value) {
+                console.log("Language Flag: " + value);
+                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__home_Login_login_login__["a" /* Login */]);
+            });
+        });
+    };
+    LanguageSelection = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-languageSelection',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\languageSelection\languageSelection.html"*/'<ion-header>\n\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row text-center style="margin-top: 15%">\n			<ion-col text-center>\n				<h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>\n			</ion-col>\n		</ion-row>\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button (click)="setLanguage(\'en\')" aria-label="English"><strong>English</strong></button>\n			</ion-col>\n		</ion-row>\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button href="../../assets/Content/7102606_EN_MHApp_TermsConditions_Draft_v2.0_2018-02-23.pdf" aria-label="Terms and Conditions" >Terms and Conditions</button> \n			</ion-col>\n		</ion-row>\n		<ion-row text-center style="margin-top: 20%">\n			<ion-col>\n				<h2 class="md-display-1" aria-label="App Santé mentale">App Santé Mentale</h2>\n			</ion-col>\n		</ion-row>\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button (click)="setLanguage(\'fr\')" aria-label="Français" ><strong>Français</strong></button>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button href="../../assets/Content/7102606_EN_MHApp_TermsConditions_Draft_v2.0_2018-02-23.pdf" aria-label="Termes et Conditions" >Termes et Conditions</button>  \n			</ion-col>\n		</ion-row>  \n    </ion-grid>\n</ion-content>\n\n<ion-footer text-center>\n	<span class="" aria-label="Version 1.0"><small>Version 1.0</small></span>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\languageSelection\languageSelection.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
+    ], LanguageSelection);
+    return LanguageSelection;
+}());
+
+//# sourceMappingURL=languageSelection.js.map
+
+/***/ }),
+
+/***/ 332:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignOut; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
@@ -1134,7 +1185,7 @@ var SignOut = (function () {
     }
     SignOut = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-signout',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\signout\signout.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n		Sign Out\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\home\Login\signout\signout.html"*/
+            selector: 'page-signout',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\signout\signout.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n		Sign Out\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\home\Login\signout\signout.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], SignOut);
@@ -1145,7 +1196,7 @@ var SignOut = (function () {
 
 /***/ }),
 
-/***/ 332:
+/***/ 333:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1154,10 +1205,10 @@ var SignOut = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__assets_services_translationService__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CscContacts_cscContacts__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Employee_employee__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EmployeeFamily_employeeFamily__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Public_public__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CscContacts_cscContacts__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Employee_employee__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__EmployeeFamily_employeeFamily__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Public_public__ = __webpack_require__(337);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1221,7 +1272,7 @@ var Resources = (function () {
     };
     Resources = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-resources',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\resources.html"*/'<ion-header *ngIf="pageElementsLoaded">\n\n    \n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n    <ion-title>{{pageElements.resourceTitleText}}</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<!-- Loading Div --> \n\n<div *ngIf="!pageElementsLoaded">\n\n	<ion-spinner></ion-spinner>\n\n</div>\n\n\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n\n\n\n             \n\n    <h3 class="title">{{pageElements.resPageText}}</h3>\n\n    \n\n        <button ion-button block [navPush]="employee">{{pageElements.buttonText1}}</button>\n\n\n\n        <button ion-button block [navPush]="empfamily">{{pageElements.buttonText2}}</button>\n\n    \n\n        <button ion-button block [navPush]="public">{{pageElements.buttonText1}}</button>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <button ion-button block>Aidez moi / Help Me</button>\n\n    </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\resources.html"*/
+            selector: 'page-resources',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\resources.html"*/'<ion-header *ngIf="pageElementsLoaded">\n\n    \n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n    <ion-title>{{pageElements.resourceTitleText}}</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<!-- Loading Div --> \n\n<div *ngIf="!pageElementsLoaded">\n\n	<ion-spinner></ion-spinner>\n\n</div>\n\n\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n\n\n\n             \n\n    <h3 class="title">{{pageElements.resPageText}}</h3>\n\n    \n\n        <button ion-button block [navPush]="employee">{{pageElements.buttonText1}}</button>\n\n\n\n        <button ion-button block [navPush]="empfamily">{{pageElements.buttonText2}}</button>\n\n    \n\n        <button ion-button block [navPush]="public">{{pageElements.buttonText1}}</button>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <button ion-button block>Aidez moi / Help Me</button>\n\n    </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\resources.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_3__assets_services_translationService__["a" /* TranslationService */]])
     ], Resources);
@@ -1232,7 +1283,7 @@ var Resources = (function () {
 
 /***/ }),
 
-/***/ 333:
+/***/ 334:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1256,7 +1307,7 @@ var CSCContacts = (function () {
     }
     CSCContacts = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cscContacts',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\CscContacts\cscContacts.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>CSCContacts</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n<!--\n\n<div ng-controller="ResourcesCtrl as ctrl" ng-cloak>\n\n	<md-content class="md-padding">\n\n		<form ng-submit="$event.preventDefault()">\n\n			<md-autocomplete\n\n		          md-selected-item="ctrl.selectedItem"\n\n		          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"\n\n		          md-search-text="ctrl.searchText"\n\n		          md-items="item in ctrl.querySearch(ctrl.searchText)"\n\n		          md-item-text="item.name"\n\n		          md-min-length="0"\n\n		          placeholder="Search for ...">\n\n		        <md-item-template>\n\n		          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.name}}</span>\n\n		        </md-item-template>\n\n		        <md-not-found>\n\n		          No resource matching "{{ctrl.searchText}}" were found.\n\n		        </md-not-found>\n\n		    </md-autocomplete>\n\n       		<md-switch flex ng-model="gpsState" ng-change="updateList(gpsState)" ng-if="isGPSEnabled()" aria-label="gps">GPS Results <span>({{getProvince()}})</span></md-switch>\n\n	    </form>      \n\n	    <md-list md-whiteframe="3">\n\n	      <md-list-item class="md-2-line" ng-repeat="item in ctrl.querySearch(ctrl.searchText)">\n\n	      	<ng-md-icon class="md-avatar-icon" icon="person"></ng-md-icon>\n\n	        <div class="md-list-item-text">\n\n	          <h3>{{item.name}}</h3>\n\n	          <p>{{item.region_en}} / {{item.secion_en}}</p>\n\n	        </div>\n\n	          <md-menu class="md-secondary">\n\n			    <md-button class="md-icon-button">\n\n			      <ng-md-icon icon="more_vert" style="fill: gray"></ng-md-icon>\n\n			    </md-button>\n\n			    <md-menu-content width="2">\n\n			      <md-menu-item>\n\n			        <md-button ng-click="showInfoMessage(\'A call will be placed\')">\n\n			        	<ng-md-icon icon="call" style="fill: gray"></ng-md-icon>&nbsp;Call\n\n			        </md-button>\n\n			      </md-menu-item>\n\n			      <md-menu-item>\n\n			        <md-button ng-click="showInfoMessage(\'An email will be sent\')">\n\n			         	<ng-md-icon icon="email" style="fill: gray"></ng-md-icon>&nbsp;E-mail\n\n			        </md-button>\n\n			      </md-menu-item>\n\n			    </md-menu-content>\n\n			  </md-menu>\n\n	        <md-divider ng-if="!$last"></md-divider>\n\n	      </md-list-item>\n\n	    </md-list>\n\n  	</md-content>		\n\n</div>\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\CscContacts\cscContacts.html"*/
+            selector: 'page-cscContacts',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\CscContacts\cscContacts.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>CSCContacts</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n<!--\n\n<div ng-controller="ResourcesCtrl as ctrl" ng-cloak>\n\n	<md-content class="md-padding">\n\n		<form ng-submit="$event.preventDefault()">\n\n			<md-autocomplete\n\n		          md-selected-item="ctrl.selectedItem"\n\n		          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"\n\n		          md-search-text="ctrl.searchText"\n\n		          md-items="item in ctrl.querySearch(ctrl.searchText)"\n\n		          md-item-text="item.name"\n\n		          md-min-length="0"\n\n		          placeholder="Search for ...">\n\n		        <md-item-template>\n\n		          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.name}}</span>\n\n		        </md-item-template>\n\n		        <md-not-found>\n\n		          No resource matching "{{ctrl.searchText}}" were found.\n\n		        </md-not-found>\n\n		    </md-autocomplete>\n\n       		<md-switch flex ng-model="gpsState" ng-change="updateList(gpsState)" ng-if="isGPSEnabled()" aria-label="gps">GPS Results <span>({{getProvince()}})</span></md-switch>\n\n	    </form>      \n\n	    <md-list md-whiteframe="3">\n\n	      <md-list-item class="md-2-line" ng-repeat="item in ctrl.querySearch(ctrl.searchText)">\n\n	      	<ng-md-icon class="md-avatar-icon" icon="person"></ng-md-icon>\n\n	        <div class="md-list-item-text">\n\n	          <h3>{{item.name}}</h3>\n\n	          <p>{{item.region_en}} / {{item.secion_en}}</p>\n\n	        </div>\n\n	          <md-menu class="md-secondary">\n\n			    <md-button class="md-icon-button">\n\n			      <ng-md-icon icon="more_vert" style="fill: gray"></ng-md-icon>\n\n			    </md-button>\n\n			    <md-menu-content width="2">\n\n			      <md-menu-item>\n\n			        <md-button ng-click="showInfoMessage(\'A call will be placed\')">\n\n			        	<ng-md-icon icon="call" style="fill: gray"></ng-md-icon>&nbsp;Call\n\n			        </md-button>\n\n			      </md-menu-item>\n\n			      <md-menu-item>\n\n			        <md-button ng-click="showInfoMessage(\'An email will be sent\')">\n\n			         	<ng-md-icon icon="email" style="fill: gray"></ng-md-icon>&nbsp;E-mail\n\n			        </md-button>\n\n			      </md-menu-item>\n\n			    </md-menu-content>\n\n			  </md-menu>\n\n	        <md-divider ng-if="!$last"></md-divider>\n\n	      </md-list-item>\n\n	    </md-list>\n\n  	</md-content>		\n\n</div>\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\CscContacts\cscContacts.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], CSCContacts);
@@ -1267,7 +1318,7 @@ var CSCContacts = (function () {
 
 /***/ }),
 
-/***/ 334:
+/***/ 335:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1276,8 +1327,8 @@ var CSCContacts = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_Login_login_login__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Employee_InfoPages_eapinfo__ = __webpack_require__(425);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ResPages_resinfo__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Employee_InfoPages_eapinfo__ = __webpack_require__(426);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ResPages_resinfo__ = __webpack_require__(427);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1353,7 +1404,7 @@ var Employee = (function () {
     };
     Employee = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-employee',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Employee\employee.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Employee</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <button ion-button block (click)="JumpToLink(clObj)"> Crisis Hotline </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(eapObj)"> Employee Assistance Program </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(cmhaObj)"> CAN Mental Health Association </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(cismObj)"> Critical Incident Stress Management </button>\n\n\n\n    <button ion-button block (click)="JumpToLink(rmrObj)"> Road to Mental Readiness </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(rwpObj)"> Return to Work Program </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(ohsObj)"> Occupational Health and Safety </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(hppObj)"> Harassment Prevention Program </button>\n\n\n\n    <button ion-button block (click)="JumpToLink(hhlObj)"> Harassment Hot line </button>\n\n\n\n    <button ion-button block (click)="JumpToLink(sunObj)"> Sunlife </button>\n\n   \n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <button ion-button block>Aidez moi / Help Me</button>\n\n    </ion-toolbar>\n\n</ion-footer>\n\n\n\n\n\n<!--\n\n\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <md-button class="md-primary md-raised">Employee Assistance Program</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Prevention Program</md-button>\n\n    <md-button class="md-primary md-raised">National Attendance Management Program</md-button>\n\n    <md-button class="md-primary md-raised">Critical Incident Stress Management</md-button>\n\n    <md-button class="md-primary md-raised">Occupational Health and Safety</md-button>\n\n    <md-button class="md-primary md-raised">Return to Work Program</md-button>\n\n    <md-button class="md-primary md-raised">CSC Contacts by Email</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Hot line</md-button>\n\n	\n\n    <a href="href="https://www.sunlife.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="https://www.sunlife.ca/" >Sunlife</md-button>\n\n    </a>\n\n	\n\n</md-content>\n\n\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Employee\employee.html"*/
+            selector: 'page-employee',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\Employee\employee.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>Employee</ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <button ion-button block (click)="JumpToLink(clObj)"> Crisis Hotline </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(eapObj)"> Employee Assistance Program </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(cmhaObj)"> CAN Mental Health Association </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(cismObj)"> Critical Incident Stress Management </button>\n\n\n\n    <button ion-button block (click)="JumpToLink(rmrObj)"> Road to Mental Readiness </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(rwpObj)"> Return to Work Program </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(ohsObj)"> Occupational Health and Safety </button>\n\n    \n\n    <button ion-button block (click)="JumpToLink(hppObj)"> Harassment Prevention Program </button>\n\n\n\n    <button ion-button block (click)="JumpToLink(hhlObj)"> Harassment Hot line </button>\n\n\n\n    <button ion-button block (click)="JumpToLink(sunObj)"> Sunlife </button>\n\n   \n\n</ion-content>\n\n\n\n<ion-footer>\n\n    <ion-toolbar>\n\n        <button ion-button block>Aidez moi / Help Me</button>\n\n    </ion-toolbar>\n\n</ion-footer>\n\n\n\n\n\n<!--\n\n\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <md-button class="md-primary md-raised">Employee Assistance Program</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Prevention Program</md-button>\n\n    <md-button class="md-primary md-raised">National Attendance Management Program</md-button>\n\n    <md-button class="md-primary md-raised">Critical Incident Stress Management</md-button>\n\n    <md-button class="md-primary md-raised">Occupational Health and Safety</md-button>\n\n    <md-button class="md-primary md-raised">Return to Work Program</md-button>\n\n    <md-button class="md-primary md-raised">CSC Contacts by Email</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Hot line</md-button>\n\n	\n\n    <a href="href="https://www.sunlife.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="https://www.sunlife.ca/" >Sunlife</md-button>\n\n    </a>\n\n	\n\n</md-content>\n\n\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\Employee\employee.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__ionic_storage__["b" /* Storage */]])
     ], Employee);
@@ -1364,7 +1415,7 @@ var Employee = (function () {
 
 /***/ }),
 
-/***/ 335:
+/***/ 336:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1388,7 +1439,7 @@ var EmployeeFam = (function () {
     }
     EmployeeFam = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-family',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\EmployeeFamily\employeeFamily.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>EmployeeFam</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <a href=Employee class="buttonLink">\n\n        <button ion-button block >Employee Assistance Program</button>\n\n    </a>\n\n    \n\n    <a href="https://www.canada.ca/en/public-health/services/mental-health-services.html" class="buttonLink">\n\n        <button ion-button block >Mental Health Service</button>\n\n    </a>\n\n    \n\n    <a href="./pages/Resources/public" class="buttonLink">\n\n        <button ion-button block >CSC Family Support Number</button>\n\n    </a>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\EmployeeFamily\employeeFamily.html"*/
+            selector: 'page-family',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\EmployeeFamily\employeeFamily.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>EmployeeFam</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <a href=Employee class="buttonLink">\n\n        <button ion-button block >Employee Assistance Program</button>\n\n    </a>\n\n    \n\n    <a href="https://www.canada.ca/en/public-health/services/mental-health-services.html" class="buttonLink">\n\n        <button ion-button block >Mental Health Service</button>\n\n    </a>\n\n    \n\n    <a href="./pages/Resources/public" class="buttonLink">\n\n        <button ion-button block >CSC Family Support Number</button>\n\n    </a>\n\n    \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\EmployeeFamily\employeeFamily.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]])
     ], EmployeeFam);
@@ -1399,7 +1450,7 @@ var EmployeeFam = (function () {
 
 /***/ }),
 
-/***/ 336:
+/***/ 337:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1444,7 +1495,7 @@ var Public = (function () {
     };
     Public = Public_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-public',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Public\public.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Public</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n<!--\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <a href="tel:911" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="tel:911">911</md-button>\n\n    </a>\n\n\n\n	<a href="http://ottawa.cmha.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="http://ottawa.cmha.ca/">Canadian Mental Health Association (CMHA)</md-button>\n\n    </a>\n\n	\n\n	<a href="tel:618161979" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="tel:618161979">Call a friend</md-button>\n\n    </a>\n\n	\n\n</md-content>\n\n-->\n\n\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Public\public.html"*/
+            selector: 'page-public',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\Public\public.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Public</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n<!--\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <a href="tel:911" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="tel:911">911</md-button>\n\n    </a>\n\n\n\n	<a href="http://ottawa.cmha.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="http://ottawa.cmha.ca/">Canadian Mental Health Association (CMHA)</md-button>\n\n    </a>\n\n	\n\n	<a href="tel:618161979" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="tel:618161979">Call a friend</md-button>\n\n    </a>\n\n	\n\n</md-content>\n\n-->\n\n\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\Public\public.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], Public);
@@ -1456,7 +1507,7 @@ var Public = (function () {
 
 /***/ }),
 
-/***/ 337:
+/***/ 338:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1465,7 +1516,7 @@ var Public = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(428);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js__ = __webpack_require__(429);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chart_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__assets_services_translationService__ = __webpack_require__(28);
@@ -1756,7 +1807,7 @@ var Dashboard = (function () {
     ], Dashboard.prototype, "pageElement", void 0);
     Dashboard = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-analyticDashboard',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Dashboard\analyticDashboard.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{pageElements.dashboardText}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-grid>\n\n	\n\n	<ion-row>\n\n            <ion-col col-md-5>\n\n		<ion-item>\n\n                    <ion-label>{{pageElements.fromDateText}}</ion-label>\n\n                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fromDate"></ion-datetime>\n\n		</ion-item>\n\n            </ion-col>\n\n            <ion-col col-md-5 offset-md-2>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.toDateText}}</ion-label>\n\n                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="toDate"></ion-datetime>\n\n		</ion-item>\n\n            </ion-col>\n\n	</ion-row>	\n\n	\n\n	<ion-row>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.moodText}}</ion-label>\n\n                    <ion-checkbox color="dark" checked="false" [(ngModel)]="moodCheckbox"></ion-checkbox>\n\n		</ion-item>\n\n            </ion-col>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.moodText}}</ion-label>\n\n                    <ion-checkbox color="dark" checked="false" [(ngModel)]="dietCheckbox"></ion-checkbox>\n\n		</ion-item>\n\n            </ion-col>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.moodText}}</ion-label>\n\n                    <ion-checkbox color="dark" checked="false" [(ngModel)]="stressCheckbox"></ion-checkbox>\n\n		</ion-item>\n\n            </ion-col>\n\n		<ion-col>\n\n                    <ion-item>\n\n                        <ion-label>{{pageElements.moodText}}</ion-label>\n\n			<ion-checkbox color="dark" checked="false" [(ngModel)]="sleepCheckbox"></ion-checkbox>\n\n                    </ion-item>\n\n		</ion-col>\n\n	</ion-row>\n\n		\n\n	<ion-row class="border">\n\n            <ion-col>\n\n                <div layout="row">\n\n                    <div id="chartDiv" #chartDiv>\n\n                        <canvas id="mainChart" #mainChart width="100%" height="100%"></canvas>\n\n                    </div>	\n\n                </div>\n\n            </ion-col>\n\n	</ion-row>\n\n		\n\n	<ion-row>\n\n            <ion-col>\n\n		<button ion-button (click)="generate(fromDate, toDate)">Generate</button>\n\n            </ion-col>\n\n	</ion-row>\n\n    </ion-grid> \n\n    \n\n</ion-content>\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Dashboard\analyticDashboard.html"*/
+            selector: 'page-analyticDashboard',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Dashboard\analyticDashboard.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>{{pageElements.dashboardText}}</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    <ion-grid>\n\n	\n\n	<ion-row>\n\n            <ion-col col-md-5>\n\n		<ion-item>\n\n                    <ion-label>{{pageElements.fromDateText}}</ion-label>\n\n                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fromDate"></ion-datetime>\n\n		</ion-item>\n\n            </ion-col>\n\n            <ion-col col-md-5 offset-md-2>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.toDateText}}</ion-label>\n\n                    <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="toDate"></ion-datetime>\n\n		</ion-item>\n\n            </ion-col>\n\n	</ion-row>	\n\n	\n\n	<ion-row>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.moodText}}</ion-label>\n\n                    <ion-checkbox color="dark" checked="false" [(ngModel)]="moodCheckbox"></ion-checkbox>\n\n		</ion-item>\n\n            </ion-col>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.moodText}}</ion-label>\n\n                    <ion-checkbox color="dark" checked="false" [(ngModel)]="dietCheckbox"></ion-checkbox>\n\n		</ion-item>\n\n            </ion-col>\n\n            <ion-col>\n\n                <ion-item>\n\n                    <ion-label>{{pageElements.moodText}}</ion-label>\n\n                    <ion-checkbox color="dark" checked="false" [(ngModel)]="stressCheckbox"></ion-checkbox>\n\n		</ion-item>\n\n            </ion-col>\n\n		<ion-col>\n\n                    <ion-item>\n\n                        <ion-label>{{pageElements.moodText}}</ion-label>\n\n			<ion-checkbox color="dark" checked="false" [(ngModel)]="sleepCheckbox"></ion-checkbox>\n\n                    </ion-item>\n\n		</ion-col>\n\n	</ion-row>\n\n		\n\n	<ion-row class="border">\n\n            <ion-col>\n\n                <div layout="row">\n\n                    <div id="chartDiv" #chartDiv>\n\n                        <canvas id="mainChart" #mainChart width="100%" height="100%"></canvas>\n\n                    </div>	\n\n                </div>\n\n            </ion-col>\n\n	</ion-row>\n\n		\n\n	<ion-row>\n\n            <ion-col>\n\n		<button ion-button (click)="generate(fromDate, toDate)">Generate</button>\n\n            </ion-col>\n\n	</ion-row>\n\n    </ion-grid> \n\n    \n\n</ion-content>\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Dashboard\analyticDashboard.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], Storage, __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_5__assets_services_translationService__["a" /* TranslationService */]])
     ], Dashboard);
@@ -1767,7 +1818,7 @@ var Dashboard = (function () {
 
 /***/ }),
 
-/***/ 343:
+/***/ 344:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1805,7 +1856,7 @@ var Updates = (function () {
     }
     Updates = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-updates',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\updates\updates.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu" persistent="true"></ion-icon>\n		</button>\n		<ion-title>\n			Updates\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<ion-grid>\n		<ion-row>\n			<ion-col class="updateHeader">\n				Update 1.0.0\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col class="updateDate">\n				March 14, 2018\n			</ion-col>\n		</ion-row>\n		<hr class="updateHR">\n		<ion-row>\n			<ion-col class="updateContent">\n				Welcome to the soft launch!\n			</ion-col>\n		</ion-row>\n		\n\n		\n		<!-- ////// -->\n	</ion-grid>\n</ion-content>\n\n<ion-footer>\n	<ion-toolbar>\n		<button ion-button block>Aidez moi / Help Me</button>\n	</ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\updates\updates.html"*/
+            selector: 'page-updates',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\updates\updates.html"*/'<ion-header>\n	<ion-navbar>\n		<button ion-button menuToggle>\n			<ion-icon name="menu" persistent="true"></ion-icon>\n		</button>\n		<ion-title>\n			Updates\n		</ion-title>\n	</ion-navbar>\n</ion-header>\n\n<ion-content padding>\n	<ion-grid>\n		<ion-row>\n			<ion-col class="updateHeader">\n				Update 1.0.0\n			</ion-col>\n		</ion-row>\n		<ion-row>\n			<ion-col class="updateDate">\n				March 14, 2018\n			</ion-col>\n		</ion-row>\n		<hr class="updateHR">\n		<ion-row>\n			<ion-col class="updateContent">\n				Welcome to the soft launch!\n			</ion-col>\n		</ion-row>\n		\n\n		\n		<!-- ////// -->\n	</ion-grid>\n</ion-content>\n\n<ion-footer>\n	<ion-toolbar>\n		<button ion-button block>Aidez moi / Help Me</button>\n	</ion-toolbar>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\updates\updates.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
     ], Updates);
@@ -1816,13 +1867,13 @@ var Updates = (function () {
 
 /***/ }),
 
-/***/ 344:
+/***/ 345:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(369);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -1830,7 +1881,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 368:
+/***/ 369:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1840,23 +1891,23 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__assets_services_translationService__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(414);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(415);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(113);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_home_Login_login_login__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_languageSelection_languageSelection__ = __webpack_require__(474);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_languageSelection_languageSelection__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_home_Login_newUser_newUser__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_home_Login_recoverUser_recoverUser__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_WellnessTracker_CheckinLogInfo_checkinLogInfo__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_Resources_resources__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_Resources_CscContacts_cscContacts__ = __webpack_require__(333);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_Resources_Employee_employee__ = __webpack_require__(334);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_Resources_EmployeeFamily_employeeFamily__ = __webpack_require__(335);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_Resources_Public_public__ = __webpack_require__(336);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_Dashboard_analyticDashboard__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_home_Login_signout_signout__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_updates_updates__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_Resources_resources__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_Resources_CscContacts_cscContacts__ = __webpack_require__(334);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_Resources_Employee_employee__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pages_Resources_EmployeeFamily_employeeFamily__ = __webpack_require__(336);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__pages_Resources_Public_public__ = __webpack_require__(337);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pages_Dashboard_analyticDashboard__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__pages_home_Login_signout_signout__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_updates_updates__ = __webpack_require__(344);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__ionic_native_status_bar__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__ionic_native_splash_screen__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_sqlite__ = __webpack_require__(25);
@@ -1966,7 +2017,7 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 414:
+/***/ 415:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1976,12 +2027,13 @@ var AppModule = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_signout_signout__ = __webpack_require__(331);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__ = __webpack_require__(332);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Dashboard_analyticDashboard__ = __webpack_require__(337);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_updates_updates__ = __webpack_require__(343);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_languageSelection_languageSelection__ = __webpack_require__(331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_Login_signout_signout__ = __webpack_require__(332);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_DailyEntry_dailyEntry__ = __webpack_require__(49);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_WellnessTracker_CheckinLog_checkinLog__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_Resources_resources__ = __webpack_require__(333);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_Dashboard_analyticDashboard__ = __webpack_require__(338);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_updates_updates__ = __webpack_require__(344);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2002,25 +2054,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 //import { Tools } from '../pages/tools/tools';
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.platform = platform;
         this.statusBar = statusBar;
         this.splashScreen = splashScreen;
-        //  rootPage: any = LanguageSelection;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__["a" /* Resources */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_languageSelection_languageSelection__["a" /* LanguageSelection */];
         this.initializeApp();
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: 'Daily Entry', component: __WEBPACK_IMPORTED_MODULE_6__pages_WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */] },
-            { title: 'Checkin Log', component: __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */] },
-            { title: 'Analytic Dashboard', component: __WEBPACK_IMPORTED_MODULE_9__pages_Dashboard_analyticDashboard__["a" /* Dashboard */] },
-            { title: 'Resources', component: __WEBPACK_IMPORTED_MODULE_8__pages_Resources_resources__["a" /* Resources */] },
+            { title: 'Daily Entry', component: __WEBPACK_IMPORTED_MODULE_7__pages_WellnessTracker_DailyEntry_dailyEntry__["a" /* DailyEntry */] },
+            { title: 'Checkin Log', component: __WEBPACK_IMPORTED_MODULE_8__pages_WellnessTracker_CheckinLog_checkinLog__["a" /* CheckinLog */] },
+            { title: 'Analytic Dashboard', component: __WEBPACK_IMPORTED_MODULE_10__pages_Dashboard_analyticDashboard__["a" /* Dashboard */] },
+            { title: 'Resources', component: __WEBPACK_IMPORTED_MODULE_9__pages_Resources_resources__["a" /* Resources */] },
             //			{ title: 'Tools', component: Tools },
-            { title: 'Update Log', component: __WEBPACK_IMPORTED_MODULE_10__pages_updates_updates__["a" /* Updates */] },
-            { title: 'Sign out', component: __WEBPACK_IMPORTED_MODULE_5__pages_home_Login_signout_signout__["a" /* SignOut */] }
+            { title: 'Update Log', component: __WEBPACK_IMPORTED_MODULE_11__pages_updates_updates__["a" /* Updates */] },
+            { title: 'Sign out', component: __WEBPACK_IMPORTED_MODULE_6__pages_home_Login_signout_signout__["a" /* SignOut */] }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -2042,7 +2094,7 @@ var MyApp = (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -2053,7 +2105,7 @@ var MyApp = (function () {
 
 /***/ }),
 
-/***/ 424:
+/***/ 425:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -2310,11 +2362,11 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 424;
+webpackContext.id = 425;
 
 /***/ }),
 
-/***/ 425:
+/***/ 426:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2346,7 +2398,7 @@ var EAPInfo = (function () {
     };
     EAPInfo = EAPInfo_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-eapinfo',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Employee\InfoPages\eapinfo.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title></ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    \n\n    <a href="mailto:tim.jodoin@gmail.com" class="buttonLink">\n\n        <button ion-button block>Contact EAP</button>\n\n    </a>\n\n\n\n     <div> \n\n        <object type="text/html" data="http://www.lte-ene.ca/en/highlights/2015-11/mental-health-initiative" width="50%" height="100%" style="overflow:auto;border:5px ridge blue">\n\n        </object>\n\n    </div>\n\n    \n\n    \n\n \n\n   \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n<!--\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <md-button class="md-primary md-raised">Employee Assistance Program</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Prevention Program</md-button>\n\n    <md-button class="md-primary md-raised">National Attendance Management Program</md-button>\n\n    <md-button class="md-primary md-raised">Critical Incident Stress Management</md-button>\n\n    <md-button class="md-primary md-raised">Occupational Health and Safety</md-button>\n\n    <md-button class="md-primary md-raised">Return to Work Program</md-button>\n\n    <md-button class="md-primary md-raised">CSC Contacts by Email</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Hot line</md-button>\n\n	\n\n	<a href="href="https://www.sunlife.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="https://www.sunlife.ca/" >Sunlife</md-button>\n\n    </a>\n\n	\n\n	\n\n	\n\n\n\n</md-content>\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\Employee\InfoPages\eapinfo.html"*/
+            selector: 'page-eapinfo',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\Employee\InfoPages\eapinfo.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title></ion-title>\n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    \n\n    <a href="mailto:tim.jodoin@gmail.com" class="buttonLink">\n\n        <button ion-button block>Contact EAP</button>\n\n    </a>\n\n\n\n     <div> \n\n        <object type="text/html" data="http://www.lte-ene.ca/en/highlights/2015-11/mental-health-initiative" width="50%" height="100%" style="overflow:auto;border:5px ridge blue">\n\n        </object>\n\n    </div>\n\n    \n\n    \n\n \n\n   \n\n</ion-content>\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n\n\n\n\n<ion-footer>\n\n  <ion-toolbar>\n\n    <button ion-button block>Aidez moi / Help Me</button>\n\n  </ion-toolbar>\n\n</ion-footer>\n\n<!--\n\n<md-content layout="column" layout-align="start center" class="resources">\n\n\n\n    <h3 class="title">Choose the resource list that applies.</h3>\n\n\n\n    <md-button class="md-primary md-raised">Employee Assistance Program</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Prevention Program</md-button>\n\n    <md-button class="md-primary md-raised">National Attendance Management Program</md-button>\n\n    <md-button class="md-primary md-raised">Critical Incident Stress Management</md-button>\n\n    <md-button class="md-primary md-raised">Occupational Health and Safety</md-button>\n\n    <md-button class="md-primary md-raised">Return to Work Program</md-button>\n\n    <md-button class="md-primary md-raised">CSC Contacts by Email</md-button>\n\n    <md-button class="md-primary md-raised">Harassment Hot line</md-button>\n\n	\n\n	<a href="href="https://www.sunlife.ca/" class="buttonLink">\n\n        <md-button class="md-primary md-raised" href="https://www.sunlife.ca/" >Sunlife</md-button>\n\n    </a>\n\n	\n\n	\n\n	\n\n\n\n</md-content>\n\n-->'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\Employee\InfoPages\eapinfo.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], EAPInfo);
@@ -2358,7 +2410,7 @@ var EAPInfo = (function () {
 
 /***/ }),
 
-/***/ 426:
+/***/ 427:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2367,7 +2419,7 @@ var EAPInfo = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_Login_login_login__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_storage__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(427);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery__ = __webpack_require__(428);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_jquery___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_jquery__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2413,7 +2465,7 @@ var ResInfo = (function () {
     };
     ResInfo = ResInfo_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-resinfo',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\ResPages\resinfo.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>{{resTitle}}</ion-title>\n\n    </ion-navbar>\n\n        <a href="{{resEmail}}" class="buttonLink">\n\n        <button ion-button block>{{resTitle}}</button>\n\n    </a>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    \n\n<!--    \n\n    <a href="mailto:{{resEmail}}" class="buttonLink">\n\n        <button ion-button block>{{resTitle}}</button>\n\n    </a>\n\n-->    \n\n    <div id="loadExternalURL" width="100%" height="100%">\n\n<!--        <object type="text/html" data="https://cors-anywhere.herokuapp.com/{{resUrl}}" width="100%" height="100%" style="overflow:auto;border:5px ridge blue">\n\n        </object>\n\n-->\n\n    </div>  \n\n       \n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\Resources\ResPages\resinfo.html"*/
+            selector: 'page-resinfo',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\ResPages\resinfo.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n            <ion-icon name="menu"></ion-icon>\n\n        </button>\n\n        <ion-title>{{resTitle}}</ion-title>\n\n    </ion-navbar>\n\n        <a href="{{resEmail}}" class="buttonLink">\n\n        <button ion-button block>{{resTitle}}</button>\n\n    </a>\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n    \n\n<!--    \n\n    <a href="mailto:{{resEmail}}" class="buttonLink">\n\n        <button ion-button block>{{resTitle}}</button>\n\n    </a>\n\n-->    \n\n    <div id="loadExternalURL" width="100%" height="100%">\n\n<!--        <object type="text/html" data="https://cors-anywhere.herokuapp.com/{{resUrl}}" width="100%" height="100%" style="overflow:auto;border:5px ridge blue">\n\n        </object>\n\n-->\n\n    </div>  \n\n       \n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\Resources\ResPages\resinfo.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -2424,57 +2476,6 @@ var ResInfo = (function () {
 }());
 
 //# sourceMappingURL=resinfo.js.map
-
-/***/ }),
-
-/***/ 474:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LanguageSelection; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_storage__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_Login_login_login__ = __webpack_require__(20);
-// Angular/Ionic Imports
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-var LanguageSelection = (function () {
-    function LanguageSelection(navCtrl, storage) {
-        this.navCtrl = navCtrl;
-        this.storage = storage;
-    }
-    // Set the language cookie, and then redirect to login.html
-    LanguageSelection.prototype.setLanguage = function (language) {
-        var _this = this;
-        this.storage.set("languageFlag", language).then(function (value) {
-            _this.storage.get("languageFlag").then(function (value) {
-                console.log("Language Flag: " + value);
-                _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_3__home_Login_login_login__["a" /* Login */]);
-            });
-        });
-    };
-    LanguageSelection = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-languageSelection',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\languageSelection\languageSelection.html"*/'<ion-header>\n\n</ion-header>\n\n<ion-content>\n    <ion-grid>\n        <ion-row text-center style="margin-top: 15%">\n			<ion-col text-center>\n				<h2 class="md-display-1" aria-label="Mental Health App">Mental Health App</h2>\n			</ion-col>\n		</ion-row>\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button (click)="setLanguage(\'en\')" aria-label="English"><strong>English</strong></button>\n			</ion-col>\n		</ion-row>\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button href="../../assets/Content/7102606_EN_MHApp_TermsConditions_Draft_v2.0_2018-02-23.pdf" aria-label="Terms and Conditions" >Terms and Conditions</button> \n			</ion-col>\n		</ion-row>\n		<ion-row text-center style="margin-top: 20%">\n			<ion-col>\n				<h2 class="md-display-1" aria-label="App Santé mentale">App Santé Mentale</h2>\n			</ion-col>\n		</ion-row>\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button (click)="setLanguage(\'fr\')" aria-label="Français" ><strong>Français</strong></button>\n			</ion-col>\n		</ion-row>\n		\n		<ion-row text-center>\n			<ion-col>\n				<button ion-button href="../../assets/Content/7102606_EN_MHApp_TermsConditions_Draft_v2.0_2018-02-23.pdf" aria-label="Termes et Conditions" >Termes et Conditions</button>  \n			</ion-col>\n		</ion-row>  \n    </ion-grid>\n</ion-content>\n\n<ion-footer text-center>\n	<span class="" aria-label="Version 1.0"><small>Version 1.0</small></span>\n</ion-footer>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\languageSelection\languageSelection.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_storage__["b" /* Storage */]])
-    ], LanguageSelection);
-    return LanguageSelection;
-}());
-
-//# sourceMappingURL=languageSelection.js.map
 
 /***/ }),
 
@@ -2587,7 +2588,7 @@ var DailyEntry = (function () {
     };
     DailyEntry = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-dailyEntry',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/'<ion-header *ngIf="pageElementsLoaded">\n\n    <ion-navbar>\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>{{pageElements.dailyEntryText}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Loading Div -->\n<div *ngIf="!pageElementsLoaded">\n	<ion-spinner></ion-spinner>\n</div>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n\n    <div text-center>\n        <img src="../../../assets/imgs/feelings/face{{data.moodScore}}.png" class="feelingImg">         \n    </div>\n    \n  <form (ngSubmit)="saveData()">\n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.moodText}}</ion-label>\n        </ion-range>\n    </ion-item>      \n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.dietText}}</ion-label>\n        </ion-range>\n    </ion-item> \n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.sleepText}}</ion-label>\n        </ion-range>\n    </ion-item> \n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.stressText}}</ion-label>\n        </ion-range>\n    </ion-item>       \n      \n    <ion-item>\n      <ion-label>{{pageElements.descriptionText}}</ion-label>\n      <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>\n    </ion-item>\n  \n      \n    <button ion-button type="submit" block>{{pageElements.saveDataText}}</button>\n  </form>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\SQLTest\sqltest\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/
+            selector: 'page-dailyEntry',template:/*ion-inline-start:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/'<ion-header *ngIf="pageElementsLoaded">\n\n    <ion-navbar>\n        <button ion-button menuToggle>\n            <ion-icon name="menu"></ion-icon>\n        </button>\n        <ion-title>{{pageElements.dailyEntryText}}</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n<!-- Loading Div -->\n<div *ngIf="!pageElementsLoaded">\n	<ion-spinner></ion-spinner>\n</div>\n\n<ion-content padding *ngIf="pageElementsLoaded" class="has-header">\n\n    <div text-center>\n        <img src="../../../assets/imgs/feelings/face{{data.moodScore}}.png" class="feelingImg">         \n    </div>\n    \n  <form (ngSubmit)="saveData()">\n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.moodText}}</ion-label>\n        </ion-range>\n    </ion-item>      \n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.dietText}}</ion-label>\n        </ion-range>\n    </ion-item> \n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.sleepText}}</ion-label>\n        </ion-range>\n    </ion-item> \n\n    <ion-item>\n        <ion-range min="1" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">\n            <ion-label range-left>{{pageElements.stressText}}</ion-label>\n        </ion-range>\n    </ion-item>       \n      \n    <ion-item>\n      <ion-label>{{pageElements.descriptionText}}</ion-label>\n      <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" ></ion-input>\n    </ion-item>\n  \n      \n    <button ion-button type="submit" block>{{pageElements.saveDataText}}</button>\n  </form>\n</ion-content>'/*ion-inline-end:"C:\Users\Tim\MobileAppProjects\ionicmhapp\bewell\src\pages\WellnessTracker\DailyEntry\dailyEntry.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_sqlite__["a" /* SQLite */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_toast__["a" /* Toast */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_5__assets_services_translationService__["a" /* TranslationService */]])
     ], DailyEntry);
@@ -2598,5 +2599,5 @@ var DailyEntry = (function () {
 
 /***/ })
 
-},[344]);
+},[345]);
 //# sourceMappingURL=main.js.map

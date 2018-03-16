@@ -1,5 +1,4 @@
 // ------------------------- Mandatory imports for all pages ------------------------- //
-
 // Component Imports
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
@@ -15,7 +14,6 @@ import { Storage } from '@ionic/storage';
 import { TranslationService } from './../../../assets/services/translationService';
 
 // ------------------------- Page Specific Imports ------------------------- //
-
 // Page Imports
 import { Login } from '../../home/Login/login/login';
 import { CheckinLog } from '../CheckinLog/checkinLog';

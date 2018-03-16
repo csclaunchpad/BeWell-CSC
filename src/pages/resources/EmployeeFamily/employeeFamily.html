@@ -1,31 +1,30 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>EmployeeFam</ion-title>
-  </ion-navbar>
+<ion-header *ngIf="pageElementsLoaded">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h3 class="title">Choose the resource list that applies.</h3>
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 
-    <a href=Employee class="buttonLink">
-        <button ion-button block >Employee Assistance Program</button>
-    </a>
+    <h3 class="title">{{pageElements.resPageText}}</h3>
+
+    <button ion-button block (click)="JumpToLink(oneObj)"> {{pageElements.buttonText1}} </button>
     
-    <a href="https://www.canada.ca/en/public-health/services/mental-health-services.html" class="buttonLink">
-        <button ion-button block >Mental Health Service</button>
-    </a>
-    
-    <a href="./pages/Resources/public" class="buttonLink">
-        <button ion-button block >CSC Family Support Number</button>
-    </a>
+    <button ion-button block (click)="JumpToLink(twoObj)"> {{pageElements.buttonText2}} </button>
+
+    <button ion-button block (click)="JumpToLink(threeObj)"> {{pageElements.buttonText3}} </button>
+
+    <button ion-button block (click)="JumpToLink(fourObj)"> {{pageElements.buttonText4}} </button>
+
+    <button ion-button block (click)="JumpToLink(fiveObj)"> {{pageElements.buttonText5}} </button>
     
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
 </ion-footer>
