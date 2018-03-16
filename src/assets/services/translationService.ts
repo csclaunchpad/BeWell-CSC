@@ -146,7 +146,7 @@ export class TranslationService {
                     }
 		}
 
-                case "employeeFamiliy.html": {
+                case "employeeFamily.html": {
                     return {
                         resourceTitleText: "Employee Family",
                         resPageText: "Choose the resource list that applies.",
@@ -296,7 +296,7 @@ export class TranslationService {
                         buttonText9: "Sun Life"
                     }
 		}
-                case "employeeFamiliy.html": {
+                case "employeeFamily.html": {
                     return {
                         resourceTitleText: "Employee Family",
                         resPageText: "Choisissez la liste de ressources qui vous concerne",

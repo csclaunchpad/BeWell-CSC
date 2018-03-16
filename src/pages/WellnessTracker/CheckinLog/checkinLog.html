@@ -1,20 +1,20 @@
 <ion-header *ngIf="pageElementsLoaded">
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>{{pageElements.checkinLogText}}</ion-title>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.checkinLogText}}</ion-title>
         <ion-buttons end>
             <button ion-button icon-only (click)="addData()">
                 <ion-icon name="add-circle"></ion-icon>
             </button>
         </ion-buttons>
-  </ion-navbar>
+    </ion-navbar>
 </ion-header>
 
 <!-- Loading Div -->
 <div *ngIf="!pageElementsLoaded">
-	<ion-spinner></ion-spinner>
+    <ion-spinner></ion-spinner>
 </div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header" style="margin: 0">

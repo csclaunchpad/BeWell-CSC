@@ -23,7 +23,8 @@ export class ResInfo {
             if(value == null) {
                 this.navCtrl.setRoot(Login);
             }    
-        });        
+        });
+                
         this.resUrl = this.navParams.get("empUrl");        // Load link to content reference
         this.resEmail = this.navParams.get("empEmail");    // Load link to contact refernce 
         this.resTitle = this.navParams.get("empTitle");  // Load link to contact refernce 
@@ -35,7 +36,7 @@ export class ResInfo {
     }
 
     loadLinkPage(url){
-                $('#loadExternalURL').load("https://cors-anywhere.herokuapp.com/"+this.resUrl);
+//                $('#loadExternalURL').load("https://cors-anywhere.herokuapp.com/"+this.resUrl);
     }
 
         

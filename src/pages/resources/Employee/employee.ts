@@ -74,6 +74,7 @@ export class Employee {
                             empEmail:"mailto:tim.jodoin@gmail.com",
                             empTitle:"Harassment Prevention Program"     
         };        
+
         this.hhlObj =  {    empUrl:"http://www.lte-ene.ca/en/highlights/2015-11/mental-health-initiative", 
                             empEmail:"mailto:tim.jodoin@gmail.com",
                             empTitle:"Harassment Hot line"     
@@ -88,7 +89,7 @@ export class Employee {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-//                this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});
