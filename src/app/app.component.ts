@@ -29,8 +29,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
 //  rootPage: any = LanguageSelection;
-//    rootPage: any = Resources;
-rootPage: any = Assessment;
+    rootPage: any = HomePage;
+//rootPage: any = Assessment;
 
     pages: Array<{title: string, component: any}>;
 
@@ -46,7 +46,7 @@ rootPage: any = Assessment;
 			{ title: 'Resources', component: Resources },
 			{ title: 'Self Assessment', component: Assessment },
 			{ title: 'Update Log', component: Updates },
-                        { title: 'Add Data', component: AddData },
+                        { title: 'FR/EN', component: LanguageSelection },
 			{ title: 'Sign out', component: SignOut }
 		];
 	}

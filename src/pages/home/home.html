@@ -1,10 +1,10 @@
-<ion-header>
+<ion-header *ngIf="pageElementsLoaded">
   <ion-navbar hideBackButton="true" >
     <button ion-button menuToggle>
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
     <ion-title>
-      Home
+      {{pageElements.homeTitleText}}
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addData()">
@@ -14,7 +14,12 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+    <ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 
     <div text-center>
         <img src="../../../assets/imgs/CF.png" class="MapleLeafImg">         
@@ -31,8 +36,8 @@
         </ion-row>
         <ion-row>
             <ion-col>
-                <button ion-button block [navPush]="Assessment">Mental Health Continuum</button>
-<!--                <button ion-button block [navPush]="Assessment">{{pageElements.buttonText1}}</button>    -->
+<!--                <button ion-button block [navPush]="assessment">Mental Health Continuum</button>       -->
+                <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
             </ion-col>
         </ion-row>
         

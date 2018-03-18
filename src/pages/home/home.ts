@@ -23,7 +23,7 @@ import { Login } from './Login/login/login';
     templateUrl: 'home.html'
 })
 export class HomePage {
-
+    assessment = Assessment;
     // The actual content of the page, fetched via translationService.ts
     private pageElements: Object;
 	

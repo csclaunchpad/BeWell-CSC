@@ -93,7 +93,20 @@ export class TranslationService {
 			buttonText3: "Link 3"
                     }
 		}
-				
+		
+                case "dailyEntry.html": {
+                    return {
+			dailyEntryText: "Daily Entry",
+			moodText: "Mood",
+                        dietText: "Diet",
+                        sleepText: "Sleep",
+                        stressText: "Stress",
+                        descriptionText: "Description",
+                        saveDataText: "Save Data"
+						
+                    }
+		}
+                		
 		case "checkinLog.html": {
 					
                     console.log("HIT");
@@ -187,6 +200,7 @@ export class TranslationService {
                     return {
                         resourceTitleText: "Road to Mental Readyness",
                         resourcePageText: "Assess Yourself",
+                        opStressInurySentence: "",
                         buttonText1: "Begin Assessment",
                         buttonText2: "Begin Assessment",
                         buttonText3: "Begin Assessment",
