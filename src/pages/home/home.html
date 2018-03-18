@@ -15,12 +15,33 @@
 </ion-header>
 
 <ion-content padding>
+
+    <div text-center>
+        <img src="../../../assets/imgs/CF.png" class="MapleLeafImg">         
+    </div> 
+    
     <ion-grid>
-		<ion-row>
-			<ion-col>
-				Placeholder for dashboard
-			</ion-col>
-		</ion-row>
+        <ion-row>
+            <ion-col>
+                <h4 class="title">Where do you score?</h4>         
+            <div text-center>
+                <img src="../../../assets/imgs/MHCM.png" class="assessmentImg">         
+            </div> 
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block [navPush]="Assessment">Mental Health Continuum</button>
+<!--                <button ion-button block [navPush]="Assessment">{{pageElements.buttonText1}}</button>    -->
+            </ion-col>
+        </ion-row>
+        
+	<ion-row>
+            <ion-col>
+		Link Disabled
+            </ion-col>
+	</ion-row>
+        
     </ion-grid>
 </ion-content>
 

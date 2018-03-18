@@ -71,35 +71,36 @@ export class DailyEntry {
 		console.log("HIT");
 	}
 
-  saveData() {
-    this.sqlite.create({
-      name: 'ionicdb5.db',
-      location: 'default'
-    }).then((db: SQLiteObject) => {
-      db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.userID, moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
+    saveData() {
+        this.sqlite.create({
+            name: 'ionicdb6.db',
+            location: 'default'
+        }).then((db: SQLiteObject) => {
+        db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?)',[this.userID, moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
         .then(res => {
-          console.log(res);
-          this.toast.show('Data saved', '5000', 'center').subscribe(
-            toast => {
-              this.navCtrl.setRoot(CheckinLog);
-            }
-          );
+            console.log(res);
+            this.toast.show('Data saved', '5000', 'center').subscribe(
+                toast => {
+                    this.navCtrl.setRoot(CheckinLog);
+                }
+            );
         })
         .catch(e => {
-          console.log(e);
-          this.toast.show(e, '5000', 'center').subscribe(
+            console.log(e);
+            this.toast.show(e, '5000', 'center').subscribe(
             toast => {
-              console.log(toast);
+                console.log(toast);
             }
-          );
+            );
+            });
+        }).catch(e => 
+        {
+            console.log(e);
+            this.toast.show(e, '5000', 'center').subscribe(
+            toast => {
+                console.log(toast);
+            }
+            );
         });
-    }).catch(e => {
-      console.log(e);
-      this.toast.show(e, '5000', 'center').subscribe(
-        toast => {
-          console.log(toast);
-        }
-      );
-    });
-  }
+    }
 }

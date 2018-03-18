@@ -8,9 +8,9 @@ import { Toast } from '@ionic-native/toast';
   selector: 'page-add-data',
   templateUrl: 'add-data.html',
 })
-export class AddDataPage {
+export class AddData {
 
-  data = { date:"", moodScore:0, dietScore:0, sleepScore:0, stressScore:0, entryNote:"", amount:0 };
+  data = { date:"", moodScore:0, dietScore:0, sleepScore:0, stressScore:0, entryNote:"" };
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -19,10 +19,10 @@ export class AddDataPage {
 
   saveData() {
     this.sqlite.create({
-      name: 'ionicdb5.db',
+      name: 'ionicdb6.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
-      db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.data.date,this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote,this.data.amount])
+      db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?)',[this.data.date,this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
         .then(res => {
           console.log(res);
           this.toast.show('Data saved', '5000', 'center').subscribe(

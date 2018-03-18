@@ -33,7 +33,7 @@ export class SQLTester {
 
     getData() {
       this.sqlite.create({
-        name: 'ionicdb5.db',
+        name: 'ionicdb6.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT, amount INT)', {})
@@ -72,7 +72,7 @@ export class SQLTester {
 
     deleteData(rowid) {
       this.sqlite.create({
-        name: 'ionicdb5.db',
+        name: 'ionicdb6.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         db.executeSql('DELETE FROM wellness WHERE rowid=?', [rowid])

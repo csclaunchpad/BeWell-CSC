@@ -57,7 +57,11 @@ export class Public {
                             empEmail:"mailto:tim.jodoin@gmail.com",
                             empTitle:"HC Mental Health Services"     
         };
-                                                                        
+        this.fourObj = {    empUrl:"http://www.camh.ca/en/hospital/Pages/home.aspx", 
+                            empEmail:"",
+                            empTitle:"Centre for Addiction and Mental Health"     
+        };
+                                                                   
     }
     
     authenticate() {		

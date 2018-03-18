@@ -67,15 +67,30 @@ export class TranslationService {
                     }
 		}
 				
-		case "dailyEntry.html": {
+		case "recoverUser.html": {
                     return {
-                        dailyEntryText: "Daily Entry",
-			moodText: "Mood",
-			dietText: "Diet",
-			sleepText: "Sleep",
-			stressText: "Stress",
-			descriptionText: "Description",
-			saveDataText: "Save Data"
+			recoverUserText: "Recover User",
+			cantFindNameText: "We couldn't find that name!",
+			nameOfAccountText: "What is the name of the account you're trying to recover?",
+			firstNameText: "First Name",
+			findNameText: "Find Name",
+			wrongAnswerText: "That isn't the answer!",
+			answerToQuestionText: "What is the answer to the following security question?",
+			securityAnswerText: "Security Answer",
+                        submitAnswerText: "Submit Answer",
+			invalidPinText: "Your pin needs to be between 4 and 6 characters!",
+			enterNewPinText: "Please enter your new pin",
+			characterLengthText: "4-6 Character Pin",
+			setNewPinText: "Set new pin"
+                    }
+		}
+                    
+		case "home.html": {
+                    return {
+                        homeTitleText: "Welcome",
+			buttonText1: "Mental Health Continuum",
+			buttonText2: "Link 2",
+			buttonText3: "Link 3"
                     }
 		}
 				
@@ -159,7 +174,7 @@ export class TranslationService {
                                 
                 case "public.html": {
                     return {
-			resourceTitleText: "Public",
+                        resourceTitleText: "Public",
                         resPageText: "Choose the resource list that applies.",
                         buttonText1: "Crisis Hotline",
                         buttonText2: "CAN Mental Health Association",
@@ -167,12 +182,20 @@ export class TranslationService {
                         buttonText4: "HC Mental Health Services"
                     }
 		}   
-                                                                                                				
+                 
+                case "assessment.html":{
+                    return {
+                        resourceTitleText: "Road to Mental Readyness",
+                        resourcePageText: "Assess Yourself",
+                        buttonText1: "Begin Assessment",
+                        buttonText2: "Begin Assessment",
+                        buttonText3: "Begin Assessment",
+                    }
+                }                                                                               				
 		default: {
                     return {}
 		}
-            }
-		
+            }		
 	} 
         else if(languageFlag == "fr") {
             switch(page) {
@@ -220,7 +243,16 @@ export class TranslationService {
 			setNewPinText: "Définir une nouvelle broche"
                     }
                 }
-				
+
+                case "home.html": {
+                    return {
+                        homeTitleText: "Welcome",
+			buttonText1: "Mental Health Continuum",
+			buttonText2: "Link 2",
+			buttonText3: "Link 3"
+                    }
+		}
+                				
 		case "dailyEntry.html": {
                     return {
                         dailyEntryText: "Entrée quotidienne",

@@ -14,6 +14,12 @@ import { Resources } from '../pages/Resources/resources';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { Updates } from '../pages/updates/updates';
 
+import { ResInfo } from '../pages/Resources/ResPages/resinfo';
+
+import { AddData } from '../pages/add-data/add-data';
+
+import { Assessment } from '../pages/Tools/assessment/assessment';
+
 //import { Tools } from '../pages/tools/tools';
 
 @Component({
@@ -22,8 +28,9 @@ import { Updates } from '../pages/updates/updates';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LanguageSelection;
+//  rootPage: any = LanguageSelection;
 //    rootPage: any = Resources;
+rootPage: any = Assessment;
 
     pages: Array<{title: string, component: any}>;
 
@@ -37,8 +44,9 @@ export class MyApp {
 			{ title: 'Checkin Log', component: CheckinLog },
 			{ title: 'Analytic Dashboard', component: Dashboard },
 			{ title: 'Resources', component: Resources },
-//			{ title: 'Tools', component: Tools },
+			{ title: 'Self Assessment', component: Assessment },
 			{ title: 'Update Log', component: Updates },
+                        { title: 'Add Data', component: AddData },
 			{ title: 'Sign out', component: SignOut }
 		];
 	}

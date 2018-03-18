@@ -21,7 +21,7 @@ export class EditDataPage {
 
   getCurrentData(rowid) {
     this.sqlite.create({
-      name: 'ionicdb5.db',
+      name: 'ionicdb6.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
       db.executeSql('SELECT * FROM wellness WHERE rowid=?', [rowid])
@@ -56,7 +56,7 @@ export class EditDataPage {
 
   updateData() {
     this.sqlite.create({
-      name: 'ionicdb5.db',
+      name: 'ionicdb6.db',
       location: 'default'
     }).then((db: SQLiteObject) => {
       db.executeSql('UPDATE wellness SET date=?,moodScore=?,dietScore=?,sleepScore=?,description=? WHERE rowid=?',[this.data.date,this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote,this.data.rowid])

@@ -1,0 +1,50 @@
+<ion-header *ngIf="pageElementsLoaded">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+    <ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header"> 
+      
+    <h4 class="title">Operational Stress Injury vs. Post-Traumatic Stress Disorder</h4>         
+    
+    <br>
+        An operational stress injury is any persistent psychological 
+        difficulty you are experiencing because of your work duties. 
+        It is the term used to describe a broad range of problems which 
+        includes post-traumatic stress disorder (PTSD) and any other 
+        diagnosed conditions, such as anxiety disorders, depression, 
+        and other conditions that could interfere with your daily 
+        functioning.
+
+    <br>         
+    <div text-center>
+        <img src="../../../assets/imgs/R2MR.png" class="assessmentImg">         
+    </div>                     
+    
+    <button ion-button block (click)="beginTest()"> 
+        <ion-icon name="play"> {{pageElements.buttonText1}} </ion-icon>
+    </button>
+    
+    <ion-row>
+	<ion-col>
+            Disabled for Testing!!
+	</ion-col>
+    </ion-row>             
+                          
+</ion-content>
+
+
+<ion-footer>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
+</ion-footer>

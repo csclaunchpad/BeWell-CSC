@@ -21,7 +21,7 @@ export class ResInfo {
     {    
         this.storage.get("userID").then((value) => {   
             if(value == null) {
-                this.navCtrl.setRoot(Login);
+//                this.navCtrl.setRoot(Login);
             }    
         });
                 

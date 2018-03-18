@@ -24,6 +24,12 @@ import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { SignOut } from '../pages/home/Login/signout/signout';
 import { Updates } from '../pages/updates/updates';
 //import { Tools } from '../pages/tools/tools';
+import { ResInfo } from '../pages/Resources/ResPages/resinfo';
+
+import { AddData } from '../pages/add-data/add-data';
+
+import { Assessment } from '../pages/Tools/assessment/assessment';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -43,6 +49,7 @@ import { Toast } from '@ionic-native/toast';
     DailyEntry,
     Updates,
 //    Tools,
+    Assessment,
     CheckinLog,
     CheckinLogInfo,
     Resources,
@@ -50,8 +57,10 @@ import { Toast } from '@ionic-native/toast';
     CSCContacts,
     Employee,
     EmployeeFam,
-    Public
-  ],
+    Public,
+    ResInfo,
+    AddData
+    ],
 	imports: [
 		BrowserModule,
 		//BrowserAnimationsModule,
@@ -71,13 +80,16 @@ import { Toast } from '@ionic-native/toast';
 		CheckinLog,
 		Updates,
 //		Tools,
-		CheckinLogInfo,
+		Assessment,
+                CheckinLogInfo,
 		Resources,
 		Dashboard,
 		CSCContacts,
 		Employee,
 		EmployeeFam,
-		Public
+		Public,
+                ResInfo,
+                AddData
 	],
 	providers: [
 		StatusBar,

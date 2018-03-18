@@ -29,7 +29,7 @@ export class Resources {
     cscContacts = CSCContacts;
     employee = Employee;
     empfamily = EmployeeFam;
-    public = Public;
+    resPublic = Public;
     
     // The actual content of the page, fetched via translationService.ts
     private pageElements: Object;
