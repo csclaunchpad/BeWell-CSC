@@ -139,7 +139,7 @@ export class RecoverUser {
 	// Initializes our DB, and fetchs all user records storing them in userRecords[]
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb6.db',
+			name: 'ionicdb9.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			

@@ -36449,6 +36449,43 @@ page-analyticDashboard .has-header {
   width: 100%;
 }
 
+page-resources .has-header {
+  top: 44px;
+  position: absolute;
+  width: 100%;
+}
+
+page-employee .has-header {
+  top: 44px;
+  position: absolute;
+  width: 100%;
+}
+
+page-employeeFamily .has-header {
+  top: 44px;
+  position: absolute;
+  width: 100%;
+}
+
+page-public .has-header {
+  top: 44px;
+  position: absolute;
+  width: 100%;
+}
+
+page-assessment .has-header {
+  top: 44px;
+  position: absolute;
+  width: 100%;
+}
+
+page-assessment .assessmentImg {
+  width: 100%;
+  height: auto;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
 page-checkinLog {
   /* Wellness Tracker Entry Colours */
 }
@@ -36651,6 +36688,58 @@ page-dailyEntry .has-header {
   top: 44px;
   position: absolute;
   width: 100%;
+}
+
+/****************************************************************************** 
+* Author: Janak Alford, Tim Jodoin, Justin Wams
+* Date: Feb 3, 2018
+* Application: CSC-Mental Health Application
+* Framework: Ionic
+*
+* Header for SCSS page-dailyEntry, Daily Entry module
+* SCSS (Sassy Casscading Style Sheets) Follow the following implementation
+* The SCSS is imported into each .ts page by using the following command syntax
+* @Component({
+*  selector: 'page-dailyEntry',
+*  templateUrl: 'dailyEntry.html'
+* })
+*
+* The above initiates the module style file structure for the component
+*
+* Glossary
+* Classes are referenced as .classname{}
+* Tags are referenced as tagname{}
+* Styles are referenced to the page when encapsulated in 
+* 
+* page-pagename{
+*      .classname{
+*         size: 100%;
+*      }
+*      tagname{
+*          size: 100%;
+*      }
+* }
+*
+*******************************************************************************/
+page-add-data .feelingImg {
+  width: 40%;
+  height: auto;
+}
+
+page-add-data .slider {
+  padding: 0;
+  margin-top: -10px;
+}
+
+page-home .has-header {
+  top: 44px;
+  position: absolute;
+  width: 100%;
+}
+
+page-home .MapleLeafImg {
+  height: auto;
+  width: 25%;
 }
 
 page-login .has-header {

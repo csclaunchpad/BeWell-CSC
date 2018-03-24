@@ -1,0 +1,127 @@
+<ion-header *ngIf="pageElementsLoaded">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+    <ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-row>
+                    Positive Space Program - The Positive Space Program is 
+                    committed to creating a welcoming and inclusive workplace 
+                    for everyone. That includes lesbian, gay, bisexual, trans, 
+                    intersex, queer and questioning (LGBTQ+) people.                    
+                    <a href="mailto:" class="buttonLink">
+                        <button ion-button block>Email Positive Space Program</button>
+                    </a>
+                    
+                </ion-row>
+                <ion-row>
+                    Road to Mental Readiness Training – First responders, 
+                    such a correctional officers, can be exposed to stresses 
+                    not often experienced by the average person. This training 
+                    program will help you strengthen your mental resilience 
+                    in the face of difficult situations.
+                    
+                    <button ion-button block [navPush]="selfassessment"> 
+                        <ion-icon name="play"> Road to Mental Readiness </ion-icon>
+                    </button>                 
+                    
+                </ion-row>
+                <ion-row>
+                    Conflict management - Training in conflict management 
+                    can help you deal with interpersonal challenges at work.   
+                                        
+                    <a href="mailto:mailto:leanna.haythorne@csc-scc.gc.ca" class="buttonLink">
+                        <button ion-button block>Email Office of Conflict Management</button>
+                    </a>
+                </ion-row>
+                <ion-row>
+                    Return to Work – This program helps employees who experience 
+                    an injury or illness, work or non-work related, return to 
+                    employment as soon as medically possible. 
+                                        
+                    <a href="mailto:GENNHQRTWDTA@csc-scc.gc.ca" class="buttonLink">
+                        <button ion-button block>Email Return to Work Program</button>
+                    </a>                    	
+                </ion-row>
+                <ion-row> 
+                    The Duty to Accommodate Program helps identify and remove 
+                    barriers to employment (i.e. having accessible facilities, 
+                    accessible workplace standards, career development 
+                    opportunities, accommodation for an injury.)  
+                                        
+                    <a href="mailto:GEN-NATDTA-OPDMA@CSC-SCC.GC.CA" class="buttonLink">
+                        <button ion-button block>Email Duty to Accommodate Program</button>
+                    </a> 
+                    
+                </ion-row>   
+                <ion-row> 
+                    Critical incident stress management is a program that can 
+                    help you cope with psychological trauma from incidents that 
+                    happen in an institution or the community. It aims to lessen 
+                    the response associated with an event. 
+ 
+                    <a href="mailto:mailto:EAP-CISM/PAE-GSIC.GEN@CSC-SCC.GC.CA" class="buttonLink">
+                        <button ion-button block>Critical Incident Stress Management</button>
+                    </a> 
+                    
+                </ion-row>  
+                
+                <ion-row> 
+                    The Employee Protection Protocol lets you report threats 
+                    or intimidation immediately, whether it’s at work or not. 
+                    Report the situation to your manager or contact the National 
+                    Monitoring Center to report after hours.
+                                        
+                    <a href="tel:+1-877-860-0617" class="buttonLink">
+                        <button ion-button block>Employee Protection Protocol</button>
+                    </a> 
+                    
+                </ion-row>  
+                
+                <ion-row> 
+                    This program promotes a safe and healthy workplace for 
+                    employees. It helps prevent or reduce occupational injuries 
+                    and illnesses by inspecting the workplace, investigating 
+                    workplace injuries, and recommending necessary changes in 
+                    policy and practice to CSC management. 
+                                        
+                    <a href="mailto:GEN-NATDTA-OPDMA@CSC-SCC.GC.CA" class="buttonLink">
+                        <button ion-button block>Occupational Health and Safety</button>
+                    </a> 
+                    <br>
+                    <br>
+                    <br>
+                </ion-row>                  
+                <ion-row> 
+                    <h4>More Helpful Links</h4>  
+                                        
+                    <button ion-button block [navPush]="resPublic">{{pageElements.buttonText3}}</button>
+                    <br>
+                    <br>
+                    <br>
+                </ion-row>  
+                
+            </ion-col>
+            
+        </ion-row>
+                 
+                 
+                 
+    </ion-grid>
+   
+</ion-content>
+
+

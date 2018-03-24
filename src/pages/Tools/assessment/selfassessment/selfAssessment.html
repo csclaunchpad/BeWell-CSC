@@ -1,0 +1,174 @@
+<ion-header *ngIf="pageElementsLoaded">
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.dailyEntryText}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<!-- Loading Div -->
+<div *ngIf="!pageElementsLoaded">
+	<ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+
+    <h3 class="title">Where do you score?</h3>
+             
+    <div text-center>
+        <img src="../../../assets/imgs/MHCM.png" class="mainImg">         
+
+<!--   -->    
+    <form (ngSubmit)="saveData()">
+
+        <ion-row style="background:#19E52D">
+            <ion-row>
+                <div class="question"> How is your mood?</div>
+            </ion-row>
+            <ion-row>
+                <ion-col>             
+                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
+                </ion-col>
+            </ion-row>
+        </ion-row>
+
+<!--   -->
+        <ion-row style="background:#AAFF5B">
+            <ion-row>
+                <div class="question">How did you sleep last night?</div>
+            </ion-row>
+            <ion-row>
+                <ion-col>             
+                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
+                </ion-col>
+            </ion-row>
+        </ion-row>
+       
+<!--   -->
+        <ion-row style="background:#FFF95B">
+            <ion-row>
+                <div class="question">How are your interactions with others today?</div>
+            </ion-row>
+            <ion-row>
+                <ion-col>             
+                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
+                </ion-col>
+            </ion-row>
+        </ion-row>
+
+<!--   -->
+        <ion-row style="background:#FFB949">
+            <ion-row>
+                <div class="question">How do you feel physically?</div>
+            </ion-row>
+            <ion-row>
+                <ion-col>             
+                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
+                </ion-col>
+            </ion-row>
+        </ion-row>
+
+<!--   -->
+        <ion-row style="background:#FF7A2D">
+            <ion-row>
+                <div class="question">How do you feel today?</div>
+            </ion-row>
+            <ion-row>
+                <ion-col>             
+                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
+                </ion-col>
+            </ion-row>
+        </ion-row>
+
+<!--   -->
+        <ion-row style="background:#FF3F35">
+            <ion-row>
+                <div class="question">How do you feel today?</div>
+            </ion-row>
+            <ion-row>
+                <ion-col>             
+                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
+                </ion-col>
+            
+                <ion-col>
+                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
+                </ion-col>
+            </ion-row>
+        </ion-row>
+
+      
+            <button ion-button type="submit" block>{{pageElements.saveDataText}}</button>
+        </form>
+    </div>
+</ion-content>

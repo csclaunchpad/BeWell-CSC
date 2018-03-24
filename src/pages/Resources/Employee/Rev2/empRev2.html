@@ -1,0 +1,117 @@
+<ion-header *ngIf="pageElementsLoaded">
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+    <ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <ion-row>
+                    CSC’s Leave guidelines – This document includes all of the 
+                    information you need to know about taking leave from work.                     
+                    <a href="link owed by COMs" class="buttonLink">
+                        <button ion-button block>CSC’s Leave guidelines</button>
+                    </a>
+                    
+                </ion-row>
+                <ion-row>
+                    Workers’ Compensation – If you become ill or injured at work, 
+                    you need to contact Workers’ Compensation to file your claim. 
+                    Contact the Workers’ Compensation board in your area to 
+                    learn about your rights and responsibilities following your 
+                    injury. 
+                    
+                    <button ion-button block (click)="JumpToLink(oneObj)"> 
+                         Contact Workers
+                    </button>                 
+                    
+                </ion-row>
+                <ion-row>
+                    Injury on duty leave provisions and collective agreements 
+                    In virtually all cases, Government of Canada employees who 
+                    must take leave due to a workplace illness or injury are 
+                    entitled to injury on duty leave with full pay. The length 
+                    of time is determined by your employer. Please consult your 
+                    collective agreement for more information.    
+                                        
+                    <a href="mailto:mailto:leanna.haythorne@csc-scc.gc.ca" class="buttonLink">
+                        <button ion-button block>Link TBD</button>
+                    </a>
+                </ion-row>
+                <ion-row>
+                    Disability insurance - If you are unable to work for a 
+                    lengthy period of time, as an employee you may be eligible 
+                    for coverage up to 70% of your annual salary. Contact the 
+                    HR Service Center to speak with a compensation advisor who 
+                    can walk you through the process. 
+                                    	
+                </ion-row>
+                <ion-row> 
+                    Medical retirement - A medical retirement is granted to 
+                    employees who are confirmed by Health Canada to have a 
+                    disability that prevents you from doing any work. Contact 
+                    the HR Service Center to speak with a compensation advisor 
+                    who can walk you through the process.  
+                    
+                </ion-row>   
+                <ion-row> 
+                    Pension/Superannuation - If you are away from work for a 
+                    certain length of time, you could return to work and find 
+                    that you owe money to your pension plan. Contact the HR 
+                    Service Centre to avoid unexpected expenses upon your return.  
+
+                    <a href="tel:+1-844-661-7857" class="buttonLink">
+                        <button ion-button block>Employee Protection Protocol</button>
+                    </a> 
+                    
+                </ion-row>  
+                
+                <ion-row> 
+                    Return to Work - This program helps employees who experience 
+                    an injury or illness, work or non-work related, return to 
+                    employment as soon as medically possible. 
+                    Contact the Return to Work Program.
+                                        
+                    <a href="mailto:GENNHQRTWDTA@csc-scc.gc.ca" class="buttonLink">
+                        <button ion-button block>Employee Protection Protocol</button>
+                    </a> 
+                    
+                </ion-row>  
+                    <button ion-button block (click)="JumpToLink(oneObj)"> 
+                         Workers Compensation 
+                    </button>                 
+                <ion-row> 
+
+                    
+                </ion-row>                  
+                <ion-row> 
+                    <h4>More Helpful Links</h4>  
+                                        
+                    <button ion-button block [navPush]="resPublic">{{pageElements.buttonText3}}</button>
+                    <br>
+                    <br>
+                    <br>
+                </ion-row>  
+                
+            </ion-col>
+            
+        </ion-row>
+                 
+                 
+                 
+    </ion-grid>
+   
+</ion-content>
+
+

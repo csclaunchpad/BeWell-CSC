@@ -14,6 +14,7 @@ import { TranslationService } from '../../../assets/services/translationService'
 
 // Page Imports
 import { Login } from '../../home/Login/login/login';
+import { SelfAssessment } from './selfassessment/selfAssessment';
 
 @Component({
     selector: 'page-assessment',
@@ -22,6 +23,7 @@ import { Login } from '../../home/Login/login/login';
 
 export class Assessment {
 
+    selfassessment = SelfAssessment;
     
     // The actual content of the page, fetched via translationService.ts
     private pageElements: Object;
@@ -40,7 +42,7 @@ export class Assessment {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-//                this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});
@@ -61,9 +63,10 @@ export class Assessment {
 	});
     }
     
- //   beginTest() {
- //       this.navCtrl.push(AssessmentQ1, {
- //       firstPassed: "score",
- //       })   
-//    }    
+//    beginTest() {
+//        this.navCtrl.push(moodAssessment, {
+//            firstPassed: "score",
+//        })   
+//    } 
+       
 }

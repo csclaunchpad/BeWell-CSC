@@ -15,6 +15,8 @@ import { TranslationService } from '../../assets/services/translationService';
 // Page Imports
 import { CSCContacts } from './CscContacts/cscContacts';
 import { Employee } from './Employee/employee';
+import { EmpRev1 } from './Employee/Rev1/empRev1';
+
 import { EmployeeFam } from './EmployeeFamily/employeeFamily';
 import { Public } from './Public/public';
 import { Login } from '../home/Login/login/login';
@@ -28,6 +30,7 @@ import { Login } from '../home/Login/login/login';
 export class Resources {
     cscContacts = CSCContacts;
     employee = Employee;
+    emprev1 = EmpRev1;
     empfamily = EmployeeFam;
     resPublic = Public;
     
@@ -48,7 +51,7 @@ export class Resources {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-//                this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});

@@ -9,6 +9,11 @@ import { TranslationService } from '../../../assets/services/translationService'
 
 import { EAPInfo } from '../Employee/InfoPages/eapinfo';
 import { ResInfo } from '../ResPages/resinfo';
+import { EmpRev1 } from '../Employee/Rev1/empRev1';
+import { EmpRev2 } from '../Employee/Rev2/empRev2';
+import { EmpRev3 } from '../Employee/Rev3/empRev3';
+
+
 
 @Component({
     selector: 'page-employee',
@@ -18,7 +23,10 @@ import { ResInfo } from '../ResPages/resinfo';
 export class Employee {
     eapinfo = EAPInfo;
     resinfo = ResInfo;
-    
+    emprev1 = EmpRev1;
+    emprev2 = EmpRev2;
+    emprev3 = EmpRev3;
+        
     public clObj: any;
     public eapObj: any;
     public cmhaObj: any;
@@ -79,8 +87,8 @@ export class Employee {
                             empEmail:"mailto:tim.jodoin@gmail.com",
                             empTitle:"Harassment Hot line"     
         }; 
-        this.sunObj =  {    empUrl:"http://www.lte-ene.ca/en/highlights/2015-11/mental-health-initiative", 
-                            empEmail:"mailto:tim.jodoin@gmail.com",
+        this.sunObj =  {    empUrl:"http://www.sunlife.com", 
+                            empEmail:"tel:+18887577427",
                             empTitle:"Sunlife"     
         };                                                                         
     }
@@ -89,7 +97,7 @@ export class Employee {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-//                this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});

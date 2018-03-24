@@ -14,9 +14,10 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQL
 import { TranslationService } from '../../assets/services/translationService';
 
 // Page Imports
-import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry';
+import { WellnessTracker } from '../WellnessTracker/wellnesstracker';
 import { Assessment } from '../Tools/assessment/assessment';
 import { Login } from './Login/login/login';
+
 
 @Component({
     selector: 'page-home',
@@ -24,6 +25,8 @@ import { Login } from './Login/login/login';
 })
 export class HomePage {
     assessment = Assessment;
+    wellnesstracker = WellnessTracker; 
+    
     // The actual content of the page, fetched via translationService.ts
     private pageElements: Object;
 	
@@ -41,7 +44,7 @@ export class HomePage {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
         this.storage.get("userID").then((value) => {
             if(value == null) {
-//              this.navCtrl.setRoot(Login);
+              this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});
@@ -74,10 +77,10 @@ export class HomePage {
 //    ionViewWillEnter() {
 //      this.getData();
 //    }
-/*
-    getData() {
+
+/*    getData() {
       this.sqlite.create({
-        name: 'ionicdb6.db',
+        name: 'ionicdb9.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
@@ -102,7 +105,7 @@ export class HomePage {
 
     deleteData(rowid) {
       this.sqlite.create({
-        name: 'ionicdb6.db',
+        name: 'ionicdb9.db',
         location: 'default'
       }).then((db: SQLiteObject) => {
         db.executeSql('DELETE FROM wellness WHERE rowid=?', [rowid])

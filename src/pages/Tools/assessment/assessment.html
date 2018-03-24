@@ -30,7 +30,7 @@
         <img src="../../../assets/imgs/R2MR.png" class="assessmentImg">         
     </div>                     
     
-    <button ion-button block (click)="beginTest()"> 
+    <button ion-button block [navPush]="selfassessment"> 
         <ion-icon name="play"> {{pageElements.buttonText1}} </ion-icon>
     </button>
     

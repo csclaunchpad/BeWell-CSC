@@ -95,7 +95,7 @@ export class CheckinLog {
 
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb6.db',
+			name: 'ionicdb9.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			
@@ -112,7 +112,7 @@ export class CheckinLog {
 	
     getData() {
         this.sqlite.create({
-            name: 'ionicdb6.db',
+            name: 'ionicdb9.db',
             location: 'default'
         }).then((db: SQLiteObject) => {
             db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})

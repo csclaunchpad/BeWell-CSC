@@ -28,9 +28,9 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <h4 class="title">Where do you score?</h4>         
+<!--                <h4 class="title">Where do you score?</h4>         -->
             <div text-center>
-                <img src="../../../assets/imgs/MHCM.png" class="assessmentImg">         
+                <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
             </div> 
             </ion-col>
         </ion-row>
@@ -40,12 +40,20 @@
                 <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
             </ion-col>
         </ion-row>
-        
-	<ion-row>
-            <ion-col>
-		Link Disabled
+
+        <ion-row>
+            <ion-col>        
+            <div text-center>
+                <img src="../../../assets/imgs/WT.png" class="featureImg">         
+            </div> 
             </ion-col>
-	</ion-row>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+<!--                <button ion-button block [navPush]="assessment">Mental Health Continuum</button>       -->
+                <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
+            </ion-col>
+        </ion-row>        
         
     </ion-grid>
 </ion-content>

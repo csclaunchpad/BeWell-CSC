@@ -13,8 +13,23 @@
 </div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+             
+             
+        <h3 class="title">Employee Folders</h3>
+    
 
-    <button ion-button block (click)="JumpToLink(clObj)"> {{pageElements.buttonText1}} </button>
+        <button ion-button block [navPush]="emprev1">List 1</button>
+        
+    After you have become ill or injured, you may need time off to recover. 
+    Here is what you need to know about taking leave and compensation. 
+        <button ion-button block [navPush]="emprev2">List 2</button>
+    
+        
+        <button ion-button block [navPush]="emprev3">List 3</button>         
+             
+             
+
+<!--    <button ion-button block (click)="JumpToLink(clObj)"> {{pageElements.buttonText1}} </button>
     
     <button ion-button block (click)="JumpToLink(eapObj)"> {{pageElements.buttonText2}} </button>
     
@@ -32,7 +47,7 @@
 
     <button ion-button block (click)="JumpToLink(hhlObj)"> {{pageElements.buttonText9}} </button>
 
-    <button ion-button block (click)="JumpToLink(sunObj)"> {{pageElements.buttonText10}} </button>
+    <button ion-button block (click)="JumpToLink(sunObj)"> {{pageElements.buttonText10}} </button> -->
    
 </ion-content>
 

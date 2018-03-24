@@ -1,0 +1,60 @@
+/******************************************************************************* 
+* Author: Tim Jodoin, Justin Wams
+* Date: Feb 3, 2018
+* Application: CSC-Mental Health Application
+* Framework: Ionic
+*
+* Header for SCSS page-dailyEntry, Daily Entry module
+* SCSS (Sassy Casscading Style Sheets) Follow the following implementation
+* The SCSS is imported into each .ts page by using the following command syntax
+* @Component({
+*  selector: 'page-dailyEntry',
+*  templateUrl: 'dailyEntry.html'
+* })
+*
+* The above initiates the module style file structure for the component
+*
+* Glossary
+* Classes are referenced as .classname{}
+* Tags are referenced as tagname{}
+* Styles are referenced to the page when encapsulated in 
+* 
+* page-pagename{
+*      .classname{
+*         size: 100%;
+*      }
+*      tagname{
+*          size: 100%;
+*      }
+* }
+*
+*******************************************************************************/
+page-selfAssessment {
+
+    .mainImg{
+        width: auto;
+        height: auto;
+        padding-bottom: 10px;
+    }
+    
+    .slider{
+        padding: 0;
+        margin-top: -5px;
+    }
+    
+    .has-header {
+    	top: 44px;
+	position:absolute;
+	width: 100%;
+    }
+
+    .buttonImg{
+        width: 75%;
+        height: auto;
+    }
+    
+    .question{
+        padding-bottom: 0px;
+        padding-top: 10px;
+    }
+}

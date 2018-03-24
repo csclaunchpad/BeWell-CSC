@@ -22,7 +22,19 @@ export class TranslationService {
 	if(languageFlag == "en") {
 			
             switch(page) {
-				
+
+                case "component.ts": {
+                    return {
+                        home: "Home",
+			dailyentry: "Daily Entry",
+			checkinglog: "Checkin Log",
+			dashboard: "Dashboard",
+			resources: "Resources",
+			assessment: "Assessment",
+			updates: "Updates",
+                        signout: "SignOut"
+                    }
+		}				
 		case "login.html": {
                     return {
                         firstNameText: "First Name",
@@ -84,12 +96,22 @@ export class TranslationService {
 			setNewPinText: "Set new pin"
                     }
 		}
-                    
+
+		case "wellnesstracker.html": {
+                    return {
+			resourceTitleText: "Wellness Tracker",
+                        resPageText: "Choose the resource list that applies to you",
+                       	buttonText1: "Daily Entry",
+                        buttonText2: "Checkin Log",
+			buttonText3: "Dashboard"
+                    }
+		}
+                                    
 		case "home.html": {
                     return {
                         homeTitleText: "Welcome",
 			buttonText1: "Mental Health Continuum",
-			buttonText2: "Link 2",
+			buttonText2: "Wellness Tracker",
 			buttonText3: "Link 3"
                     }
 		}
@@ -170,7 +192,8 @@ export class TranslationService {
                         buttonText7: "Occupational Health and Safety",
                         buttonText8: "Harassment Prevention Program",
                         buttonText9: "Harassment Hot line",
-                        buttonText10: "Sun Life"
+                        buttonText10: "Sun Life",
+                        sunlink: "https://www.sunlife.ca/ca/Insurance/Life+insurance?vgnLocale=en_CA"
                     }
 		}
 
@@ -198,7 +221,7 @@ export class TranslationService {
                  
                 case "assessment.html":{
                     return {
-                        resourceTitleText: "Road to Mental Readyness",
+                        resourceTitleText: "Road to Mental Readiness",
                         resourcePageText: "Assess Yourself",
                         opStressInurySentence: "",
                         buttonText1: "Begin Assessment",
@@ -214,6 +237,18 @@ export class TranslationService {
         else if(languageFlag == "fr") {
             switch(page) {
 				
+                case "component.ts": {
+                    return {
+                        home: "Home",
+			dailyentry: "Daily Entry",
+			checkinglog: "Checkin Log",
+			dashboard: "Dashboard",
+			resources: "Resources",
+			assessment: "Assessment",
+			updates: "Updates",
+                        signout: "SignOut"
+                    }
+		}
                 case "login.html": {
                     return {
                         firstNameText: "Prénom",
@@ -262,11 +297,21 @@ export class TranslationService {
                     return {
                         homeTitleText: "Welcome",
 			buttonText1: "Mental Health Continuum",
-			buttonText2: "Link 2",
+			buttonText2: "Wellness Tracker",
 			buttonText3: "Link 3"
                     }
 		}
-                				
+
+                case "wellnesstracker.html": {
+                    return {
+			resourceTitleText: "Wellness Tracker",
+                        resPageText: "Choose the resource list that applies to you",
+                       	buttonText1: "Entrée quotidienne",
+                        buttonText2: "Journal d'enregistrement",
+			buttonText3: "Tableau de bord"
+                    }
+		}
+                                				
 		case "dailyEntry.html": {
                     return {
                         dailyEntryText: "Entrée quotidienne",
@@ -339,7 +384,8 @@ export class TranslationService {
                         buttonText6: "Return to Work Program",
                         buttonText7: "CSC Contacts by Email",
                         buttonText8: "Harassment Hot line",
-                        buttonText9: "Sun Life"
+                        buttonText9: "Sun Life",
+                        sunlink: "https://www.sunlife.ca/ca/Insurance/Life+insurance?vgnLocale=fr_CA"
                     }
 		}
                 case "employeeFamily.html": {

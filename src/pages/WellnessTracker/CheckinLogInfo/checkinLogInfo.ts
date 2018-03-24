@@ -77,7 +77,7 @@ export class CheckinLogInfo {
 	
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb6.db',
+			name: 'ionicdb9.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			

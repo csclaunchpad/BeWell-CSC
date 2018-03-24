@@ -1,0 +1,39 @@
+<ion-header *ngIf="pageElementsLoaded">
+    
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+	<ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+             
+    <h3 class="title">{{pageElements.resPageText}}</h3>
+    
+        <button ion-button block [navPush]="dailyentry">{{pageElements.buttonText1}}</button>
+
+        <button ion-button block [navPush]="checkinlog">{{pageElements.buttonText2}}</button>
+    
+        <button ion-button block [navPush]="dashboard">{{pageElements.buttonText3}}</button>
+
+        <button ion-button block [navPush]="assessment">{{pageElements.buttonText4}}</button>        
+        
+</ion-content>
+
+<ion-footer>
+    
+    <ion-toolbar>
+    
+        <button ion-button block>Aidez moi / Help Me</button>
+    
+    </ion-toolbar>
+    
+</ion-footer>

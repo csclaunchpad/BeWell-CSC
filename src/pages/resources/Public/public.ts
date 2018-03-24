@@ -68,7 +68,7 @@ export class Public {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-//                this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});

@@ -174,7 +174,7 @@ export class Login {
 	// Creates a connection to our DB, performs the login process if given the login flag
 	initDB(loginFlag) {
 		this.sqlite.create({
-			name: 'ionicdb6.db',
+			name: 'ionicdb9.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			

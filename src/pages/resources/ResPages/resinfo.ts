@@ -21,7 +21,7 @@ export class ResInfo {
     {    
         this.storage.get("userID").then((value) => {   
             if(value == null) {
-//                this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }    
         });
                 
@@ -36,7 +36,7 @@ export class ResInfo {
     }
 
     loadLinkPage(url){
-//                $('#loadExternalURL').load("https://cors-anywhere.herokuapp.com/"+this.resUrl);
+                $('#loadExternalURL').load("https://cors-anywhere.herokuapp.com/"+this.resUrl);
     }
 
         

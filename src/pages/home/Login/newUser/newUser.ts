@@ -70,6 +70,9 @@ export class NewUser {
 		
 		// Initialize our DB
 		this.initDB();
+                // Build Wellness Tracker Table
+                this.createWTtable();
+                
 		
 		
     }
@@ -126,7 +129,7 @@ export class NewUser {
 	// Initializes our DB, and fetchs all user records storing them in userRecords[]
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb6.db',
+			name: 'ionicdb9.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			
@@ -147,4 +150,15 @@ export class NewUser {
 			}).catch(e => console.log(e));
 		}).catch(e => console.log(e));
 	}
+        
+        createWTtable(){
+            this.sqlite.create({
+              name: 'ionicdb9.db',
+              location: 'default'
+            }).then((db: SQLiteObject) => {
+              db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+              .then(res => console.log('Executed SQL'))
+              .catch(e => console.log(e));
+            }).catch(e => console.log(e));
+        }
 }
