@@ -103,4 +103,8 @@ export class DailyEntry {
                 );
             });
         }
+//POP a page off the menu stack        
+    goBack() {
+        this.navCtrl.pop();
+    }
 }

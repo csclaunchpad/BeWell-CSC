@@ -1,8 +1,10 @@
 <ion-header *ngIf="pageElementsLoaded">
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
+ <ion-navbar hideBackButton="true" >
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-title>{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
@@ -18,15 +20,17 @@
         <ion-row>
             <ion-col>
                 <ion-row>
-                    CSC’s Leave guidelines – This document includes all of the 
-                    information you need to know about taking leave from work.                     
+                    <h5>CSC’s Leave Guidelines</h5> 
+                    This document includes all of the information you need to 
+                    know about taking leave from work.                     
                     <a href="link owed by COMs" class="buttonLink">
                         <button ion-button block>CSC’s Leave guidelines</button>
                     </a>
                     
                 </ion-row>
+                
                 <ion-row>
-                    Workers’ Compensation – If you become ill or injured at work, 
+                    <h5>Workers’ Compensation</h5> If you become ill or injured at work, 
                     you need to contact Workers’ Compensation to file your claim. 
                     Contact the Workers’ Compensation board in your area to 
                     learn about your rights and responsibilities following your 
@@ -38,6 +42,7 @@
                     
                 </ion-row>
                 <ion-row>
+                    <h5>Injury on Duty</h5>
                     Injury on duty leave provisions and collective agreements 
                     In virtually all cases, Government of Canada employees who 
                     must take leave due to a workplace illness or injury are 
@@ -50,7 +55,8 @@
                     </a>
                 </ion-row>
                 <ion-row>
-                    Disability insurance - If you are unable to work for a 
+                    <h5>Disability Insurance</h5>
+                    If you are unable to work for a 
                     lengthy period of time, as an employee you may be eligible 
                     for coverage up to 70% of your annual salary. Contact the 
                     HR Service Center to speak with a compensation advisor who 
@@ -58,18 +64,21 @@
                                     	
                 </ion-row>
                 <ion-row> 
-                    Medical retirement - A medical retirement is granted to 
+                    <h5>Medical retirement</h5> 
+                    A medical retirement is granted to 
                     employees who are confirmed by Health Canada to have a 
                     disability that prevents you from doing any work. Contact 
                     the HR Service Center to speak with a compensation advisor 
                     who can walk you through the process.  
                     
                 </ion-row>   
-                <ion-row> 
-                    Pension/Superannuation - If you are away from work for a 
-                    certain length of time, you could return to work and find 
-                    that you owe money to your pension plan. Contact the HR 
-                    Service Centre to avoid unexpected expenses upon your return.  
+                <ion-row>
+                    
+                    <h5>Pension/Superannuation</h5> 
+                    If you are away from work for a certain length of time, 
+                    you could return to work and find that you owe money to 
+                    your pension plan. Contact the HR Service Center to avoid 
+                    unexpected expenses upon your return.  
 
                     <a href="tel:+1-844-661-7857" class="buttonLink">
                         <button ion-button block>Employee Protection Protocol</button>
@@ -77,8 +86,10 @@
                     
                 </ion-row>  
                 
-                <ion-row> 
-                    Return to Work - This program helps employees who experience 
+                <ion-row>
+                    
+                    <h5>Return to Work</h5>
+                    This program helps employees who experience 
                     an injury or illness, work or non-work related, return to 
                     employment as soon as medically possible. 
                     Contact the Return to Work Program.
@@ -88,15 +99,13 @@
                     </a> 
                     
                 </ion-row>  
-                    <button ion-button block (click)="JumpToLink(oneObj)"> 
-                         Workers Compensation 
-                    </button>                 
+               
                 <ion-row> 
 
                     
                 </ion-row>                  
                 <ion-row> 
-                    <h4>More Helpful Links</h4>  
+                    <h5>More Helpful Links</h5>  
                                         
                     <button ion-button block [navPush]="resPublic">{{pageElements.buttonText3}}</button>
                     <br>

@@ -22,39 +22,36 @@
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 
     <div text-center>
+        <h5 class="title">{{pageElements.PageTitleText}}</h5> 
         <img src="../../../assets/imgs/CF.png" class="MapleLeafImg">         
     </div> 
     
     <ion-grid>
         <ion-row>
             <ion-col>
-<!--                <h4 class="title">Where do you score?</h4>         -->
-            <div text-center>
-                <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
-            </div> 
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-<!--                <button ion-button block [navPush]="assessment">Mental Health Continuum</button>       -->
-                <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
+                In corrections, we see all kinds of difficult situations so 
+                it's important to take care of our mental health just as you do 
+                our physical health.  <br> 
+                The state of our mental health is shown through how we think, 
+                feel and act in response to the challenges of daily life. <br> 
+                <br>The good news: mental health injuries are treatable.
+                <br>    
+                Originating from an organization wide Hackathon held Oct 2016
+                it was decided that CSC as a whole would come together to show 
+                support and assist our colleagues with improved access to 
+                programs set up to help us prepare and recover from 
+                stressful situations and get back to work smoothly.   
             </ion-col>
         </ion-row>
 
         <ion-row>
-            <ion-col>        
-            <div text-center>
-                <img src="../../../assets/imgs/WT.png" class="featureImg">         
-            </div> 
-            </ion-col>
-        </ion-row>
-        <ion-row>
             <ion-col>
-<!--                <button ion-button block [navPush]="assessment">Mental Health Continuum</button>       -->
-                <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
+                    <h5 class="title">{{pageElements.buttonText1}}</h5> 
+                    <a href="mailto:" class="buttonLink">
+                        <button ion-button block class = "buttonLink" >{{pageElements.buttonText2}}</button>
+                    </a>  
             </ion-col>
-        </ion-row>        
-        
+        </ion-row> 
     </ion-grid>
 </ion-content>
 

@@ -92,4 +92,8 @@ export class CheckinLogInfo {
 			.catch(e => console.log(e));
 		}).catch(e => console.log(e));
 	}
+        //POP a page off the menu stack
+    goBack() {
+        this.navCtrl.pop();
+    }
 }

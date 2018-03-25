@@ -82,5 +82,9 @@ export class EmployeeFam {
             }			
 	});
     }    
+    //POP a page off the menu stack
+    goBack() {
+        this.navCtrl.pop();
+    }
 }
 

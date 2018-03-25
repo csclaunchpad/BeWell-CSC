@@ -23,7 +23,7 @@ import { Public } from '../pages/Resources/Public/public';
 import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { SignOut } from '../pages/home/Login/signout/signout';
 import { Updates } from '../pages/updates/updates';
-//import { Tools } from '../pages/tools/tools';
+import { Tools } from '../pages/Tools/tools';
 import { ResInfo } from '../pages/Resources/ResPages/resinfo';
 import { EAP } from '../pages/Resources/ResPages/EAP/eap';
 import { EmpRev1 } from '../pages/Resources/Employee/Rev1/empRev1';
@@ -55,7 +55,7 @@ import { TranslationService } from '../assets/services/translationService';
         WellnessTracker,
         DailyEntry,
         Updates,
-//    Tools,
+        Tools,
         Assessment,
         SelfAssessment,
         CheckinLog,
@@ -91,7 +91,7 @@ import { TranslationService } from '../assets/services/translationService';
 	DailyEntry,
 	CheckinLog,
 	Updates,
-//	Tools,
+	Tools,
 	Assessment,
         SelfAssessment,
         CheckinLogInfo,

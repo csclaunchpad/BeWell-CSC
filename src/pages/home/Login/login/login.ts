@@ -27,6 +27,7 @@ import { RecoverUser } from '../recoverUser/recoverUser'; // recoverUser.html
 import { HomePage } from '../../home'; // home.html
 import { DailyEntry } from '../../../WellnessTracker/DailyEntry/dailyEntry'; // home.html
 
+import * as PH from "password-hash";
 
 @Component({
     selector: 'page-login',
@@ -67,6 +68,8 @@ export class Login {
 	private firstName: string;
 	private userID: string;
 
+        private hashedPassword: any;
+         
 	//private fadeState: String = 'visible';
 	
     constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage, private menu: MenuController, private translationService: TranslationService) {	
@@ -137,9 +140,13 @@ export class Login {
 				
 				// Iterate through our records variable, if we have a match, take in the userID and return true
 				for(var i = 0; i < this.userRecords.length; i++) {				
-					if(this.userRecords[i].pin.toLowerCase() == this.pin.toLowerCase() && this.userRecords[i].firstName.toLowerCase() == this.firstName.toLowerCase()) {
-						this.userID = this.userRecords[i].rowid;
+					if(this.userRecords[i].firstName == this.firstName) {
+                                            if(PH.verify((this.pin), this.userRecords[i].pin)){
+                                                console.log("User found");
+
+                                                this.userID = this.userRecords[i].rowid;                                               
 						return true;
+                                            }
 					}
 				}
 			} else {

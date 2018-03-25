@@ -110,9 +110,10 @@ export class TranslationService {
 		case "home.html": {
                     return {
                         homeTitleText: "Welcome",
-			buttonText1: "Mental Health Continuum",
-			buttonText2: "Wellness Tracker",
-			buttonText3: "Link 3"
+                        PageTitleText: "Welcome CSC Family!!",
+			buttonText1: "Help us improve mental health?",
+			buttonText2: "Send us an Idea.",
+			buttonText3: "placeholder"
                     }
 		}
 		
@@ -229,6 +230,15 @@ export class TranslationService {
                         buttonText3: "Begin Assessment",
                     }
                 }                                                                               				
+                case "tools.html": {
+                    return {
+                        homeTitleText: "Tools",
+                        pageToolText1: "Try Our Tools!",
+    			buttonText1: "Mental Health Continuum",
+			buttonText2: "Wellness Tracker",
+			buttonText3: "Do you have a tool idea?"
+                    }
+		} 
 		default: {
                     return {}
 		}
@@ -298,7 +308,7 @@ export class TranslationService {
                         homeTitleText: "Welcome",
 			buttonText1: "Mental Health Continuum",
 			buttonText2: "Wellness Tracker",
-			buttonText3: "Link 3"
+			buttonText3: "Do you have a tool idea?"
                     }
 		}
 
@@ -406,6 +416,14 @@ export class TranslationService {
                         buttonText2: "CAN Mental Health Association",
                         buttonText3: "Critical Incident Stress Management",
                         buttonText4: "HC Mental Health Services"
+                    }
+		}
+                case "tools.html": {
+                    return {
+                        homeTitleText: "Tools",
+			buttonText1: "Mental Health Continuum",
+			buttonText2: "Wellness Tracker",
+			buttonText3: "Do you have a tool idea?"
                     }
 		}                                       
 		default: {

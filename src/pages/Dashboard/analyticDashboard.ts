@@ -6,7 +6,9 @@ import { NavController, Content } from 'ionic-angular';
 // Local Storage Imports
 import { Storage } from '@ionic/storage';
 
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
+// services for SQLite FEB 2018
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  
+
 // Import for Translation Service
 import { TranslationService } from './../../assets/services/translationService';
 
@@ -351,4 +353,9 @@ export class Dashboard {
 			}).catch(e => console.log(e));
 		}).catch(e => console.log(e));
 	}
+
+//POP a age off the stack
+    goBack() {
+        this.navCtrl.pop();
+    }
 }

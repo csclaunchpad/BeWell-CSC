@@ -11,6 +11,8 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 // Import for Translation Service
 import { TranslationService } from './../../../../assets/services/translationService';
 
+import * as PH from "password-hash";
+
 @Component({
     selector: 'page-newUser',
     templateUrl: 'newUser.html'
@@ -33,7 +35,10 @@ export class NewUser {
 	private invalidPin: boolean;
 	private invalidSecurityQuestion: boolean;
 	private invalidSecurityAnswer: boolean;
-	
+        
+        private hashedPassword: any;
+        private hashedDbName: any;
+        
 	// Stores our SQLite3 table data
 	private userRecords: any = [];
 	
@@ -98,12 +103,15 @@ export class NewUser {
 			}
 		}
 		
-		// Check to see if the pin provided is between 4 and 6 characters, if not, set the flag
-		if(this.pin.length < 4 || this.pin.length > 6) {
+		// Check to see if the pin provided is between 4 and 20 characters, if not, set the flag
+		if(this.pin.length < 4 || this.pin.length > 50) {
 			this.invalidPin = true;
 			console.log("Pin is invalid");
 		}
-		
+                else {
+                    this.hashedPassword = PH.generate(this.pin); 
+                }                   
+                
 		// Check to see if the security question is blank, if so, set the flag
 		if(this.securityQuestion == "") {
 			this.invalidSecurityQuestion = true;
@@ -116,7 +124,7 @@ export class NewUser {
 		
 		// If all flags are false, execute the insert query
 		if(!this.invalidName && !this.firstNameFound && !this.invalidPin && !this.invalidSecurityQuestion && !this.invalidSecurityAnswer) {
-			this.openDatabase.executeSql('INSERT INTO users(firstName, pin, securityQuestion, securityAnswer) VALUES (?,?,?,?)', [this.firstName, this.pin, this.securityQuestion, this.securityAnswer])
+			this.openDatabase.executeSql('INSERT INTO users(firstName, pin, securityQuestion, securityAnswer) VALUES (?,?,?,?)', [this.firstName, this.hashedPassword, this.securityQuestion, this.securityAnswer])
 				.then(res => {
 					console.log("User added successfully");
 					
@@ -159,6 +167,7 @@ export class NewUser {
               db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
               .then(res => console.log('Executed SQL'))
               .catch(e => console.log(e));
+              console.log("wellness created.")
             }).catch(e => console.log(e));
         }
 }

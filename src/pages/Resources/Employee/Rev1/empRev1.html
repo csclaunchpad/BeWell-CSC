@@ -1,8 +1,10 @@
 <ion-header *ngIf="pageElementsLoaded">
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
+  <ion-navbar hideBackButton="true" >
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+            <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-title>{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
@@ -18,37 +20,55 @@
         <ion-row>
             <ion-col>
                 <ion-row>
-                    Positive Space Program - The Positive Space Program is 
+                    <h5>Employee Assistance Program</h5> 
+                    The Employee Assistance Program is a confidential program 
+                    designed to help you and your immediate family members. 
+                    They can provide referrals and short-term counselling 
+                    services for personal and work-related problems. Contact 
+                    the Employee Assistance Program (1-800-268-7708) 24 hours a 
+                    day, 365 days a year from anywhere in the country.
+                  
+                    <a href="mailto:" class="buttonLink">
+                        <button ion-button block class = "buttonLink" >Employee Assistance Program</button>
+                    </a>
+                </ion-row>
+                        
+                <ion-row>     
+                    <h5>Positive Space Program</h5> 
+                    This program is 
                     committed to creating a welcoming and inclusive workplace 
                     for everyone. That includes lesbian, gay, bisexual, trans, 
                     intersex, queer and questioning (LGBTQ+) people.                    
                     <a href="mailto:" class="buttonLink">
-                        <button ion-button block>Email Positive Space Program</button>
+                        <button ion-button block class = "buttonLink" >Email Positive Space Program</button>
                     </a>
-                    
+              
                 </ion-row>
+                
                 <ion-row>
-                    Road to Mental Readiness Training – First responders, 
-                    such a correctional officers, can be exposed to stresses 
+                    <h5>Road to Mental Readiness Training</h5> 
+                    First responders, such a correctional officers, can be exposed to stresses 
                     not often experienced by the average person. This training 
                     program will help you strengthen your mental resilience 
                     in the face of difficult situations.
                     
-                    <button ion-button block [navPush]="selfassessment"> 
+                    <button ion-button block class = "buttonLink" [navPush]="selfassessment"> 
                         <ion-icon name="play"> Road to Mental Readiness </ion-icon>
                     </button>                 
                     
                 </ion-row>
                 <ion-row>
-                    Conflict management - Training in conflict management 
+                    <h5>Conflict management</h5> 
+                        The conflict management training program  
                     can help you deal with interpersonal challenges at work.   
                                         
                     <a href="mailto:mailto:leanna.haythorne@csc-scc.gc.ca" class="buttonLink">
-                        <button ion-button block>Email Office of Conflict Management</button>
+                        <button ion-button block class = "buttonLink">Email Office of Conflict Management</button>
                     </a>
                 </ion-row>
                 <ion-row>
-                    Return to Work – This program helps employees who experience 
+                    <h5>Return to Work</h5> 
+                    This program helps employees who experience 
                     an injury or illness, work or non-work related, return to 
                     employment as soon as medically possible. 
                                         
@@ -57,7 +77,8 @@
                     </a>                    	
                 </ion-row>
                 <ion-row> 
-                    The Duty to Accommodate Program helps identify and remove 
+                    <h5>Duty to Accommodate</h5> 
+                    This program helps identify and remove 
                     barriers to employment (i.e. having accessible facilities, 
                     accessible workplace standards, career development 
                     opportunities, accommodation for an injury.)  
@@ -67,8 +88,10 @@
                     </a> 
                     
                 </ion-row>   
+
                 <ion-row> 
-                    Critical incident stress management is a program that can 
+                    <h5>Critical Incident Stress Management</h5> 
+                            This program that can 
                     help you cope with psychological trauma from incidents that 
                     happen in an institution or the community. It aims to lessen 
                     the response associated with an event. 
@@ -80,7 +103,8 @@
                 </ion-row>  
                 
                 <ion-row> 
-                    The Employee Protection Protocol lets you report threats 
+                    <h5>Employee Protection Protocol</h5>
+                    This program lets you report threats 
                     or intimidation immediately, whether it’s at work or not. 
                     Report the situation to your manager or contact the National 
                     Monitoring Center to report after hours.
@@ -90,8 +114,22 @@
                     </a> 
                     
                 </ion-row>  
+                <ion-row>
+                    <h5>Harassment Prevention Program</h5> 
+                        If you are experiencing harassment at work, the 
+                        Harassment Prevention Program can help. Harassment is 
+                        any improper conduct by an individual that is offensive 
+                        to another person. Contact the Harassment Prevention 
+                        Program.
+
+                  
+                    <a href="mailto:" class="buttonLink">
+                        <button ion-button block class = "buttonLink" >Employee Assistance Program</button>
+                    </a>
+                </ion-row>
                 
                 <ion-row> 
+                    <h5>Occupational Health and Safety</h5>
                     This program promotes a safe and healthy workplace for 
                     employees. It helps prevent or reduce occupational injuries 
                     and illnesses by inspecting the workplace, investigating 
@@ -106,9 +144,9 @@
                     <br>
                 </ion-row>                  
                 <ion-row> 
-                    <h4>More Helpful Links</h4>  
+                    <h5>More Helpful Links</h5>  
                                         
-                    <button ion-button block [navPush]="resPublic">{{pageElements.buttonText3}}</button>
+                    <button ion-button block class = "fullbutton" [navPush]="resPublic">{{pageElements.buttonText3}}</button>
                     <br>
                     <br>
                     <br>

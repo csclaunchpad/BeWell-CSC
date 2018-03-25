@@ -51,6 +51,10 @@ export class EmpRev1 {
                 console.log("No language flag set");
             }			
 	});
-    }        
+    } 
     
+    //POP a page off the menu stack               
+    goBack() {
+        this.navCtrl.pop();
+    }    
 }

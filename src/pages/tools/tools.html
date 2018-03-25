@@ -4,18 +4,53 @@
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
     <ion-title>
-      Tools
+      {{pageElements.homeTitleText}}
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<!-- Loading Div --> 
+<div *ngIf="!pageElementsLoaded">
+    <ion-spinner></ion-spinner>
+</div>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+
     <ion-grid>
-		<ion-row>
-			<ion-col text-center style="margin-top:40%; font-size: 18px;">
-				<strong>Tools are on their way!</strong>
-			</ion-col>
-		</ion-row>
+        <ion-row>
+            <ion-col>
+                <h5 class="title">{{pageElements.pageToolText1}}</h5> 
+            <div text-center>
+                <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
+            </div> 
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
+            </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col>        
+            <div text-center>
+                <img src="../../../assets/imgs/WT.png" class="featureImg">         
+            </div> 
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
+            </ion-col>
+        </ion-row> 
+        
+        <ion-row>
+            <ion-col>
+                    <a href="mailto:" class="buttonLink">
+                        <button ion-button block class = "buttonLink" >{{pageElements.buttonText3}}</button>
+                    </a>  
+            </ion-col>
+        </ion-row> 
     </ion-grid>
 </ion-content>
 

@@ -64,6 +64,9 @@ export class HomePage {
             }			
 	});
     }	
+    
+    
+    
 //	test() {
 //		this.storage.get("userID").then((value) => {
 //			console.log(value);

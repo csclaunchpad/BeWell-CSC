@@ -11,26 +11,13 @@ import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
-import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
+//import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';
-import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
-import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { Resources } from '../pages/Resources/resources';
-import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 import { Updates } from '../pages/updates/updates';
 
-import { ResInfo } from '../pages/Resources/ResPages/resinfo';
-import { EAP } from '../pages/Resources/ResPages/EAP/eap';
-
-import { Assessment } from '../pages/Tools/assessment/assessment';
-import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAssessment';
-import { EmpRev1 } from '../pages/Resources/Employee/Rev1/empRev1';
-import { EmpRev2 } from '../pages/Resources/Employee/Rev2/empRev2';
-import { EmpRev3 } from '../pages/Resources/Employee/Rev3/empRev3';
-
-
-//import { Tools } from '../pages/tools/tools';
+import { Tools } from '../pages/Tools/tools';
 
 @Component({
   templateUrl: 'app.html'
@@ -117,7 +104,8 @@ export class MyApp {
   
 		this.pages = [
 			{ title: 'Welcome', component: HomePage },
-			{ title: 'Wellness Tracker', component: WellnessTracker },
+//			{ title: 'Wellness Tracker', component: WellnessTracker },
+                        { title: 'Tools', component: Tools },
 			{ title: 'Resources', component: Resources },
 			{ title: 'Update Log', component: Updates },
                         { title: 'FR/EN', component: LanguageSelection },

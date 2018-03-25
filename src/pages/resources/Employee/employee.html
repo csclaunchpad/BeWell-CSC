@@ -1,10 +1,14 @@
 <ion-header *ngIf="pageElementsLoaded">
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
+    
+    <ion-navbar hideBackButton="true" >
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-title>{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
+    
 </ion-header>
 
 <!-- Loading Div --> 
@@ -15,17 +19,21 @@
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
              
              
-        <h3 class="title">Employee Folders</h3>
+        <h3 class="title"></h3>
     
+        These are programs created to assist employees in achieving workplace 
+        happiness and wellbeing. 
+    
+        <button ion-button block class = "buttonspace"[navPush]="emprev1">Assistance Programs</button>
+        
+        After you have become ill or injured, you may need time off to recover. 
+        Here is what you need to know about taking leave and compensation. 
 
-        <button ion-button block [navPush]="emprev1">List 1</button>
-        
-    After you have become ill or injured, you may need time off to recover. 
-    Here is what you need to know about taking leave and compensation. 
-        <button ion-button block [navPush]="emprev2">List 2</button>
+        <button ion-button block class = "buttonspace" [navPush]="emprev2">Leave Programs</button>
     
+        Other helpful contact resources that maybe useful for you.
         
-        <button ion-button block [navPush]="emprev3">List 3</button>         
+        <button ion-button block class = "buttonspace" [navPush]="emprev3">Helpful Resources</button>         
              
              
 

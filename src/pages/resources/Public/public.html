@@ -1,8 +1,10 @@
 <ion-header *ngIf="pageElementsLoaded">
-    <ion-navbar>
-        <button ion-button menuToggle >
-            <ion-icon name="menu"></ion-icon>
-        </button>
+ <ion-navbar hideBackButton="true" >
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-title>{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
