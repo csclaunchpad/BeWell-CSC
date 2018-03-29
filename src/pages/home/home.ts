@@ -17,6 +17,7 @@ import { TranslationService } from '../../assets/services/translationService';
 import { WellnessTracker } from '../WellnessTracker/wellnesstracker';
 import { Assessment } from '../Tools/assessment/assessment';
 import { Login } from './Login/login/login';
+import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry'; // home.html
 
 
 @Component({
@@ -100,12 +101,12 @@ export class HomePage {
       }).catch(e => console.log(e));
     }
 */
-/*
+
     addData() {
       this.navCtrl.push(DailyEntry);
     }
 
-
+/*
     deleteData(rowid) {
       this.sqlite.create({
         name: 'ionicdb9.db',

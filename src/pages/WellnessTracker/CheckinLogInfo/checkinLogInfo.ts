@@ -37,6 +37,8 @@ export class CheckinLogInfo {
 	
 	// Controls whether our view is loaded based off of if pageElements has been loaded
 	private pageElementsLoaded: boolean = false;
+        
+        private userID: string;
 	
 	// ------------------------- Page Specific Variables ------------------------- //
 	
@@ -54,6 +56,7 @@ export class CheckinLogInfo {
 		var languageFlag = this.storage.get("languageFlag").then((value) => {
 			if(value != null) {
 				this.pageElements = this.translationService.load("checkinLogInfo.html", value);
+                                this.pageElementsLoaded = true;
 				console.log(this.pageElements);
 			} else {
 				console.log("No language flag set");
@@ -62,22 +65,24 @@ export class CheckinLogInfo {
 		
 		this.checkinLogID = this.navParams.get('entryID');
 		
-		this.initDB();
+//		this.initDB();
 	}
 	
-	authenticate() {
+        authenticate() {
 		
 		// Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
-		this.storage.get("userID").then((value) => {
-			if(value == null) {
-				this.navCtrl.setRoot(Login);
-			}
-		});
+            this.storage.get("userID").then((value) => {
+		if(value == null) {
+                    this.navCtrl.setRoot(Login);
+		}
+		this.userID = value;
+                this.initDB();
+            });
 	}
-	
+        
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb9.db',
+			name: this.userID +".db",
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			
@@ -87,7 +92,7 @@ export class CheckinLogInfo {
 				.then(res => {
 					console.log(this.checkinLogID);
 					this.userRecords = res.rows.item(0);
-					console.log(this.userRecords);
+					console.log("TJ", this.userRecords);
 				})
 			.catch(e => console.log(e));
 		}).catch(e => console.log(e));

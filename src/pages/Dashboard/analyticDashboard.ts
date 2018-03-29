@@ -332,7 +332,7 @@ export class Dashboard {
 	// Initializes our DB, and fetchs all user records storing them in userRecords[]
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb9.db',
+			name: this.userID +".db",
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			

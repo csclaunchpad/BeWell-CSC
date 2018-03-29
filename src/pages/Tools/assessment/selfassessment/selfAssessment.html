@@ -24,150 +24,78 @@
 <!--   -->    
     <form (ngSubmit)="saveData()">
 
-        <ion-row style="background:#19E52D">
-            <ion-row>
-                <div class="question"> How is your mood?</div>
-            </ion-row>
-            <ion-row>
-                <ion-col>             
-                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
-                </ion-col>
-            </ion-row>
-        </ion-row>
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q1" name="Q1" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.moodText}}</ion-label>
+        </ion-range>
+    </ion-item>      
 
-<!--   -->
-        <ion-row style="background:#AAFF5B">
-            <ion-row>
-                <div class="question">How did you sleep last night?</div>
-            </ion-row>
-            <ion-row>
-                <ion-col>             
-                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
-                </ion-col>
-            </ion-row>
-        </ion-row>
-       
-<!--   -->
-        <ion-row style="background:#FFF95B">
-            <ion-row>
-                <div class="question">How are your interactions with others today?</div>
-            </ion-row>
-            <ion-row>
-                <ion-col>             
-                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
-                </ion-col>
-            </ion-row>
-        </ion-row>
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q2" name="Q2" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.dietText}}</ion-label>
+        </ion-range>
+    </ion-item> 
 
-<!--   -->
-        <ion-row style="background:#FFB949">
-            <ion-row>
-                <div class="question">How do you feel physically?</div>
-            </ion-row>
-            <ion-row>
-                <ion-col>             
-                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
-                </ion-col>
-            </ion-row>
-        </ion-row>
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q3" name="Q3" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.sleepText}}</ion-label>
+        </ion-range>
+    </ion-item> 
 
-<!--   -->
-        <ion-row style="background:#FF7A2D">
-            <ion-row>
-                <div class="question">How do you feel today?</div>
-            </ion-row>
-            <ion-row>
-                <ion-col>             
-                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
-                </ion-col>
-            </ion-row>
-        </ion-row>
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q4" name="Q4" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.stressText}}</ion-label>
+        </ion-range>
+    </ion-item>       
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q5" name="Q5" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.moodText}}</ion-label>
+        </ion-range>
+    </ion-item>      
 
-<!--   -->
-        <ion-row style="background:#FF3F35">
-            <ion-row>
-                <div class="question">How do you feel today?</div>
-            </ion-row>
-            <ion-row>
-                <ion-col>             
-                    <img src="../../../../assets/imgs/feelings/face1.png" class="buttonImg">   
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face3.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face7.png" class="buttonImg">
-                </ion-col>
-            
-                <ion-col>
-                    <img src="../../../../assets/imgs/feelings/face10.png" class="buttonImg">
-                </ion-col>
-            </ion-row>
-        </ion-row>
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q6" name="Q6" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.dietText}}</ion-label>
+        </ion-range>
+    </ion-item> 
 
-      
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q7" name="Q7" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.sleepText}}</ion-label>
+        </ion-range>
+    </ion-item> 
+
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q8" name="Q8" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.stressText}}</ion-label>
+        </ion-range>
+    </ion-item>       
+
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q9" name="Q9" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.moodText}}</ion-label>
+        </ion-range>
+    </ion-item>      
+
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q10" name="Q10" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.dietText}}</ion-label>
+        </ion-range>
+    </ion-item> 
+
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q11" name="Q11" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.sleepText}}</ion-label>
+        </ion-range>
+    </ion-item> 
+
+    <ion-item>
+        <ion-range min="1" max="10" [(ngModel)]="data.Q12" name="Q12" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">
+            <ion-label range-left>{{pageElements.stressText}}</ion-label>
+        </ion-range>
+    </ion-item>       
+
+        
             <button ion-button type="submit" block>{{pageElements.saveDataText}}</button>
         </form>
     </div>

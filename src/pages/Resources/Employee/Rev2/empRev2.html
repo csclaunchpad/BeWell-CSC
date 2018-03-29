@@ -19,105 +19,92 @@
     <ion-grid>
         <ion-row>
             <ion-col>
+                <ion-card class="card"> 
                 <ion-row>
-                    <h5>CSC’s Leave Guidelines</h5> 
-                    This document includes all of the information you need to 
-                    know about taking leave from work.                     
+                    <h5>{{pageElements.title1}}</h5> 
+                    <p>{{pageElements.paragraph1Text}}</p>                     
                     <a href="link owed by COMs" class="buttonLink">
-                        <button ion-button block>CSC’s Leave guidelines</button>
+                        <button ion-button block>{{pageElements.button1}}</button>
                     </a>
                     
                 </ion-row>
+                </ion-card>
                 
+                <ion-card class="card">
                 <ion-row>
-                    <h5>Workers’ Compensation</h5> If you become ill or injured at work, 
-                    you need to contact Workers’ Compensation to file your claim. 
-                    Contact the Workers’ Compensation board in your area to 
-                    learn about your rights and responsibilities following your 
-                    injury. 
+                    <h5>{{pageElements.title2}}</h5> 
+                    <p>{{pageElements.paragraph2Text}}</p>
                     
                     <button ion-button block (click)="JumpToLink(oneObj)"> 
-                         Contact Workers
+                         {{pageElements.button2}}
                     </button>                 
                     
                 </ion-row>
+                </ion-card>
+                
+                <ion-card class="card">    
                 <ion-row>
-                    <h5>Injury on Duty</h5>
-                    Injury on duty leave provisions and collective agreements 
-                    In virtually all cases, Government of Canada employees who 
-                    must take leave due to a workplace illness or injury are 
-                    entitled to injury on duty leave with full pay. The length 
-                    of time is determined by your employer. Please consult your 
-                    collective agreement for more information.    
+                    <h5>{{pageElements.title3}}</h5> 
+                    <p>{{pageElements.paragraph3Text}}</p>   
                                         
                     <a href="mailto:mailto:leanna.haythorne@csc-scc.gc.ca" class="buttonLink">
-                        <button ion-button block>Link TBD</button>
+                        <button ion-button block>{{pageElements.button3}}</button>
                     </a>
                 </ion-row>
+                </ion-card>
+                
+                <ion-card class="card">    
                 <ion-row>
-                    <h5>Disability Insurance</h5>
-                    If you are unable to work for a 
-                    lengthy period of time, as an employee you may be eligible 
-                    for coverage up to 70% of your annual salary. Contact the 
-                    HR Service Center to speak with a compensation advisor who 
-                    can walk you through the process. 
-                                    	
+                    <h5>{{pageElements.title4}}</h5> 
+                    <p>{{pageElements.paragraph4Text}}</p> 	
                 </ion-row>
+                </ion-card>
+                
+                <ion-card class="card">    
                 <ion-row> 
-                    <h5>Medical retirement</h5> 
-                    A medical retirement is granted to 
-                    employees who are confirmed by Health Canada to have a 
-                    disability that prevents you from doing any work. Contact 
-                    the HR Service Center to speak with a compensation advisor 
-                    who can walk you through the process.  
+                    
+                    <h5>{{pageElements.title5}}</h5> 
+                    <p>{{pageElements.paragraph5Text}}</p>
                     
                 </ion-row>   
+                </ion-card>    
+                    
+                <ion-card class="card">    
                 <ion-row>
                     
-                    <h5>Pension/Superannuation</h5> 
-                    If you are away from work for a certain length of time, 
-                    you could return to work and find that you owe money to 
-                    your pension plan. Contact the HR Service Center to avoid 
-                    unexpected expenses upon your return.  
+                    <h5>{{pageElements.title6}}</h5> 
+                    <p>{{pageElements.paragraph6Text}}</p>  
 
                     <a href="tel:+1-844-661-7857" class="buttonLink">
-                        <button ion-button block>Employee Protection Protocol</button>
+                        <button ion-button block>{{pageElements.button6}}</button>
                     </a> 
                     
                 </ion-row>  
+                </ion-card>
                 
+                <ion-card class="card">    
                 <ion-row>
                     
-                    <h5>Return to Work</h5>
-                    This program helps employees who experience 
-                    an injury or illness, work or non-work related, return to 
-                    employment as soon as medically possible. 
-                    Contact the Return to Work Program.
+                    <h5>{{pageElements.title7}}</h5> 
+                    <p>{{pageElements.paragraph7Text}}</p>
                                         
                     <a href="mailto:GENNHQRTWDTA@csc-scc.gc.ca" class="buttonLink">
-                        <button ion-button block>Employee Protection Protocol</button>
+                        <button ion-button block>{{pageElements.button7}}</button>
                     </a> 
                     
                 </ion-row>  
-               
-                <ion-row> 
-
-                    
-                </ion-row>                  
-                <ion-row> 
-                    <h5>More Helpful Links</h5>  
+               </ion-card>     
+                 
+                <ion-row class = "padbutton"> 
+                    <h5>{{pageElements.moreHelpfulLinksText}}</h5>  
                                         
-                    <button ion-button block [navPush]="resPublic">{{pageElements.buttonText3}}</button>
-                    <br>
-                    <br>
-                    <br>
+                    <button ion-button block [navPush]="resPublic">{{pageElements.bottomButton}}</button>
+                
                 </ion-row>  
                 
             </ion-col>
             
-        </ion-row>
-                 
-                 
+        </ion-row> 
                  
     </ion-grid>
    

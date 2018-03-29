@@ -40,7 +40,7 @@ export class EmpRev2 {
                             empTitle:"Contact Workers’ Compensation"     
         };        
         this.twoObj =  {    empUrl:"https://www.canada.ca/en/treasury-board-secretariat/services/values-ethics/diversity-equity/disability-management/fundamentals-return-to-work-plan.html", 
-                            empEmail:"mailto:Email Needed",
+                            empEmail:"mailto:PAE-GSIC_001.GEN_EAP-CISM@CSC-SCC.GC.CA",
                             empTitle:"Contact EAP"     
         };                
       
@@ -61,7 +61,7 @@ export class EmpRev2 {
         // Fetch the content from our language translation service
 	var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
-                this.pageElements = this.translationService.load("employee.html", value);
+                this.pageElements = this.translationService.load("empRev2.html", value);
 		this.pageElementsLoaded = true; 
 		console.log(this.pageElements);
             } 

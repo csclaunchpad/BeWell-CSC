@@ -22,6 +22,7 @@ export class NewUser {
     
 	// Our persistent connection to our DB which is set in initDB();
 	private openDatabase: SQLiteObject;
+        private openWTDatabase: SQLiteObject;
 	
 	// Our references to our view
 	private firstName: String;
@@ -75,11 +76,7 @@ export class NewUser {
 		
 		// Initialize our DB
 		this.initDB();
-                // Build Wellness Tracker Table
-                this.createWTtable();
-                
-		
-		
+	
     }
 	
 	createUser() {
@@ -132,12 +129,15 @@ export class NewUser {
 					this.navCtrl.pop();
 			}).catch(e => console.log(e));
 		}
+
+            // Build Wellness Tracker Table
+            this.createWTtable();
 	}
 	
 	// Initializes our DB, and fetchs all user records storing them in userRecords[]
 	initDB() {
 		this.sqlite.create({
-			name: 'ionicdb9.db',
+			name: 'users_CSC.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			
@@ -153,21 +153,27 @@ export class NewUser {
 					for(var i=0; i<res.rows.length; i++) {
 						this.userRecords.push({rowid:res.rows.item(i).rowid, firstName:res.rows.item(i).firstName, pin:res.rows.item(i).pin, securityQuestion:res.rows.item(i).securityQuestion, securityAnswer:res.rows.item(i).securityAnswer})
 					}
-					console.log("User Records:");
-					console.log(this.userRecords);
+					console.log("User Records: TJ");
+					console.log("User Records: TJ", this.userRecords[1].pin);
+        				console.log("User Records: TJ", (this.userRecords.length+1));                                
 			}).catch(e => console.log(e));
 		}).catch(e => console.log(e));
 	}
         
         createWTtable(){
+            console.log("userid tj", this.userRecords.rowid)
+            
             this.sqlite.create({
-              name: 'ionicdb9.db',
-              location: 'default'
+                name: (this.userRecords.length+1) + ".db",
+                location: 'default'
             }).then((db: SQLiteObject) => {
-              db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
-              .then(res => console.log('Executed SQL'))
-              .catch(e => console.log(e));
-              console.log("wellness created.")
+            
+            this.openWTDatabase = db;
+            
+                db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+                .then(res => console.log('Executed SQL'))
+                .catch(e => console.log(e));
+                console.log("wellness created.")
             }).catch(e => console.log(e));
         }
 }

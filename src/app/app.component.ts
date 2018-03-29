@@ -12,12 +12,14 @@ import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
 //import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
+
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';
 import { Resources } from '../pages/Resources/resources';
 import { Updates } from '../pages/updates/updates';
 
 import { Tools } from '../pages/Tools/tools';
+
 
 @Component({
   templateUrl: 'app.html'

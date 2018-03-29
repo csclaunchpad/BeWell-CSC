@@ -10,6 +10,8 @@ import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
 import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
+import { TOCFR } from '../pages/languageSelection/TOCFR/tocfr';
+import { TOCEN } from '../pages/languageSelection/TOCEN/tocen';
 import { NewUser } from '../pages/home/Login/newUser/newUser';
 import { RecoverUser } from '../pages/home/Login/recoverUser/recoverUser';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
@@ -51,6 +53,8 @@ import { TranslationService } from '../assets/services/translationService';
         SignOut,
         NewUser,
         LanguageSelection,
+        TOCEN,
+        TOCFR,
         RecoverUser,
         WellnessTracker,
         DailyEntry,
@@ -88,7 +92,9 @@ import { TranslationService } from '../assets/services/translationService';
 	RecoverUser,
         WellnessTracker,
 	LanguageSelection,
-	DailyEntry,
+        TOCEN,
+        TOCFR,
+      	DailyEntry,
 	CheckinLog,
 	Updates,
 	Tools,

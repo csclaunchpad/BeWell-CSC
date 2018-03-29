@@ -8,10 +8,27 @@ page-empRev1 {
 
     .buttonLink{
         width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .padbutton{
+        margin-bottom: 44px;
+    }
+
+    .card{
+        width: 95%;
     }
     
     h5{
+        font-weight: bold;
         padding-top: 20px;
         padding-bottom: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+    
+    p{
+        padding: 10px;
+    }
+
 }

@@ -72,8 +72,9 @@ export class DailyEntry {
 	}
 
         saveData() {
+            console.log("TJDE:", this.userID +".db" );
             this.sqlite.create({
-                name: 'ionicdb9.db',
+                name: this.userID +".db",
                 location: 'default'
             }).then((db: SQLiteObject) => {
             db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.userID, moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
@@ -81,9 +82,12 @@ export class DailyEntry {
                 console.log(res);
                 this.toast.show('Data saved', '5000', 'center').subscribe(
                     toast => {
-                        this.navCtrl.setRoot(CheckinLog);
-                    }
+//                        this.navCtrl.pop();
+//                        this.navCtrl.push(CheckinLog);
+//                        this.navCtrl.setRoot(CheckinLog);
+                    }    
                 );
+                this.navCtrl.pop();
             })
             .catch(e => {
                 console.log(e);

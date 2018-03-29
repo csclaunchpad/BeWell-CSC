@@ -1,10 +1,10 @@
-<ion-header>
+<ion-header *ngIf="pageElementsLoaded">
   <ion-navbar >
     <button ion-button menuToggle>
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
     <ion-title>
-      {{pageElements.homeTitleText}}
+      {{pageElements.menuTitleText}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -18,22 +18,25 @@
 
     <ion-grid>
         <ion-row>
-            <ion-col>
+<!--            <ion-col>   -->
                 <h5 class="title">{{pageElements.pageToolText1}}</h5> 
-            <div text-center>
+<!--            <div text-center>
                 <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
             </div> 
             </ion-col>
+-->
         </ion-row>
-        <ion-row>
+<!--        <ion-row>
             <ion-col>
                 <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
             </ion-col>
         </ion-row>
-
+-->
+    <ion-card>
         <ion-row>
             <ion-col>        
             <div text-center>
+                <h6>{{pageElements.buttonText2}}</h6>
                 <img src="../../../assets/imgs/WT.png" class="featureImg">         
             </div> 
             </ion-col>
@@ -43,14 +46,24 @@
                 <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
             </ion-col>
         </ion-row> 
-        
+    </ion-card>   
+    <ion-card>
+        <ion-row>
+            <ion-col>        
+            <div text-center>
+                <img src="../../../assets/imgs/ideas.png" class="featureImg">         
+            </div> 
+            </ion-col>
+        </ion-row>
         <ion-row>
             <ion-col>
                     <a href="mailto:" class="buttonLink">
                         <button ion-button block class = "buttonLink" >{{pageElements.buttonText3}}</button>
                     </a>  
             </ion-col>
-        </ion-row> 
+        </ion-row>
+    </ion-card>
+
     </ion-grid>
 </ion-content>
 

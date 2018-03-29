@@ -1,10 +1,12 @@
 // Angular/Ionic Imports
 
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { Login } from '../home/Login/login/login';
+import { TOCFR } from './TOCFR/tocfr';
+import { TOCEN } from './TOCEN/tocen';
 
 @Component({
   selector: 'page-languageSelection',
@@ -12,8 +14,10 @@ import { Login } from '../home/Login/login/login';
 })
 
 export class LanguageSelection {
-
-	constructor(public navCtrl: NavController, private storage: Storage) {
+        tocen = TOCEN;
+        tocfr = TOCFR;
+        
+	constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
 		
 	}
 	

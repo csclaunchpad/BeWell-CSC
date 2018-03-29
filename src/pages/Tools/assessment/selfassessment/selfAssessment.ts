@@ -42,7 +42,7 @@ export class SelfAssessment {
 	
 	// ------------------------- Page Specific Variables ------------------------- //
 	
-	data = { date:"", moodScore:5, dietScore:5, sleepScore:5, stressScore:5, entryNote:"" };
+	data = { date:"", Q1:5, Q2:5, Q3:5, Q4:5, Q5:5, Q6:5, Q7:5, Q8:5, Q9:5, Q10:5, Q11:5, Q12:5 };
 
 	constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private toast: Toast, private storage: Storage, private translationService: TranslationService) {
 		this.authenticate();
@@ -73,36 +73,4 @@ export class SelfAssessment {
 		console.log("HIT");
 	}
 
-    saveData() {
-        this.sqlite.create({
-            name: 'ionicdb9.db',
-            location: 'default'
-        }).then((db: SQLiteObject) => {
-        db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.userID, moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
-        .then(res => {
-            console.log(res);
-            this.toast.show('Data saved', '5000', 'center').subscribe(
-                toast => {
-                    this.navCtrl.setRoot(HomePage);
-                }
-            );
-        })
-        .catch(e => {
-            console.log(e);
-            this.toast.show(e, '5000', 'center').subscribe(
-            toast => {
-                console.log(toast);
-            }
-            );
-            });
-        }).catch(e => 
-        {
-            console.log(e);
-            this.toast.show(e, '5000', 'center').subscribe(
-            toast => {
-                console.log(toast);
-            }
-            );
-        });
-    }
 }

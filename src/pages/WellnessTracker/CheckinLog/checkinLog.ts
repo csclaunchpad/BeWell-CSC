@@ -5,6 +5,7 @@ import { NavController, NavParams } from 'ionic-angular';
 
 // Local Storage Import
 import { Storage } from '@ionic/storage';
+import { Toast } from '@ionic-native/toast';
 
 // SQLite3 Imports
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQLite FEB 2018
@@ -46,9 +47,10 @@ export class CheckinLog {
 	
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private storage: Storage, private translationService: TranslationService) {
-		this.authenticate();
-		this.configuration();
-	}
+	this.authenticate();               
+	this.configuration();
+                
+    }
 
 	authenticate() {
 		
@@ -58,6 +60,8 @@ export class CheckinLog {
 				this.navCtrl.setRoot(Login);
 			}
 			this.userID = value;
+                        console.log("TJ=", this.userID);
+                        this.getData();
 		});
 	}
 	
@@ -85,17 +89,19 @@ export class CheckinLog {
             });
 	}
 	
-    ionViewDidLoad() {
-        this.getData();
-    }
+//    ionViewDidLoad() {
+  //      this.getData();
+//    }
 
-    ionViewWillEnter() {
-        this.getData();
-    }
+//    ionViewWillEnter() {
+//        this.getData();
+//    }  
+
 
 	initDB() {
+            console.log("init DB");
 		this.sqlite.create({
-			name: 'ionicdb9.db',
+			name: this.userID +".db",
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			
@@ -112,12 +118,12 @@ export class CheckinLog {
 	
     getData() {
         this.sqlite.create({
-            name: 'ionicdb9.db',
+            name: this.userID +".db",
             location: 'default'
         }).then((db: SQLiteObject) => {
-            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
-            .then(res => console.log('Executed SQL'))
-            .catch(e => console.log(e));
+//            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+//            .then(res => console.log('Executed SQL'))
+//            .catch(e => console.log(e));
             db.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
             .then(res => {
             this.userRecords = [];

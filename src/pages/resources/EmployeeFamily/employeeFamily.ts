@@ -81,8 +81,14 @@ export class EmployeeFam {
                 console.log("No language flag set");
             }			
 	});
-    }    
-    //POP a page off the menu stack
+    }
+        
+    JumpToLink(empObj) {
+        this.navCtrl.push( ResInfo, { empUrl: empObj.empUrl, empEmail: empObj.empEmail, empTitle: empObj.empTitle } )
+//        this.navCtrl.push( ResInfo, { eapObj } )
+    }
+    
+        //POP a page off the menu stack
     goBack() {
         this.navCtrl.pop();
     }

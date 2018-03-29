@@ -25,7 +25,6 @@ import { AlertController, MenuController } from 'ionic-angular';
 import { NewUser } from '../newUser/newUser'; // newUser.html
 import { RecoverUser } from '../recoverUser/recoverUser'; // recoverUser.html
 import { HomePage } from '../../home'; // home.html
-import { DailyEntry } from '../../../WellnessTracker/DailyEntry/dailyEntry'; // home.html
 
 import * as PH from "password-hash";
 
@@ -54,7 +53,8 @@ export class Login {
 	
 	// Our persistent connection to our DB which is set in initDB()
 	private openDatabase: SQLiteObject;
-	
+        private openWTDatabase: SQLiteObject;
+        	
 	// The actual content of the page, fetched via translationService.ts
 	private pageElements: Object;
 	
@@ -170,7 +170,7 @@ export class Login {
 			
 			// Set our login flag in localStorage and then redirect to the home page
 			this.storage.set("userID", this.userID);
-			this.navCtrl.setRoot(DailyEntry);
+			this.navCtrl.setRoot(HomePage);
 		
 		// If not found
 		} else {
@@ -181,7 +181,7 @@ export class Login {
 	// Creates a connection to our DB, performs the login process if given the login flag
 	initDB(loginFlag) {
 		this.sqlite.create({
-			name: 'ionicdb9.db',
+			name: 'users_CSC.db',
 			location: 'default'
 		}).then((db: SQLiteObject) => {
 			

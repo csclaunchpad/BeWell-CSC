@@ -43,7 +43,7 @@ export class EmpRev1 {
         // Fetch the content from our language translation service
 	var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
-                this.pageElements = this.translationService.load("employee.html", value);
+                this.pageElements = this.translationService.load("empRev1.html", value);
 		this.pageElementsLoaded = true; 
 		console.log(this.pageElements);
             } 

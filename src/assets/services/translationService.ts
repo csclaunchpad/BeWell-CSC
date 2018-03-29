@@ -49,7 +49,7 @@ export class TranslationService {
                     return {
 			firstNameText: "First Name",
 			pinText: "Pin",
-			pinRestrictionText: "4-6 Character Pin",
+			pinRestrictionText: "4-20 Character Pin",
 			securityQuestionText: "Security Question",
 			securityAnswerText: "Security Answer",
 			createUserText: "Create User!",
@@ -234,11 +234,99 @@ export class TranslationService {
                     return {
                         homeTitleText: "Tools",
                         pageToolText1: "Try Our Tools!",
-    			buttonText1: "Mental Health Continuum",
-			buttonText2: "Wellness Tracker",
-			buttonText3: "Do you have a tool idea?"
+						buttonText1: "Mental Health Continuum",
+						buttonText2: "Wellness Tracker",
+						buttonText3: "Do you have a tool idea?"
                     }
-		} 
+				}
+				
+				case "empRev1.html": {
+					return {
+						AssProgTitleText: "Assistance Programs",
+                                                title1: "Employee Assistance Program",
+						paragraph1Text: "The Employee Assistance Program is a confidential program designed to help you and your immediate family members. They can provide referrals and short-term counselling services for personal and work-related problems. Contact the Employee Assistance Program (1-800-268-7708) 24 hours a day, 365 days a year from anywhere in the country.",
+						button1: "Employee Assistance Program",
+						title2: "Positive Space Program",
+						paragraph2Text: "This program is committed to creating a welcoming and inclusive workplace for everyone. That includes lesbian, gay, bisexual, trans, intersex, queer and questioning (LGBTQ+) people.",
+						button2: "Positive Space Program",
+						title3: "Road to Mental Readiness Training",
+						paragraph3Text: "First responders, such a correctional officers, can be exposed to stresses not often experienced by the average person. This training program will help you strengthen your mental resilience in the face of difficult situations.",
+						button3: "Road to Mental Readiness",
+						title4: "Conflict management",
+						paragraph4Text: "The conflict management training program  can help you deal with interpersonal challenges at work. ",
+						button4: "Office of Conflict Management",
+						title5: "Return to Work",
+						paragraph5Text: "This program helps employees who experience an injury or illness, work or non-work related, return to employment as soon as medically possible.",
+						button5: "Return to Work Program",
+						title6: "Duty to Accommodate",
+						paragraph6Text: "This program helps identify and remove barriers to employment (i.e. having accessible facilities, accessible workplace standards, career development opportunities, accommodation for an injury.) ",
+						button6: "Duty to Accommodate Program",
+						title7: "Critical Incident Stress Management",
+						paragraph7Text: "This program that can help you cope with psychological trauma from incidents that happen in an institution or the community. It aims to lessen the response associated with an event.",
+						button7: "Critical Incident Stress Management",
+						title8: "Employee Protection Protocol",
+						paragraph8Text: "This program lets you report threats or intimidation immediately, whether it’s at work or not. Report the situation to your manager or contact the National Monitoring Center to report after hours.",
+						button8: "Employee Protection Protocol",
+						title9: "Harassment Prevention Program",
+						paragraph9Text: "If you are experiencing harassment at work, the Harassment Prevention Program can help. Harassment is any improper conduct by an individual that is offensive to another person. Contact the Harassment Prevention Program.",
+						button9: "Employee Assistance Program",
+						title10: "Occupational Health and Safety",
+						paragraph10Text: "This program promotes a safe and healthy workplace for employees. It helps prevent or reduce occupational injuries and illnesses by inspecting the workplace, investigating workplace injuries, and recommending necessary changes in policy and practice to CSC management.",
+						button10: "Occupational Health and Safety",
+						moreHelpfulLinksText: "More Helpful Links",
+						bottomButton: "PUBLIC",
+					}
+					
+				}
+				
+				case "empRev2.html": {
+					return {
+                                                AssProgTitleText: "Leave Programs",
+						title1: "CSC’s Leave Guidelines",
+						paragraph1Text: "This document includes all of the information you need to know about taking leave from work.",
+						button1: "CSC’s Leave guidelines",
+						title2: "Workers’ Compensation",
+						paragraph2Text: "If you become ill or injured at work, you need to contact Workers’ Compensation to file your claim. Contact the Workers’ Compensation board in your area to learn about your rights and responsibilities following your injury.",
+						button2: "Contact Workers",
+						title3: "Injury on Duty",
+						paragraph3Text: "Injury on duty leave provisions and collective agreements In virtually all cases, Government of Canada employees who must take leave due to a workplace illness or injury are entitled to injury on duty leave with full pay. The length of time is determined by your employer. Please consult your collective agreement for more information.",
+						button3: "Link TBD",
+						title4: "Disability Insurance",
+						paragraph4Text: "If you are unable to work for a lengthy period of time, as an employee you may be eligible for coverage up to 70% of your annual salary. Contact the HR Service Center to speak with a compensation advisor who can walk you through the process. ",
+						title5: "Medical retirement",
+						paragraph5Text: "A medical retirement is granted to employees who are confirmed by Health Canada to have a disability that prevents you from doing any work. Contact the HR Service Center to speak with a compensation advisor who can walk you through the process.",
+						title6: "Pension/Superannuation",
+						paragraph6Text: "If you are away from work for a certain length of time, you could return to work and find that you owe money to your pension plan. Contact the HR Service Center to avoid unexpected expenses upon your return.",
+						button6: "Employee Protection Protocol",
+						title7: "Return to Work",
+						paragraph7Text: "This program helps employees who experience an injury or illness, work or non-work related, return to employment as soon as medically possible. Contact the Return to Work Program.",
+                                                button7: "Return to Work",    
+     						moreHelpfulLinksText: "More Helpful Links",
+						bottomButton: "PUBLIC",
+					}
+					
+				}
+				
+				case "empRev3.html": {
+					return {
+						AssProgTitleText: "Leave Programs",
+                                                maintitle: "Other helpful resources that may be available to you.",
+						mainParagraph: "Maintaining productive and respectful communication with your manager or supervisor about your experience is important. Keep a detailed record of your paper and in-person conversations for your files. ",
+						title1: "Your family doctor:",
+						paragraph1Text: "Seeking assistance from your family doctor is crucial to your recovery process. With a doctor’s referral, your Public Service Health Care Plan will cover you up to $2000 a year for psychological services. Book an appointment now. ",
+						title2: "Family, friends, and colleagues:",
+						paragraph2Text: "Communication with those you care for most and are closest with is key. Even though you may not feel like it, reach out and create a healthy support network for yourself. Your recovery will benefit greatly if you do.",
+						title3: "Your local counsellor:",
+						paragraph3Text: "Meeting with a local counsellor may be a good idea if you need to talk. They will be able to support you and guide you as you process your experience. ",
+						title4: "Your financial advisor:",
+						paragraph4Text: "There may be financial implications if you cannot work for some time. Reach out to your financial advisor for advice and guidance.",
+						title5: "Your insurance company:",
+						paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. ",
+                                                moreHelpfulLinksText: "More Helpful Links",
+						bottomButton: "PUBLIC",
+					}
+				}
+				
 		default: {
                     return {}
 		}
@@ -247,101 +335,101 @@ export class TranslationService {
         else if(languageFlag == "fr") {
             switch(page) {
 				
-                case "component.ts": {
+                case "component.ts": { //Transalted except Assessment
                     return {
-                        home: "Home",
-			dailyentry: "Daily Entry",
-			checkinglog: "Checkin Log",
-			dashboard: "Dashboard",
-			resources: "Resources",
-			assessment: "Assessment",
-			updates: "Updates",
-                        signout: "SignOut"
+                        home: "Bienvenue",
+			dailyentry: "Inscription Quotidienne",
+			checkinglog: "Journal des inscriptions quotidiennes",
+			dashboard: "Tableau de bord",
+			resources: "Ressources",
+			assessment: "Évaluation",
+			updates: "Mise à jour du journal",
+                        signout: "Fermeture de session"
                     }
 		}
                 case "login.html": {
                     return {
                         firstNameText: "Prénom",
-			pinText: "épingle",
-			createUserText: "Créer un utilisateur",
-			loginText: "S'identifier",
-			forgotPinText: "Pin oublié"
+			pinText: "NIP",
+			createUserText: "Créer un compte d’utilisateur",
+			loginText: "Ouverture de session",
+			forgotPinText: "J’ai oublié mon NIP"
                     }
 		}
 				
 		case "newUser.html": {
                     return {
 			firstNameText: "Prénom",
-			pinText: "Épingle",
-			pinRestrictionText: "4-6 Pin de caractère",
+			pinText: "NIP",
+			pinRestrictionText: "NIP de 4 à 20 caractères",
 			securityQuestionText: "Question de sécurité",
-			securityAnswerText: "Réponse de sécurité",
-			createUserText: "Créer un utilisateur!",
-			firstNameFoundText: "Ce prénom est déjà pris!",
-			invalidNameText: "Votre prénom ne peut pas être vide",
-			invalidPinLengthText: "Votre code doit être entre 4 et 6 caractères",
-			invalidSecurityQuestionText: "Votre question de sécurité ne peut pas être vide!",
-			invalidSecurityAnswerText: "Votre réponse de sécurité ne peut pas être vide!"
+			securityAnswerText: "Réponse à la question de sécurité",
+			createUserText: "Créer un compte d’utilisateur",
+			firstNameFoundText: "Le prénom est déjà utilisé!",
+			invalidNameText: "Le champ Prénom doit être rempli",
+			invalidPinLengthText: "Votre NIP doit avoir de 4 à 20 caractères",
+			invalidSecurityQuestionText: "Le champ Question de sécurité doit être rempli",
+			invalidSecurityAnswerText: "Le champ réponse à la question de sécurité doit être rempli"
                     }
                 }
 				
 		case "recoverUser.html": {
                     return {
-                        recoverUserText: "Récupérer l'utilisateur",
-			cantFindNameText: "Nous n'avons pas trouvé ce nom!",
-			nameOfAccountText: "Quel est le nom du compte que vous essayez de récupérer?",
+                        recoverUserText: "Récupérer un compte d’utilisateur",
+			cantFindNameText: "Le compte n’existe pas!",
+			nameOfAccountText: "Quel est le nom du compte que vous tentez de récupérer? ",
 			firstNameText: "Prénom",
 			findNameText: "Trouver le nom",
 			wrongAnswerText: "Ce n'est pas la réponse!",
 			answerToQuestionText: "Quelle est la réponse à la question de sécurité suivante?",
-			securityAnswerText: "Réponse de sécurité",
+                        securityAnswerText: "Réponse à la question de sécurité",
 			submitAnswerText: "Envoyer une réponse",
 			invalidPinText: "Votre code doit avoir entre 4 et 6 caractères!",
-			enterNewPinText: "S'il vous plaît entrer votre nouvelle broche",
-			characterLengthText: "4-6 Pin de caractère",
+                        enterNewPinText: "S'il vous plaît entrer votre nouvelle broche",
+			characterLengthText: "4-20 NIP de caractère",
 			setNewPinText: "Définir une nouvelle broche"
-                    }
+                   }
                 }
 
                 case "home.html": {
                     return {
-                        homeTitleText: "Welcome",
+                        homeTitleText: "Bienvenue",
 			buttonText1: "Mental Health Continuum",
-			buttonText2: "Wellness Tracker",
-			buttonText3: "Do you have a tool idea?"
+			buttonText2: "Avez-vous une idée d'outil?",
+			buttonText3: "Avez-vous une idée d'outil?"
                     }
 		}
 
-                case "wellnesstracker.html": {
+                case "wellnesstracker.html": { //all trasnlated but Welness tracker
                     return {
 			resourceTitleText: "Wellness Tracker",
-                        resPageText: "Choose the resource list that applies to you",
-                       	buttonText1: "Entrée quotidienne",
-                        buttonText2: "Journal d'enregistrement",
-			buttonText3: "Tableau de bord"
+                        resPageText: "Choisissez la liste de ressources qui s’applique à vous",
+                       	buttonText1: "Inscription quotidienne",
+                        buttonText2: "Journal des inscriptions quotidiennes",
+			buttonText3: "Tableau de Bord Analytique"
                     }
 		}
                                 				
 		case "dailyEntry.html": {
                     return {
-                        dailyEntryText: "Entrée quotidienne",
-			moodText: "Ambiance",
+                        dailyEntryText: "Inscription quotidienne",
+			moodText: "Humeur",
 			dietText: "Régime",
-			sleepText: "Dormir",
+			sleepText: "Sommeil",
 			stressText: "Stress",
-			descriptionText: "La description",
-			saveDataText: "Enregistrer des données"
+			descriptionText: "Description",
+			saveDataText: "Sauvegarder les données"
                     }
 		}
 				
 		case "checkinLog.html": {
                     return {
-			checkinLogText: "Journal d'enregistrement",
-			moodText: "Ambiance",
+			checkinLogText: "Journal des inscriptions quotidiennes",
+			moodText: "Humeur",
 			dietText: "Régime",
-			sleepText: "Dormir",
+			sleepText: "Sommeil",
 			stressText: "Stress",
-			wellnessScoreText: "Score",
+			wellnessScoreText: "Note",
 			helpMeText: "Aidez moi!"
                     }
 		}
@@ -349,11 +437,11 @@ export class TranslationService {
 		case "analyticDashboard.html": {
                     return {
 			dashboardText: "Tableau de bord",
-			fromDateText: "Partir de la date",
-			toDateText: "À ce jour",
-			moodText: "Ambiance",
+			fromDateText: "Du date",
+			toDateText: "Au date",
+			moodText: "Humeur",
 			dietText: "Régime",
-			sleepText: "Dormir",
+			sleepText: "Sommeil",
 			stressText: "Stress",
 			generateText: "Produire"
                     }
@@ -361,11 +449,11 @@ export class TranslationService {
 				
 		case "checkinLogInfo.html": {
                     return {
-			checkinLogInfoText: "Archiver les informations du journal",
-			dateText: "Rendez-vous amoureux",
-			moodText: "Ambiance",
+			checkinLogInfoText: "Information relative au journal des inscriptions quotidiennes",
+			dateText: "Date",
+			moodText: "Humeur",
 			dietText: "Régime",
-			sleepText: "Dormir",
+			sleepText: "Sommeil",
 			stressText: "Stress",
 			editText: "modifier",
 			deleteText: "Effacer"
@@ -384,13 +472,13 @@ export class TranslationService {
                                 
                 case "employee.html": {
                     return {
-                        resourceTitleText: "Ressources",
-                        resPageText: "Choose the resource list that applies.",
+                        resourceTitleText: "EMPLOYÉ(E) DU SCC",
+                        resPageText: "Choisissez la liste de ressources qui s’applique à vous",
                         buttonText1: "Employee Assistance Program",
 			buttonText2: "Harassment Prevention Program",
 			buttonText3: "National Attendance Management Program",
                         buttonText4: "Critical Incident Stress Management",
-                        buttonText5: "Occupational Health and Safety",
+                       buttonText5: "Occupational Health and Safety",
                         buttonText6: "Return to Work Program",
                         buttonText7: "CSC Contacts by Email",
                         buttonText8: "Harassment Hot line",
@@ -400,8 +488,8 @@ export class TranslationService {
 		}
                 case "employeeFamily.html": {
                     return {
-                        resourceTitleText: "Employee Family",
-                        resPageText: "Choisissez la liste de ressources qui vous concerne",
+                       resourceTitleText: "FAMILLE D’UN OU D’UNE EMPLOYÉ(E) DU SCC",
+                        resPageText: "Choisissez la liste de ressources qui s’applique à vous",
                         buttonText1: "Crisis Hotline",
                         buttonText2: "Employee Assitance Program",
                         buttonText3: "Mental Health Service",
@@ -411,7 +499,7 @@ export class TranslationService {
                 case "public.html": {
                     return {
                         resourceTitleText: "Public",
-                        resPageText: "Choose the resource list that applies.",
+                        resPageText: "Choisissez la liste de ressources qui s’applique à vous",
                         buttonText1: "Crisis Hotline",
                         buttonText2: "CAN Mental Health Association",
                         buttonText3: "Critical Incident Stress Management",
@@ -420,12 +508,92 @@ export class TranslationService {
 		}
                 case "tools.html": {
                     return {
-                        homeTitleText: "Tools",
+                        homeTitleText: "Outils",
 			buttonText1: "Mental Health Continuum",
 			buttonText2: "Wellness Tracker",
 			buttonText3: "Do you have a tool idea?"
                     }
-		}                                       
+		}                
+                case "empRev1.html": {
+			return {
+                                title1: "Employee Assistance Program",
+				paragraph1Text: "The Employee Assistance Program is a confidential program designed to help you and your immediate family members. They can provide referrals and short-term counselling services for personal and work-related problems. Contact the Employee Assistance Program (1-800-268-7708) 24 hours a day, 365 days a year from anywhere in the country.",
+				button1: "Employee Assistance Program",
+				title2: "Positive Space Program",
+				paragraph2Text: "This program is committed to creating a welcoming and inclusive workplace for everyone. That includes lesbian, gay, bisexual, trans, intersex, queer and questioning (LGBTQ+) people.",
+				button2: "Email Positive Space Program",
+				title3: "Road to Mental Readiness Training",
+				paragraph3Text: "First responders, such a correctional officers, can be exposed to stresses not often experienced by the average person. This training program will help you strengthen your mental resilience in the face of difficult situations.",
+				button3: "Road to Mental Readiness",
+				title4: "Conflict management",
+				paragraph4Text: "The conflict management training program  can help you deal with interpersonal challenges at work. ",
+				button4: "Email Office of Conflict Management",
+				title5: "Return to Work",
+				paragraph5Text: "This program helps employees who experience an injury or illness, work or non-work related, return to employment as soon as medically possible.",
+				button5: "Email Return to Work Program",
+				title6: "Duty to Accommodate",
+				paragraph6Text: "This program helps identify and remove barriers to employment (i.e. having accessible facilities, accessible workplace standards, career development opportunities, accommodation for an injury.) ",
+				button6: "Email Duty to Accommodate Program",
+				title7: "Critical Incident Stress Management",
+				paragraph7Text: "This program that can help you cope with psychological trauma from incidents that happen in an institution or the community. It aims to lessen the response associated with an event.",
+				button7: "Critical Incident Stress Management",
+				title8: "Employee Protection Protocol",
+				paragraph8Text: "This program lets you report threats or intimidation immediately, whether it’s at work or not. Report the situation to your manager or contact the National Monitoring Center to report after hours.",
+				button8: "Employee Protection Protocol",
+				title9: "Harassment Prevention Program",
+				paragraph9Text: "If you are experiencing harassment at work, the Harassment Prevention Program can help. Harassment is any improper conduct by an individual that is offensive to another person. Contact the Harassment Prevention Program.",
+				button9: "Employee Assistance Program",
+				title10: "Occupational Health and Safety",
+				paragraph10Text: "This program promotes a safe and healthy workplace for employees. It helps prevent or reduce occupational injuries and illnesses by inspecting the workplace, investigating workplace injuries, and recommending necessary changes in policy and practice to CSC management.",
+				button10: "Occupational Health and Safety",
+				moreHelpfulLinksText: "More Helpful Links",
+				bottomButton: "PUBLIC",
+			}
+					
+		}
+		
+		case "empRev2.html": {
+			return {
+				title1: "CSC’s Leave Guidelines",
+				paragraph1Text: "This document includes all of the information you need to know about taking leave from work.",
+				button1: "CSC’s Leave guidelines",
+				title2: "Workers’ Compensation",
+				paragraph2Text: "If you become ill or injured at work, you need to contact Workers’ Compensation to file your claim. Contact the Workers’ Compensation board in your area to learn about your rights and responsibilities following your injury.",
+				button2: "Contact Workers",
+				title3: "Injury on Duty",
+				paragraph3Text: "Injury on duty leave provisions and collective agreements In virtually all cases, Government of Canada employees who must take leave due to a workplace illness or injury are entitled to injury on duty leave with full pay. The length of time is determined by your employer. Please consult your collective agreement for more information.",
+				button3: "Link TBD",
+				title4: "Disability Insurance",
+				paragraph4Text: "If you are unable to work for a lengthy period of time, as an employee you may be eligible for coverage up to 70% of your annual salary. Contact the HR Service Center to speak with a compensation advisor who can walk you through the process. ",
+				title5: "Medical retirement",
+				paragraph5Text: "A medical retirement is granted to employees who are confirmed by Health Canada to have a disability that prevents you from doing any work. Contact the HR Service Center to speak with a compensation advisor who can walk you through the process.",
+				title6: "Pension/Superannuation",
+				paragraph6Text: "If you are away from work for a certain length of time, you could return to work and find that you owe money to your pension plan. Contact the HR Service Center to avoid unexpected expenses upon your return.",
+				button6: "Employee Protection Protocol",
+				title7: "Return to Work",
+				paragraph7Text: "This program helps employees who experience an injury or illness, work or non-work related, return to employment as soon as medically possible. Contact the Return to Work Program.",
+				moreHelpfulLinksText: "More Helpful Links",
+				bottomButton: "PUBLIC",
+			}
+					
+		}
+			
+		case "empRev3.html": {
+			return {
+				maintitle: "Other helpful resources that may be available to you.",
+				mainParagraph: "Maintaining productive and respectful communication with your manager or supervisor about your experience is important. Keep a detailed record of your paper and in-person conversations for your files. ",
+				title1: "Your family doctor:",
+				paragraph1Text: "Seeking assistance from your family doctor is crucial to your recovery process. With a doctor’s referral, your Public Service Health Care Plan will cover you up to $2000 a year for psychological services. Book an appointment now. ",
+				title2: "Family, friends, and colleagues:",
+				paragraph2Text: "Communication with those you care for most and are closest with is key. Even though you may not feel like it, reach out and create a healthy support network for yourself. Your recovery will benefit greatly if you do.",
+				title3: "Your local counsellor:",
+				paragraph3Text: "Meeting with a local counsellor may be a good idea if you need to talk. They will be able to support you and guide you as you process your experience. ",
+				title4: "Your financial advisor:",
+				paragraph4Text: "There may be financial implications if you cannot work for some time. Reach out to your financial advisor for advice and guidance.",
+				title5: "Your insurance company:",
+				paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. "
+			}
+		}                       
 		default: {
                     return {}
 		}
