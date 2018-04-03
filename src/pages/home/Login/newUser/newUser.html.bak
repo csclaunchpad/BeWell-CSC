@@ -1,0 +1,89 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			New User
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+	
+	<ion-grid>
+		<!-- Name already used flag -->	
+		<ion-row *ngIf="firstNameFound">
+			<ion-col>
+				{{pageElements.firstNameFoundText}}
+			</ion-col>
+		</ion-row>
+		
+		<!-- Name cannot be blank flag -->
+		<ion-row *ngIf="invalidName">
+			<ion-col>
+				{{pageElements.invalidNameText}}
+			</ion-col>
+		</ion-row>
+		
+		<!-- First name label and input field -->
+		<ion-row>
+			<ion-col>
+				<ion-label color="primary">{{pageElements.firstNameText}}</ion-label>
+				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>
+			</ion-col>
+		</ion-row>
+		
+		<!-- Invalid pin length flag -->
+		<ion-row *ngIf="invalidPinLength">
+			<ion-col>
+				<!-- {{pageElements.invalidPinLengthText}} -->
+			</ion-col>
+		</ion-row>
+		
+		<!-- Pin label and input field -->
+		<ion-row>
+			<ion-col>
+				<ion-label color="primary">{{pageElements.pinText}}</ion-label>
+				<ion-input placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>
+			</ion-col>
+		</ion-row>
+		
+		<!-- Blank security question flag -->
+		<ion-row *ngIf="invalidSecurityQuestion">
+			<ion-col>
+				{{pageElements.invalidSecurityQuestionText}}
+			</ion-col>
+		</ion-row>
+		
+		<!-- Security question label and input field -->
+		<ion-row>
+			<ion-col>
+				<ion-label color="primary">{{pageElements.securityQuestionText}}</ion-label> 
+				<ion-input placeholder="{{pageElements.securityQuestionText}}" [(ngModel)]="securityQuestion"></ion-input>
+			</ion-col>
+		</ion-row>
+		
+		<!-- Blank security answer flag -->
+		<ion-row *ngIf="invalidSecurityAnswer">
+			<ion-col>
+				{{pageElements.invalidSecurityAnswerText}}
+			</ion-col>
+		</ion-row>
+		
+		<!-- Security answer label and input flag -->
+		<ion-row>
+			<ion-col>
+				<ion-label color="primary">{{pageElements.securityAnswerText}}</ion-label>
+				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>
+			</ion-col>
+		</ion-row>
+		
+		<!-- Create user button -->
+		<ion-row>
+			<ion-col>
+				<button ion-button (click)="createUser()">{{pageElements.createUserText}}</button>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

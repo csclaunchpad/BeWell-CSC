@@ -18,7 +18,8 @@
 
     <ion-grid>
         <ion-row>
-            <ion-col>
+            
+            <ion-card class="card">
                 <ion-row>
                     <h5>{{pageElements.title1}}</h5> 
                     <p>{{pageElements.paragraph1Text}}</p>

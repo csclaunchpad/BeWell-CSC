@@ -310,7 +310,6 @@ export class TranslationService {
 				
 				case "empRev3.html": {
 					return {
-						maintitle: "Other helpful resources that may be available to you.",
 						AssProgTitleText: "Leave Programs",
                                                 maintitle: "Other helpful resources that may be available to you.",
 						mainParagraph: "Maintaining productive and respectful communication with your manager or supervisor about your experience is important. Keep a detailed record of your paper and in-person conversations for your files. ",
@@ -322,7 +321,9 @@ export class TranslationService {
 						paragraph3Text: "Meeting with a local counsellor may be a good idea if you need to talk. They will be able to support you and guide you as you process your experience. ",
 						title4: "Your financial advisor:",
 						paragraph4Text: "There may be financial implications if you cannot work for some time. Reach out to your financial advisor for advice and guidance.",
-						paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. "
+						title5: "Your insurance company:",
+						paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. ",
+                                                moreHelpfulLinksText: "More Helpful Links",
 						bottomButton: "PUBLIC",
 					}
 				}
@@ -350,12 +351,10 @@ export class TranslationService {
                 case "login.html": {
                     return {
                         firstNameText: "Prénom",
-			pinText: "épingle",
-			createUserText: "Créer un utilisateur",
-			loginText: "S'identifier",
-			forgotPinText: "Pin oublié",
-			firstNameInput: "Entrée du prénom",
-			pinInput: "Entrée de broche"
+			pinText: "NIP",
+			createUserText: "Créer un compte d’utilisateur",
+			loginText: "Ouverture de session",
+			forgotPinText: "J’ai oublié mon NIP"
                     }
 		}
 				
@@ -445,8 +444,7 @@ export class TranslationService {
 			dietText: "Régime",
 			sleepText: "Sommeil",
 			stressText: "Stress",
-			generateText: "Produire",
-			chartText: "Graphique"
+			generateText: "Produire"
                     }
 		}
 				

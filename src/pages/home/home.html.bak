@@ -3,11 +3,9 @@
     <button ion-button menuToggle>
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
-	<div attr.aria-label="{{pageElements.homeTitleText}}">
-		<ion-title>
-		  {{pageElements.homeTitleText}}
-		</ion-title>
-	</div>
+    <ion-title>
+      {{pageElements.homeTitleText}}
+    </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addData()">
         <ion-icon name="add-circle"></ion-icon>
@@ -23,7 +21,7 @@
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 
-    <div text-center attr.aria-label="{{pageElements.PageTitleText}}">
+    <div text-center>
         <h5 class="title">{{pageElements.PageTitleText}}</h5> 
         <img src="../../../assets/imgs/CF.png" class="MapleLeafImg">         
     </div> 
@@ -48,9 +46,9 @@
 
         <ion-row>
             <ion-col>
-                    <h5 class="title" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</h5> 
+                    <h5 class="title">{{pageElements.buttonText1}}</h5> 
                     <a href="mailto:" class="buttonLink">
-                        <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</button>
+                        <button ion-button block class = "buttonLink" >{{pageElements.buttonText2}}</button>
                     </a>  
             </ion-col>
         </ion-row> 
