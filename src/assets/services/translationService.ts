@@ -312,7 +312,6 @@ export class TranslationService {
 					return {
 						maintitle: "Other helpful resources that may be available to you.",
 						AssProgTitleText: "Leave Programs",
-                                                maintitle: "Other helpful resources that may be available to you.",
 						mainParagraph: "Maintaining productive and respectful communication with your manager or supervisor about your experience is important. Keep a detailed record of your paper and in-person conversations for your files. ",
 						title1: "Your family doctor:",
 						paragraph1Text: "Seeking assistance from your family doctor is crucial to your recovery process. With a doctor’s referral, your Public Service Health Care Plan will cover you up to $2000 a year for psychological services. Book an appointment now. ",
@@ -322,8 +321,8 @@ export class TranslationService {
 						paragraph3Text: "Meeting with a local counsellor may be a good idea if you need to talk. They will be able to support you and guide you as you process your experience. ",
 						title4: "Your financial advisor:",
 						paragraph4Text: "There may be financial implications if you cannot work for some time. Reach out to your financial advisor for advice and guidance.",
-						paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. "
-						bottomButton: "PUBLIC",
+						paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. ",
+						bottomButton: "PUBLIC"
 					}
 				}
 				
