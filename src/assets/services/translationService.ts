@@ -161,16 +161,16 @@ export class TranslationService {
 		}
 				
 		case "checkinLogInfo.html": {
-                    return {
-			checkinLogInfoText: "Check in Log Info",
-			dateText: "Date",
-			moodText: "Mood",
-			dietText: "Diet",
-			sleepText: "Sleep",
-			stressText: "Stress",
-			editText: "Edit",
-			deleteText: "Delete"
-                    }
+			return {
+				checkinLogInfoText: "Check in Log Info",
+				dateText: "Date",
+				moodText: "Mood",
+				dietText: "Diet",
+				sleepText: "Sleep",
+				stressText: "Stress",
+				editText: "Edit",
+				deleteText: "Delete"
+			}
 		}
 
 		case "resources.html": {
@@ -326,6 +326,20 @@ export class TranslationService {
 					}
 				}
 				
+				case "checkinLogEdit.html": {
+					return {
+						checkinLogInfoText: "Check in Log Info",
+						dateText: "Date",
+						moodText: "Mood",
+						dietText: "Diet",
+						sleepText: "Sleep",
+						stressText: "Stress",
+						editText: "Edit",
+						deleteText: "Delete",
+						saveDataText: "Save"
+					}
+				}
+				
 		default: {
                     return {}
 		}
@@ -450,16 +464,16 @@ export class TranslationService {
 		}
 				
 		case "checkinLogInfo.html": {
-                    return {
-			checkinLogInfoText: "Information relative au journal des inscriptions quotidiennes",
-			dateText: "Date",
-			moodText: "Humeur",
-			dietText: "Régime",
-			sleepText: "Sommeil",
-			stressText: "Stress",
-			editText: "modifier",
-			deleteText: "Effacer"
-                    }
+			return {
+				checkinLogInfoText: "Information relative au journal des inscriptions quotidiennes",
+				dateText: "Date",
+				moodText: "Humeur",
+				dietText: "Régime",
+				sleepText: "Sommeil",
+				stressText: "Stress",
+				editText: "modifier",
+				deleteText: "Effacer"
+			}
 		}
 				
 		case "resources.html": {
@@ -595,7 +609,22 @@ export class TranslationService {
 				title5: "Your insurance company:",
 				paragraph5Text: "If you have questions about what is covered and what isn’t for mental health services, reach out to SunLife Canada. They can help. "
 			}
-		}                       
+		}
+
+		case "checkinLogEdit": {
+			return {
+				checkinLogInfoText: "Information relative au journal des inscriptions quotidiennes",
+				dateText: "Date",
+				moodText: "Humeur",
+				dietText: "Régime",
+				sleepText: "Sommeil",
+				stressText: "Stress",
+				editText: "modifier",
+				deleteText: "Effacer",
+				saveDataText: 'Sauvegarder'
+			}
+			
+		}
 		default: {
                     return {}
 		}

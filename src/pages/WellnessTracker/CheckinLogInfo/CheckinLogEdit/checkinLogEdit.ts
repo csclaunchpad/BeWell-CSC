@@ -14,25 +14,25 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQL
 import { AlertController } from 'ionic-angular';
 
 // Import for Translation Service
-import { TranslationService } from './../../../assets/services/translationService';
+import { TranslationService } from './../../../../assets/services/translationService';
 
 // ------------------------- Page Specific Imports ------------------------- //
 
 // Import Login
-import { Login } from '../../home/Login/login/login';
+import { Login } from '../../../home/Login/login/login';
+
+// Moment (Date framework) Import
+import * as moment from 'moment';
 
 // Import CheckinLog
-import { CheckinLog } from '../CheckinLog/checkinLog';
-
-// Import CheckinLogEdit
-import { CheckinLogEdit } from './CheckinLogEdit/checkinLogEdit';
+import { CheckinLog } from '../../CheckinLog/checkinLog';
 
 @Component({
-  selector: 'page-checkinLogInfo',
-  templateUrl: 'checkinLogInfo.html'
+  selector: 'page-checkinLogEdit',
+  templateUrl: 'checkinLogEdit.html'
 })
 
-export class CheckinLogInfo {
+export class CheckinLogEdit {
 
 	// ------------------------- Mandatory variables for all pages ------------------------- //
 	
@@ -47,8 +47,8 @@ export class CheckinLogInfo {
 	
 	// Controls whether our view is loaded based off of if pageElements has been loaded
 	private pageElementsLoaded: boolean = false;
-        
-	private userID: string;
+	
+	private userID: any;
 	
 	// ------------------------- Page Specific Variables ------------------------- //
 	
@@ -65,29 +65,27 @@ export class CheckinLogInfo {
 		// Fetch the content from our language translation service
 		var languageFlag = this.storage.get("languageFlag").then((value) => {
 			if(value != null) {
-				this.pageElements = this.translationService.load("checkinLogInfo.html", value);
-                                this.pageElementsLoaded = true;
+				this.pageElements = this.translationService.load("checkinLogEdit.html", value);
 				console.log(this.pageElements);
 			} else {
 				console.log("No language flag set");
 			}
 		});
 		
-		this.checkinLogID = this.navParams.get('entryID');
-		
-	// this.initDB();
+		this.checkinLogID = this.navParams.get('checkinLogID');
+		this.initDB();
 	}
 	
-        authenticate() {
+	authenticate() {
 		
 		// Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
-            this.storage.get("userID").then((value) => {
-		if(value == null) {
-                    this.navCtrl.setRoot(Login);
-		}
-		this.userID = value;
-                this.initDB();
-            });
+		this.storage.get("userID").then((value) => {
+			if(value == null) {
+				this.navCtrl.setRoot(Login);
+			}
+			this.userID = value;
+			this.initDB();
+		});
 	}
         
 	initDB() {
@@ -100,8 +98,8 @@ export class CheckinLogInfo {
 			
 			this.openDatabase.executeSql('SELECT * FROM wellness WHERE rowid = ?', [this.checkinLogID])
 				.then(res => {
-					console.log(this.checkinLogID);
-					this.userRecords = res.rows.item(0);
+					this.userRecords = res.rows.item(0);					
+					this.pageElementsLoaded = true;
 					if(this.userRecords.date.indexOf("T") == -1) {
 						console.log("userRecords[0].Date is in wrong format, fixing now");
 						this.userRecords.date = this.userRecords.date.substring(0, this.userRecords.date.indexOf(" ")) + "T" + this.userRecords.date.substring((this.userRecords.date.indexOf(" ")+1));
@@ -119,25 +117,26 @@ export class CheckinLogInfo {
 	showConfirm() {
 		let alert = this.alertCtrl.create({
 			title: 'Delete',
-			message: 'Are you sure you want to delete this entry?',
+			message: 'Are you sure you want to make these changes?',
 			buttons: [
 				{
-					text: 'Cancel',
+					text: 'No',
 					role: 'cancel',
 					handler: () => {
-						console.log("Delete canceled");
+						console.log("Update canceled");
 					}
 				},
 				{
-					text: 'Delete',
+					text: 'Yes',
 					handler: () => {
 						if(this.openDatabase != undefined) {
-							this.openDatabase.executeSql('DELETE FROM wellness WHERE rowid = ?', [this.checkinLogID]).then(res => {
-								console.log("Delete success");
+							console.log("this.userRecords.date: " + this.userRecords.date);
+							this.openDatabase.executeSql('UPDATE wellness SET moodScore = ?, dietScore = ?, sleepScore = ?, stressScore = ?, entryNote = ? WHERE rowid = ?', [ this.userRecords.moodScore, this.userRecords.dietScore, this.userRecords.sleepScore, this.userRecords.stressScore, this.userRecords.entryNote, this.checkinLogID]).then(res => {
+								console.log("Update success");
 								this.navCtrl.setRoot(CheckinLog);
 							});
 						} else {
-							console.log("Cannot delete, the DB has not be initialized");
+							console.log("Cannot update, the DB has not be initialized");
 						}
 					}
 				}
@@ -147,12 +146,6 @@ export class CheckinLogInfo {
 	}
 	
 	edit() {
-		this.navCtrl.push(CheckinLogEdit, {
-            checkinLogID: this.checkinLogID
-		});
-	}
-	
-	del() {
 		this.showConfirm();
 	}
 }

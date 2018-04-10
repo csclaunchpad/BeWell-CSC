@@ -57,10 +57,10 @@
 		
 		<ion-row text-center>
 			<ion-col>
-				<button ion-button block attr.aria-label="{{pageElements.editText}}">{{pageElements.editText}}</button>
+				<button ion-button block attr.aria-label="{{pageElements.editText}}" (click)="edit()">{{pageElements.editText}}</button>
 			</ion-col>
 			<ion-col>
-				<button ion-button block attr.aria-label="{{pageElements.deleteText}}">{{pageElements.deleteText}}</button>
+				<button ion-button block attr.aria-label="{{pageElements.deleteText}}" (click)="del()">{{pageElements.deleteText}}</button>
 			</ion-col>
 		</ion-row>
     </ion-grid>
