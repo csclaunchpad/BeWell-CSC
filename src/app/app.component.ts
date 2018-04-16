@@ -19,6 +19,7 @@ import { Resources } from '../pages/Resources/resources';
 import { Updates } from '../pages/updates/updates';
 
 import { Tools } from '../pages/Tools/tools';
+import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAssessment';
 
 
 @Component({
@@ -28,8 +29,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
     rootPage: any = LanguageSelection;
-//    rootPage: any = Resources;
-//    rootPage: any = Assessment;
+//    rootPage: any = Tools;
+//    rootPage: any = SelfAssessment;
 
     // The actual content of the page, fetched via translationService.ts
     private pageElements: Object;

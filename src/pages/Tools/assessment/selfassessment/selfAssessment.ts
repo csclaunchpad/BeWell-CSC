@@ -39,6 +39,8 @@ export class SelfAssessment {
 	private pageElementsLoaded: boolean = false;
 	
 	private userID: string;
+        
+        private scoreBadge: string;
 	
 	// ------------------------- Page Specific Variables ------------------------- //
 	
@@ -63,14 +65,29 @@ export class SelfAssessment {
 	authenticate() {
 		this.storage.get("userID").then((value) => {
 			if(value == null) {
-                            this.navCtrl.setRoot(Login);
+//                            this.navCtrl.setRoot(Login);
 			}
 			this.userID = value;
 		});	
 	}
 	
 	updateScores(selectedValue: any) {
-		console.log("HIT");
+            console.log("HIT");
+            var score = (this.data.Q1+this.data.Q2+this.data.Q3+this.data.Q4+this.data.Q5+this.data.Q6+this.data.Q7+this.data.Q8+this.data.Q9+this.data.Q10+this.data.Q11+this.data.Q12);
+            /*
+            if(score < 12*10/4){
+                this.scoreBadge = "Healthy.png";
+            }
+            else if(score < 12*10/2){
+                this.scoreBadge = "Reacting.png";
+            }
+            else if(score < ((12*10/2)+(12*10/4))){
+                this.scoreBadge = "Injured.png";
+            }
+            else(score < 12*10){
+                this.scoreBadge = "Ill.png";
+            }
+            */       
 	}
 
 }

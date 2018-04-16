@@ -14,56 +14,71 @@
     <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header" >
 
     <ion-grid>
         <ion-row>
-<!--            <ion-col>   -->
-                <h5 class="title">{{pageElements.pageToolText1}}</h5> 
-<!--            <div text-center>
-                <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
-            </div> 
-            </ion-col>
--->
-        </ion-row>
-<!--        <ion-row>
-            <ion-col>
-                <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
-            </ion-col>
-        </ion-row>
--->
-    <ion-card>
-        <ion-row>
-            <ion-col>        
-            <div text-center>
-                <h6>{{pageElements.buttonText2}}</h6>
-                <img src="../../../assets/imgs/WT.png" class="featureImg">         
-            </div> 
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
-            </ion-col>
-        </ion-row> 
-    </ion-card>   
-    <ion-card>
-        <ion-row>
-            <ion-col>        
-            <div text-center>
-                <img src="../../../assets/imgs/ideas.png" class="featureImg">         
-            </div> 
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col>
-                    <a href="mailto:" class="buttonLink">
-                        <button ion-button block class = "buttonLink" >{{pageElements.buttonText3}}</button>
-                    </a>  
-            </ion-col>
-        </ion-row>
-    </ion-card>
+            <h5 class="title">{{pageElements.pageToolText1}}</h5> 
 
+<!--            <ion-card class="backgroundMHCM">
+                
+                <ion-row>
+                    <ion-col>   
+                        <div text-center>
+                            <h6>{{pageElements.buttonText1}}</h6>
+                            <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
+                        </div> 
+                    </ion-col>
+                </ion-row>
+                
+                <ion-row>
+                    <ion-col>
+                        <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
+                    </ion-col>
+                </ion-row>
+               
+            </ion-card>
+-->             
+            <ion-card class="backgroundWT">
+                
+                <ion-row>
+                    <ion-col>        
+                    <div text-center>
+                        <h6>{{pageElements.buttonText2}}</h6>
+                        <img src="../../../assets/imgs/WT.png" class="featureImg">         
+                    </div> 
+                    </ion-col>
+                </ion-row>
+                
+                <ion-row>
+                    <ion-col>
+                        <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
+                    </ion-col>
+                </ion-row> 
+                
+            </ion-card>
+            
+            <ion-card class="blackgroundIDEA">
+                
+                <ion-row>
+                    <ion-col>        
+                    <div text-center>
+                        <img src="../../../assets/imgs/ideas.png" class="featureImg">         
+                    </div> 
+                    </ion-col>
+                </ion-row>
+                
+                <ion-row>
+                    <ion-col>
+                            <a href="mailto:" class="buttonLink">
+                                <button ion-button block class = "buttonLink" >{{pageElements.buttonText3}}</button>
+                            </a>  
+                    </ion-col>
+                </ion-row>
+                
+            </ion-card>
+            
+        </ion-row>
     </ion-grid>
 </ion-content>
 

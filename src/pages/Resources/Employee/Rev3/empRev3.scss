@@ -1,6 +1,6 @@
 page-empRev3 {
     
-    
+     
     .has-header {
     	top: 44px;
 	position:absolute;
@@ -9,17 +9,24 @@ page-empRev3 {
 
     .buttonLink{
         width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
+//        padding-left: 10px;
+//        padding-right: 10px;
+//        padding-bottom: 5px;
     }
     .padbutton{
         margin-bottom: 44px;
     }
-
+    
+    .cardPadding{
+        padding: 10px; 
+    }
     .card{
         width: 95%;
     }
-    
+    .cardH5{
+        font-weight: bold;
+        margin-left: 0px;
+    }
     h5{
         font-weight: bold;
         padding-top: 20px;
@@ -29,7 +36,8 @@ page-empRev3 {
     }
     
     p{
-        padding: 10px;
+        margin: 5px;
     }
+
 
 }

@@ -5,7 +5,7 @@
             <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+        <ion-title>{{pageElements.AssProgTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -22,55 +22,57 @@
                 
                 <h4>{{pageElements.maintitle}}</h4> 
                 <br><br>
-                <ion-card class="card">
+                <ion-card class = "cardPadding">
                     <ion-row>
-                    <h5>{{pageElements.title1}}</h5> 
+                    <div class ="cardH5" >{{pageElements.title1}}</div> 
                     <p>{{pageElements.paragraph1Text}}</p>
                     </ion-row>
                 </ion-card>
                 
-                <ion-card class="card">
+                <ion-card class = "cardPadding">
                     <ion-row>
-                    <h5>{{pageElements.title2}}</h5> 
+                    <div class ="cardH5" >{{pageElements.title2}}</div> 
                     <p>{{pageElements.paragraph2Text}}</p> 
                     </ion-row>
                 </ion-card>
                 
-                <ion-card class="card">
+                <ion-card class = "cardPadding">
                     <ion-row>
-                    <h5>{{pageElements.title3}}</h5> 
+                    <div class ="cardH5" >{{pageElements.title3}}</div> 
                     <p>{{pageElements.paragraph3Text}}</p> 
                     </ion-row> 
                 </ion-card>    
                 
-                <ion-card class="card">
+                <ion-card class = "cardPadding">
                     <ion-row>        
-                    <h5>{{pageElements.title4}}</h5> 
+                    <div class ="cardH5" >{{pageElements.title4}}</div> 
                     <p>{{pageElements.paragraph4Text}}</p> 
                     </ion-row>
                 </ion-card>
                 
-                <ion-card class="card">
+                <ion-card class = "cardPadding">
                     <ion-row>        
-                    <h5>{{pageElements.title5}}</h5> 
+                    <div class ="cardH5" >{{pageElements.title5}}</div> 
                     <p>{{pageElements.paragraph5Text}}</p>
                     </ion-row>
                 </ion-card>
                 
-                <ion-card class="card">
+<!--                <ion-card class = "cardPadding">
                     <ion-row>                  
-                    <h5>{{pageElements.title6}}</h5> 
-                    <p>{{pageElements.paragraph6Text}}</p>
+                        <div class ="cardH5"> {{pageElements.title6}}</div> 
+                        <p>{{pageElements.paragraph6Text}}</p>
                     </ion-row>
                 </ion-card>
+-->                
+                
                 
             </ion-col>
         </ion-row> 
             
-    <ion-row class = "padbutton"> 
-        <h5>{{pageElements.moreHelpfulLinksText}}</h5>                                      
-            <button ion-button block [navPush]="resPublic">{{pageElements.bottomButton}}</button>
-    </ion-row>
+        <ion-row class = "padbutton"> 
+            <h5>{{pageElements.moreHelpfulLinksText}}</h5>                                      
+                <button ion-button block [navPush]="resPublic">{{pageElements.bottomButton}}</button>
+        </ion-row>
         
     </ion-grid>
    
