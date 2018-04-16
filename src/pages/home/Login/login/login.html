@@ -5,46 +5,46 @@
 <ion-content padding *ngIf="pageElementsLoaded">
 	<ion-grid>
 		<ion-row>
-			<ion-col text-center>
+			<ion-col text-center attr.aria-label="{{pageElements.firstNameText}}">
 				{{pageElements.firstNameText}}
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
 			<ion-col text-center>
-				<ion-item>
+				<ion-item attr.aria-label="{{pageElements.firstNameInput}}">
 					<ion-input type="text" placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
-			<ion-col text-center>
+			<ion-col text-center attr.aria-label="{{pageElements.pinText}}">
 				{{pageElements.pinText}}
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
 			<ion-col text-center>
-				<ion-item>
+				<ion-item attr.aria-label="{{pageElements.pinInput}}">
 					<ion-input type="text" placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>
 				</ion-item>
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
-			<ion-col text-center>
+			<ion-col text-center attr.aria-label="{{loginText}}">
 				<button ion-button (click)="login()">{{pageElements.loginText}}</button>
 			</ion-col>
 		</ion-row>
 		
 		<ion-row>
 		
-			<ion-col col-6 text-center>
+			<ion-col col-6 text-center attr.aria-label="{{pageElements.createUserText}}">
 				<button ion-button (click)="newUser()">{{pageElements.createUserText}}</button>
 			</ion-col>
 			
-			<ion-col col-6 text-center>
+			<ion-col col-6 text-center attr.aria-label="{{pageElements.forgotPinText}}">
 				<button ion-button (click)="recoverUser()">{{pageElements.forgotPinText}}</button>
 			</ion-col>
 		</ion-row>

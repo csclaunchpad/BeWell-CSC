@@ -1,9 +1,9 @@
-<ion-header>
+<ion-header *ngIf="pageElementsLoaded">
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
 		</button>
-		<ion-title>
+		<ion-title attr.aria-label="{{pageElements.newUserText}}">
 			New User
 		</ion-title>
 	</ion-navbar>
@@ -13,14 +13,14 @@
 	
 	<ion-grid>
 		<!-- Name already used flag -->	
-		<ion-row *ngIf="firstNameFound">
+		<ion-row *ngIf="firstNameFound" attr.aria-label="{{pageElements.firstNameFoundText}}">
 			<ion-col>
 				{{pageElements.firstNameFoundText}}
 			</ion-col>
 		</ion-row>
 		
 		<!-- Name cannot be blank flag -->
-		<ion-row *ngIf="invalidName">
+		<ion-row *ngIf="invalidName" attr.aria-label="{{pageElements.invalidNameText}}">
 			<ion-col>
 				{{pageElements.invalidNameText}}
 			</ion-col>
@@ -30,27 +30,27 @@
 		<ion-row>
 			<ion-col>
 				<ion-label color="primary">{{pageElements.firstNameText}}</ion-label>
-				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName"></ion-input>
+				<ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName" attr.aria-label="{{pageElements.firstNameInput}}"></ion-input>
 			</ion-col>
 		</ion-row>
 		
 		<!-- Invalid pin length flag -->
-		<ion-row *ngIf="invalidPinLength">
+		<ion-row *ngIf="invalidPin" attr.aria-label="{{pageElements.invalidPinLengthText}}">
 			<ion-col>
-				<!-- {{pageElements.invalidPinLengthText}} -->
+				{{pageElements.invalidPinLengthText}}
 			</ion-col>
 		</ion-row>
 		
 		<!-- Pin label and input field -->
 		<ion-row>
 			<ion-col>
-				<ion-label color="primary">{{pageElements.pinText}}</ion-label>
-				<ion-input placeholder="{{pageElements.pinText}}" [(ngModel)]="pin"></ion-input>
+				<ion-label color="primary" attr.aria-label="{{pageElements.pinText}}">{{pageElements.pinText}}</ion-label>
+				<ion-input placeholder="{{pageElements.pinText}}" [(ngModel)]="pin" attr.aria-label="{{pageElements.pinInput}}"></ion-input>
 			</ion-col>
 		</ion-row>
 		
 		<!-- Blank security question flag -->
-		<ion-row *ngIf="invalidSecurityQuestion">
+		<ion-row *ngIf="invalidSecurityQuestion" attr.aria-label="{{pageElements.invalidSecurityQuestionText}}">
 			<ion-col>
 				{{pageElements.invalidSecurityQuestionText}}
 			</ion-col>
@@ -59,13 +59,13 @@
 		<!-- Security question label and input field -->
 		<ion-row>
 			<ion-col>
-				<ion-label color="primary">{{pageElements.securityQuestionText}}</ion-label> 
-				<ion-input placeholder="{{pageElements.securityQuestionText}}" [(ngModel)]="securityQuestion"></ion-input>
+				<ion-label color="primary" attr.aria-label="{{pageElements.securityQuestionText}}">{{pageElements.securityQuestionText}}</ion-label> 
+				<ion-input placeholder="{{pageElements.securityQuestionText}}" [(ngModel)]="securityQuestion" attr.aria-label="{{pageElements.securityQuestionInput}}"></ion-input>
 			</ion-col>
 		</ion-row>
 		
 		<!-- Blank security answer flag -->
-		<ion-row *ngIf="invalidSecurityAnswer">
+		<ion-row *ngIf="invalidSecurityAnswer" attr.aria-label="{{pageElements.invalidSecurityAnswerText}}">
 			<ion-col>
 				{{pageElements.invalidSecurityAnswerText}}
 			</ion-col>
@@ -74,15 +74,15 @@
 		<!-- Security answer label and input flag -->
 		<ion-row>
 			<ion-col>
-				<ion-label color="primary">{{pageElements.securityAnswerText}}</ion-label>
-				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer"></ion-input>
+				<ion-label color="primary" attr.aria-label="{{pageElements.securityAnswerText}}">{{pageElements.securityAnswerText}}</ion-label>
+				<ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer" attr.aria-label="{{pageElements.securityAnswerInput}}"></ion-input>
 			</ion-col>
 		</ion-row>
 		
 		<!-- Create user button -->
 		<ion-row>
 			<ion-col>
-				<button ion-button (click)="createUser()">{{pageElements.createUserText}}</button>
+				<button ion-button (click)="createUser()" attr.aria-label="{{pageElements.createUserText}}">{{pageElements.createUserText}}</button>
 			</ion-col>
 		</ion-row>
 	</ion-grid>

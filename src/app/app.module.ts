@@ -4,7 +4,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
@@ -17,6 +16,7 @@ import { RecoverUser } from '../pages/home/Login/recoverUser/recoverUser';
 import { DailyEntry } from '../pages/WellnessTracker/DailyEntry/dailyEntry';
 import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
+import { CheckinLogEdit } from '../pages/WellnessTracker/CheckinLogInfo/CheckinLogEdit/checkinLogEdit';
 import { Resources } from '../pages/Resources/resources';
 import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
 import { Employee } from '../pages/Resources/Employee/employee';
@@ -64,6 +64,7 @@ import { TranslationService } from '../assets/services/translationService';
         SelfAssessment,
         CheckinLog,
         CheckinLogInfo,
+		CheckinLogEdit,
         Resources,
         Dashboard,
         CSCContacts,
@@ -84,29 +85,30 @@ import { TranslationService } from '../assets/services/translationService';
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-	MyApp,
-	HomePage,
-	Login,
+		MyApp,
+        HomePage,
+        Login,
         SignOut,
-	NewUser,
-	RecoverUser,
-        WellnessTracker,
-	LanguageSelection,
+        NewUser,
+        LanguageSelection,
         TOCEN,
         TOCFR,
-      	DailyEntry,
-	CheckinLog,
-	Updates,
-	Tools,
-	Assessment,
+        RecoverUser,
+        WellnessTracker,
+        DailyEntry,
+        Updates,
+        Tools,
+        Assessment,
         SelfAssessment,
+        CheckinLog,
         CheckinLogInfo,
-	Resources,
-	Dashboard,
-	CSCContacts,
-	Employee,
-	EmployeeFam,
-	Public,
+		CheckinLogEdit,
+        Resources,
+        Dashboard,
+        CSCContacts,
+        Employee,
+        EmployeeFam,
+        Public,
         ResInfo,
         EAP,
         EmpRev1,

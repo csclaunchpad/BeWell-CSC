@@ -5,7 +5,7 @@
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{pageElements.checkinLogText}}</ion-title>
+        <ion-title attr.aria-label="{{pageElements.checkinLogText}}">{{pageElements.checkinLogText}}</ion-title>
         <ion-buttons end>
             <button ion-button icon-only (click)="addData()">
                 <ion-icon name="add-circle"></ion-icon>
@@ -27,28 +27,28 @@
                     <ion-row layout-align="center center" flex="60">
 
                         <ion-col class="moodBackground" layout-align="center center">
-                            <strong>{{pageElements.moodText}}: </strong>{{wellness.moodScore}}
+                            <strong attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}: </strong><span attr.aria-label="{{wellness.moodScore}}">{{wellness.moodScore}}</span>
                         </ion-col>
 
                         <ion-col class="dietBackground" layout-align="center center">
-                            <strong>{{pageElements.dietText}}: </strong>{{wellness.dietScore}}
+                            <strong attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}: </strong><span attr.aria-label="{{wellness.dietScore}}">{{wellness.dietScore}}</span>
                         </ion-col>                
 
                         <ion-col class="sleepBackground" layout-align="center center">
-                            <strong>{{pageElements.sleepText}}: </strong>{{wellness.sleepScore}}
+                            <strong attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}: </strong><span attr.aria-label="{{wellness.sleepScore}}">{{wellness.sleepScore}}</span>
                         </ion-col>                
 
                         <ion-col class="stressBackground" layout-align="center center">
-                            <strong>{{pageElements.stressText}}: </strong>{{wellness.stressScore}}
+                            <strong attr.aria-label="{{pageElements.stressText}}">{{pageElements.stressText}}: </strong><span attr.aria-label="{{wellness.stressScore}}">{{wellness.stressScore}}</span>
                         </ion-col>
 
                     </ion-row>
                     <ion-row>
-                        <ion-col col-6>
-                            {{pageElements.wellnessScoreText}}: {{wellness.totalScore}}
+                        <ion-col col-4>
+                            <span attr.aria-label="{{pageElements.wellnessScoreText}}">{{pageElements.wellnessScoreText}}</span>: <span attr.aria-label="{{wellness.totalScore}}">{{(wellness.moodScore + wellness.dietScore + wellness.sleepScore + (10-wellness.stressScore))*2.5 | number : 0}}</span>
                         </ion-col>
-                        <ion-col col-6>
-                            {{wellness.date}}
+                        <ion-col col-8 style="text-align: right">
+                            <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
                         </ion-col>
                     </ion-row>
                                     

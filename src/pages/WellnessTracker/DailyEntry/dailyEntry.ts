@@ -3,6 +3,9 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+// Alert Imports
+import { AlertController } from 'ionic-angular';
+
 // SQLite3 Imports
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Toast } from '@ionic-native/toast';
@@ -38,20 +41,27 @@ export class DailyEntry {
 	
 	private userID: string;
 	
+	private openDatabase: SQLiteObject;
+	
 	// ------------------------- Page Specific Variables ------------------------- //
 	
-	data = { date:"", moodScore:5, dietScore:5, sleepScore:5, stressScore:5, entryNote:"" };
-
-	constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private toast: Toast, private storage: Storage, private translationService: TranslationService) {
+	data = { date: "", moodScore:5, dietScore:5, sleepScore:5, stressScore:5, entryNote:"" };
+	
+	constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private toast: Toast, private storage: Storage, private translationService: TranslationService, public alertCtrl: AlertController) {
 		this.authenticate();
 		this.configuration();
 	}
 	
 	configuration() {
+		
+		console.log("Date: " + this.data.date);
+		
 		var languageFlag = this.storage.get("languageFlag").then((value) => {
 			if(value != null) {
 				this.pageElements = this.translationService.load("dailyEntry.html", value);
 				this.pageElementsLoaded = true;
+				console.log(this.pageElements);
+				this.initDB();
 			} else {
 				// Handle null language flag
 			}
@@ -71,43 +81,42 @@ export class DailyEntry {
 		console.log("HIT");
 	}
 
-        saveData() {
-            console.log("TJDE:", this.userID +".db" );
-            this.sqlite.create({
-                name: this.userID +".db",
-                location: 'default'
-            }).then((db: SQLiteObject) => {
-            db.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.userID, moment().format('YYYY-MM-DD HH:mm:ss'),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote])
-            .then(res => {
-                console.log(res);
-                this.toast.show('Data saved', '5000', 'center').subscribe(
-                    toast => {
-//                        this.navCtrl.pop();
-//                        this.navCtrl.push(CheckinLog);
-//                        this.navCtrl.setRoot(CheckinLog);
-                    }    
-                );
-                this.navCtrl.pop();
-            })
-            .catch(e => {
-                console.log(e);
-                this.toast.show(e, '5000', 'center').subscribe(
-                toast => {
-                    console.log(toast);
-                }
-                );
-                });
-            }).catch(e => 
-            {
-                console.log(e);
-                this.toast.show(e, '5000', 'center').subscribe(
-                toast => {
-                    console.log(toast);
-                }
-                );
-            });
-        }
-//POP a page off the menu stack        
+	initDB() {
+		console.log("TJDE:", this.userID +".db" );
+		this.sqlite.create({
+			name: this.userID +".db",
+			location: 'default'
+		}).then((db: SQLiteObject) => {
+			db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+			.then(res => {
+				console.log('Executed Create Table Wellness Query');
+				this.openDatabase = db;
+			}).catch(e => console.log(e));
+		})
+	}
+	
+	saveData() {
+		if(this.openDatabase != undefined) {
+			this.openDatabase.executeSql('INSERT INTO wellness VALUES(NULL,?,?,?,?,?,?,?)',[this.userID, new Date().toISOString(),this.data.moodScore,this.data.dietScore,this.data.sleepScore,this.data.stressScore,this.data.entryNote]).then(res => {this.navCtrl.pop()});
+		} else {
+			console.log("openDatabase isn't initialized");
+		}
+	}
+	
+	
+	
+	// Shows alert based on the title, subtitle, and button text supplied
+	showAlert(titleText, subtitleText, buttonText) {
+		console.log(this.navCtrl);
+		let alert = this.alertCtrl.create({
+			title: titleText,
+			subTitle: subtitleText,
+			buttons: [buttonText]
+		});
+		alert.present(alert);
+	}
+		
+	//POP a page off the menu stack        
     goBack() {
         this.navCtrl.pop();
     }
