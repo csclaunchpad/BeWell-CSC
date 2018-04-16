@@ -18,13 +18,13 @@
              
     <h3 class="title">{{pageElements.resPageText}}</h3>
     
-        <button ion-button block [navPush]="dailyentry">{{pageElements.buttonText1}}</button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" [navPush]="dailyentry">{{pageElements.buttonText1}}</button>
 
-        <button ion-button block [navPush]="checkinlog">{{pageElements.buttonText2}}</button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="checkinlog">{{pageElements.buttonText2}}</button>
     
-        <button ion-button block [navPush]="dashboard">{{pageElements.buttonText3}}</button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText3}}" [navPush]="dashboard">{{pageElements.buttonText3}}</button>
 
-        <button ion-button block [navPush]="assessment">{{pageElements.buttonText4}}</button>       
+        <button ion-button block attr.aria-label="{{pageElements.buttonText4}}" [navPush]="assessment">{{pageElements.buttonText4}}</button>       
         
 </ion-content>
 

@@ -17,46 +17,27 @@
 </div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
-             
-             
-        <h3 class="title"></h3>
+               
+    <h3 class="title"></h3>
     
-        These are programs created to assist employees in achieving workplace 
-        happiness and wellbeing. 
+    <ion-card class = "cardPadding">
+        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</div>
+        <p attr.aria-label="{{pageElements.buttonText1Desc}}">{{pageElements.buttonText1Desc}} </p>
+        <button ion-button block class = "buttonspace" attr.aria-label="{{pageElements.buttonText1}}" [navPush]="emprev1">{{pageElements.buttonText1}}</button>
+    </ion-card>
     
-        <button ion-button block class = "buttonspace"[navPush]="emprev1">Assistance Programs</button>
-        
-        After you have become ill or injured, you may need time off to recover. 
-        Here is what you need to know about taking leave and compensation. 
-
-        <button ion-button block class = "buttonspace" [navPush]="emprev2">Leave Programs</button>
+    <ion-card class = "cardPadding">
+        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</div>
+        <p attr.aria-label="{{pageElements.buttonText2Desc}}">{{pageElements.buttonText2Desc}}</p>
+        <button ion-button block class = "buttonspace" attr.aria-label="{{pageElements.buttonText2}}" [navPush]="emprev2">{{pageElements.buttonText2}}</button>
+    </ion-card>
     
-        Other helpful contact resources that maybe useful for you.
-        
-        <button ion-button block class = "buttonspace" [navPush]="emprev3">Helpful Resources</button>         
-             
-             
-
-<!--    <button ion-button block (click)="JumpToLink(clObj)"> {{pageElements.buttonText1}} </button>
+    <ion-card class = "cardPadding">
+        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText3}}">{{pageElements.buttonText3}}</div>
+        <p attr.aria-label="{{pageElements.buttonText3Desc}}">{{pageElements.buttonText3Desc}} </p>
+        <button ion-button block class = "buttonspace" attr.aria-label="{{pageElements.buttonText3}}" [navPush]="emprev3">{{pageElements.buttonText3}}</button>         
+    </ion-card>
     
-    <button ion-button block (click)="JumpToLink(eapObj)"> {{pageElements.buttonText2}} </button>
-    
-    <button ion-button block (click)="JumpToLink(cmhaObj)"> {{pageElements.buttonText3}} </button>
-    
-    <button ion-button block (click)="JumpToLink(cismObj)"> {{pageElements.buttonText4}} </button>
-
-    <button ion-button block (click)="JumpToLink(rmrObj)"> {{pageElements.buttonText5}} </button>
-    
-    <button ion-button block (click)="JumpToLink(rwpObj)"> {{pageElements.buttonText6}} </button>
-    
-    <button ion-button block (click)="JumpToLink(ohsObj)"> {{pageElements.buttonText7}} </button>
-    
-    <button ion-button block (click)="JumpToLink(hppObj)"> {{pageElements.buttonText8}} </button>
-
-    <button ion-button block (click)="JumpToLink(hhlObj)"> {{pageElements.buttonText9}} </button>
-
-    <button ion-button block (click)="JumpToLink(sunObj)"> {{pageElements.buttonText10}} </button> -->
-   
 </ion-content>
 
 <ion-footer>

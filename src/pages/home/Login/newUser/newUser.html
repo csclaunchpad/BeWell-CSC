@@ -1,4 +1,4 @@
-<ion-header *ngIf="pageElementsLoaded">
+<ion-header>
 	<ion-navbar>
 		<button ion-button menuToggle>
 			<ion-icon name="menu"></ion-icon>
@@ -44,7 +44,7 @@
 		<!-- Pin label and input field -->
 		<ion-row>
 			<ion-col>
-				<ion-label color="primary" attr.aria-label="{{pageElements.pinText}}">{{pageElements.pinText}}</ion-label>
+				<ion-label color="primary" attr.aria-label="{{pageElements.pageElements.pinText}}">{{pageElements.pinText}}</ion-label>
 				<ion-input placeholder="{{pageElements.pinText}}" [(ngModel)]="pin" attr.aria-label="{{pageElements.pinInput}}"></ion-input>
 			</ion-col>
 		</ion-row>

@@ -44,11 +44,11 @@
 
                     </ion-row>
                     <ion-row>
-                        <ion-col col-4>
-                            <span attr.aria-label="{{pageElements.wellnessScoreText}}">{{pageElements.wellnessScoreText}}</span>: <span attr.aria-label="{{wellness.totalScore}}">{{(wellness.moodScore + wellness.dietScore + wellness.sleepScore + (10-wellness.stressScore))*2.5 | number : 0}}</span>
+                        <ion-col col-6>
+                            <span attr.aria-label="{{pageElements.wellnessScoreText}}">{{pageElements.wellnessScoreText}}</span>: <span attr.aria-label="{{wellness.totalScore}}">{{wellness.totalScore}}</span>
                         </ion-col>
-                        <ion-col col-8 style="text-align: right">
-                            <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
+                        <ion-col col-6>
+                            <span attr.aria-label="{{wellness.date}}">{{wellness.date}}</span>
                         </ion-col>
                     </ion-row>
                                     

@@ -5,7 +5,7 @@
             <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{pageElements.AssProgTitleText}}</ion-title>
+        <ion-title attr.aria-label="{{pageElements.AssProgTitleText}}">{{pageElements.AssProgTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -21,10 +21,10 @@
             <ion-col>
                 <ion-card class = "cardPadding"> 
                 <ion-row>
-                    <div class ="cardH5" >{{pageElements.title1}}</div> 
-                    <p>{{pageElements.paragraph1Text}}</p>                     
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title1}}">{{pageElements.title1}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph1Text}}">{{pageElements.paragraph1Text}}</p>                     
                     <a href="link owed by COMs" class="buttonLink">
-                        <button ion-button block>{{pageElements.button1}}</button>
+                        <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.button1}}">{{pageElements.button1}}</button>
                     </a>
                     
                 </ion-row>
@@ -32,39 +32,34 @@
                 
                 <ion-card class = "cardPadding">
                 <ion-row>
-                    <div class ="cardH5" >{{pageElements.title2}}</div> 
-                    <p>{{pageElements.paragraph2Text}}</p>
-                    
-                    <button ion-button block (click)="JumpToLink(oneObj)"> 
-                         {{pageElements.button2}}
-                    </button>                 
-                    
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title2}}">{{pageElements.title2}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph2Text}}">{{pageElements.paragraph2Text}}</p>               
+                    <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.button2}}" (click)="JumpToLink(oneObj)"> {{pageElements.button2}} </button>                                    
                 </ion-row>
                 </ion-card>
                 
                 <ion-card class = "cardPadding">    
                 <ion-row>
-                    <div class ="cardH5" >{{pageElements.title3}}</div> 
-                    <p>{{pageElements.paragraph3Text}}</p>   
-                                        
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title3}}">{{pageElements.title3}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph3Text}}">{{pageElements.paragraph3Text}}</p>                                         
                     <a href="mailto:mailto:leanna.haythorne@csc-scc.gc.ca" class="buttonLink">
-                        <button ion-button block>{{pageElements.button3}}</button>
+                        <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.button3}}">{{pageElements.button3}}</button>
                     </a>
                 </ion-row>
                 </ion-card>
                 
                 <ion-card class = "cardPadding">    
                 <ion-row>
-                    <div class ="cardH5" >{{pageElements.title4}}</div> 
-                    <p>{{pageElements.paragraph4Text}}</p> 	
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title4}}" >{{pageElements.title4}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph4Text}}">{{pageElements.paragraph4Text}}</p> 	
                 </ion-row>
                 </ion-card>
-                
+
                 <ion-card class = "cardPadding">    
                 <ion-row> 
                     
-                    <div class ="cardH5" >{{pageElements.title5}}</div> 
-                    <p>{{pageElements.paragraph5Text}}</p>
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title5}}">{{pageElements.title5}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph5Text}}">{{pageElements.paragraph5Text}}</p>
                     
                 </ion-row>   
                 </ion-card>    
@@ -72,11 +67,11 @@
                 <ion-card class = "cardPadding">    
                 <ion-row>
                     
-                    <div class ="cardH5" >{{pageElements.title6}}</div> 
-                    <p>{{pageElements.paragraph6Text}}</p>  
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title6}}">{{pageElements.title6}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph6Text}}">{{pageElements.paragraph6Text}}</p>  
 
                     <a href="tel:+1-844-661-7857" class="buttonLink">
-                        <button ion-button block>{{pageElements.button6}}</button>
+                        <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.button6}}">{{pageElements.button6}}</button>
                     </a> 
                     
                 </ion-row>  
@@ -85,11 +80,11 @@
                 <ion-card class = "cardPadding">    
                 <ion-row>
                     
-                    <div class ="cardH5" >{{pageElements.title7}}</div> 
-                    <p>{{pageElements.paragraph7Text}}</p>
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title7}}">{{pageElements.title7}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph7Text}}">{{pageElements.paragraph7Text}}</p>
                                         
                     <a href="mailto:GENNHQRTWDTA@csc-scc.gc.ca" class="buttonLink">
-                        <button ion-button block>{{pageElements.button7}}</button>
+                        <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.button7}}">{{pageElements.button7}}</button>
                     </a> 
                     
                 </ion-row>  
@@ -98,7 +93,7 @@
                 <ion-row class = "padbutton"> 
                     <h5>{{pageElements.moreHelpfulLinksText}}</h5>  
                                         
-                    <button ion-button block [navPush]="resPublic">{{pageElements.bottomButton}}</button>
+                    <button ion-button block attr.aria-label="{{pageElements.bottomButton}}" [navPush]="resPublic">{{pageElements.bottomButton}}</button>
                 
                 </ion-row>  
                 

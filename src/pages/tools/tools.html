@@ -18,7 +18,7 @@
 
     <ion-grid>
         <ion-row>
-            <h5 class="title">{{pageElements.pageToolText1}}</h5> 
+            <h5 class="title" attr.aria-label="{{pageElements.pageToolText1}}">{{pageElements.pageToolText1}}</h5> 
 
 <!--            <ion-card class="backgroundMHCM">
                 
@@ -44,7 +44,7 @@
                 <ion-row>
                     <ion-col>        
                     <div text-center>
-                        <h6>{{pageElements.buttonText2}}</h6>
+                        <h6 attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</h6>
                         <img src="../../../assets/imgs/WT.png" class="featureImg">         
                     </div> 
                     </ion-col>
@@ -52,7 +52,7 @@
                 
                 <ion-row>
                     <ion-col>
-                        <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
+                        <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
                     </ion-col>
                 </ion-row> 
                 
@@ -71,7 +71,7 @@
                 <ion-row>
                     <ion-col>
                             <a href="mailto:" class="buttonLink">
-                                <button ion-button block class = "buttonLink" >{{pageElements.buttonText3}}</button>
+                                <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.buttonText3}}" >{{pageElements.buttonText3}}</button>
                             </a>  
                     </ion-col>
                 </ion-row>

@@ -4,6 +4,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from '@ionic/storage';
 
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
@@ -18,7 +19,7 @@ import { CheckinLog } from '../pages/WellnessTracker/CheckinLog/checkinLog';
 import { CheckinLogInfo } from '../pages/WellnessTracker/CheckinLogInfo/checkinLogInfo';
 import { CheckinLogEdit } from '../pages/WellnessTracker/CheckinLogInfo/CheckinLogEdit/checkinLogEdit';
 import { Resources } from '../pages/Resources/resources';
-import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
+//import { CSCContacts } from '../pages/Resources/CscContacts/cscContacts';
 import { Employee } from '../pages/Resources/Employee/employee';
 import { EmployeeFam } from '../pages/Resources/EmployeeFamily/employeeFamily';
 import { Public } from '../pages/Resources/Public/public';
@@ -64,10 +65,9 @@ import { TranslationService } from '../assets/services/translationService';
         SelfAssessment,
         CheckinLog,
         CheckinLogInfo,
-		CheckinLogEdit,
+        CheckinLogEdit,
         Resources,
         Dashboard,
-        CSCContacts,
         Employee,
         EmployeeFam,
         Public,
@@ -85,30 +85,29 @@ import { TranslationService } from '../assets/services/translationService';
     ],
     bootstrap: [IonicApp],
     entryComponents: [
-		MyApp,
-        HomePage,
-        Login,
+	MyApp,
+	HomePage,
+	Login,
         SignOut,
-        NewUser,
-        LanguageSelection,
+	NewUser,
+	RecoverUser,
+        WellnessTracker,
+	LanguageSelection,
         TOCEN,
         TOCFR,
-        RecoverUser,
-        WellnessTracker,
-        DailyEntry,
-        Updates,
-        Tools,
-        Assessment,
+      	DailyEntry,
+	CheckinLog,
+        CheckinLogEdit,
+	Updates,
+	Tools,
+	Assessment,
         SelfAssessment,
-        CheckinLog,
         CheckinLogInfo,
-		CheckinLogEdit,
-        Resources,
-        Dashboard,
-        CSCContacts,
-        Employee,
-        EmployeeFam,
-        Public,
+	Resources,
+	Dashboard,
+	Employee,
+	EmployeeFam,
+	Public,
         ResInfo,
         EAP,
         EmpRev1,

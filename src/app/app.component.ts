@@ -39,24 +39,17 @@ export class MyApp {
     private pageElementsLoaded: boolean = false;   
 
     private userID: string;
+    
+    private home: any;
 
     pages: Array<{title: string, component: any}>;
 
 	constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private storage: Storage, private translationService: TranslationService) {
 		this.initializeApp();
                 this.configuration();
-                this.buildMenu();
-		// used for an example of ngFor and navigation
- 
-/*		this.pages = [
-			{ title: 'Welcome', component: HomePage },
-			{ title: 'Wellness Tracker', component: WellnessTracker },
-			{ title: 'Resources', component: Resources },
-			{ title: 'Update Log', component: Updates },
-                        { title: 'FR/EN', component: LanguageSelection },
-			{ title: 'Sign out', component: SignOut }
-		];
-*/
+            console.log("fuck1");
+            
+                		// used for an example of ngFor and navigation
 	}
 
 	initializeApp() {
@@ -78,33 +71,34 @@ export class MyApp {
             // Fetch the content from our language translation service
             var languageFlag = this.storage.get("languageFlag").then((value) => {
                 if(value != null) {
-                    this.pageElements = this.translationService.load("component.ts", value);
+                    this.pageElements = this.translationService.load("app.component.ts", value);
                     this.pageElementsLoaded = true;
-                    console.log(this.pageElements);
+                    console.log("fuck", this.pageElements);
+               
                 } 
                 else {
                     console.log("No language flag set");
-                }			
+                }	
+                      this.buildMenu();
+
             });
+            
         }
-       
+ 
         buildMenu(){
                             // used for an example of ngFor and navigation
-            /*
+            console.log("fuck2", this.pageElements);
+/*       
             this.pages = [
                 { title: this.pageElements.home, component: HomePage },
-                { title: this.pageElements.dailyentry, component: DailyEntry },
-                { title: this.pageElements.checkinglog, component: CheckinLog },
-                { title: this.pageElements.dashboard, component: Dashboard },
-                { title: this.pageElements.resources, component: Resources },
-                { title: this.pageElements.assessment, component: Assessment },
-                { title: this.pageElements.updates, component: Updates },
+                { title: 'this.pageElements.tools', component: Tools },
+                { title: 'this.pageElements.resources', component: Resources },
+                { title: 'this.pageElements.updates', component: Updates },
                 { title: 'FR/EN', component: LanguageSelection },
-                { title: this.pageElements.signout, component: SignOut }
+                { title: 'this.pageElements.signout', component: SignOut }
             ];
-*/
+*/  
 
-  
 		this.pages = [
 			{ title: 'Welcome', component: HomePage },
 //			{ title: 'Wellness Tracker', component: WellnessTracker },

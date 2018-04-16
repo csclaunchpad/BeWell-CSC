@@ -5,7 +5,7 @@
             <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{pageElements.AssProgTitleText}}</ion-title>
+        <ion-title attr.aria-label="{{pageElements.AssProgTitleText}}" >{{pageElements.AssProgTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -20,52 +20,51 @@
         <ion-row>
             <ion-col>
                 
-                <h4>{{pageElements.maintitle}}</h4> 
+                <h4 attr.aria-label="{{pageElements.maintitle}}">{{pageElements.maintitle}}</h4> 
                 <br><br>
+                
                 <ion-card class = "cardPadding">
                     <ion-row>
-                    <div class ="cardH5" >{{pageElements.title1}}</div> 
-                    <p>{{pageElements.paragraph1Text}}</p>
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title1}}">{{pageElements.title1}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph1Text}}">{{pageElements.paragraph1Text}}</p>
                     </ion-row>
                 </ion-card>
                 
                 <ion-card class = "cardPadding">
                     <ion-row>
-                    <div class ="cardH5" >{{pageElements.title2}}</div> 
-                    <p>{{pageElements.paragraph2Text}}</p> 
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title2}}">{{pageElements.title2}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph2Text}}">{{pageElements.paragraph2Text}}</p> 
                     </ion-row>
                 </ion-card>
                 
                 <ion-card class = "cardPadding">
                     <ion-row>
-                    <div class ="cardH5" >{{pageElements.title3}}</div> 
-                    <p>{{pageElements.paragraph3Text}}</p> 
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title3}}">{{pageElements.title3}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph3Text}}">{{pageElements.paragraph3Text}}</p> 
                     </ion-row> 
                 </ion-card>    
                 
                 <ion-card class = "cardPadding">
                     <ion-row>        
-                    <div class ="cardH5" >{{pageElements.title4}}</div> 
-                    <p>{{pageElements.paragraph4Text}}</p> 
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title4}}">{{pageElements.title4}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph4Text}}">{{pageElements.paragraph4Text}}</p> 
                     </ion-row>
                 </ion-card>
                 
                 <ion-card class = "cardPadding">
                     <ion-row>        
-                    <div class ="cardH5" >{{pageElements.title5}}</div> 
-                    <p>{{pageElements.paragraph5Text}}</p>
+                    <div class ="cardH5" attr.aria-label="{{pageElements.title5}}">{{pageElements.title5}}</div> 
+                    <p attr.aria-label="{{pageElements.paragraph5Text}}">{{pageElements.paragraph5Text}}</p>
                     </ion-row>
                 </ion-card>
                 
-<!--                <ion-card class = "cardPadding">
+<!--            <ion-card class = "cardPadding">
                     <ion-row>                  
                         <div class ="cardH5"> {{pageElements.title6}}</div> 
                         <p>{{pageElements.paragraph6Text}}</p>
                     </ion-row>
                 </ion-card>
--->                
-                
-                
+-->                               
             </ion-col>
         </ion-row> 
             

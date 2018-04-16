@@ -56,10 +56,9 @@ export class NewUser {
 			if(value != null) {
 				this.pageElements = this.translationService.load("newUser.html", value);
 				this.pageElementsLoaded = true;
-				console.log("Page Elements: ");
 				console.log(this.pageElements);
 			} else {
-				console.log("Failed to get pageElements");
+				// Handle null language flag
 			}
 		});
 		
@@ -130,6 +129,9 @@ export class NewUser {
 					this.navCtrl.pop();
 			}).catch(e => console.log(e));
 		}
+
+            // Build Wellness Tracker Table
+            this.createWTtable();
 	}
 	
 	// Initializes our DB, and fetchs all user records storing them in userRecords[]
@@ -150,8 +152,28 @@ export class NewUser {
 					this.userRecords = [];
 					for(var i=0; i<res.rows.length; i++) {
 						this.userRecords.push({rowid:res.rows.item(i).rowid, firstName:res.rows.item(i).firstName, pin:res.rows.item(i).pin, securityQuestion:res.rows.item(i).securityQuestion, securityAnswer:res.rows.item(i).securityAnswer})
-					}                          
+					}
+					console.log("User Records: TJ");
+					console.log("User Records: TJ", this.userRecords[1].pin);
+        				console.log("User Records: TJ", (this.userRecords.length+1));                                
 			}).catch(e => console.log(e));
 		}).catch(e => console.log(e));
 	}
+        
+        createWTtable(){
+            console.log("userid tj", this.userRecords.rowid)
+            
+            this.sqlite.create({
+                name: (this.userRecords.length+1) + ".db",
+                location: 'default'
+            }).then((db: SQLiteObject) => {
+            
+            this.openWTDatabase = db;
+            
+                db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+                .then(res => console.log('Executed SQL'))
+                .catch(e => console.log(e));
+                console.log("wellness created.")
+            }).catch(e => console.log(e));
+        }
 }

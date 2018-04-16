@@ -16,13 +16,13 @@
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
              
-    <h3 class="title">{{pageElements.resPageText}}</h3>
+    <h3 class="title" attr.aria-label="{{pageElements.resPageText}}">{{pageElements.resPageText}}</h3>
     
-        <button ion-button block [navPush]="employee">{{pageElements.buttonText1}}</button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" [navPush]="employee">{{pageElements.buttonText1}}</button>
 
-        <button ion-button block [navPush]="empfamily">{{pageElements.buttonText2}}</button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="empfamily">{{pageElements.buttonText2}}</button>
     
-        <button ion-button block [navPush]="resPublic">{{pageElements.buttonText3}}</button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText3}}" [navPush]="resPublic">{{pageElements.buttonText3}}</button>
     
 </ion-content>
 

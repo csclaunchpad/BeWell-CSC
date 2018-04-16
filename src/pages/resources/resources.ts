@@ -13,7 +13,6 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQL
 import { TranslationService } from '../../assets/services/translationService';
 
 // Page Imports
-import { CSCContacts } from './CscContacts/cscContacts';
 import { Employee } from './Employee/employee';
 import { EmpRev1 } from './Employee/Rev1/empRev1';
 
@@ -28,7 +27,6 @@ import { Login } from '../home/Login/login/login';
 })
 
 export class Resources {
-    cscContacts = CSCContacts;
     employee = Employee;
     emprev1 = EmpRev1;
     empfamily = EmployeeFam;

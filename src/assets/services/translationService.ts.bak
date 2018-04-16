@@ -23,11 +23,14 @@ export class TranslationService {
 			
             switch(page) {
 
-                case "app.component.ts": {
+                case "component.ts": {
                     return {
                         home: "Home",
-			tools: "Tools",
+			dailyentry: "Daily Entry",
+			checkinglog: "Checkin Log",
+			dashboard: "Dashboard",
 			resources: "Resources",
+			assessment: "Assessment",
 			updates: "Updates",
                         signout: "SignOut"
                     }
@@ -38,9 +41,7 @@ export class TranslationService {
 			pinText: "Pin",
 			createUserText: "Create User",
 			loginText: "Login",
-			forgotPinText: "Forgot Pin",
-			firstNameInput: "First Name Input",
-			pinInput: "Pin Input"
+			forgotPinText: "Forgot Pin"
                     }
 		}
 				
@@ -152,8 +153,7 @@ export class TranslationService {
 			dietText: "Diet",
 			sleepText: "Sleep",
 			stressText: "Stress",
-			generateText: "Generate",
-			chartText: "Chart"
+			generateText: "Generate"
                     }
 		}
 				
@@ -184,12 +184,15 @@ export class TranslationService {
                     return {
                         resourceTitleText: "Employee Resources",
                         resPageText: "Choose the resource list that applies.",
-                        buttonText1Desc: "These are programs created to assist employees in achieving workplace happiness and wellbeing.",
-                        buttonText1: "Assistance Programs",
-                        buttonText2Desc: "After you have become ill or injured, you may need time off to recover. Here is what you need to know about taking leave and compensation.",
-			buttonText2: "Leave Programs",
-                        buttonText3Desc: "Other helpful contact resources that maybe useful for you.",
-                        buttonText3: "Helpful Resources",
+                        buttonText1: "Crisis Hotline",
+			buttonText2: "Employee Assistance Program",
+			buttonText3: "CAN Mental Health Association",
+                        buttonText4: "Critical Incident Stress Management",
+                        buttonText5: "Road to Mental Readiness",
+                        buttonText6: "Return to Work Program",
+                        buttonText7: "Occupational Health and Safety",
+                        buttonText8: "Harassment Prevention Program",
+                        buttonText9: "Harassment Hot line",
                         buttonText10: "Sun Life",
                         sunlink: "https://www.sunlife.ca/ca/Insurance/Life+insurance?vgnLocale=en_CA"
                     }
@@ -307,8 +310,8 @@ export class TranslationService {
 				
 				case "empRev3.html": {
 					return {
-						maintitle: "Other helpful resources that may be available to you.",
-						AssProgTitleText: "Leave Programs",
+						AssProgTitleText: "Helpful Resources",
+                                                maintitle: "Other helpful resources that may be available to you.",
 						mainParagraph: "Maintaining productive and respectful communication with your manager or supervisor about your experience is important. Keep a detailed record of your paper and in-person conversations for your files. ",
 						title1: "Your family doctor:",
 						paragraph1Text: "Seeking assistance from your family doctor is crucial to your recovery process. With a doctor’s referral, your Public Service Health Care Plan will cover you up to $2000 a year for psychological services. Book an appointment now. ",
@@ -333,11 +336,14 @@ export class TranslationService {
         else if(languageFlag == "fr") {
             switch(page) {
 				
-                case "component.ts": { //Translated except Assessment
+                case "component.ts": { //Transalted except Assessment
                     return {
                         home: "Bienvenue",
-			tools: "Outils",
+			dailyentry: "Inscription Quotidienne",
+			checkinglog: "Journal des inscriptions quotidiennes",
+			dashboard: "Tableau de bord",
 			resources: "Ressources",
+			assessment: "Évaluation",
 			updates: "Mise à jour du journal",
                         signout: "Fermeture de session"
                     }
@@ -348,9 +354,7 @@ export class TranslationService {
 			pinText: "NIP",
 			createUserText: "Créer un compte d’utilisateur",
 			loginText: "Ouverture de session",
-			forgotPinText: "J’ai oublié mon NIP",
-			firstNameInput: "Entrée du prénom",
-			pinInput: "Entrée de broche"
+			forgotPinText: "J’ai oublié mon NIP"
                     }
 		}
 				
@@ -440,8 +444,7 @@ export class TranslationService {
 			dietText: "Régime",
 			sleepText: "Sommeil",
 			stressText: "Stress",
-			generateText: "Produire",
-			chartText: "Graphique"
+			generateText: "Produire"
                     }
 		}
 				
@@ -470,15 +473,17 @@ export class TranslationService {
                                 
                 case "employee.html": {
                     return {
-                        resourceTitleText: "Employee Resources",
+                        resourceTitleText: "EMPLOYÉ(E) DU SCC",
                         resPageText: "Choisissez la liste de ressources qui s’applique à vous",
-                        buttonText1Desc: "These are programs created to assist employees in achieving workplace happiness and wellbeing.",
-                        buttonText1: "Programme d’aide aux employés",
-                        buttonText2Desc: "After you have become ill or injured, you may need time off to recover. Here is what you need to know about taking leave and compensation.",
-			buttonText2: "Leave Programs",
-                        buttonText3Desc: "Other helpful contact resources that maybe useful for you.",
-                        buttonText3: "Helpful Resources",
-                        buttonText10: "Sun Life",
+                        buttonText1: "Employee Assistance Program",
+			buttonText2: "Harassment Prevention Program",
+			buttonText3: "National Attendance Management Program",
+                        buttonText4: "Critical Incident Stress Management",
+                        buttonText5: "Occupational Health and Safety",
+                        buttonText6: "Return to Work Program",
+                        buttonText7: "CSC Contacts by Email",
+                        buttonText8: "Harassment Hot line",
+                        buttonText9: "Sun Life",
                         sunlink: "https://www.sunlife.ca/ca/Insurance/Life+insurance?vgnLocale=fr_CA"
                     }
 		}
