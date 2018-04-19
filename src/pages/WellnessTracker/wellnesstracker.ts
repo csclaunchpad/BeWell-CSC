@@ -58,17 +58,22 @@ export class WellnessTracker {
     
     configuration() {
 		
-        // Fetch the content from our language translation service
-	var languageFlag = this.storage.get("languageFlag").then((value) => {
-            if(value != null) {
-                this.pageElements = this.translationService.load("wellnesstracker.html", value);
-		this.pageElementsLoaded = true;
-		console.log(this.pageElements);
-            } 
-            else {
-                console.log("No language flag set");
-            }			
-	});
+		// Fetch the content from our language translation service
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
+				if(value != null) {
+					this.pageElements = this.translationService.load("wellnesstracker.html", value);
+			this.pageElementsLoaded = true;
+			console.log(this.pageElements);
+				} 
+				else {
+					console.log("No language flag set");
+				}			
+		});
     }
+	
+	//POP a page off the menu stack               
+    goBack() {
+        this.navCtrl.pop();
+    } 
         
 }

@@ -1,7 +1,17 @@
 page-wellnesstracker {
     .has-header {
-    	top: 44px;
-	position:absolute;
-	width: 100%;
+    	margin-top: 44px;
+        position:absolute;
+        width: 100%;
     }
+	
+	.center > * {
+		display: flex!important;
+		align-content: center!important;
+		align-items: center!important;
+	}
+	
+	.center-grid {
+		margin-bottom: 50px;
+	}
 }

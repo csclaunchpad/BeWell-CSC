@@ -1,11 +1,11 @@
-<ion-header *ngIf="pageElementsLoaded">
+<ion-header>
   <ion-navbar hideBackButton="true" >
         <ion-buttons left>
             <button ion-button icon-only (click)="goBack()">
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-		<ion-title attr.aria-label="{{pageElements.dashboardText}}">{{pageElements.dashboardText}}</ion-title>
+		<ion-title attr.aria-label="{{pageElements.dashboardText}}" *ngIf="pageElementsLoaded">{{pageElements.dashboardText}}</ion-title>
 		
 		<ion-buttons end>
             <button ion-button icon-only (click)="addData()">
@@ -15,8 +15,8 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content class="has-header" style="height: 100%">
-<ion-grid *ngIf="pageElementsLoaded">
+<ion-content style="height: 100%">
+    <ion-grid *ngIf="pageElementsLoaded">
 	<ion-row>
 		<ion-col col-md-5>
 			<ion-item>

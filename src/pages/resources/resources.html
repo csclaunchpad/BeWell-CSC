@@ -1,29 +1,29 @@
-<ion-header *ngIf="pageElementsLoaded">
+<ion-header>
     
     <ion-navbar>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    <ion-title *ngIf="pageElementsLoaded">{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 <!-- Loading Div --> 
 <div *ngIf="!pageElementsLoaded">
-	<ion-spinner></ion-spinner>
+    <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
-             
-    <h3 class="title" attr.aria-label="{{pageElements.resPageText}}">{{pageElements.resPageText}}</h3>
+<ion-content padding >
+    <div *ngIf="pageElementsLoaded">
+        <h3 class="title" attr.aria-label="{{pageElements.resPageText}}">{{pageElements.resPageText}}</h3>
     
         <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" [navPush]="employee">{{pageElements.buttonText1}}</button>
 
         <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="empfamily">{{pageElements.buttonText2}}</button>
     
         <button ion-button block attr.aria-label="{{pageElements.buttonText3}}" [navPush]="resPublic">{{pageElements.buttonText3}}</button>
-    
+    </div>
 </ion-content>
 
 <ion-footer>

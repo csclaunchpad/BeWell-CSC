@@ -1,11 +1,11 @@
-<ion-header *ngIf="pageElementsLoaded">
-      <ion-navbar hideBackButton="true" >
+<ion-header>
+    <ion-navbar hideBackButton="true" >
         <ion-buttons left>
             <button ion-button icon-only (click)="goBack()">
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title attr.aria-label="{{pageElements.checkinLogText}}">{{pageElements.checkinLogText}}</ion-title>
+        <ion-title attr.aria-label="{{pageElements.checkinLogText}}" *ngIf="pageElementsLoaded">{{pageElements.checkinLogText}}</ion-title>
         <ion-buttons end>
             <button ion-button icon-only (click)="addData()">
                 <ion-icon name="add-circle"></ion-icon>
@@ -19,13 +19,12 @@
     <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header" style="margin: 0">
+<ion-content padding class="has-header">
     <ion-list>
         <ion-item-sliding *ngFor="let wellness of userRecords; let i=index" (click)="redirectToCheckinLogInfo(wellness.rowid)">
             <ion-item nopadding>
                 <ion-card>
                     <ion-row layout-align="center center" flex="60">
-
                         <ion-col class="moodBackground" layout-align="center center">
                             <strong attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}: </strong><span attr.aria-label="{{wellness.moodScore}}">{{wellness.moodScore}}</span>
                         </ion-col>
@@ -44,14 +43,13 @@
 
                     </ion-row>
                     <ion-row>
-                        <ion-col col-6>
-                            <span attr.aria-label="{{pageElements.wellnessScoreText}}">{{pageElements.wellnessScoreText}}</span>: <span attr.aria-label="{{wellness.totalScore}}">{{wellness.totalScore}}</span>
+                        <ion-col col-4>
+                            <span attr.aria-label="{{pageElements.wellnessScoreText}}">{{pageElements.wellnessScoreText}}</span>: <span attr.aria-label="{{wellness.totalScore}}">{{(wellness.moodScore + wellness.dietScore + wellness.sleepScore + (10-wellness.stressScore))*2.5 | number : 0}}</span>
                         </ion-col>
-                        <ion-col col-6>
-                            <span attr.aria-label="{{wellness.date}}">{{wellness.date}}</span>
+                        <ion-col col-8 style="text-align: right">
+                            <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
                         </ion-col>
-                    </ion-row>
-                                    
+                    </ion-row>           
                 </ion-card>
             </ion-item>
         </ion-item-sliding>

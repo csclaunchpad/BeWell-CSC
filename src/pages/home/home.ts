@@ -35,9 +35,13 @@ export class HomePage {
     private pageElementsLoaded: boolean = false;   
 
     private userID: string;
+	
+	private lastCheckinTime: string;
+	
+	private openDatabase: SQLiteObject;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private translationService: TranslationService) {
-	this.authenticate();
+    constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private translationService: TranslationService, private sqlite: SQLite) {
+		this.authenticate();
         this.configuration();
     }
 

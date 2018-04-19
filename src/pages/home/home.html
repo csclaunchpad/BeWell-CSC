@@ -24,7 +24,7 @@
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
 
     <div text-center attr.aria-label="{{pageElements.PageTitleText}}">
-        <h5 class="title">{{pageElements.PageTitleText}}</h5> 
+        <h5 class="titleHeader">{{pageElements.PageTitleText}}</h5> 
         <img src="../../../assets/imgs/CF.png" class="MapleLeafImg">         
     </div> 
     
@@ -48,7 +48,7 @@
 
         <ion-row>
             <ion-col>
-                    <h5 class="title" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</h5> 
+                    <div style="text-align:center"><h5 class="titleHeader" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</h5></div>
                     <a href="mailto:" class="buttonLink">
                         <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</button>
                     </a>  

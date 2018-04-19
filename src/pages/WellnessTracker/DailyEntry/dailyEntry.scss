@@ -42,8 +42,12 @@ page-dailyEntry {
     }
     
     .has-header {
-    	top: 44px;
-	position:absolute;
-	width: 100%;
+    	margin-top: 44px;
     }
+	
+	.center > * {
+		display: flex!important;
+		align-content: center!important;
+		align-items: center!important;
+	}
 }

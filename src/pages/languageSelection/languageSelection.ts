@@ -1,5 +1,7 @@
 // Angular/Ionic Imports
 
+import { Events } from 'ionic-angular';
+
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
@@ -14,24 +16,17 @@ import { TOCEN } from './TOCEN/tocen';
 })
 
 export class LanguageSelection {
-        tocen = TOCEN;
-        tocfr = TOCFR;
-        
-	constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
-		
-	}
-	
-	// Set the language cookie, and then redirect to login.html
-	setLanguage(language) {
-		
-		this.storage.set("languageFlag", language).then((value) => {
-			this.storage.get("languageFlag").then((value) => {
-				console.log("Language Flag: " + value);
-			
-				this.navCtrl.setRoot(Login);
-			})
-		});
-		
-	}
+    tocen = TOCEN;
+    tocfr = TOCFR;
+
+    constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private events: Events) {}
+
+    // Set the language cookie, informs app.component.ts to redraw the menu, and then redirect to login.html
+    setLanguage(language) {
+        this.storage.set("languageFlag", language).then((value) => {
+            this.events.publish('languageFlag:changed', language);
+            this.navCtrl.setRoot(Login);
+        });	
+    }
 }
 

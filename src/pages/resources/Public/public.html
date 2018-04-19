@@ -1,32 +1,32 @@
-<ion-header *ngIf="pageElementsLoaded">
+<ion-header>
  <ion-navbar hideBackButton="true" >
         <ion-buttons left>
             <button ion-button icon-only (click)="goBack()">
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+        <ion-title *ngIf="pageElementsLoaded">{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 </ion-header>
 
 
 <!-- Loading Div --> 
 <div *ngIf="!pageElementsLoaded">
-	<ion-spinner></ion-spinner>
+    <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
-             
-    <h3 class="title" attr.aria-label="{{pageElements.resPageText}}" >{{pageElements.resPageText}}</h3>
+<ion-content padding>
+    <div *ngIf="pageElementsLoaded">
+        <h3 class="title" attr.aria-label="{{pageElements.resPageText}}" >{{pageElements.resPageText}}</h3>
 
-    <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(oneObj)"> {{pageElements.buttonText1}} </button>
-    
-    <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(twoObj)"> {{pageElements.buttonText2}} </button>
-    
-    <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(threeObj)"> {{pageElements.buttonText3}} </button>
-    
-    <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(fourObj)"> {{pageElements.buttonText4}} </button>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(oneObj)"> {{pageElements.buttonText1}} </button>
 
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(twoObj)"> {{pageElements.buttonText2}} </button>
+
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(threeObj)"> {{pageElements.buttonText3}} </button>
+
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(fourObj)"> {{pageElements.buttonText4}} </button>
+    </div>
 </ion-content>    
 
 <ion-footer>

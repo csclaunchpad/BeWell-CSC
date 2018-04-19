@@ -1,10 +1,10 @@
-<ion-header *ngIf="pageElementsLoaded">
-  <ion-navbar >
+<ion-header>
+  <ion-navbar>
     <button ion-button menuToggle>
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
-    <ion-title>
-      {{pageElements.menuTitleText}}
+    <ion-title *ngIf="pageElementsLoaded">
+      {{pageElements.homeTitleText}}
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,76 +14,80 @@
     <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header" >
+<ion-content padding>
 
-    <ion-grid>
+    <ion-grid *ngIf="pageElementsLoaded">
         <ion-row>
-            <h5 class="title" attr.aria-label="{{pageElements.pageToolText1}}">{{pageElements.pageToolText1}}</h5> 
-
-<!--            <ion-card class="backgroundMHCM">
-                
-                <ion-row>
-                    <ion-col>   
-                        <div text-center>
-                            <h6>{{pageElements.buttonText1}}</h6>
-                            <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
-                        </div> 
-                    </ion-col>
-                </ion-row>
-                
-                <ion-row>
-                    <ion-col>
-                        <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
-                    </ion-col>
-                </ion-row>
-               
-            </ion-card>
--->             
-            <ion-card class="backgroundWT">
-                
-                <ion-row>
-                    <ion-col>        
-                    <div text-center>
-                        <h6 attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</h6>
-                        <img src="../../../assets/imgs/WT.png" class="featureImg">         
-                    </div> 
-                    </ion-col>
-                </ion-row>
-                
-                <ion-row>
-                    <ion-col>
-                        <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
-                    </ion-col>
-                </ion-row> 
-                
-            </ion-card>
-            
-            <ion-card class="blackgroundIDEA">
-                
-                <ion-row>
-                    <ion-col>        
+<!--            <ion-col>   -->
+                <h5 class="title">{{pageElements.pageToolText1}}</h5> 
+<!--            <div text-center>
+                <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
+            </div> 
+            </ion-col>
+-->
+        </ion-row>
+<!--        <ion-row>
+            <ion-col>
+                <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
+            </ion-col>
+        </ion-row>
+-->
+        <ion-card>
+            <ion-row>
+                <ion-col>        
+                <div text-center>
+                    <h6>{{pageElements.buttonText2}}</h6>
+                    <img src="../../../assets/imgs/WT.png" class="featureImg">         
+                </div> 
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <button ion-button block [navPush]="wellnesstracker">{{pageElements.buttonText2}}</button>    
+                </ion-col>
+            </ion-row> 
+        </ion-card>   
+        <ion-card>
+            <ion-row>
+                <ion-col>        
                     <div text-center>
                         <img src="../../../assets/imgs/ideas.png" class="featureImg">         
                     </div> 
-                    </ion-col>
-                </ion-row>
-                
-                <ion-row>
-                    <ion-col>
-                            <a href="mailto:" class="buttonLink">
-                                <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.buttonText3}}" >{{pageElements.buttonText3}}</button>
-                            </a>  
-                    </ion-col>
-                </ion-row>
-                
-            </ion-card>
-            
-        </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <a href="mailto:" class="buttonLink">
+                        <button ion-button block class = "buttonLink" >{{pageElements.buttonText3}}</button>
+                    </a>  
+                </ion-col>
+            </ion-row>
+        </ion-card>
+
+        <!-- <ion-card class="backgroundMHCM">
+
+            <ion-row>
+                <ion-col>   
+                    <div text-center>
+                        <h6>{{pageElements.buttonText1}}</h6>
+                        <img src="../../../assets/imgs/MHCM.png" class="featureImg">         
+                    </div> 
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <button ion-button block [navPush]="assessment">{{pageElements.buttonText1}}</button>    
+                </ion-col>
+            </ion-row>
+
+        </ion-card>
+        -->             
     </ion-grid>
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
+    <ion-toolbar>
+        <button ion-button block>Aidez moi / Help Me</button>
+    </ion-toolbar>
 </ion-footer>

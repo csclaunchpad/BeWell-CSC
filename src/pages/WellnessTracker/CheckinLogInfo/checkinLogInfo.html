@@ -5,64 +5,64 @@
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-		<ion-title attr.aria-label="{{pageElements.checkinLogInfoText}}">{{pageElements.checkinLogInfoText}}</ion-title>
+            <ion-title attr.aria-label="{{pageElements.checkinLogInfoText}}">{{pageElements.checkinLogInfoText}}</ion-title>
 	</ion-navbar>
 </ion-header>
 
 <!-- Loading Div -->
 <div *ngIf="!pageElementsLoaded">
-	<ion-spinner></ion-spinner>
+    <ion-spinner></ion-spinner>
 </div>
 
 <ion-content padding style="height: 100%" *ngIf="pageElementsLoaded" class="has-header">
 
     <ion-grid>
-		<ion-row text-center>
-			<ion-col>
-				<img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">
-			</ion-col>
-		</ion-row>
-		
-		<ion-row text-center>
-			<ion-col>
-				<span attr.aria-label="{{pageElements.dateText}}">{{pageElements.dateText}}:</span> <span attr.aria-label="{{userRecords.date}}">{{userRecords.date}}</span>
-			</ion-col>
-		</ion-row>
-		
-		<ion-row text-center>
-			<ion-col attr.aria-label="{{userRecords.entryNote}}">
-				{{userRecords.entryNote}}
-			</ion-col>
-		</ion-row>
-		
-		<ion-row text-center>
-			<ion-col col-4>
-				<span attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}:</span> <span attr.aria-label="{{userRecords.moodScore}}">{{userRecords.moodScore}}</span>
-			</ion-col>
-			
-			<ion-col col-4 offset-4>
-				<span attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}:</span> <span attr.aria-label="{{userRecords.dietScore}}">{{userRecords.dietScore}}</span>
-			</ion-col>
-		</ion-row>
-		
-		<ion-row text-center>
-			<ion-col col-4>
-				<span attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}:</span> <span attr.aria-label="{{userRecords.sleepScore}}">{{userRecords.sleepScore}}</span>
-			</ion-col>
-			
-			<ion-col col-4 offset-4>
-				<span attr.aria-label="{{pageElements.stressText}}">{{pageElements.stressText}}:</span> <span attr.aria-label="{{userRecords.stressScore}}">{{userRecords.stressScore}}</span>
-			</ion-col>
-		</ion-row>
-		
-		<ion-row text-center>
-			<ion-col>
-				<button ion-button block attr.aria-label="{{pageElements.editText}}" (click)="edit()">{{pageElements.editText}}</button>
-			</ion-col>
-			<ion-col>
-				<button ion-button block attr.aria-label="{{pageElements.deleteText}}" (click)="del()">{{pageElements.deleteText}}</button>
-			</ion-col>
-		</ion-row>
+        <ion-row text-center>
+            <ion-col>
+                    <img src="../../assets/imgs/feelings/face{{totalScore}}.png" class="feelingImg">
+            </ion-col>
+        </ion-row>
+
+        <ion-row text-center>
+            <ion-col>
+                    <span attr.aria-label="{{pageElements.dateText}}">{{pageElements.dateText}}:</span> <span attr.aria-label="{{userRecords.date}}">{{userRecords.date | date : "medium" }}</span>
+            </ion-col>
+        </ion-row>
+
+        <ion-row text-center>
+            <ion-col attr.aria-label="{{userRecords.entryNote}}">
+                    {{userRecords.entryNote}}
+            </ion-col>
+        </ion-row>
+
+        <ion-row text-center>
+            <ion-col col-4>
+                <span attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}:</span> <span attr.aria-label="{{userRecords.moodScore}}">{{userRecords.moodScore}}</span>
+            </ion-col>
+
+            <ion-col col-4 offset-4>
+                <span attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}:</span> <span attr.aria-label="{{userRecords.dietScore}}">{{userRecords.dietScore}}</span>
+            </ion-col>
+        </ion-row>
+
+        <ion-row text-center>
+            <ion-col col-4>
+                <span attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}:</span> <span attr.aria-label="{{userRecords.sleepScore}}">{{userRecords.sleepScore}}</span>
+            </ion-col>
+
+            <ion-col col-4 offset-4>
+                <span attr.aria-label="{{pageElements.stressText}}">{{pageElements.stressText}}:</span> <span attr.aria-label="{{userRecords.stressScore}}">{{userRecords.stressScore}}</span>
+            </ion-col>
+        </ion-row>
+
+        <ion-row text-center>
+            <ion-col>
+                <button ion-button block attr.aria-label="{{pageElements.editText}}" (click)="edit()">{{pageElements.editText}}</button>
+            </ion-col>
+            <ion-col>
+                <button ion-button block attr.aria-label="{{pageElements.deleteText}}" (click)="del()">{{pageElements.deleteText}}</button>
+            </ion-col>
+        </ion-row>
     </ion-grid>
 </ion-content>
 
@@ -71,4 +71,3 @@
         <button ion-button block>Aidez moi / Help Me</button>
     </ion-toolbar>
 </ion-footer>
-

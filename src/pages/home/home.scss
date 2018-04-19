@@ -1,8 +1,6 @@
 page-home {
     .has-header {
-    	top: 44px;
-	position:absolute;
-	width: 100%;
+    	margin-top: 44px;
     }
     
     .MapleLeafImg{
@@ -15,7 +13,20 @@ page-home {
         width: auto;
         padding-top:  10px;
     }
-    .title{
+    .titleHeader{
         padding-top: 20px;
+    }
+	
+    .border {
+            border-style: solid;
+            border-width: 0.5px;
+    }
+
+    .checkinTimeCounter {
+            margin-top: 0;
+    }
+
+    .testBackground {
+            background: linear-gradient(to top right, #99ccff 0%, #ffffff 100%);
     }
 }

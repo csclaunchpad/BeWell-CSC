@@ -56,13 +56,11 @@ page-checkinLog {
 	background: linear-gradient(210deg, #3366ff, #FFFFFF); /* Standard syntax (must be last) */
     }
 	
-	.has-header {
-		top: 44px;
-		position:absolute;
-		width: 100%;
-	}
-	
-	.scroll-content {
-		margin-top: 0 !important;
-	}
+    .has-header {
+        top: 44px;
+    }
+
+    .scroll-content {
+            margin-top: 0 !important;
+    }
 }
