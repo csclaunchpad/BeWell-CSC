@@ -12,49 +12,78 @@
 <ion-content padding>
     <ion-grid *ngIf="pageElementsLoaded">
         <!-- Phase 1 -->
-        <ion-row *ngIf="phase1">
+        <div *ngIf="phase1">
 
             <!-- First name label and input field -->
-            <ion-col>
-                <ion-label color="primary" attr.aria-label="{{pageElements.nameOfAccountText}}">{{pageElements.nameOfAccountText}}</ion-label>
-                <ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName" attr.aria-label="{{pageElements.firstNameInput}}"></ion-input>
-            </ion-col>
-
-            <!-- Find name button -->
-            <ion-col>
-                <button ion-button (click)="submitPhase1()" attr.aria-label="{{pageElements.findNameText}}">{{pageElements.findNameText}}</button>
-            </ion-col>
-        </ion-row>
+            <ion-row>
+                <ion-col>
+                    <span attr.aria-label="{{pageElements.nameOfAccountText}}">{{pageElements.nameOfAccountText}}</span>                
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input placeholder="{{pageElements.firstNameText}}" [(ngModel)]="firstName" attr.aria-label="{{pageElements.firstNameInput}}"></ion-input>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <!-- Find name button -->
+                <ion-col>
+                    <button ion-button (click)="submitPhase1()" attr.aria-label="{{pageElements.findNameText}}">{{pageElements.findNameText}}</button>
+                </ion-col>
+            </ion-row>
+        </div>
 
         <!-- Phase 2 -->
-        <ion-row *ngIf="phase2">
+        <div *ngIf="phase2">
 
+            <ion-row>
+                <ion-col>
+                    <span>{{pageElements.answerToQuestionText}}</span>
+                </ion-col>
+            </ion-row>
+            
             <!-- Security question, security answer label, and input field -->
-            <ion-col>
-                {{securityQuestion}}
-                <ion-label color="primary">{{pageElements.answerToQuestionText}}</ion-label>
-                <ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer" attr.aria-label="{{pageElements.answerInput}}"></ion-input>
-            </ion-col>
-
+            <ion-row>
+                <ion-col>
+                    {{securityQuestion}}
+                </ion-col>
+            </ion-row>
+            
+            <ion-row>
+                <ion-col>
+                    <ion-input placeholder="{{pageElements.securityAnswerText}}" [(ngModel)]="securityAnswer" attr.aria-label="{{pageElements.answerInput}}"></ion-input>
+                </ion-col>
+            </ion-row>
+            
             <!-- Submit answer button -->
-            <ion-col>
-                <button ion-button (click)="submitPhase2()" attr.aria-label="{{pageElements.submitAnswerText}}">{{pageElements.submitAnswerText}}</button>
-            </ion-col>
-        </ion-row>
+            <ion-row>
+                <ion-col>
+                    <button ion-button (click)="submitPhase2()" attr.aria-label="{{pageElements.submitAnswerText}}">{{pageElements.submitAnswerText}}</button>
+                </ion-col>
+            </ion-row>
+        </div>
 
         <!-- Phase 3 -->
-        <ion-row *ngIf="phase3">
+        <div *ngIf="phase3">
 
             <!-- Pin label and input field -->
-            <ion-col>
-                <ion-label color="primary" attr.aria-label="{{pageElements.enterNewPinText}}">{{pageElements.enterNewPinText}}</ion-label>
-                <ion-input placeholder="{{pageElements.characterLengthText}}" [(ngModel)]="pin" attr.aria-label="{{pageElements.newPinInput}}"></ion-input>
-            </ion-col>
+            <ion-row>
+                <ion-col>
+                    <span attr.aria-label="{{pageElements.enterNewPinText}}">{{pageElements.enterNewPinText}}</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-input placeholder="{{pageElements.characterLengthText}}" [(ngModel)]="pin" attr.aria-label="{{pageElements.newPinInput}}"></ion-input>
+                </ion-col>
+            </ion-row>
 
             <!-- Set new pin button -->
-            <ion-col>
-                <button ion-button (click)="submitPhase3()" attr.aria-label="{{pageElements.setNewPinText}}">{{pageElements.setNewPinText}}</button>
-            </ion-col>
-        </ion-row>
+            <ion-row>    
+                <ion-col>
+                    <button ion-button (click)="submitPhase3()" attr.aria-label="{{pageElements.setNewPinText}}">{{pageElements.setNewPinText}}</button>
+                </ion-col>
+            </ion-row>
+        </div>
     </ion-grid>
 </ion-content>
