@@ -1,37 +1,47 @@
-<ion-header>
+<ion-header *ngIf="pageElementsLoaded">
     
     <ion-navbar>
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-    <ion-title *ngIf="pageElementsLoaded">{{pageElements.resourceTitleText}}</ion-title>
+    <ion-title>{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 
 </ion-header>
 
 <!-- Loading Div --> 
 <div *ngIf="!pageElementsLoaded">
-    <ion-spinner></ion-spinner>
+	<ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding >
-    <div *ngIf="pageElementsLoaded">
-        <h3 class="title" attr.aria-label="{{pageElements.resPageText}}">{{pageElements.resPageText}}</h3>
-    
-        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" [navPush]="employee">{{pageElements.buttonText1}}</button>
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+             
+<!--    <h3 class="title" attr.aria-label="{{pageElements.resPageText}}">{{pageElements.resPageText}}</h3>  -->
 
+    <ion-card class = "cardPadding">
+        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</div>
+        <p attr.aria-label="{{pageElements.buttonText1Desc}}">{{pageElements.buttonText1Desc}} </p>
+        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" [navPush]="employee">{{pageElements.buttonText1}}</button>
+    </ion-card>
+
+    <ion-card class = "cardPadding">
+        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</div>
+        <p attr.aria-label="{{pageElements.buttonText2Desc}}">{{pageElements.buttonText2Desc}} </p>    
         <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="empfamily">{{pageElements.buttonText2}}</button>
-    
+    </ion-card>
+
+    <ion-card class = "cardPadding">
+        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText3}}">{{pageElements.buttonText3}}</div>
+        <p attr.aria-label="{{pageElements.buttonText3Desc}}">{{pageElements.buttonText3Desc}} </p>      
         <button ion-button block attr.aria-label="{{pageElements.buttonText3}}" [navPush]="resPublic">{{pageElements.buttonText3}}</button>
-    </div>
+    </ion-card>   
+    
 </ion-content>
 
 <ion-footer>
     
-    <ion-toolbar>
-    
+    <ion-toolbar>    
         <button ion-button block>Aidez moi / Help Me</button>
-    
     </ion-toolbar>
     
 </ion-footer>
