@@ -22,43 +22,42 @@
 </div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
-
-    <div text-center attr.aria-label="{{pageElements.PageTitleText}}">
-        <h5 class="titleHeader">{{pageElements.PageTitleText}}</h5> 
-        <img src="../../../assets/imgs/CF.png" class="MapleLeafImg">         
-    </div> 
     
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                In corrections, we see all kinds of difficult situations so 
-                it's important to take care of our mental health just as you do 
-                our physical health.  <br> 
-                The state of our mental health is shown through how we think, 
-                feel and act in response to the challenges of daily life. <br> 
-                
-                <br>    
-                Originating from an organization wide Hackathon held Oct 2016
-                it was decided that CSC as a whole would come together to show 
-                support and assist our colleagues with improved access to 
-                programs set up to help us prepare and recover from 
-                stressful situations and get back to work smoothly.   
-            </ion-col>
-        </ion-row>
 
-        <ion-row>
-            <ion-col>
-                    <div style="text-align:center"><h5 class="titleHeader" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</h5></div>
-                    <a href="mailto:" class="buttonLink">
-                        <button ion-button block class = "buttonLink" attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</button>
-                    </a>  
-            </ion-col>
-        </ion-row> 
-    </ion-grid>
+        <div class="center">
+            
+            <ion-row style="margin-top: 50px">
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline  class="circlebtn iconimg" [navPush]="dailyentry"><img src="../../assets/Icons/checkIn.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText1}}</ion-label>    
+                </ion-col>
+
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="wellnesstracker"><img src="../../assets/Icons/wellnessTracker.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText2}}</ion-label>    
+                </ion-col>                 
+            </ion-row>
+
+            
+            <ion-row>
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="checkinlog"><img src="../../assets/Icons/wrench.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText3}}</ion-label>    
+                </ion-col>   
+
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="resources"><img src="../../assets/Icons/resources.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText4}}</ion-label>    
+                </ion-col>                 
+            </ion-row>
+            
+            <ion-row>
+                <ion-col text-center>
+                    <button ion-button round outline class="rectBtn iconimg" [navPush]="checkinlog"><img style="width: 40px" src="../../assets/Icons/call.svg" /></button>
+                </ion-col>
+            </ion-row>
+            
+        </div>
+ 
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar>
-    <button ion-button block>Aidez moi / Help Me</button>
-  </ion-toolbar>
-</ion-footer>

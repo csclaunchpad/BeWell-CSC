@@ -13,6 +13,7 @@ import { SQLite, SQLiteObject } from '@ionic-native/sqlite';  //services for SQL
 import { TranslationService } from '../../assets/services/translationService';
 
 // Page Imports
+import { ResInfo } from './ResPages/resinfo';
 import { Employee } from './Employee/employee';
 import { EmpRev1 } from './Employee/Rev1/empRev1';
 
@@ -49,7 +50,7 @@ export class Resources {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-                this.navCtrl.setRoot(Login);
+//                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});
@@ -68,5 +69,15 @@ export class Resources {
                 console.log("No language flag set");
             }			
 	});
+    }
+    
+        //opens resource link with details associated to the selection from the UI.
+    JumpToLink(empObj) {
+        this.navCtrl.push( ResInfo, { empUrl: empObj.empUrl, empEmail: empObj.empEmail, empTitle: empObj.empTitle } )
+//        this.navCtrl.push( ResInfo, { eapObj } )
+    }
+        //POP a page off the menu stack
+    goBack() {
+        this.navCtrl.pop();
     }
 }

@@ -18,7 +18,8 @@ import { WellnessTracker } from '../WellnessTracker/wellnesstracker';
 import { Assessment } from '../Tools/assessment/assessment';
 import { Login } from './Login/login/login';
 import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry'; // home.html
-
+import { CheckinLog } from '../WellnessTracker/CheckinLog/checkinLog'; // home.html
+import { Resources } from '../Resources/resources'; // home.html
 
 @Component({
     selector: 'page-home',
@@ -27,6 +28,11 @@ import { DailyEntry } from '../WellnessTracker/DailyEntry/dailyEntry'; // home.h
 export class HomePage {
     assessment = Assessment;
     wellnesstracker = WellnessTracker; 
+    resources = Resources;
+    dailyentry = DailyEntry;
+    checkinlog = CheckinLog;
+
+    
     
     // The actual content of the page, fetched via translationService.ts
     private pageElements: Object;
@@ -49,7 +55,7 @@ export class HomePage {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
         this.storage.get("userID").then((value) => {
             if(value == null) {
-              this.navCtrl.setRoot(Login);
+//              this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});

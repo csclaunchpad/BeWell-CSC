@@ -1,6 +1,6 @@
 <ion-header *ngIf="pageElementsLoaded">
     <ion-navbar hideBackButton="true">
-		<ion-buttons left>
+        <ion-buttons left>
             <button ion-button icon-only (click)="goBack()">
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
@@ -16,46 +16,24 @@
 </div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="center">
-        <ion-grid class="center-grid">
-			<ion-row>
-				<ion-col style="text-align:center; margin-bottom:20px;">
-					<h3 class="title">{{pageElements.resPageText}}</h3>
-				</ion-col>
-			</ion-row>
-			<ion-row>	
-				<ion-col style="margin-bottom: 20px">
-					<div style="text-align:center">Check-in and log your current mood!</div>
-					<button ion-button block [navPush]="dailyentry">{{pageElements.buttonText1}}</button>
-				</ion-col>
-			</ion-row>
-			<ion-row>	
-				<ion-col style="margin-bottom: 20px">
-					<div style="text-align:center">View all your check-in logs in one place!</div>
-					<button ion-button block [navPush]="checkinlog">{{pageElements.buttonText2}}</button>
-				</ion-col>
-			</ion-row>
-			<ion-row>	
-				<ion-col style="margin-bottom: 20px">
-					<div style="text-align:center">Analyze your check-in logs using the dashboard!</div>
-					<button ion-button block [navPush]="dashboard">{{pageElements.buttonText3}}</button>
-				</ion-col>
-			</ion-row>
+           
+    <div class="center">
+
+        <ion-row >	
+            <ion-col style="margin-bottom: 20px">
+                <button ion-button round outline class="circlebtn" [navPush]="checkinlog"><img src="../../assets/Icons/dailyLog.svg" /></button>
+                <ion-label text-center>{{pageElements.buttonText1}}</ion-label>    
+            </ion-col>
+        </ion-row>
+            
+	<ion-row>	
+            <ion-col style="margin-bottom: 20px">
+                <button ion-button round outline class="circlebtn" [navPush]="dashboard"><img src="../../assets/Icons/graph.svg" /></button>
+                <ion-label text-center>{{pageElements.buttonText2}}</ion-label>
+            </ion-col>
+	</ion-row>
 			
-			<!--<ion-row>	
-				<ion-col>
-					<button ion-button block [navPush]="assessment">{{pageElements.buttonText4}}</button>
-				</ion-col>
-			</ion-row>-->
-			
-		</ion-grid>        
+    </div>        
+
 </ion-content>
 
-<ion-footer>
-    
-    <ion-toolbar>
-    
-        <button ion-button block>Aidez moi / Help Me</button>
-    
-    </ion-toolbar>
-    
-</ion-footer>

@@ -46,37 +46,47 @@
         </ion-row>
         
         <form (ngSubmit)="saveData()">
-
-            <ion-item no-lines>
-                <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">
-                    <ion-label range-left attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}</ion-label>
-                </ion-range>
-            </ion-item>      
-
-            <ion-item no-lines>
-                <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">
-                    <ion-label range-left attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}</ion-label>
-                </ion-range>
-            </ion-item> 
-
-            <ion-item no-lines>
-                <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">
-                    <ion-label range-left attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}</ion-label>
-                </ion-range>
-            </ion-item> 
-
-            <ion-item no-lines>
+        
+            <ion-row>
+                <ion-item no-lines>
+                    <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="GenericColor" pin="true" class="slider" (ionChange)="updateScores()">
+                        <ion-label range-left attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}</ion-label>
+                    </ion-range>
+                </ion-item>      
+            </ion-row>
+            
+            <ion-row>
+                <ion-item no-lines>
+                    <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="GenericColor" pin="true" class="slider" (ionChange)="updateScores()">
+                        <ion-label range-left attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}</ion-label>
+                    </ion-range>
+                </ion-item>
+            </ion-row>
+            
+            <ion-row>                
+                <ion-item no-lines>
+                    <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="GenericColor" pin="true" class="slider" (ionChange)="updateScores()">
+                        <ion-label range-left attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}</ion-label>
+                    </ion-range>
+                </ion-item> 
+            </ion-row>
+            
+<!--            <ion-item no-lines>
                 <ion-range min="1" max="10" [(ngModel)]="data.stressScore" name="stressScore" color="stressColor" pin="true" class="slider" (ionChange)="updateScores()">
                     <ion-label range-left attr.aria-label="{{pageElements.stressText}}">{{pageElements.stressText}}</ion-label>
                 </ion-range>
-            </ion-item>       
+            </ion-item>    -->   
 
             <ion-item no-lines>
-                <ion-label attr.aria-label="{{pageElements.descriptionText}}">{{pageElements.descriptionText}}</ion-label>
-                <ion-input type="text" placeholder="Description" [(ngModel)]="data.entryNote" name="entryNote" required="" attr.aria-label="{{pageElements.descriptionInput}}"></ion-input>
+                <ion-input type="text" placeholder="Description" class="rectTxBx" [(ngModel)]="data.entryNote" name="entryNote" required="" attr.aria-label="{{pageElements.descriptionInput}}"></ion-input>
             </ion-item>
 
-            <button ion-button type="submit" block attr.aria-label="{{pageElements.saveDataText}}">{{pageElements.saveDataText}}</button>
+            <ion-row>
+                <ion-col text-center>
+                    <button ion-button round outline type="submit" class="rectBtn iconimg" block attr.aria-label="{{pageElements.saveDataText}}" [navPush]="checkinlog"><img style="width: 30px;" src="../../assets/Icons/checkmark.svg" /></button>
+                </ion-col>
+            </ion-row>
+
         </form>
     </ion-grid>
 </ion-content>

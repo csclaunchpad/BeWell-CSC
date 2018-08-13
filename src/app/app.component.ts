@@ -13,7 +13,7 @@ import { Storage } from '@ionic/storage';
 
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
-//import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
+import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
 
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';
@@ -30,8 +30,9 @@ import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAss
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = LanguageSelection;
+//    rootPage: any = LanguageSelection;
 
+    rootPage: any = HomePage;
     // The actual content of the page, fetched via translationService.ts
     private pageElements: any;
 
@@ -88,11 +89,11 @@ export class MyApp {
         console.log(this.pageElements);
 
         this.pages = [
-            { title: this.pageElements.home, component: HomePage },
-//          { title: 'Wellness Tracker', component: WellnessTracker },
-            { title: this.pageElements.tools, component: Tools },
-            { title: this.pageElements.resources, component: Resources },
-            { title: this.pageElements.updates, component: Updates },
+//            { title: this.pageElements.home, component: HomePage },
+//            { title: 'Wellness Tracker', component: WellnessTracker },
+//            { title: this.pageElements.tools, component: Tools },
+  //          { title: this.pageElements.resources, component: Resources },
+//            { title: this.pageElements.updates, component: Updates },
             { title: 'FR/EN', component: LanguageSelection },
             { title: this.pageElements.signout, component: SignOut }
         ];

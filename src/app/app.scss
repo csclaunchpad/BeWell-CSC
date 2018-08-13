@@ -15,8 +15,71 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-//Added by Tim 16-03-2018
-//ion-content {
-//    background: $app-background;
-//}
+//Added by Tim 18-07-2018
+ion-content {
+    background: $app-background;
+    margin-bottom: 0;
+    margin-top: 0;
+    
+}
 
+ion-footer{
+    ion-toolbar{
+        background: $toolbar-background;
+    }
+}
+
+ion-navbar{
+    background: $app-toolbar;
+}
+
+ion-toolbar{
+    background: $app-toolbar;
+}
+
+ion-menu{
+    ion-content {
+        background: $app-menu-content;
+        ion-list{
+            ion-text{
+            font-color: $app-menu-title;
+            }
+        }
+    }
+}
+
+ion-label{
+    font-size: 11px;
+}
+
+.circlebtn{
+    background-color: transparent;
+    border: 2px solid #002E5D;
+    border-radius: 80px;
+    height: 80px;
+    width: 80px;
+}
+
+.rectBtn{
+    background-color: transparent;
+    border: 2px solid #002E5D;
+    border-radius: 10px;
+    height: 50px;
+    width: 80%;
+}
+
+.rectTxBx{
+    background-color: transparent;
+    border: 2px solid #002E5D;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.iconimg {
+    margin: auto;
+    display: inline-block;
+}
+
+.center{
+    margin: auto;
+}

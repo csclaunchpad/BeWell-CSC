@@ -1,10 +1,12 @@
 <ion-header *ngIf="pageElementsLoaded">
     
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-    <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+    <ion-navbar hideBackButton="true" >
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
 
 </ion-header>
@@ -15,8 +17,65 @@
 </div>
 
 <ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+    
+            <div class="center">
+            
+            <ion-row style="margin-top: 10px">
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" attr.aria-label="{{pageElements.buttonText1}}" [navPush]="emprev1"><img src="../../assets/Icons/EAS.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText1}}</ion-label>    
+                </ion-col>
+
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="wellnesstracker"><img src="../../assets/Icons/EAP.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText2}}</ion-label>    
+                </ion-col>  
+                
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="wellnesstracker"><img src="../../assets/Icons/HPP.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText3}}</ion-label>    
+                </ion-col>
+            </ion-row>
+
+            
+            <ion-row>
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="checkinlog"><img src="../../assets/Icons/CISM.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText4}}</ion-label>    
+                </ion-col>   
+
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="resources"><img src="../../assets/Icons/CM.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText5}}</ion-label>    
+                </ion-col>
+                
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="wellnesstracker"><img src="../../assets/Icons/EPP.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText6}}</ion-label>    
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="checkinlog"><img src="../../assets/Icons/RtWP.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText3}}</ion-label>    
+                </ion-col>   
+
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="resources"><img src="../../assets/Icons/NAMP.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText4}}</ion-label>    
+                </ion-col>
+                
+                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
+                    <button ion-button round outline class="circlebtn iconimg" [navPush]="wellnesstracker"><img src="../../assets/Icons/.svg" /></button>
+                    <ion-label text-center text-wrap>{{pageElements.buttonText2}}</ion-label>    
+                </ion-col>
+            </ion-row>
+
+            
+        </div>
              
-<!--    <h3 class="title" attr.aria-label="{{pageElements.resPageText}}">{{pageElements.resPageText}}</h3>  -->
+<!--    
 
     <ion-card class = "cardPadding">
         <div class ="cardH5" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</div>
@@ -35,13 +94,6 @@
         <p attr.aria-label="{{pageElements.buttonText3Desc}}">{{pageElements.buttonText3Desc}} </p>      
         <button ion-button block attr.aria-label="{{pageElements.buttonText3}}" [navPush]="resPublic">{{pageElements.buttonText3}}</button>
     </ion-card>   
-    
+    -->
 </ion-content>
 
-<ion-footer>
-    
-    <ion-toolbar>    
-        <button ion-button block>Aidez moi / Help Me</button>
-    </ion-toolbar>
-    
-</ion-footer>

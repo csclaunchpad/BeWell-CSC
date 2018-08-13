@@ -23,7 +23,23 @@
     <ion-list>
         <ion-item-sliding *ngFor="let wellness of userRecords; let i=index" (click)="redirectToCheckinLogInfo(wellness.rowid)">
             <ion-item nopadding>
-                <ion-card>
+
+                <ion-row>
+                    <ion-col style="width: 20%">
+                        <div text-center>
+                            <img src="../../../assets/imgs/feelings/face{{wellness.moodScore}}.png" class="feelingImg">         
+                        </div>
+                    </ion-col>
+                    <ion-col style="width: 60%">
+                        <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
+                        <span attr.aria-label="{{wellness.entryNote.substring(1, 30)}}">{{ wellness.entryNote.substring(1, 30) | date : "medium" }}</span>
+                    </ion-col>
+                    <ion-col style="width: 20%">
+                        
+                    </ion-col>
+                </ion-row>
+                
+<!--                
                     <ion-row layout-align="center center" flex="60">
                         <ion-col class="moodBackground" layout-align="center center">
                             <strong attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}: </strong><span attr.aria-label="{{wellness.moodScore}}">{{wellness.moodScore}}</span>
@@ -50,7 +66,7 @@
                             <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
                         </ion-col>
                     </ion-row>           
-                </ion-card>
+-->                
             </ion-item>
         </ion-item-sliding>
     </ion-list>

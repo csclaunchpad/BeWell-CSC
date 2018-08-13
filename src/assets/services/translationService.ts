@@ -26,7 +26,7 @@ export class TranslationService {
 		case "app.component.ts": {
                     return {
                         home: "Home",
-                        tools: "Tools",
+                        tools: "Dashboard",
                         resources: "Resources",
                         updates: "Updates",
                         signout: "SignOut"
@@ -101,19 +101,20 @@ export class TranslationService {
                     return {
 			resourceTitleText: "Wellness Tracker",
                         resPageText: "Choose the resource list that applies to you",
-                       	buttonText1: "Daily Entry",
-                        buttonText2: "Checkin Log",
-			buttonText3: "Dashboard"
+                       	buttonText1: "Daily Log",
+                        buttonText2: "Graph",
+//			buttonText3: "Graph"
                     }
 		}
                                     
 		case "home.html": {
                     return {
-                        homeTitleText: "Welcome",
-                        PageTitleText: "Welcome CSC Family!!",
-			buttonText1: "Help us improve mental health?",
-			buttonText2: "Send us an Idea.",
-			buttonText3: "placeholder"
+                        homeTitleText: "Dashboard",
+                        pageToolText1: "Try Our Tools!",
+			buttonText1: "Daily Check-In",
+			buttonText2: "Wellness Tracker",
+			buttonText3: "Tools",
+                        buttonText4: "Resources"
                     }
 		}
 		
@@ -176,11 +177,14 @@ export class TranslationService {
 			resourceTitleText: "Resources",
                         resPageText: "Choose the resource list that applies to you",
                         buttonText1Desc: "Working in a correctional environment can be challenging in many ways and it is sometimes not easy to find help so CSC-SCC feels it's important to make resources more accessible to employees.",
-                       	buttonText1: "CSC EMPLOYEE",
+                       	buttonText1: "Employee Assistance Services",
                         buttonText2Desc: "Mental health concerns are often identified by immediate family before they become relavant to fellow employees so CSC-SCC feels it's important to make resources avaliable to family memebers of CSC-SCC employees. (Sentence need improvment) ",
-                        buttonText2: "CSC EMPLOYEE FAMILY",
+                        buttonText2: "Employee Assistance Program",
                         buttonText3Desc: "We care about everyone so here are some helpful resources for everyone. (Sentence need improvment)",
-			buttonText3: "PUBLIC"
+			buttonText3: "Harrassment Prevention Program",
+                        buttonText4: "Critical Incident Stress Managment",
+                        buttonText5: "Conflict Management",
+                        buttonText6: "Employee Protection Protocol",
                     }
 		}
 
@@ -236,9 +240,10 @@ export class TranslationService {
                         menuTitleText: "Tools",
                         homeTitleText: "Tools",
                         pageToolText1: "Try Our Tools!",
-			buttonText1: "Mental Health Continuum",
+			buttonText1: "Daily Check-In",
 			buttonText2: "Wellness Tracker",
-			buttonText3: "Do you have a tool idea?"
+			buttonText3: "Tools",
+                        buttonText4: "Resources"
                     }
 		}
 				
