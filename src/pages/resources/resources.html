@@ -11,18 +11,20 @@
 
 </ion-header>
 
-<!-- Loading Div --> 
+<!-- Loading Div 
 <div *ngIf="!pageElementsLoaded">
 	<ion-spinner></ion-spinner>
 </div>
+--> 
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
-    
+
+ <!-- <ion-content padding *ngIf="pageElementsLoaded" class="has-header">  -->
+<ion-content padding *ngIf="pageElementsLoaded" class="has-header">    
             <div class="center">
             
             <ion-row style="margin-top: 10px">
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg" attr.aria-label="{{pageElements.buttonText1}}" [navPush]="emprev1"><img src="../../assets/Icons/EAS.svg" /></button>
+                    <button ion-button round outline class="circlebtn iconimg" attr.aria-label="{{pageElements.buttonText1}}" (click)="JumpToLink(easObj)"><img src="../../assets/Icons/EAS.svg" /></button>
                     <ion-label text-center text-wrap>{{pageElements.buttonText1}}</ion-label>    
                 </ion-col>
 
@@ -75,25 +77,5 @@
             
         </div>
              
-<!--    
-
-    <ion-card class = "cardPadding">
-        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText1}}">{{pageElements.buttonText1}}</div>
-        <p attr.aria-label="{{pageElements.buttonText1Desc}}">{{pageElements.buttonText1Desc}} </p>
-        <button ion-button block attr.aria-label="{{pageElements.buttonText1}}" [navPush]="employee">{{pageElements.buttonText1}}</button>
-    </ion-card>
-
-    <ion-card class = "cardPadding">
-        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText2}}">{{pageElements.buttonText2}}</div>
-        <p attr.aria-label="{{pageElements.buttonText2Desc}}">{{pageElements.buttonText2Desc}} </p>    
-        <button ion-button block attr.aria-label="{{pageElements.buttonText2}}" [navPush]="empfamily">{{pageElements.buttonText2}}</button>
-    </ion-card>
-
-    <ion-card class = "cardPadding">
-        <div class ="cardH5" attr.aria-label="{{pageElements.buttonText3}}">{{pageElements.buttonText3}}</div>
-        <p attr.aria-label="{{pageElements.buttonText3Desc}}">{{pageElements.buttonText3Desc}} </p>      
-        <button ion-button block attr.aria-label="{{pageElements.buttonText3}}" [navPush]="resPublic">{{pageElements.buttonText3}}</button>
-    </ion-card>   
-    -->
 </ion-content>
 

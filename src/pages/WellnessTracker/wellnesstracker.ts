@@ -41,7 +41,12 @@ export class WellnessTracker {
 
     private userID: string;
     
-    constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, private translationService: TranslationService) {
+    constructor(public navCtrl: NavController, 
+        public navParams: NavParams, 
+        private storage: Storage, 
+        private translationService: TranslationService) 
+        {
+            
 	this.authenticate();
         this.configuration();
     }

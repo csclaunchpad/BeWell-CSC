@@ -1,28 +1,55 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>{{resTitle}}</ion-title>
+    <ion-navbar hideBackButton="true" >
+        <ion-buttons left>
+            <button ion-button icon-only (click)="goBack()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </button>
+        </ion-buttons>
+<!--        <ion-title>{{pageElements.resTitle}}</ion-title> -->
+<ion-title>Test</ion-title>
     </ion-navbar>
-        <a href="{{resEmail}}" class="buttonLink">
-        <button ion-button block>{{resTitle}}</button>
-    </a>
+        
 </ion-header>
-
-
-<ion-content padding>
+       
+             
+<ion-content>
     
-<!--    
-    <a href="mailto:{{resEmail}}" class="buttonLink">
-        <button ion-button block>{{resTitle}}</button>
-    </a>
--->    
-    <div id="loadExternalURL" width="100%" height="100%">
-<!--        <object type="text/html" data="https://cors-anywhere.herokuapp.com/{{resUrl}}" width="100%" height="100%" style="overflow:auto;border:5px ridge blue">
-        </object>
--->
-    </div>  
+    <div class ="resBanner">
+        <img src="assets/imgs/easObj.png">  
+    </div>
+
+    
+    <ion-col padding>
+        <!-- This row is for resource description -->
+        <ion-row>
+            <ion-col text-center>
+<!--                <div class ="cardH5" attr.aria-label="{{pageElements.resParagraph1Text}}"><p>{{pageElements.resParagraph1Text}}</p></div>    -->
+<div class ="cardH5" ><p>poop</p></div>
+                    
+            </ion-col>
+        </ion-row> 
+
+        <!-- This row is for resource description -->
+        <ion-row>
+            <ion-col text-center>
+                <p>pageElements.resParagraph1Text</p>
+            </ion-col>
+        </ion-row>         
+        
+        
+        <ion-row>
+            <ion-col text-center>
+                <a href="mailto:{{resEmail}}" class="buttonLink">
+                <button ion-button round outline class="rectBtn iconimg"><img style="width: 40px" src="../../assets/Icons/call.svg" /></button>
+                </a>
+            </ion-col>
+        </ion-row>
+        
+    </ion-col>
+   
+   
+    
+ 
        
 </ion-content>
 

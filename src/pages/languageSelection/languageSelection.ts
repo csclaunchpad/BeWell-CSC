@@ -25,7 +25,7 @@ export class LanguageSelection {
     setLanguage(language) {
         this.storage.set("languageFlag", language).then((value) => {
             this.events.publish('languageFlag:changed', language);
-//            this.navCtrl.setRoot(Login);
+            this.navCtrl.setRoot(Login);
         });	
     }
 }

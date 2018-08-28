@@ -14,7 +14,7 @@ import { TranslationService } from '../../../../assets/services/translationServi
 })
 
 export class EmpRev1 {
-
+    
     private pageElements: Object;
 	
     // Controls whether our view is loaded based off of if pageElements has been loaded
@@ -33,7 +33,7 @@ export class EmpRev1 {
     // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
 	this.storage.get("userID").then((value) => {
             if(value == null) {
-                this.navCtrl.setRoot(Login);
+//                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
 	});

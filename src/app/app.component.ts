@@ -18,6 +18,7 @@ import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';
 import { Resources } from '../pages/Resources/resources';
+import { ResInfo } from '../pages/Resources/ResPages/resinfo';
 import { Updates } from '../pages/updates/updates';
 
 import { Tools } from '../pages/Tools/tools';
@@ -30,9 +31,11 @@ import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAss
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-//    rootPage: any = LanguageSelection;
+    rootPage: any = LanguageSelection;
 
-    rootPage: any = HomePage;
+//    rootPage: any = HomePage;
+//    rootPage: any = Resources;
+//  rootPage: any = ResInfo;  
     // The actual content of the page, fetched via translationService.ts
     private pageElements: any;
 

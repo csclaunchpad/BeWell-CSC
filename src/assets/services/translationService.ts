@@ -187,6 +187,15 @@ export class TranslationService {
                         buttonText6: "Employee Protection Protocol",
                     }
 		}
+                
+                case "resinfo.html": {
+                    return {
+                        resTitle: "Test Resources",
+                        resParagraph1Text: "Stuff here",
+                      
+                    }
+		}
+
 
                 case "employee.html": {
                     return {
@@ -416,6 +425,14 @@ export class TranslationService {
 			buttonText1: "Mental Health Continuum",
 			buttonText2: "Avez-vous une idée d'outil?",
 			buttonText3: "Avez-vous une idée d'outil?"
+                    }
+		}
+
+                case "resinfo.html": {
+                    return {
+                        resTitle: "Test Resources",
+                        resParagraph1Text: "Stuff here",
+                      
                     }
 		}
 
