@@ -6,36 +6,57 @@
             </button>
         </ion-buttons>
 <!--        <ion-title>{{pageElements.resTitle}}</ion-title> -->
-<ion-title>Test</ion-title>
+		<ion-title *ngIf="pageElementsLoaded">{{pageElements.title}}</ion-title>
     </ion-navbar>
         
 </ion-header>
        
              
-<ion-content>
+<ion-content *ngIf="pageElementsLoaded" class="mainContent">
     
-    <div class ="resBanner">
-        <img src="assets/imgs/easObj.png">  
+    <div class="resBanner">
+        <img src="assets/imgs/{{pageElements.imageName}}">  
     </div>
 
     
-    <ion-col padding>
-        <!-- This row is for resource description -->
-        <ion-row>
-            <ion-col text-center>
-<!--                <div class ="cardH5" attr.aria-label="{{pageElements.resParagraph1Text}}"><p>{{pageElements.resParagraph1Text}}</p></div>    -->
-<div class ="cardH5" ><p>poop</p></div>
-                    
-            </ion-col>
-        </ion-row> 
-
-        <!-- This row is for resource description -->
-        <ion-row>
-            <ion-col text-center>
-                <p>pageElements.resParagraph1Text</p>
-            </ion-col>
-        </ion-row>         
+    <ion-grid padding>
         
+		<!-- Main Paragraph -->
+        <ion-row *ngIf="pageElements.mainParagraph != ''">
+            <ion-col text-center>
+                <div attr.aria-label="{{pageElements.mainParagraphAriaLabel}}">
+					<p style="text-align: left">{{pageElements.mainParagraph}}</p>
+				</div>
+            </ion-col>
+        </ion-row>
+
+		<!-- bulletPointHeader -->
+		<ion-row *ngIf="pageElements.bulletPointHeader != ''">
+			<ion-col col-md-3 offset-md-3>
+				<div attr.aria-label="{{pageElements.bulletPointHeaderAriaLabel}}">
+					{{pageElements.bulletPointHeader}}
+				</div>
+			</ion-col>
+		</ion-row>
+		
+		<ion-row>
+			<ion-col *ngIf="pageElements.bulletPoint1 != ''">
+				<ul>
+					<li *ngIf="pageElements.bulletPoint1 != ''" attr.aria-label="{{pageElements.bulletPoint1AriaLabel}}">{{pageElements.bulletPoint1}}</li>
+					<li *ngIf="pageElements.bulletPoint2 != ''" attr.aria-label="{{pageElements.bulletPoint2AriaLabel}}">{{pageElements.bulletPoint2}}</li>
+						<ul *ngIf="pageElements.bulletPoint2SubPoint1 != ''">
+							<li *ngIf="pageElements.bulletPoint2SubPoint1 != ''" attr.aria-label="{{pageElements.bulletPoint2SubPoint1AriaLabel}}">{{pageElements.bulletPoint2SubPoint1}}</li>
+							<li *ngIf="pageElements.bulletPoint2SubPoint2 != ''" attr.aria-label="{{pageElements.bulletPoint2SubPoint2AriaLabel}}">{{pageElements.bulletPoint2SubPoint2}}</li>
+							<li *ngIf="pageElements.bulletPoint2SubPoint3 != ''" attr.aria-label="{{pageElements.bulletPoint2SubPoint3AriaLabel}}">{{pageElements.bulletPoint2SubPoint3}}</li>
+						</ul>
+					<li *ngIf="pageElements.bulletPoint3 != ''" attr.aria-label="{{pageElements.bulletPoint3AriaLabel}}">{{pageElements.bulletPoint3}}</li>
+					<li *ngIf="pageElements.bulletPoint4 != ''" attr.aria-label="{{pageElements.bulletPoint4AriaLabel}}">{{pageElements.bulletPoint4}}</li>
+					<li *ngIf="pageElements.bulletPoint5 != ''" attr.aria-label="{{pageElements.bulletPoint5AriaLabel}}">{{pageElements.bulletPoint5}}</li>
+					<li *ngIf="pageElements.bulletPoint6 != ''" attr.aria-label="{{pageElements.bulletPoint6AriaLabel}}">{{pageElements.bulletPoint6}}</li>
+					<li *ngIf="pageElements.bulletPoint7 != ''" attr.aria-label="{{pageElements.bulletPoint7AriaLabel}}">{{pageElements.bulletPoint7}}</li>
+				</ul>
+			</ion-col>
+		</ion-row>      
         
         <ion-row>
             <ion-col text-center>
@@ -44,8 +65,14 @@
                 </a>
             </ion-col>
         </ion-row>
+		
+		<ion-row>
+			<ion-col text-center>
+				{{pageElements.contactName}}
+			</ion-col>
+		</ion-row>
         
-    </ion-col>
+    </ion-grid>
    
    
     

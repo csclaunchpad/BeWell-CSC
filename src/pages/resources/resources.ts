@@ -51,9 +51,11 @@ export class Resources {
         private storage: Storage, 
         private translationService: TranslationService) 
     {
+	
 	this.authenticate();
-        this.configuration();
-        
+	this.configuration();
+    
+	/*
         this.easObj =  {    empImg:"easObj.jpg", 
                             empContact:"tel:+15555555",
                             empPage:"easObj"     
@@ -95,32 +97,32 @@ export class Resources {
                             empEmail:"tel:+18887577427",
                             empTitle:"Sunlife"     
         };                                                    
-        
+        */
     }
     
     authenticate() {		
-    // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
-	this.storage.get("userID").then((value) => {
+		// Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
+		this.storage.get("userID").then((value) => {
             if(value == null) {
 //                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
-	});
+		});
     }
     
     configuration() {
 		
         // Fetch the content from our language translation service
-	var languageFlag = this.storage.get("languageFlag").then((value) => {
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
                 this.pageElements = this.translationService.load("resources.html", value);
-		this.pageElementsLoaded = true;
-		console.log(this.pageElements);
+				this.pageElementsLoaded = true;
+				console.log(this.pageElements);
             } 
             else {
                 console.log("No language flag set");
             }			
-	});
+		});
     }
     
     //POP a page off the menu stack
@@ -129,8 +131,8 @@ export class Resources {
     }
     
     //opens resource link with details associated to the selection from the UI.
-    JumpToLink(empObj) {
-//        this.navCtrl.push( ResInfo, { empUrl: empObj.empUrl, empEmail: empObj.empEmail, empTitle: empObj.empTitle } )
-        this.navCtrl.push( ResInfo, { empObj } )
+    GoToPage(name) {
+		
+        this.navCtrl.push( ResInfo, { pageName: name } )
     }
 }

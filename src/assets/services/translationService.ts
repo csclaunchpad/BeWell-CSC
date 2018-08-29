@@ -185,6 +185,9 @@ export class TranslationService {
                         buttonText4: "Critical Incident Stress Managment",
                         buttonText5: "Conflict Management",
                         buttonText6: "Employee Protection Protocol",
+						buttonText7: "Return to Work Program",
+						buttonText8: "National Attendance Management Program",
+						buttonText9: "Duty to Accommodate"
                     }
 		}
                 
@@ -355,6 +358,308 @@ export class TranslationService {
                         saveDataText: "Save"
                     }
                 }
+				
+				case "EmployeeProtectionProtocol": {
+					return {
+						title: "Employee Protection Protocol",
+						callNowText: "Call now",
+						mainParagraph: "The Employee Protection Protocol (EPP) can help keep you and your family safe from threats, criminal harassment and intimidation. It is not uncommon to encounter difficult behaviour when dealing with offenders. You may experience different degrees of such behaviour depending on what you do and where you work. All threats are not equal. If you feel the situation is not 'normal' you should report it.",
+						mainParagraphAriaLabel: "Employee Protection Protocol (EPP) Summary",
+						bulletPointHeader: "What to do when threatened:",
+						bulletPointHeaderAriaLabel: "Bullet Point Header",
+						bulletPoint1: "Take immediate action if you perceive that you are in imminent or serious danger",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Inside the workplace you should report the situation to your manager right away. If something happens outside of normal working hours, follow established procedures for your site to start the EPP process. For example:",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "At the institutions, contact the designated duty officer for your facility",
+						bulletPoint2SubPoint1AriaLabel: "Bullet two sub point one",
+						bulletPoint2SubPoint2: "In the community, contact the National Monitoring Centre: 1-877-860-0617",
+						
+						bulletPoint2SubPoint2AriaLabel: "Bullet two sub point two",
+						bulletPoint2SubPoint3: "At NHQ, contact the NHQ security number: 613-992-1486",
+						bulletPoint2SubPoint3AriaLabel: "Bullet two sub point three",
+						
+						bulletPoint3: "Outside the workplace you should distance yourself from the threat. Contact the police immediately. Then report the situation to your manager as soon as possible.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "",
+						bulletPoint4AriaLabel: "",
+						bulletPoint5: "",
+						bulletPoint5AriaLabel: "Fifth Bullet Point",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact ???",
+						imageName: "DSC_0848.jpg"
+					}
+					
+				}
+				
+				case "EmployeeAssistanceServices": {
+					return {
+						title: "Employee Assistance Services",
+						callNowText: "Call now",
+						mainParagraph: "Employee Assistance Services (EAS) is the national provider of Employee Assistance Program (EAP) services for the Correctional Service of Canada. They maintain the highest level of professionalism and confidentiality.",
+						mainParagraphAriaLabel: "Employee Assistance Services (EAS) Summary",
+						bulletPointHeader: "You can reach the crisis/rreferral line at 1-800-268-7708 or 1-800-567-5803 (TTY). It:",
+						bulletPointHeaderAriaLabel: "Bullet Point Header",
+						bulletPoint1: "is a confidential mental health service",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "is available 24 hours a day and 365 days a year",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "offers bilingual service (French & English)",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "is available at no cost for employees, their spouse and dependents",
+						bulletPoint4AriaLabel: "Fourth Bullet Point",
+						bulletPoint5: "provides immediatge telephone crisis support and counselling if needed",
+						bulletPoint5AriaLabel: "Fifth Bullet Point",
+						bulletPoint6: "coordinates refferals to a counsellor in your area",
+						bulletPoint6AriaLabel: "Sixth Bullet Point",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact Employee Assistance Program",
+						imageName: "36431210_l.jpg",
+					}
+				}
+				
+				case "CriticalIncidentStressManagement": {
+					return {
+						title: "Critical Incident Stress Management",
+						callNowText: "Call now",
+						mainParagraph: "The role of the Critical Incident Stress Management (CISM) program is to respond to the needs of emploees following a 'critical incident'. A critical incident is described as a traumatic event, outside the usual range of human experience. The event could occur in the institution, the community or headquarters and can cause a strong emotional reaction with the potential to affect one's ability to cope with the after effects.",
+						mainParagraphAriaLabel: "Critical Incident Stress Management (CISM) Summary",
+						bulletPointHeader: "",
+						bulletPointHeaderAriaLabel: "",
+						bulletPoint1: "A trained CISM team member with assess the needs of those directly involved in the incident to determine whether a CISM intervention is required.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Following the assessment, the CISM team member will provide advice and recommendations to management.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "The CISM team carries out appropriate interventions, based on their needs assessment.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "CISM is a crisis intervention. It is not a counseling service and doesn't replace therapy.",
+						bulletPoint4AriaLabel: "Fourth Bullet Point",
+						bulletPoint5: "CISM is voluntary. You are not obligated to use the program.",
+						bulletPoint5AriaLabel: "Fifth Bullet Point",
+						bulletPoint6: "CISM is confidential. After an incident, peers do not provide details about who uses the program. They only tell management that they have offered CISM interventions.",
+						bulletPoint6AriaLabel: "Sixth Bullet Point",
+						bulletPoint7: "CISM is peer-driven; staff members volunteer as CISM peer support members. You can contact a CISM peer support member any time. You can talk to a peer about an incident when it happens without judgment or criticism.",
+						bulletPoint7AriaLabel: "Seventh Bullet Point",
+						contactName: "Contact GEN-EAP-CISM",
+						imageName: "39280824_l.jpg",
+					}
+				}
+				
+				case "DutyToAccomodate": {
+					return {
+						title: "Duty to Accomodate",
+						callNowText: "Call now",
+						mainParagraph: "The Duty to Accommodate Program helps identify and remove barriers to your employment (i.e., having accessible facilities, accessible workplace standards, career development opportunities). It also provides options for how to accommodate you when such barriers cannot be removed. Access this program to see what accommodations are available to you to help you remain as productive as possible in the workforce.",
+						mainParagraphAriaLabel: "Duty to Accommodate Summary",
+						bulletPointHeader: "",
+						bulletPointHeaderAriaLabel: "",
+						bulletPoint1: "Provide advice and guidance to managers/supervisors on the accommodation process as well as case specific accommodation matters.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Inform and educate all parties of their role and responsibilities in the accommodation process.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "Assist managers/supervisors with preparing accommodation-related documents (e.g. accommodatation aggreements, letters of clarifcation to physicians, letters to employees about the accommodatation process).",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "",
+						bulletPoint4AriaLabel: "",
+						bulletPoint5: "",
+						bulletPoint5AriaLabel: "",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact GEN-NAT-DTA-OPDMA",
+						imageName: "43276279_l.jpg",
+					}
+				}
+				
+				case "EmployeeAssistanceProgram": {
+					return {
+						title: "Employee Assistance Program",
+						callNowText: "Call now",
+						mainParagraph: "The Employee Assistance Program (EAP) is a voluntary and confidential program designed to provide confidential support to employees, the immdiate families and managers/supervisors that are coping with difficult personal and/or work-related situations.",
+						mainParagraphAriaLabel: "Duty to Accommodate Summary",
+						bulletPointHeader: "",
+						bulletPointHeaderAriaLabel: "",
+						bulletPoint1: "EAP is a voluntary program - refferal agents are available at each worksite to offer a listening ear, answer questions on the program, provide information about apprpriate internal and external resources and followw up.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "It is a short-term counselling service. You can access up to eight sessions with a professional counselor in the community if the issue is likely to be resolved within this alotted time frame.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "If the professional counsellor things that more than eight sessions are needed, you will be referred to a specialized resource in the communit, including those covered by your Public Service Health Care Plan (PSHCP). Long interventions are not covered by EAP.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "",
+						bulletPoint4AriaLabel: "",
+						bulletPoint5: "",
+						bulletPoint5AriaLabel: "",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact Employee Assistance Program",
+						imageName: "30051199_l.jpg",
+					}
+				}
+				
+				case "HarassmentPreventionProgram": {
+					return {
+						title: "Harassment Prevention Program",
+						callNowText: "Call now",
+						mainParagraph: "The Harassment Prevention Program provides information and advice to employees and managers/supervisors in cases of alleged harassment and to ensure the workplace is free from harassment.",
+						mainParagraphAriaLabel: "Harassment Prevention Program Summary",
+						bulletPointHeader: "The Harassment Prevention Program can:",
+						bulletPointHeaderAriaLabel: "Bullet Point Header",
+						bulletPoint1: "Put you in touch with a harassment prevention coordinator.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Help you learn about informal andd formal ways to deal with harassment.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "Provide information on the policy, guidelines and formal complaint process.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "Advise appropriate Designated Official (responsible for the overall application of the Policy on Harassment Prevention and Resolution and the Directive on the Harassment Complaint Process) in formal processes.",
+						bulletPoint4AriaLabel: "Fourth Bullet Point",
+						bulletPoint5: "Liaise with complainant/respondent.",
+						bulletPoint5AriaLabel: "",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact GEN-NAT Harrassment Prvention Harcèlement",
+						imageName: "33867343_l.jpg",
+					}
+				}
+				
+				case "NationalAttendanceManagementProgram": {
+					return {
+						title: "National Attendance Management Program",
+						callNowText: "Call now",
+						mainParagraph: "CSC's National Attendance Management Program (NAMP) is to ensure consistent, supportive and fair management of employee attendance while respecting collective agreements. To promote and improve attendance through awareness, intervention and individual case management.",
+						mainParagraphAriaLabel: "National Attendance Management Program (NAMP) Summary",
+						bulletPointHeader: "The National Attendance Management Program can:",
+						bulletPointHeaderAriaLabel: "Bullet Point Header",
+						bulletPoint1: "Provide early intervention.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Provide support for employees.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "Assist in identifying and resolving workplace issues that may contribute to absenteeism.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "Help develop attendance management action plans.",
+						bulletPoint4AriaLabel: "Fourth Bullet Point",
+						bulletPoint5: "",
+						bulletPoint5AriaLabel: "",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact GEN RTW-PRT",
+						imageName: "47382242_l.jpg",
+					}
+				}
+				
+				case "ConflictManagement": {
+					return {
+						title: "Conflict Management",
+						callNowText: "Call now",
+						mainParagraph: "",
+						mainParagraphAriaLabel: "",
+						bulletPointHeader: "The Office of Conflict Management (OCM)",
+						bulletPointHeaderAriaLabel: "Bullet Point Header",
+						bulletPoint1: "Provide confidential and impartial conflict management services.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Discuss informal options such as facilitated discussion, conflict coaching and mediation.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "Provide customized group interventions.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "Provide presentations, workshops, awareness sessions and training on effective communication and conflict management.",
+						bulletPoint4AriaLabel: "Fourth Bullet Point",
+						bulletPoint5: "Visit the Conflict management Hub website to find information on the OCM and on how to prevent, manage, and resolve conflicts in the workplace.",
+						bulletPoint5AriaLabel: "Fifth Bullet Point",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact OCM",
+						imageName: "52115462_l.jpg",
+					}
+				}
+				
+				case "ReturnToWorkProgram": {
+					return {
+						title: "Return to Work Program",
+						callNowText: "Call now",
+						mainParagraph: "When you are ready to return to work after an injury or illness, you have the right to request accommodation to ease your return. If you manage an employee who is returning to work, you have a dity to accommodate. In both cases, communication is key.",
+						mainParagraphAriaLabel: "Return to Work Summary",
+						bulletPointHeader: "To prepare for an employee to return to work after an illness or injury, you should:",
+						bulletPointHeaderAriaLabel: "Bullet Point Header",
+						bulletPoint1: "Remember to stay in touch with your employee during their absence.",
+						bulletPoint1AriaLabel: "First Bullet Point",
+						bulletPoint2: "Based on the information you have received, assess whether you have enough information - medical or otherwise - to determine if your employee should return to their substantive position or if they will need modified work.",
+						bulletPoint2AriaLabel: "Second Bullet Point",
+						bulletPoint2SubPoint1: "",
+						bulletPoint2SubPoint1AriaLabel: "",
+						bulletPoint2SubPoint2: "",
+						bulletPoint2SubPoint2AriaLabel: "",
+						bulletPoint2SubPoint3: "",
+						bulletPoint2SubPoint3AriaLabel: "",
+						bulletPoint3: "Work with your employee to develop a return to work plan. You may also need to talk to other stakeholders, for example the Return to Work advisor or union respresentative.",
+						bulletPoint3AriaLabel: "Third Bullet Point",
+						bulletPoint4: "Provide presentations, workshops, awareness sessions and training on effective communication and conflict management.",
+						bulletPoint4AriaLabel: "Fourth Bullet Point",
+						bulletPoint5: "Make whatever adjustments are needed to respect the work plan you have developed together.",
+						bulletPoint5AriaLabel: "Fifth Bullet Point",
+						bulletPoint6: "",
+						bulletPoint6AriaLabel: "",
+						bulletPoint7: "",
+						bulletPoint7AriaLabel: "",
+						contactName: "Contact GEN RTW-PRT",
+						imageName: "82795851_l.jpg",
+					}
+				}
+				
+				
 				
 		default: {
                     return {}

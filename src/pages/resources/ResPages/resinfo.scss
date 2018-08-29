@@ -2,14 +2,21 @@ page-resinfo {
 
     img{
         width: 100%;
-        overflow: hidden;
+		max-height: initial;
+		bottom: 50%;
     }
     
     .resBanner{
         display: block;
         width: 100%;
-        padding-top: 50px;
-    } 
+		overflow: hidden;
+        padding-top: 40px;
+		max-height: 175px;
+    }
+	
+	.mainContent {
+		height: 100%;
+	}
     
     
 }

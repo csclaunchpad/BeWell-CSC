@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Login } from '../../home/Login/login/login';
 import { Storage } from '@ionic/storage';
+
+import { Events } from 'ionic-angular';
+
 // Import for Translation Service
 import { TranslationService } from '../../../assets/services/translationService';
 
@@ -29,36 +32,46 @@ export class ResInfo {
     {    
         this.authenticate();
         this.configuration();
-                
-        this.resImg = this.navParams.get("empImg");        // Load link to content reference
-        this.resEmail = this.navParams.get("empEmail");    // Load link to contact refernce 
-//        this.resTitle = this.navParams.get("empTitle");  // Load link to contact refernce 
    
     } 
     
     authenticate() {		
-    // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
-	this.storage.get("userID").then((value) => {
-            if(value == null) {
-//                this.navCtrl.setRoot(Login);
-            }
-            this.userID = value;
-	});
+		// Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
+		this.storage.get("userID").then((value) => {
+				if(value == null) {
+	//                this.navCtrl.setRoot(Login);
+				}
+				this.userID = value;
+		});
     }
     
     configuration() {
 		
         // Fetch the content from our language translation service
-	var languageFlag = this.storage.get("languageFlag").then((value) => {
+		var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
-                this.pageElements = this.translationService.load("resinfo.html", value);
-		this.pageElementsLoaded = true;
-		console.log(this.pageElements);
-            } 
-            else {
-                console.log("No language flag set");
-            }			
-	});
+                //this.pageElements = this.translationService.load("EmployeeProtectionProtocol", "en");
+				//this.pageElements = this.translationService.load("EmployeeAssistanceServices", "en");
+				//this.pageElements = this.translationService.load("CriticalIncidentStressManagement", "en");
+				//this.pageElements = this.translationService.load("DutyToAccomodate", "en");
+				//this.pageElements = this.translationService.load("EmployeeAssistanceProgram", "en");
+				//this.pageElements = this.translationService.load("HarassmentPreventionProgram", "en");
+				console.log(this.navParams);
+				this.pageElements = this.translationService.load(this.navParams.get('pageName'), "en");
+				
+				
+				this.pageElementsLoaded = true;
+				console.log(this.pageElements);
+			} 
+			else {
+				console.log("No language flag set");
+			}			
+		});
+    }
+	
+	//POP a page off the menu stack
+    goBack() {
+        this.navCtrl.pop();
     }
     
 }
