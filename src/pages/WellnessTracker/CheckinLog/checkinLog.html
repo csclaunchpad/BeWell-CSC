@@ -19,61 +19,95 @@
     <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding class="has-header">
-    <ion-list>
-        <ion-item-sliding *ngFor="let wellness of userRecords; let i=index" (click)="redirectToCheckinLogInfo(wellness.rowid)">
-            <ion-item nopadding>
-
-                <ion-row>
-                    <ion-col style="width: 20%">
-                        <div text-center>
-                            <img src="../../../assets/imgs/feelings/face{{wellness.moodScore}}.png" class="feelingImg">         
-                        </div>
-                    </ion-col>
-                    <ion-col style="width: 60%">
-                        <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
-                        <span attr.aria-label="{{wellness.entryNote.substring(1, 30)}}">{{ wellness.entryNote.substring(1, 30) | date : "medium" }}</span>
-                    </ion-col>
-                    <ion-col style="width: 20%">
-                        
-                    </ion-col>
-                </ion-row>
-                
-<!--                
-                    <ion-row layout-align="center center" flex="60">
-                        <ion-col class="moodBackground" layout-align="center center">
-                            <strong attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}: </strong><span attr.aria-label="{{wellness.moodScore}}">{{wellness.moodScore}}</span>
-                        </ion-col>
-
-                        <ion-col class="dietBackground" layout-align="center center">
-                            <strong attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}: </strong><span attr.aria-label="{{wellness.dietScore}}">{{wellness.dietScore}}</span>
-                        </ion-col>                
-
-                        <ion-col class="sleepBackground" layout-align="center center">
-                            <strong attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}: </strong><span attr.aria-label="{{wellness.sleepScore}}">{{wellness.sleepScore}}</span>
-                        </ion-col>                
-
-                        <ion-col class="stressBackground" layout-align="center center">
-                            <strong attr.aria-label="{{pageElements.stressText}}">{{pageElements.stressText}}: </strong><span attr.aria-label="{{wellness.stressScore}}">{{wellness.stressScore}}</span>
-                        </ion-col>
-
-                    </ion-row>
-                    <ion-row>
-                        <ion-col col-4>
-                            <span attr.aria-label="{{pageElements.wellnessScoreText}}">{{pageElements.wellnessScoreText}}</span>: <span attr.aria-label="{{wellness.totalScore}}">{{(wellness.moodScore + wellness.dietScore + wellness.sleepScore + (10-wellness.stressScore))*2.5 | number : 0}}</span>
-                        </ion-col>
-                        <ion-col col-8 style="text-align: right">
-                            <span attr.aria-label="{{wellness.date}}">{{ wellness.date | date : "medium" }}</span>
-                        </ion-col>
-                    </ion-row>           
--->                
-            </ion-item>
-        </ion-item-sliding>
-    </ion-list>
+<ion-content *ngIf="pageElementsLoaded" style="margin-top:56px;" class="noBackground">
+	<ion-grid>
+		<ion-row *ngFor="let wellness of userRecords; index as i" [attr.data-index]="i" (click)="showHideElement(i)" [ngClass]="{blueBackground: showHideArray[i], noBackground: !showHideArray[i]}">
+			
+			<!-- Coloured Circle, depending on log score -->
+			<ion-col col-2>
+				<div *ngIf="(wellness.moodScore + wellness.sleepScore + wellness.dietScore) > 23">
+					<img height="50px" width="50px" src="../../../assets/imgs/Badges/green.png">
+				</div>
+				
+				<div *ngIf="(wellness.moodScore + wellness.sleepScore + wellness.dietScore) > 16 && (wellness.moodScore + wellness.sleepScore + wellness.dietScore) < 22">
+					<img height="50px" width="50px" src="../../../assets/imgs/Badges/orange.png">
+				</div>
+				
+				<div *ngIf="(wellness.moodScore + wellness.sleepScore + wellness.dietScore) > 8 && (wellness.moodScore + wellness.sleepScore + wellness.dietScore) < 15">
+					<img height="50px" width="50px" src="../../../assets/imgs/Badges/yellow.png">
+				</div>
+				
+				<div *ngIf="(wellness.moodScore + wellness.sleepScore + wellness.dietScore) < 8">
+					<img height="50px" width="50px" src="../../../assets/imgs/Badges/red.png">
+				</div>
+			</ion-col>
+			
+			<ion-col col-8>
+			
+				<!-- Date header -->
+				<ion-row style="padding-top: 8px" [ngClass]="{headerDateTextTrue: showHideArray[i], headerDateTextFalse: !showHideArray[i]}">
+					{{wellness.date | date: "MMMM d, yyyy"}}
+				</ion-row>
+				
+				<!-- Entry note hidden -->
+				<ion-row *ngIf="!showHideArray[i]" style="padding: 0 10px 10px 0;">
+					{{wellness.entryNote.substring(0, 30)}}...
+				</ion-row>
+				
+				<!-- Entry note not hidden -->
+				<ion-row *ngIf="showHideArray[i]" style="padding: 0 10px 10px 0;">
+					{{wellness.entryNote}}
+				</ion-row>
+			</ion-col>
+			
+			<!-- Side view -->
+			<ion-col col-2 style="padding-top: 15px">
+				
+				<!-- Time on the right -->
+				<ion-row>
+					{{wellness.date | date: "H:mma"}}
+				</ion-row>
+				
+				<!-- Dropdown arrow, hidden when log is set to hidden -->
+				<ion-row justify-content-center *ngIf="!showHideArray[i]">
+					<ion-icon name="arrow-dropdown"></ion-icon>
+				</ion-row>
+				
+				<!-- Dropup arrow, shown when log is set to show -->
+				<ion-row justify-content-center *ngIf="showHideArray[i]">
+					<ion-icon name="arrow-dropup"></ion-icon>
+				</ion-row>
+				
+				<!-- Mood header -->
+				<ion-row *ngIf="showHideArray[i]" justify-content-center class="scoreHeader">
+					Mood
+				</ion-row>
+				
+				<!-- Mood Score -->
+				<ion-row *ngIf="showHideArray[i]" justify-content-center class="score">
+					{{wellness.moodScore}}
+				</ion-row>
+				
+				<!-- Sleep header -->
+				<ion-row *ngIf="showHideArray[i]" justify-content-center class="scoreHeader">
+					Sleep
+				</ion-row>
+				
+				<!-- Sleep score -->
+				<ion-row *ngIf="showHideArray[i]" justify-content-center class="score">
+					{{wellness.sleepScore}}
+				</ion-row>
+				
+				<!-- Diet header -->
+				<ion-row *ngIf="showHideArray[i]" justify-content-center class="scoreHeader">
+					Diet
+				</ion-row>
+				
+				<!-- Diet score -->
+				<ion-row *ngIf="showHideArray[i]" justify-content-center class="score">
+					{{wellness.dietScore}}
+				</ion-row>
+			</ion-col>
+		</ion-row>	
+	</ion-grid>
 </ion-content>
-
-<ion-footer>
-    <ion-toolbar>
-        <button ion-button block>Aidez moi! / Help me!</button>
-    </ion-toolbar>
-</ion-footer>

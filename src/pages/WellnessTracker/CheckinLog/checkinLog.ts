@@ -31,6 +31,7 @@ export class CheckinLog {
 
     // Stores our SQLite3 table data
     private userRecords: any = [];
+	private showHideArray: any;
 
     // Our persistent connection to our DB which is set in initDB()
     private openDatabase: SQLiteObject;
@@ -40,6 +41,8 @@ export class CheckinLog {
 
     // Controls whether our view is loaded based off of if pageElements has been loaded
     private pageElementsLoaded: boolean = false;
+	
+	private date: String = new Date("Fri Apr 3 15:48:21 2018 GMT").toISOString();
 	
     private userID: string;
 
@@ -67,7 +70,75 @@ export class CheckinLog {
 
     configuration() {
 
-        // Fetch the content from our language translation service
+		// Temporary code, just to get around not having SQL
+		/*this.pageElements = this.translationService.load("checkinLog.html", "en");
+		this.pageElementsLoaded = true;
+	
+		var entry1 = {
+			rowid: 1,
+			moodScore: 8,
+			dietScore: 6,
+			sleepScore: 7,
+			date: new Date("Fri Mar 31 15:48:21 2018 GMT").toISOString(),
+			entryNote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+		}
+		
+		var entry2 = {
+			rowid: 2,
+			moodScore: 10,
+			dietScore: 5,
+			sleepScore: 9,
+			date: new Date("Fri Apr 1 15:48:21 2018 GMT").toISOString(),
+			entryNote: "Lorem ip"
+		}
+	
+		var entry3 = {
+			rowid: 3,
+			moodScore: 1,
+			dietScore: 3,
+			sleepScore: 6,
+			date: new Date("Fri Apr 2 15:48:21 2018 GMT").toISOString(),
+			entryNote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+		}
+		
+		var entry4 = {
+			rowid: 4,
+			moodScore: 8,
+			dietScore: 6,
+			sleepScore: 7,
+			date: new Date("Fri Apr 3 15:48:21 2018 GMT").toISOString(),
+			entryNote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+		}
+		
+		var entry5 = {
+			rowid: 5,
+			moodScore: 10,
+			dietScore: 10,
+			sleepScore: 10,
+			date: new Date("Fri Apr 3 15:48:21 2018 GMT").toISOString(),
+			entryNote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+		}
+		
+		var entry6 = {
+			rowid: 6,
+			moodScore: 1,
+			dietScore: 1,
+			sleepScore: 1,
+			date: new Date("Fri Apr 3 15:48:21 2018 GMT").toISOString(),
+			entryNote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+		}
+
+		this.userRecords.push(entry1);
+		this.userRecords.push(entry2);
+		this.userRecords.push(entry3);
+		this.userRecords.push(entry4);
+		this.userRecords.push(entry5);
+		this.userRecords.push(entry6);
+
+		console.log(this.userRecords);
+		*/
+		
+	    // Fetch the content from our language translation service
         var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
                 this.pageElements = this.translationService.load("checkinLog.html", value);
@@ -77,17 +148,21 @@ export class CheckinLog {
                 console.log("No language flag set");
             }			
         });
+		
+		this.showHideArray = Array(this.userRecords.length).fill(false);
     }
-
-    redirectToCheckinLogInfo(checkinLogID) {
-
-        var objectTest = { test: checkinLogID }
-
-        this.navCtrl.push(CheckinLogInfo, {
-            entryID: objectTest.test
-        });
-    }
-
+	
+	// Shows/Hides the element selected, this function also hides all the rest of the open logs
+	showHideElement(index) {
+		// Save the state of the selected log, i.e shown or hidden
+		var elementState = this.showHideArray[index];
+		
+		// Set all logs to hide, we do this so only one log can be open at a time
+		for(var i = 0; i < this.showHideArray.length; i++) this.showHideArray[i] = false;
+		
+		// Take the state we saved earlier, and reverse it
+		this.showHideArray[index] = !elementState;
+	}
 
     initDB() {
         this.sqlite.create({
