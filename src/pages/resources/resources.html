@@ -1,15 +1,14 @@
-<ion-header *ngIf="pageElementsLoaded">
-    
+<ion-header>
     <ion-navbar hideBackButton="true" >
         <ion-buttons left>
             <button ion-button icon-only (click)="goBack()">
                 <ion-icon name="arrow-back"></ion-icon>
             </button>
         </ion-buttons>
-        <ion-title>{{pageElements.resourceTitleText}}</ion-title>
+        <ion-title *ngIf="pageElementsLoaded">{{pageElements.resourceTitleText}}</ion-title>
     </ion-navbar>
-
 </ion-header>
+
 
 <!-- Loading Div --> 
 <div *ngIf="!pageElementsLoaded">
@@ -17,8 +16,8 @@
 </div>
 
 <!-- <ion-content padding *ngIf="pageElementsLoaded" class="has-header">  -->
-<ion-content padding *ngIf="pageElementsLoaded">    
-            <div class="center">
+<ion-content padding>    
+		<div class="center" *ngIf="pageElementsLoaded">
             
             <ion-row style="margin-top: 10px">
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">

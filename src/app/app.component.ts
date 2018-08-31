@@ -31,7 +31,7 @@ import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAss
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = LanguageSelection;
+    rootPage: any = WellnessTracker;
 
 //    rootPage: any = HomePage;
 //    rootPage: any = Resources;

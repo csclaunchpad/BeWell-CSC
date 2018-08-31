@@ -61,13 +61,12 @@ export class Dashboard {
     private mainChart: any;
 
     // Mood = 0, sleep = 1, stress = 2, diet = 3 
-    private graphColours: any = ["#FF9800", "#01579B", "#D32F2F", "#4CAF50"];
+    private graphColours: any = ["#FF9800", "#01579B", "#4CAF50"];
 
     private userID: string;
 
     // Initializing references to our view
     moodCheckbox: boolean;
-    stressCheckbox: boolean;
     dietCheckbox: boolean;
     sleepCheckbox: boolean;
     fromDate: Date;
@@ -118,7 +117,7 @@ export class Dashboard {
     validateInput() {
 
         // Checks to see if a single checkbox has been checked, if not, show alert, then return false
-        if(!this.moodCheckbox && !this.stressCheckbox && !this.dietCheckbox && !this.sleepCheckbox) {
+        if(!this.moodCheckbox && !this.dietCheckbox && !this.sleepCheckbox) {
                 this.showAlert("Whoops!", "You don't have a score checkbox checked!", "Right on!");
                 return false;
         }
@@ -148,18 +147,13 @@ export class Dashboard {
 
             // We need to fill variables depending on whether they were selected or not (We avoid string building doing it this way)
             var moodScore = "";
-            var stressScore = "";
             var dietScore = "";
             var sleepScore = "";
 
             if(this.moodCheckbox) {
                     moodScore = "moodScore, ";
             }
-
-            if(this.stressCheckbox) {
-                    stressScore = "stressScore, ";
-            }
-
+			
             if(this.dietCheckbox) {
                     dietScore = "dietScore, ";
             }
@@ -185,7 +179,7 @@ export class Dashboard {
             // ----------- Combining above data to form queries ----------- //
 
             // Generating the select and where clause based off data above
-            selectStatement = moodScore + stressScore + dietScore + sleepScore + "date";		
+            selectStatement = moodScore + dietScore + sleepScore + "date";		
             whereClause = "WHERE date BETWEEN DATETIME('" + fromDate + "') AND DATETIME('" + toDate + "') AND userID = '" + this.userID + "' ORDER BY date DESC";
 
             // Combine the two statements and wrap them with SQL syntax
@@ -203,7 +197,6 @@ export class Dashboard {
 
                 // Stores all data in their respective arrays
                 var moodScoreArray = [];
-                var stressScoreArray = [];
                 var dietScoreArray = [];
                 var sleepScoreArray = [];
 
@@ -221,9 +214,6 @@ export class Dashboard {
                             moodScoreArray[i] = res.rows.item(i).moodScore;
                     }
 
-                    if(this.stressCheckbox) {
-                            stressScoreArray[i] = res.rows.item(i).stressScore;
-                    }
 
                     if(this.dietCheckbox) {
                             dietScoreArray[i] = res.rows.item(i).dietScore;
@@ -243,19 +233,6 @@ export class Dashboard {
                             data: moodScoreArray,
                             label: "Mood",
                             borderColor: this.graphColours[0],
-                            fill: false
-                    }
-                }
-
-                // If stressCheckbox was selected, build our stress line
-                if(this.stressCheckbox) {
-
-                    var stressCheckboxIndex = graphDataSets.length;
-
-                    graphDataSets[graphDataSets.length] = { 
-                            data: stressScoreArray,
-                            label: "Stress",
-                            borderColor: this.graphColours[2],
                             fill: false
                     }
                 }
@@ -291,10 +268,6 @@ export class Dashboard {
 
                 if(this.moodCheckbox) {
                         datasetsObject[datasetsObject.length] = {label: graphDataSets[moodCheckboxIndex].label, data: graphDataSets[moodCheckboxIndex].data, borderColor: graphDataSets[moodCheckboxIndex].borderColor, fill: graphDataSets[moodCheckboxIndex].fill};
-                }
-
-                if(this.stressCheckbox) {
-                        datasetsObject[datasetsObject.length] = {label: graphDataSets[stressCheckboxIndex].label, data: graphDataSets[stressCheckboxIndex].data, borderColor: graphDataSets[stressCheckboxIndex].borderColor, fill: graphDataSets[stressCheckboxIndex].fill};
                 }
 
                 if(this.dietCheckbox) {
@@ -347,7 +320,7 @@ export class Dashboard {
 
             this.openDatabase = db;
 
-            this.openDatabase.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+            this.openDatabase.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, entryNote TEXT)', {})
             .then(res => console.log('Executed SQL'))
             .catch(e => console.log(e));
 
@@ -355,7 +328,7 @@ export class Dashboard {
                 .then(res => {
                     this.userRecords = [];
                     for(var i=0; i<res.rows.length; i++) {
-                        this.userRecords.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,moodScore:res.rows.item(i).moodScore,dietScore:res.rows.item(i).dietScore,sleepScore:res.rows.item(i).sleepScore,stressScore:res.rows.item(i).stressScore,entryNote:res.rows.item(i).entryNote})
+                        this.userRecords.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,moodScore:res.rows.item(i).moodScore,dietScore:res.rows.item(i).dietScore,sleepScore:res.rows.item(i).sleepScore,entryNote:res.rows.item(i).entryNote})
                     }
                     console.log("User Records:");
                     console.log(this.userRecords);

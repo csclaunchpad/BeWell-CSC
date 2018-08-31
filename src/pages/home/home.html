@@ -1,13 +1,11 @@
-<ion-header *ngIf="pageElementsLoaded">
+<ion-header>
   <ion-navbar hideBackButton="true" >
     <button ion-button menuToggle>
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
-	<div attr.aria-label="{{pageElements.homeTitleText}}">
-		<ion-title>
-		  {{pageElements.homeTitleText}}
-		</ion-title>
-	</div>
+	<ion-title attr.aria-label="{{pageElements.homeTitleText}}" *ngIf="pageElementsLoaded">
+	  {{pageElements.homeTitleText}}
+	</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="addData()">
         <ion-icon name="add-circle"></ion-icon>
@@ -21,10 +19,10 @@
     <ion-spinner></ion-spinner>
 </div>
 
-<ion-content padding *ngIf="pageElementsLoaded" class="has-header">
+<ion-content padding>
     
 
-        <div class="center">
+        <div class="center" *ngIf="pageElementsLoaded">
             
             <ion-row style="margin-top: 50px">
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">

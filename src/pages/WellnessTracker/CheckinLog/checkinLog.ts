@@ -53,7 +53,7 @@ export class CheckinLog {
 	
     // Runs instead of the constructor because we need to handle when this page is popped to (When a page is popped to, the constructor won't run)
     ionViewWillEnter() {
-        this.authenticate();
+        //this.authenticate();
         this.configuration();
     }
 
@@ -71,7 +71,7 @@ export class CheckinLog {
     configuration() {
 
 		// Temporary code, just to get around not having SQL
-		/*this.pageElements = this.translationService.load("checkinLog.html", "en");
+		this.pageElements = this.translationService.load("checkinLog.html", "en");
 		this.pageElementsLoaded = true;
 	
 		var entry1 = {
@@ -136,10 +136,10 @@ export class CheckinLog {
 		this.userRecords.push(entry6);
 
 		console.log(this.userRecords);
-		*/
+		
 		
 	    // Fetch the content from our language translation service
-        var languageFlag = this.storage.get("languageFlag").then((value) => {
+       /* var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
                 this.pageElements = this.translationService.load("checkinLog.html", value);
                 this.pageElementsLoaded = true;
@@ -147,7 +147,7 @@ export class CheckinLog {
             } else {
                 console.log("No language flag set");
             }			
-        });
+        });*/
 		
 		this.showHideArray = Array(this.userRecords.length).fill(false);
     }
@@ -164,7 +164,7 @@ export class CheckinLog {
 		this.showHideArray[index] = !elementState;
 	}
 
-    initDB() {
+    /*initDB() {
         this.sqlite.create({
                 name: this.userID +".db",
                 location: 'default'
@@ -193,7 +193,7 @@ export class CheckinLog {
             console.log(this.userRecords);
         }).catch(e => console.log(e));
     }
-
+*/
     addData() {
         this.navCtrl.push(DailyEntry);
     }

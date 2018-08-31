@@ -21,7 +21,7 @@
 
 <ion-content *ngIf="pageElementsLoaded" style="margin-top:56px;" class="noBackground">
 	<ion-grid>
-		<ion-row *ngFor="let wellness of userRecords; index as i" [attr.data-index]="i" (click)="showHideElement(i)" [ngClass]="{blueBackground: showHideArray[i], noBackground: !showHideArray[i]}">
+		<ion-row *ngFor="let wellness of userRecords; index as i" [attr.data-index]="i" (click)="showHideElement(i)" [ngClass]="{blueBackground: showHideArray[i], noBackground: !showHideArray[i]}" class="lightBorder">
 			
 			<!-- Coloured Circle, depending on log score -->
 			<ion-col col-2>

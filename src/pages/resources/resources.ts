@@ -1,7 +1,8 @@
 // ------------------------- Mandatory imports for all pages ------------------------- //
 // Component Imports
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component} from '@angular/core';
+import { NavController, NavParams} from 'ionic-angular';
+
 
 // Local Storage Import
 import { Storage } from '@ionic/storage';
@@ -24,6 +25,7 @@ import { EmpRev1 } from './Employee/Rev1/empRev1';
 })
 
 export class Resources {
+	
     resPublic = Public;
     emprev1 = EmpRev1;
     
@@ -115,7 +117,7 @@ export class Resources {
         // Fetch the content from our language translation service
 		var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
-                this.pageElements = this.translationService.load("resources.html", value);
+                this.pageElements = this.translationService.load("resources.html", "en");
 				this.pageElementsLoaded = true;
 				console.log(this.pageElements);
             } 

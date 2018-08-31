@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Content } from 'ionic-angular';
 import { Login } from '../../home/Login/login/login';
 import { Storage } from '@ionic/storage';
 
@@ -13,6 +13,9 @@ import { TranslationService } from '../../../assets/services/translationService'
     templateUrl: 'resinfo.html'
 })
 export class ResInfo {
+	
+	@ViewChild(Content) content: Content;
+	
     public resImg;
     public resEmail;
 //    public resTitle;
@@ -61,6 +64,7 @@ export class ResInfo {
 				
 				
 				this.pageElementsLoaded = true;
+				this.content.resize();
 				console.log(this.pageElements);
 			} 
 			else {
