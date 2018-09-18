@@ -7,6 +7,7 @@ import { Events } from 'ionic-angular';
 
 // Import for Translation Service
 import { TranslationService } from '../../../assets/services/translationService';
+import { DailyEntry } from '../../WellnessTracker/DailyEntry/dailyEntry';
 
 @Component({
     selector: 'page-resinfo',
@@ -71,6 +72,10 @@ export class ResInfo {
 				console.log("No language flag set");
 			}			
 		});
+    }
+	
+	addData() {
+		this.navCtrl.push(DailyEntry);
     }
 	
 	//POP a page off the menu stack
