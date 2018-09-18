@@ -31,7 +31,7 @@ import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAss
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = Resources;
+    rootPage: any = LanguageSelection;
 
 //    rootPage: any = HomePage;
 //    rootPage: any = Resources;
@@ -70,7 +70,7 @@ export class MyApp {
     openPage(page) {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
+        this.nav.setRoot(page);
     }
 
     configuration() {	
