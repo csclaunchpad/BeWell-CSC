@@ -56,8 +56,13 @@ ion-label{
     background-color: transparent;
     border: 2px solid #002E5D;
     border-radius: 80px;
-    height: 80px;
-    width: 80px;
+	height: 80px;
+	width: 80px;
+}
+
+.dashboardButton {
+	height: 120px !important;
+    width: 120px !important;
 }
 
 .rectBtn{
@@ -80,6 +85,20 @@ ion-label{
     display: inline-block;
 }
 
+.iconDashboard {
+	width: 32px;
+	height: 32px;
+}
+
 .center{
     margin: auto;
 }
+
+.menuItemText {
+	font-size: 20px;
+}
+
+.menuItemIcon {
+	font-size: 28px;
+}
+

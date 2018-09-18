@@ -6,9 +6,38 @@
 
     <ion-content>
         <ion-list>
-            <button menuClose ion-item style="color: white;" *ngFor="let p of pages" (click)="openPage(p)">
-                {{p.title}}
+            <button menuClose ion-item style="color: white;" (click)="openPage(pages[0].component)">
+                <ion-row align-items-center>
+					<ion-col col-auto>
+						<ion-icon name="{{pages[0].icon}}" class="menuItemIcon"></ion-icon>
+					</ion-col>
+					<ion-col col-auto>
+						<span class="menuItemText">{{pages[0].title}}</span>
+					</ion-col>
+				</ion-row>
             </button>
+			
+			<button menuClose ion-item style="color: white;" (click)="openPage(pages[1].component)">
+                <ion-row align-items-center>
+					<ion-col col-auto>
+						<ion-icon name="{{pages[1].icon}}" class="menuItemIcon"></ion-icon>
+					</ion-col>
+					<ion-col col-auto>
+						<span class="menuItemText">{{pages[1].title}}</span>
+					</ion-col>
+				</ion-row>
+            </button>
+			
+			<button menuClose ion-item style="color: white;" (click)="openPage(pages[2].component)">
+				<ion-row align-items-center>
+					<ion-col col-auto>
+						<ion-icon name="{{pages[2].icon}}" class="menuItemIcon"></ion-icon>
+					</ion-col>
+					<ion-col col-auto>
+						<span class="menuItemText">{{pages[2].title}}</span>
+					</ion-col>
+				</ion-row>
+			</button>
         </ion-list>
     </ion-content>
 

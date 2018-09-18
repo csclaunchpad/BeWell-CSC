@@ -3,12 +3,12 @@
     <button ion-button menuToggle>
         <ion-icon name="menu" persistent="true"></ion-icon>
     </button>
-	<ion-title attr.aria-label="{{pageElements.homeTitleText}}" *ngIf="pageElementsLoaded">
-	  {{pageElements.homeTitleText}}
+	<ion-title attr.aria-label="{{pageElements.homeTitleText}}" *ngIf="pageElementsLoaded" class="headerTitleText">
+		{{pageElements.homeTitleText}}
 	</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="addData()">
-        <ion-icon name="add-circle"></ion-icon>
+      <button ion-button icon-only (click)="addData()" class="newEntrybutton">
+			<ion-icon name="add-circle"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -26,12 +26,12 @@
             
             <ion-row style="margin-top: 50px">
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline  class="circlebtn iconimg" [navPush]="dailyentry"><img src="../../assets/Icons/checkIn.svg" /></button>
+                    <button ion-button round outline  class="circlebtn iconimg dashboardButton" [navPush]="dailyentry"><img src="../../assets/Icons/checkIn.svg" class="iconDashboard"/></button>
                     <ion-label text-center text-wrap>{{pageElements.buttonText1}}</ion-label>    
                 </ion-col>
 
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg" [navPush]="wellnesstracker"><img src="../../assets/Icons/wellnessTracker.svg" /></button>
+                    <button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="wellnesstracker"><img src="../../assets/Icons/wellnessTracker.svg" class="iconDashboard" /></button>
                     <ion-label text-center text-wrap>{{pageElements.buttonText2}}</ion-label>    
                 </ion-col>                 
             </ion-row>
@@ -39,19 +39,19 @@
             
             <ion-row>
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg" [navPush]="checkinlog"><img src="../../assets/Icons/wrench.svg" /></button>
+                    <button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="checkinlog"><img src="../../assets/Icons/wrench.svg" class="iconDashboard" /></button>
                     <ion-label text-center text-wrap>{{pageElements.buttonText3}}</ion-label>    
                 </ion-col>   
 
                 <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg" [navPush]="resources"><img src="../../assets/Icons/resources.svg" /></button>
+                    <button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="resources"><img src="../../assets/Icons/resources.svg" class="iconDashboard" /></button>
                     <ion-label text-center text-wrap>{{pageElements.buttonText4}}</ion-label>    
                 </ion-col>                 
             </ion-row>
             
             <ion-row>
                 <ion-col text-center>
-                    <button ion-button round outline class="rectBtn iconimg" [navPush]="checkinlog"><img style="width: 40px" src="../../assets/Icons/call.svg" /></button>
+                    <button ion-button round outline class="rectBtn iconimg" [navPush]="checkinlog"><img style="width: 40px" src="../../assets/Icons/call.svg" class="iconDashboard"/></button>
                 </ion-col>
             </ion-row>
             

@@ -31,7 +31,7 @@ import { SelfAssessment } from '../pages/Tools/assessment/selfassessment/selfAss
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = WellnessTracker;
+    rootPage: any = Resources;
 
 //    rootPage: any = HomePage;
 //    rootPage: any = Resources;
@@ -46,7 +46,7 @@ export class MyApp {
 
     private home: any;
 
-    pages: Array<{title: string, component: any}>;
+    pages: Array<{title: string, component: any, icon: string}>;
 
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private storage: Storage, private translationService: TranslationService, events: Events) {
         this.initializeApp();
@@ -80,7 +80,6 @@ export class MyApp {
                 this.pageElements = this.translationService.load("app.component.ts", value);
                 this.pageElementsLoaded = true;
                 this.buildMenu();
-
             } else {
                 console.log("No language flag set");
             }	
@@ -92,15 +91,11 @@ export class MyApp {
         console.log(this.pageElements);
 
         this.pages = [
-//            { title: this.pageElements.home, component: HomePage },
-//            { title: 'Wellness Tracker', component: WellnessTracker },
-//            { title: this.pageElements.tools, component: Tools },
-  //          { title: this.pageElements.resources, component: Resources },
-//            { title: this.pageElements.updates, component: Updates },
-            { title: 'FR/EN', component: LanguageSelection },
-            { title: this.pageElements.signout, component: SignOut }
+			{ title: 'FR/EN', component: LanguageSelection, icon: "list" },
+            { title: this.pageElements.help, component: LanguageSelection, icon: "information-circle" },
+            { title: this.pageElements.logout, component: SignOut, icon: "log-out" }
         ];
-
+		console.log(this.pages[0]);
         /*this.pages = [
             { title: "Home", component: HomePage },
 //          { title: 'Wellness Tracker', component: WellnessTracker },
