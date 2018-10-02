@@ -46,7 +46,7 @@ export class DailyEntry {
 
     // ------------------------- Page Specific Variables ------------------------- //
 
-    data = { dateTime: moment().format(), date: moment().format(), moodScore:6, dietScore:5, sleepScore:5, stressScore:5, entryNote:"" };
+    data = { dateTime: moment().format(), date: moment().format(), moodScore:5, dietScore:5, sleepScore:5, stressScore:5, entryNote:"" };
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private sqlite: SQLite, private toast: Toast, private storage: Storage, private translationService: TranslationService, public alertCtrl: AlertController) {
         this.authenticate();

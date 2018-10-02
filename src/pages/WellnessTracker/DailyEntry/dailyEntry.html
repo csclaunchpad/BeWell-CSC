@@ -28,7 +28,7 @@
          <ion-row>
                 <ion-col>
                         <ion-item>
-                                <ion-label>Date</ion-label>
+                                <ion-label class="titleText">{{pageElements.dateText}}</ion-label>
                                 <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="data.date"></ion-datetime>
                         </ion-item>
                 </ion-col>
@@ -38,7 +38,7 @@
         <ion-row>
                 <ion-col>
                         <ion-item>
-                          <ion-label>Time</ion-label>
+                          <ion-label class="titleText">{{pageElements.timeText}}</ion-label>
                           <ion-datetime displayFormat="hh:mm A" [(ngModel)]="data.dateTime"></ion-datetime>
                         </ion-item>
                 </ion-col>
@@ -48,24 +48,24 @@
         
             <ion-row>
                 <ion-item no-lines>
-                    <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="GenericColor" pin="true" class="slider" (ionChange)="updateScores()">
-                        <ion-label range-left attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}</ion-label>
+                    <ion-range min="1" max="10" [(ngModel)]="data.moodScore" name="moodScore" color="moodColor" pin="true" class="slider" (ionChange)="updateScores()">
+                        <ion-label range-left attr.aria-label="{{pageElements.moodText}}" class="titleText">{{pageElements.moodText}}</ion-label>
                     </ion-range>
                 </ion-item>      
             </ion-row>
             
             <ion-row>
                 <ion-item no-lines>
-                    <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="GenericColor" pin="true" class="slider" (ionChange)="updateScores()">
-                        <ion-label range-left attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}</ion-label>
+                    <ion-range min="1" max="10" [(ngModel)]="data.dietScore" name="dietScore" color="dietColor" pin="true" class="slider" (ionChange)="updateScores()">
+                        <ion-label range-left attr.aria-label="{{pageElements.dietText}}" class="titleText">{{pageElements.dietText}}</ion-label>
                     </ion-range>
                 </ion-item>
             </ion-row>
             
-            <ion-row>                
+            <ion-row style="margin-bottom: 20px;">                
                 <ion-item no-lines>
-                    <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="GenericColor" pin="true" class="slider" (ionChange)="updateScores()">
-                        <ion-label range-left attr.aria-label="{{pageElements.sleepText}}">{{pageElements.sleepText}}</ion-label>
+                    <ion-range min="1" max="10" [(ngModel)]="data.sleepScore" name="sleepScore" color="sleepColor" pin="true" class="slider" (ionChange)="updateScores()">
+                        <ion-label range-left attr.aria-label="{{pageElements.sleepText}}" class="titleText">{{pageElements.sleepText}}</ion-label>
                     </ion-range>
                 </ion-item> 
             </ion-row>

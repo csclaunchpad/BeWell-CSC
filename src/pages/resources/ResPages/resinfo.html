@@ -6,7 +6,8 @@
             </button>
         </ion-buttons>
 <!--        <ion-title>{{pageElements.resTitle}}</ion-title> -->
-		<ion-title *ngIf="pageElementsLoaded">Resources</ion-title>
+		<ion-title *ngIf="languageFlagValue=='en'">Resources</ion-title>
+		<ion-title *ngIf="languageFlagValue=='fr'">Ressources</ion-title>
 		<ion-buttons end>
             <button ion-button icon-only (click)="addData()" class="newEntrybutton">
                 <ion-icon name="add-circle"></ion-icon>

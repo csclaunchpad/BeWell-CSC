@@ -50,8 +50,8 @@
 				</ion-row>
 				
 				<!-- Entry note hidden -->
-				<ion-row *ngIf="!showHideArray[i]" style="padding: 0 10px 10px 0;">
-					{{wellness.entryNote.substring(0, 30)}}...
+				<ion-row *ngIf="!showHideArray[i]" style="padding: 0 10px 10px 0; height: 100%">
+					{{wellness.entryNote.substring(0, 26)}}<span *ngIf="wellness.entryNote.length > 26">...</span>
 				</ion-row>
 				
 				<!-- Entry note not hidden -->
@@ -80,7 +80,7 @@
 				
 				<!-- Mood header -->
 				<ion-row *ngIf="showHideArray[i]" justify-content-center class="scoreHeader">
-					Mood
+					{{pageElements.moodText}}
 				</ion-row>
 				
 				<!-- Mood Score -->
@@ -90,7 +90,7 @@
 				
 				<!-- Sleep header -->
 				<ion-row *ngIf="showHideArray[i]" justify-content-center class="scoreHeader">
-					Sleep
+					{{pageElements.sleepText}}
 				</ion-row>
 				
 				<!-- Sleep score -->
@@ -100,7 +100,7 @@
 				
 				<!-- Diet header -->
 				<ion-row *ngIf="showHideArray[i]" justify-content-center class="scoreHeader">
-					Diet
+					{{pageElements.dietText}}
 				</ion-row>
 				
 				<!-- Diet score -->

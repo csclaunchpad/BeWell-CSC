@@ -4,25 +4,54 @@ page-analyticDashboard {
 	border-width: 1px;
     }
 	
-    .has-header {
-	top: 44px;
-	position:absolute;
-	width: 100%;
-    }
-    
-    .chartWrapper {
-    position: relative;
-    }
-
-    .chartWrapper > canvas {
-        position: absolute;
-        left: 0;
-        top: 0;
-        pointer-events:none;
-    }
-
-    .chartAreaWrapper {
-        width: 100%;
-        overflow-x: scroll;
-    }
+    .parent {
+		width: 95%;
+		height: 400px;
+		position: relative;
+		overflow-x: scroll;
+	}
+	
+	.canvas-wrap {
+		width: 1000px;
+		height: 100%;
+	}
+	
+	.chartWrapper {
+		position: relative;
+	}
+	
+	.chartWrapper > canvas {
+		position: absolute;
+		left: 0;
+		top: 0;
+		pointer-events: none;
+	}
+	
+	ion-content > .scroll-content{
+		padding-bottom: 56px;
+	}
+	
+	ion-footer {
+		background-color: white;
+	}
+	
+	.hr {
+		border-bottom: 1px solid #ccc;
+		margin: 10px 0;
+		width: 100%;
+	}
+	
+	.titleText {
+		font-size: 16px;
+	}
+	
+	.center > * {
+		display: flex!important;
+		align-content: center!important;
+		align-items: center!important;
+	}
+	
+	.newEntrybutton {
+		font-size: 18px;
+	}
 }

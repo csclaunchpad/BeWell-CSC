@@ -14,6 +14,7 @@ import { Storage } from '@ionic/storage';
 import { HomePage } from '../pages/home/home';
 import { Login } from '../pages/home/Login/login/login';
 import { WellnessTracker } from '../pages/WellnessTracker/wellnesstracker';
+import { Dashboard } from '../pages/Dashboard/analyticDashboard';
 
 import { LanguageSelection } from '../pages/languageSelection/languageSelection';
 import { SignOut } from '../pages/home/Login/signout/signout';

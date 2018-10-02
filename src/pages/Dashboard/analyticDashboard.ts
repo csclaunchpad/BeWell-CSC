@@ -52,10 +52,10 @@ export class Dashboard {
     // ------------------------- Page Specific Variables ------------------------- //
 
     // Fetch the canvas element that we're storing our chart in
-    @ViewChild('mainChart') pageElement: ElementRef; 
-
+	@ViewChild('mainChart') pageElement: ElementRef;
+	
     // 2D context for graph
-    private context: CanvasRenderingContext2D;
+    public context: CanvasRenderingContext2D;
 
     // Public declaration for our chart
     private mainChart: any;
@@ -65,6 +65,7 @@ export class Dashboard {
 
     private userID: string;
 
+	private chartGenerated: boolean = false;
     // Initializing references to our view
     moodCheckbox: boolean;
     dietCheckbox: boolean;
@@ -81,7 +82,7 @@ export class Dashboard {
     authenticate() {
         this.storage.get("userID").then((value) => {
             if(value == null) {
-                    this.navCtrl.setRoot(Login);
+                this.navCtrl.setRoot(Login);
             }
             this.userID = value;
         });
@@ -132,13 +133,14 @@ export class Dashboard {
         return true;
     }
 
-
     // Generates a chart based off data from view
     generate(fromDate, toDate) {
 
         // Checks if the input is valid, if not, don't run
         if(this.validateInput()) {
-
+			
+			this.chartGenerated = true;
+			
             var selectStatement = "";
             var whereClause = "";
             var query = "";
@@ -245,7 +247,7 @@ export class Dashboard {
                     graphDataSets[graphDataSets.length] = { 
                             data: dietScoreArray,
                             label: "Diet",
-                            borderColor: this.graphColours[3],
+                            borderColor: this.graphColours[2],
                             fill: false
                     }
                 }
@@ -278,11 +280,12 @@ export class Dashboard {
                         datasetsObject[datasetsObject.length] = {label: graphDataSets[sleepCheckboxIndex].label, data: graphDataSets[sleepCheckboxIndex].data, borderColor: graphDataSets[sleepCheckboxIndex].borderColor, fill: graphDataSets[sleepCheckboxIndex].fill};
                 }
 
+				console.log("DataSets:");
                 console.log(datasetsObject);
 
                 // Fetch our 2D context for our graph, this is required when creating the graph
                 this.context = ( <HTMLCanvasElement> this.pageElement.nativeElement).getContext('2d');
-
+				
                 // Generate Chart
                 var mainChart = new Chart(this.context, {
 
@@ -293,20 +296,22 @@ export class Dashboard {
                     }, options: {
                         scaleShowValues: true,
                         responsive: true,
+						maintainAspectRatio: false,
                         scales: {
                             yAxes: [{
                                 ticks: {
-                                        beginAtZero: true
+									beginAtZero: true,
+									fontSize: 12
                                 }
                             }],
                             xAxes: [{
                                 ticks: {
-                                        autoSkip: false
+									fontSize: 12
                                 }
                             }]
-                        },
+                        }
                     }
-                });			
+                });
             }).catch(e => console.log(e));
         }
     }

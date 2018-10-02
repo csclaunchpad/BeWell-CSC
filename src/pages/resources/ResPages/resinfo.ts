@@ -28,6 +28,8 @@ export class ResInfo {
     private pageElementsLoaded: boolean = false;   
 
     private userID: string;
+	
+	private languageFlagValue: string;
     
     constructor(public navCtrl: NavController, 
         public navParams: NavParams, 
@@ -54,16 +56,8 @@ export class ResInfo {
         // Fetch the content from our language translation service
 		var languageFlag = this.storage.get("languageFlag").then((value) => {
             if(value != null) {
-                //this.pageElements = this.translationService.load("EmployeeProtectionProtocol", "en");
-				//this.pageElements = this.translationService.load("EmployeeAssistanceServices", "en");
-				//this.pageElements = this.translationService.load("CriticalIncidentStressManagement", "en");
-				//this.pageElements = this.translationService.load("DutyToAccomodate", "en");
-				//this.pageElements = this.translationService.load("EmployeeAssistanceProgram", "en");
-				//this.pageElements = this.translationService.load("HarassmentPreventionProgram", "en");
-				console.log(this.navParams);
-				this.pageElements = this.translationService.load(this.navParams.get('pageName'), "en");
-				
-				
+				this.languageFlagValue = value;
+				this.pageElements = this.translationService.load(this.navParams.get('pageName'), value);		
 				this.pageElementsLoaded = true;
 				this.content.resize();
 				console.log(this.pageElements);
