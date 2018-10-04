@@ -40,6 +40,24 @@
 					</div>
 				</ion-col>
 			</ion-row>
+			
+			<!-- Main Paragraph2 -->
+			<ion-row *ngIf="pageElements.mainParagraph2 != ''">
+				<ion-col text-center>
+					<div attr.aria-label="{{pageElements.mainParagraph2AriaLabel}}">
+						<p style="text-align: left; margin-bottom: 0">{{pageElements.mainParagraph2}}</p>
+					</div>
+				</ion-col>
+			</ion-row>
+			
+			<!-- Main Paragraph Link -->
+			<ion-row *ngIf="pageElements.mainParagraphLinkContent != '' || pageElements.mainParagraphLinkContent != 'undefined'">
+				<ion-col text-center>
+					<div attr.aria-label="{{pageElements.mainParagraphLinkContentAriaLabel}}">
+						<span style="text-align: left; margin-bottom: 0"><a href="{{pageElements.mainParagraphLink}}">{{pageElements.mainParagraphLinkContent}}</a></span>
+					</div>
+				</ion-col>
+			</ion-row>
 
 			<!-- bulletPointHeader -->
 			<ion-row *ngIf="pageElements.bulletPointHeader != ''">
@@ -52,7 +70,7 @@
 			
 			<ion-row>
 				<ion-col *ngIf="pageElements.bulletPoint1 != ''">
-					<ul>
+					<ul style="margin-top: 0;">
 						<li *ngIf="pageElements.bulletPoint1 != ''" attr.aria-label="{{pageElements.bulletPoint1AriaLabel}}">{{pageElements.bulletPoint1}}</li>
 						<li *ngIf="pageElements.bulletPoint2 != ''" attr.aria-label="{{pageElements.bulletPoint2AriaLabel}}">{{pageElements.bulletPoint2}}</li>
 							<ul *ngIf="pageElements.bulletPoint2SubPoint1 != ''">
@@ -69,13 +87,23 @@
 				</ion-col>
 			</ion-row>
 			
+			<ion-row *ngIf="pageElements.secondListMainParagraph != ''">
+				<ion-col text-center>
+					<div attr.aria-label="{{pageElements.secondListMainParagraphAriaLabel}}">
+						<p style="text-align: left; margin-bottom: 0; margin-top: 0;">{{pageElements.secondListMainParagraph}}</p>
+					</div>
+				</ion-col>
+			</ion-row>
+			
 			<ion-row *ngIf="pageElements.secondListTitle != ''">
 				<ion-col>
-					<span attr.aria-label="{{pageElements.secondListTitleAriaLabel}}">{{pageElements.secondListTitle}}</span>
+					<span style="margin-bottom: 0;" attr.aria-label="{{pageElements.secondListTitleAriaLabel}}">{{pageElements.secondListTitle}}</span>
 					<ul>
 						<li *ngIf="pageElements.secondListBulletPoint1 != ''" attr.aria-label="{{pageElements.secondListBulletPoint1AriaLabel}}">{{pageElements.secondListBulletPoint1}}</li>
 						<li *ngIf="pageElements.secondListBulletPoint2 != ''" attr.aria-label="{{pageElements.secondListBulletPoint2AriaLabel}}">{{pageElements.secondListBulletPoint2}}</li>
 						<li *ngIf="pageElements.secondListBulletPoint3 != ''" attr.aria-label="{{pageElements.secondListBulletPoint3AriaLabel}}">{{pageElements.secondListBulletPoint3}}</li>
+						<li *ngIf="pageElements.secondListBulletPoint4 != ''" attr.aria-label="{{pageElements.secondListBulletPoint4AriaLabel}}">{{pageElements.secondListBulletPoint4}}</li>
+						<li *ngIf="pageElements.secondListBulletPoint5 != ''" attr.aria-label="{{pageElements.secondListBulletPoint5AriaLabel}}">{{pageElements.secondListBulletPoint5}}</li>
 					</ul>
 				</ion-col>
 			</ion-row>

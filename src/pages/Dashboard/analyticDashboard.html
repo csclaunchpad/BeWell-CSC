@@ -66,8 +66,8 @@
 		<ion-row>
 			<ion-col col-10>
 				<ion-item>
-					<ion-label style="font-color: #FF9800; font-size: 16px" attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="moodCheckbox"></ion-checkbox>
+					<ion-label style="font-size: 16px" attr.aria-label="{{pageElements.moodText}}">{{pageElements.moodText}}</ion-label>
+					<ion-checkbox color="moodColor" checked="false" [(ngModel)]="moodCheckbox"></ion-checkbox>
 				</ion-item>
 			</ion-col>
 		</ion-row>
@@ -75,7 +75,7 @@
 			<ion-col col-10>
 				<ion-item>
 					<ion-label style="font-color: #4CAF50; font-size: 16px" attr.aria-label="{{pageElements.dietText}}">{{pageElements.dietText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="dietCheckbox"></ion-checkbox>
+					<ion-checkbox color="dietColor" checked="false" [(ngModel)]="dietCheckbox"></ion-checkbox>
 				</ion-item>
 			</ion-col>
 		</ion-row>
@@ -83,7 +83,7 @@
 			<ion-col col-10>
 				<ion-item>
 					<ion-label style="font-color: #01579B; font-size: 16px" attr.aria-label="{{pageElements.fromDateText}}">{{pageElements.sleepText}}</ion-label>
-					<ion-checkbox color="dark" checked="false" [(ngModel)]="sleepCheckbox"></ion-checkbox>
+					<ion-checkbox color="sleepColor" checked="false" [(ngModel)]="sleepCheckbox"></ion-checkbox>
 				</ion-item>
 			</ion-col>
 		</ion-row>
