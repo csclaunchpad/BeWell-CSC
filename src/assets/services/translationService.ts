@@ -941,7 +941,7 @@ export class TranslationService {
 						secondListFooterParagraph: "",
 						secondListFooterParagraphAriaLabel: "",
 						contactName: "Contact ???",
-						imageName: "36431210_l.jpg",
+						imageName: "lifespeakBanner.jpg",
 					}
 				}
 		
@@ -1834,7 +1834,7 @@ export class TranslationService {
 						secondListFooterParagraph: "",
 						secondListFooterParagraphAriaLabel: "",
 						contactName: "Contact ???",
-						imageName: "36431210_l.jpg",
+						imageName: "lifespeakBanner.jpg",
 					}
 				}
 				
