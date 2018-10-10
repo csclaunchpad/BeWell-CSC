@@ -64,7 +64,7 @@ export class RecoverUser {
     configuration() {
 
         // Fetch the content from our language translation service
-        var languageFlag = this.storage.get("languageFlag").then((value) => {
+        this.storage.get("languageFlag").then((value) => {
             if(value != null) {
                 this.pageElements = this.translationService.load("recoverUser.html", value);
                 this.pageElementsLoaded = true;

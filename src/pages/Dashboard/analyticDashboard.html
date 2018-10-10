@@ -17,44 +17,19 @@
 
 <ion-content style="height: 100%">
     <ion-grid *ngIf="pageElementsLoaded">
-		<!--<ion-row>
-			<ion-col style="font-size: 16px; font-weight: bold;">
-				How to generate a graph
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col offset-1>
-				<span style="font-weight: bold">1.</span> Select the range of dates that the graph will show.
-			</ion-col>
-		</ion-row>
 		
+		<!-- From and To Dates -->
 		<ion-row>
-			<ion-col offset-1>
-				<span style="font-weight: bold">2.</span> Select which Wellness Tracker score(s) you want to show.
-			</ion-col>
-		</ion-row>
 		
-		<ion-row>
-			<ion-col offset-1>
-				<span style="font-weight: bold">3.</span> Click the "Generate Graph" button at the bottom of the screen.
-			</ion-col>
-		</ion-row>
-		
-		<ion-row>
-			<ion-col offset-1>
-				<span style="font-weight: bold">4.</span> You're done! Use this tool to view trends in your entries.
-			</ion-col>
-		</ion-row>
-		
-		<div class="hr"></div>
-		-->
-		<ion-row>
+			<!-- From Date -->
 			<ion-col col-md-5>
 				<ion-item>
 					<ion-label attr.aria-label="{{pageElements.fromDateText}}" class="titleText">{{pageElements.fromDateText}}</ion-label>
 					<ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fromDate"></ion-datetime>
 				</ion-item>
 			</ion-col>
+			
+			<!-- To Date -->
 			<ion-col col-md-5 offset-md-2>
 				<ion-item>
 					<ion-label attr.aria-label="{{pageElements.toDateText}}" class="titleText">{{pageElements.toDateText}}</ion-label>
@@ -63,6 +38,7 @@
 			</ion-col>
 		</ion-row>	
 
+		<!-- Mood Checkbox -->
 		<ion-row>
 			<ion-col col-10>
 				<ion-item>
@@ -71,6 +47,8 @@
 				</ion-item>
 			</ion-col>
 		</ion-row>
+		
+		<!-- Diet Checkbox -->
 		<ion-row>
 			<ion-col col-10>
 				<ion-item>
@@ -79,6 +57,8 @@
 				</ion-item>
 			</ion-col>
 		</ion-row>
+		
+		<!-- Sleep Checkbox -->
 		<ion-row>
 			<ion-col col-10>
 				<ion-item>
@@ -89,8 +69,9 @@
 		</ion-row>
 		
 		<div class="hr"></div>
-				<div *ngIf="!chartGenerated" style="color: grey; margin-top:30%;" text-center>- Graph Area -</div>
+		<div *ngIf="!chartGenerated" style="color: grey; margin-top:30%;" text-center>- Graph Area -</div>
 
+		<!-- Graph -->
 		<div class="parent">
 			<div class="canvas-wrap" style="color: white">
 				<canvas id="mainChart" #mainChart></canvas>
@@ -100,6 +81,8 @@
 </ion-content>
 
 <ion-footer>
+
+	<!-- Generate Button -->
 	<ion-row>
 		<ion-col text-center>
 				<button *ngIf="pageElementsLoaded" ion-button (click)="generate(fromDate, toDate)">{{pageElements.generateText}}</button>

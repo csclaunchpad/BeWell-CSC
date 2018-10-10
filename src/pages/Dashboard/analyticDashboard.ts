@@ -60,12 +60,14 @@ export class Dashboard {
     // Public declaration for our chart
     private mainChart: any;
 
-    // Mood = 0, sleep = 1, stress = 2, diet = 3 
+    // Mood = 0, sleep = 1, diet = 2
     private graphColours: any = ["#FF9800", "#01579B", "#4CAF50"];
 
     private userID: string;
-
+	
+	// Controls pre-chart generated content, hides it if true
 	private chartGenerated: boolean = false;
+	
     // Initializing references to our view
     moodCheckbox: boolean;
     dietCheckbox: boolean;
@@ -90,7 +92,7 @@ export class Dashboard {
 
     configuration() {
         // Fetch the content from our language translation service
-        var languageFlag = this.storage.get("languageFlag").then((value) => {
+        this.storage.get("languageFlag").then((value) => {
             if(value != null) {
                 this.pageElements = this.translationService.load("analyticDashboard.html", value);
                 this.pageElementsLoaded = true;
@@ -153,15 +155,15 @@ export class Dashboard {
             var sleepScore = "";
 
             if(this.moodCheckbox) {
-                    moodScore = "moodScore, ";
+				moodScore = "moodScore, ";
             }
 			
             if(this.dietCheckbox) {
-                    dietScore = "dietScore, ";
+				dietScore = "dietScore, ";
             }
 
             if(this.sleepCheckbox) {
-                    sleepScore = "sleepScore, ";
+				sleepScore = "sleepScore, ";
             }
 
             // ----------- Building/Formatting Dates ----------- //
@@ -204,7 +206,8 @@ export class Dashboard {
 
                 // Loop through graph data gathered above, and seperate it into categories
                 for(var i=0; i< res.rows.length; i++) {
-
+					
+					// Checks to see if the dates exist in the OLD format, if so, change them
                     if(res.rows.item(i).date.indexOf("T") == -1) {
                         console.log("res.rows.item[" + i + "].Date is in wrong format, fixing now");
                         res.rows.item(i).date = res.rows.item(i).date.substring(0, res.rows.item(i).date.indexOf(" ")) + "T" + res.rows.item(i).date.substring((res.rows.item(i).date.indexOf(" ")+1));
@@ -213,16 +216,15 @@ export class Dashboard {
                     labelsArray[i] = moment(res.rows.item(i).date).format('h:mm a, MMM DD, YYYY');
 
                     if(this.moodCheckbox) {
-                            moodScoreArray[i] = res.rows.item(i).moodScore;
+						moodScoreArray[i] = res.rows.item(i).moodScore;
                     }
 
-
                     if(this.dietCheckbox) {
-                            dietScoreArray[i] = res.rows.item(i).dietScore;
+						dietScoreArray[i] = res.rows.item(i).dietScore;
                     }
 
                     if(this.sleepCheckbox) {
-                            sleepScoreArray[i] = res.rows.item(i).sleepScore;
+						sleepScoreArray[i] = res.rows.item(i).sleepScore;
                     }
                 }
 
@@ -232,10 +234,10 @@ export class Dashboard {
                     var moodCheckboxIndex = graphDataSets.length;
 
                     graphDataSets[graphDataSets.length] = { 
-                            data: moodScoreArray,
-                            label: "Mood",
-                            borderColor: this.graphColours[0],
-                            fill: false
+						data: moodScoreArray,
+						label: "Mood",
+						borderColor: this.graphColours[0],
+						fill: false
                     }
                 }
 
@@ -245,10 +247,10 @@ export class Dashboard {
                     var dietCheckboxIndex = graphDataSets.length;
 
                     graphDataSets[graphDataSets.length] = { 
-                            data: dietScoreArray,
-                            label: "Diet",
-                            borderColor: this.graphColours[2],
-                            fill: false
+						data: dietScoreArray,
+						label: "Diet",
+						borderColor: this.graphColours[2],
+						fill: false
                     }
                 }
 
@@ -258,10 +260,10 @@ export class Dashboard {
                     var sleepCheckboxIndex = graphDataSets.length;
 
                     graphDataSets[graphDataSets.length] = { 
-                            data: sleepScoreArray,
-                            label: "Sleep",
-                            borderColor: this.graphColours[1],
-                            fill: false
+						data: sleepScoreArray,
+						label: "Sleep",
+						borderColor: this.graphColours[1],
+						fill: false
                     }
                 }
 
@@ -269,19 +271,16 @@ export class Dashboard {
                 var datasetsObject = [];				
 
                 if(this.moodCheckbox) {
-                        datasetsObject[datasetsObject.length] = {label: graphDataSets[moodCheckboxIndex].label, data: graphDataSets[moodCheckboxIndex].data, borderColor: graphDataSets[moodCheckboxIndex].borderColor, fill: graphDataSets[moodCheckboxIndex].fill};
+					datasetsObject[datasetsObject.length] = {label: graphDataSets[moodCheckboxIndex].label, data: graphDataSets[moodCheckboxIndex].data, borderColor: graphDataSets[moodCheckboxIndex].borderColor, fill: graphDataSets[moodCheckboxIndex].fill};
                 }
 
                 if(this.dietCheckbox) {
-                        datasetsObject[datasetsObject.length] = {label: graphDataSets[dietCheckboxIndex].label, data: graphDataSets[dietCheckboxIndex].data, borderColor: graphDataSets[dietCheckboxIndex].borderColor, fill: graphDataSets[dietCheckboxIndex].fill};
+					datasetsObject[datasetsObject.length] = {label: graphDataSets[dietCheckboxIndex].label, data: graphDataSets[dietCheckboxIndex].data, borderColor: graphDataSets[dietCheckboxIndex].borderColor, fill: graphDataSets[dietCheckboxIndex].fill};
                 }
 
                 if(this.sleepCheckbox) {
-                        datasetsObject[datasetsObject.length] = {label: graphDataSets[sleepCheckboxIndex].label, data: graphDataSets[sleepCheckboxIndex].data, borderColor: graphDataSets[sleepCheckboxIndex].borderColor, fill: graphDataSets[sleepCheckboxIndex].fill};
+					datasetsObject[datasetsObject.length] = {label: graphDataSets[sleepCheckboxIndex].label, data: graphDataSets[sleepCheckboxIndex].data, borderColor: graphDataSets[sleepCheckboxIndex].borderColor, fill: graphDataSets[sleepCheckboxIndex].fill};
                 }
-
-				console.log("DataSets:");
-                console.log(datasetsObject);
 
                 // Fetch our 2D context for our graph, this is required when creating the graph
                 this.context = ( <HTMLCanvasElement> this.pageElement.nativeElement).getContext('2d');
@@ -329,14 +328,11 @@ export class Dashboard {
             .then(res => console.log('Executed SQL'))
             .catch(e => console.log(e));
 
-            this.openDatabase.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {})
-                .then(res => {
-                    this.userRecords = [];
-                    for(var i=0; i<res.rows.length; i++) {
-                        this.userRecords.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,moodScore:res.rows.item(i).moodScore,dietScore:res.rows.item(i).dietScore,sleepScore:res.rows.item(i).sleepScore,entryNote:res.rows.item(i).entryNote})
-                    }
-                    console.log("User Records:");
-                    console.log(this.userRecords);
+            this.openDatabase.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {}).then(res => {
+				this.userRecords = [];
+				for(var i=0; i<res.rows.length; i++) {
+					this.userRecords.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,moodScore:res.rows.item(i).moodScore,dietScore:res.rows.item(i).dietScore,sleepScore:res.rows.item(i).sleepScore,entryNote:res.rows.item(i).entryNote})
+				}
             }).catch(e => console.log(e));
         }).catch(e => console.log(e));
     }

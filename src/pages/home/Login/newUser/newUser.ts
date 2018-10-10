@@ -41,7 +41,6 @@ export class NewUser {
     private invalidSecurityAnswer: boolean;
 
     private hashedPassword: any;
-    private hashedDbName: any;
 
     // Stores our SQLite3 table data
     private userRecords: any = [];
@@ -55,7 +54,7 @@ export class NewUser {
     constructor(public navCtrl: NavController, private sqlite: SQLite, private storage: Storage, private translationService: TranslationService, public alertCtrl: AlertController) {
 
         // Fetch the content from our language translation service
-        var languageFlag = this.storage.get("languageFlag").then((value) => {
+        this.storage.get("languageFlag").then((value) => {
             if(value != null) {
                 this.pageElements = this.translationService.load("newUser.html", value);
                 this.pageElementsLoaded = true; 

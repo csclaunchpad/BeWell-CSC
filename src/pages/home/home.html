@@ -20,42 +20,44 @@
 </div>
 
 <ion-content padding>
-    
+	<div class="center" *ngIf="pageElementsLoaded">
+		<ion-row style="margin-top: 50px">
+		
+			<!-- Daily Entry Button -->
+			<ion-col text-center style="margin-bottom: 20px; width: 50%;">
+				<button ion-button round outline  class="circlebtn iconimg dashboardButton" [navPush]="dailyentry"><img src="../../assets/Icons/checkIn.svg" class="iconDashboard"/></button>
+				<ion-label text-center text-wrap>{{pageElements.buttonText1}}</ion-label>    
+			</ion-col>
+			
+			<!-- Wellness Tracker Button -->
+			<ion-col text-center style="margin-bottom: 20px; width: 50%;">
+				<button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="wellnesstracker"><img src="../../assets/Icons/wellnessTracker.svg" class="iconDashboard" /></button>
+				<ion-label text-center text-wrap>{{pageElements.buttonText2}}</ion-label>    
+			</ion-col>                 
+		</ion-row>
 
-        <div class="center" *ngIf="pageElementsLoaded">
-            
-            <ion-row style="margin-top: 50px">
-                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline  class="circlebtn iconimg dashboardButton" [navPush]="dailyentry"><img src="../../assets/Icons/checkIn.svg" class="iconDashboard"/></button>
-                    <ion-label text-center text-wrap>{{pageElements.buttonText1}}</ion-label>    
-                </ion-col>
+		
+		<ion-row>
+		
+			<!-- Tools Placeholder -->
+			<ion-col text-center style="margin-bottom: 20px; width: 50%;">
+				<button ion-button round outline class="circlebtn iconimg dashboardButton"><img src="../../assets/Icons/wrench.svg" class="iconDashboard" /></button>
+				<ion-label text-center text-wrap>{{pageElements.buttonText3}}</ion-label>    
+			</ion-col>   
 
-                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="wellnesstracker"><img src="../../assets/Icons/wellnessTracker.svg" class="iconDashboard" /></button>
-                    <ion-label text-center text-wrap>{{pageElements.buttonText2}}</ion-label>    
-                </ion-col>                 
-            </ion-row>
-
-            
-            <ion-row>
-                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg dashboardButton"><img src="../../assets/Icons/wrench.svg" class="iconDashboard" /></button>
-                    <ion-label text-center text-wrap>{{pageElements.buttonText3}}</ion-label>    
-                </ion-col>   
-
-                <ion-col text-center style="margin-bottom: 20px; width: 50%;">
-                    <button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="resources"><img src="../../assets/Icons/resources.svg" class="iconDashboard" /></button>
-                    <ion-label text-center text-wrap>{{pageElements.buttonText4}}</ion-label>    
-                </ion-col>                 
-            </ion-row>
-            
-            <ion-row>
-                <ion-col text-center>
-                    <button ion-button round outline class="rectBtn iconimg" [navPush]="checkinlog"><img style="width: 40px" src="../../assets/Icons/call.svg" class="iconDashboard"/></button>
-                </ion-col>
-            </ion-row>
-            
-        </div>
- 
+			<!-- Resources Button -->
+			<ion-col text-center style="margin-bottom: 20px; width: 50%;">
+				<button ion-button round outline class="circlebtn iconimg dashboardButton" [navPush]="resources"><img src="../../assets/Icons/resources.svg" class="iconDashboard" /></button>
+				<ion-label text-center text-wrap>{{pageElements.buttonText4}}</ion-label>    
+			</ion-col>                 
+		</ion-row>
+		
+		<ion-row>
+			<ion-col text-center>
+				<button ion-button round outline class="rectBtn iconimg" [navPush]="checkinlog"><img style="width: 40px" src="../../assets/Icons/call.svg" class="iconDashboard"/></button>
+			</ion-col>
+		</ion-row>
+		
+	</div>
 </ion-content>
 

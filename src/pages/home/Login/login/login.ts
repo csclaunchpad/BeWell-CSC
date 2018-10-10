@@ -30,8 +30,8 @@ import * as PH from "password-hash";
 
 @Component({
     selector: 'page-login',
-    templateUrl: 'login.html'
-	/*animations: [
+    templateUrl: 'login.html',
+	animations: [
 		trigger('fade', [
 			state('visible', style({
 				opacity: 1
@@ -41,7 +41,7 @@ import * as PH from "password-hash";
 			})),
 			transition('visible <=> invisible', animate('200ms linear'))
 		])
-	]*/
+	]
 })
 
 export class Login {
@@ -53,7 +53,7 @@ export class Login {
 	
 	// Our persistent connection to our DB which is set in initDB()
 	private openDatabase: SQLiteObject;
-        private openWTDatabase: SQLiteObject;
+    private openWTDatabase: SQLiteObject;
         	
 	// The actual content of the page, fetched via translationService.ts
 	private pageElements: Object;
@@ -68,154 +68,147 @@ export class Login {
 	private firstName: string;
 	private userID: string;
 
-        private hashedPassword: any;
+    private hashedPassword: any;
          
-	//private fadeState: String = 'visible';
+	private fadeState: String = 'visible';
 	
     constructor(public navCtrl: NavController, private sqlite: SQLite, public alertCtrl: AlertController, private storage: Storage, private menu: MenuController, private translationService: TranslationService) {	
-            this.authenticate();
-            this.configuration();
+        this.authenticate();
+        this.configuration();
 	}
 	
 	authenticate() {
 		
-            // Fetch our login flag and check it's value, if it's null, the user is not logged in so redirect them to the login screen
-            this.storage.get("userID").then((value) => {
-                if(value != null) {
-                    this.navCtrl.setRoot(HomePage);
-                }
-            });
+		// Fetch our login flag and check it's value, if it exists, the user is already logged in
+		this.storage.get("userID").then((value) => {
+			if(value != null) {
+				this.navCtrl.setRoot(HomePage);
+			}
+		});
 	}
 	
 	configuration() {
 		
-            // Fetch the content from our language translation service
-            var languageFlag = this.storage.get("languageFlag").then((value) => {
-                if(value != null) {
-                    this.pageElements = this.translationService.load("login.html", value);
-                    this.pageElementsLoaded = true;
-                    console.log("this.pageElements: ");
-                    console.log(this.pageElements);
-                } else {
-                    // Handle null language flag
-                }
-            });
+		// Fetch the content from our language translation service
+		this.storage.get("languageFlag").then((value) => {
+			if(value != null) {
+				this.pageElements = this.translationService.load("login.html", value);
+				this.pageElementsLoaded = true;
+			} else {
+				// Handle null language flag
+			}
+		});
 
-            // Call initDB without the login flag
-            this.initDB(false);
+		// Call initDB without the login flag
+		this.initDB(false);
 	}
 
 	// Redirect the user to newUser.html
 	newUser() {
-            this.navCtrl.push(NewUser);
+		this.navCtrl.push(NewUser);
 	}
 	
 	// Redirect the user to recoverUser.html
 	recoverUser() {
-            this.navCtrl.push(RecoverUser);
+		this.navCtrl.push(RecoverUser);
 	}
 	
 	// Our login method, call initDB() with the login flag
 	login() {
-            this.initDB(true);
+		this.initDB(true);
 	}
 	
 	// This method will show an alert based off the title, subtitle, and button text inputs
 	showAlert(titleText, subtitleText, buttonText) {
-            let alert = this.alertCtrl.create({
-                    title: titleText,
-                    subTitle: subtitleText,
-                    buttons: [buttonText]
-            });
-            alert.present(alert);
+		let alert = this.alertCtrl.create({
+				title: titleText,
+				subTitle: subtitleText,
+				buttons: [buttonText]
+		});
+		alert.present(alert);
 	}
 	
 	// Queries the DB for the provided pin, returns true if the account was found
 	checkPin() {
-            // Check our DB variable
-            if(this.openDatabase != null) {
+		// Check our DB variable
+		if(this.openDatabase != null) {
 
-                // Check our records variable
-                if(this.userRecords != null) {
+			// Check our records variable
+			if(this.userRecords != null) {
 
-                    // Iterate through our records variable, if we have a match, take in the userID and return true
-                    for(var i = 0; i < this.userRecords.length; i++) {				
-                        if(this.userRecords[i].firstName == this.firstName) {
-                            if(PH.verify((this.pin), this.userRecords[i].pin)){
-                                console.log("User found");
+				// Iterate through our records variable, if we have a match, take in the userID and return true
+				for(var i = 0; i < this.userRecords.length; i++) {				
+					if(this.userRecords[i].firstName == this.firstName) {
+						if(PH.verify((this.pin), this.userRecords[i].pin)){
+							this.userID = this.userRecords[i].rowid;                                               
+							return true;
+						}
+					}
+				}
+			} else {
+				console.log("userRecords hasn't been set");
+				return false;
+			}
+		} else {
+			console.log("openDatabase hasn't been set");
+			return false;
+		}
 
-                                this.userID = this.userRecords[i].rowid;                                               
-                                return true;
-                            }
-                        }
-                    }
-                } else {
-                    console.log("userRecords hasn't been set");
-                    return false;
-                }
-            } else {
-                    console.log("openDatabase hasn't been set");
-                    return false;
-            }
-
-            // No user found
-            console.log("No user found");
-            return false;
+		// No user found
+		console.log("No user found");
+		return false;
 	}
 	
 	loginProcess() {
-            // If found
-            if(this.checkPin()) {
-                console.log("User ID:" + this.userID);
+		// If found
+		if(this.checkPin()) {
+			console.log("User ID:" + this.userID);
 
-                // Set our login flag in localStorage and then redirect to the home page
-                this.storage.set("userID", this.userID);
-                this.navCtrl.setRoot(HomePage);
+			// Set our login flag in localStorage and then redirect to the home page
+			this.storage.set("userID", this.userID);
+			this.navCtrl.setRoot(HomePage);
 
-            // If not found
-            } else {
-                this.showAlert("Invalid Login", "The first name or pin you have entered wasn't found", "Let's try again!");
-            }
+		// If not found
+		} else {
+			this.showAlert("Invalid Login", "The first name or pin you have entered wasn't found", "Let's try again!");
+		}
 	}
 	
 	// Creates a connection to our DB, performs the login process if given the login flag
 	initDB(loginFlag) {
-            this.sqlite.create({
-                name: 'users_CSC.db',
-                location: 'default'
-            }).then((db: SQLiteObject) => {
+		this.sqlite.create({
+			name: 'users_CSC.db',
+			location: 'default'
+		}).then((db: SQLiteObject) => {
 
-                // Take the open connection and save it to our openDatabase variable
-                this.openDatabase = db;
+			// Take the open connection and save it to our openDatabase variable
+			this.openDatabase = db;
 
-                // If the table hasn't been created yet, create it (This will eventually be moved to an initial script that'll run on launch
-                db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, firstName TEXT, pin TEXT, securityQuestion TEXT, securityAnswer TEXT)', {})
-                .then(res => console.log('Executed SQL'))
-                .catch(e => console.log(e));
+			// If the table hasn't been created yet, create it (This will eventually be moved to an initial script that'll run on launch
+			db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, firstName TEXT, pin TEXT, securityQuestion TEXT, securityAnswer TEXT)', {})
+			.then(res => console.log('Executed SQL'))
+			.catch(e => console.log(e));
 
-                // Fetch all the users from our DB
-                db.executeSql('SELECT * FROM users ORDER BY rowid DESC', {})
-                    .then(res => {
+			// Fetch all the users from our DB
+			db.executeSql('SELECT * FROM users ORDER BY rowid DESC', {})
+				.then(res => {
 
-                        // Store them all in our userRecords variable
-                        this.userRecords = [];
-                        for(var i=0; i<res.rows.length; i++) {
-                            this.userRecords.push({rowid:res.rows.item(i).rowid, firstName:res.rows.item(i).firstName, pin:res.rows.item(i).pin, securityQuestion:res.rows.item(i).securityQuestion, securityAnswer:res.rows.item(i).securityAnswer})
-                        }
+					// Store them all in our userRecords variable
+					this.userRecords = [];
+					for(var i=0; i<res.rows.length; i++) {
+						this.userRecords.push({rowid:res.rows.item(i).rowid, firstName:res.rows.item(i).firstName, pin:res.rows.item(i).pin, securityQuestion:res.rows.item(i).securityQuestion, securityAnswer:res.rows.item(i).securityAnswer})
+					}
 
-                        console.log("User Records:");
-                        console.log(this.userRecords);
+					// If login flag is set, start our login checking process, we do it this way because our DB is retrieved as a promise. (Possibly explore better promise handling techniques in the future - JW) 
+					if(loginFlag) {
+						this.loginProcess();
+					}
 
-                        // If login flag is set, start our login checking process, we do it this way because our DB is retrieved as a promise. (Possibly explore better promise handling techniques in the future - JW) 
-                        if(loginFlag) {
-                            this.loginProcess();
-                        }
-
-                }).catch(e => console.log(e));
-            }).catch(e => console.log(e));
+			}).catch(e => console.log(e));
+		}).catch(e => console.log(e));
 	}
 	
-	/*toggleFade() {
+	toggleFade() {
 		this.fadeState = (this.fadeState == 'visible') ? 'invisible' : 'visible';   
-	}*/
+	}
 }
