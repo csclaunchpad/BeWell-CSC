@@ -185,12 +185,12 @@ export class Login {
 			this.openDatabase = db;
 
 			// If the table hasn't been created yet, create it (This will eventually be moved to an initial script that'll run on launch
-			db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, firstName TEXT, pin TEXT, securityQuestion TEXT, securityAnswer TEXT)', {})
+			db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, firstName TEXT, pin TEXT, securityQuestion TEXT, securityAnswer TEXT)', {} as any)
 			.then(res => console.log('Executed SQL'))
 			.catch(e => console.log(e));
 
 			// Fetch all the users from our DB
-			db.executeSql('SELECT * FROM users ORDER BY rowid DESC', {})
+			db.executeSql('SELECT * FROM users ORDER BY rowid DESC', {} as any)
 				.then(res => {
 
 					// Store them all in our userRecords variable

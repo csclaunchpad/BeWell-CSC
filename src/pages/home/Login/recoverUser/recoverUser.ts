@@ -152,11 +152,11 @@ export class RecoverUser {
 
             this.openDatabase = db;
 
-            db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, firstName TEXT, pin TEXT, securityQuestion TEXT, securityAnswer TEXT)', {})
+            db.executeSql('CREATE TABLE IF NOT EXISTS users(rowid INTEGER PRIMARY KEY, firstName TEXT, pin TEXT, securityQuestion TEXT, securityAnswer TEXT)', {} as any)
             .then(res => console.log('Executed SQL'))
             .catch(e => console.log(e));
 
-            db.executeSql('SELECT * FROM users ORDER BY rowid DESC', {}).then(res => {
+            db.executeSql('SELECT * FROM users ORDER BY rowid DESC', {} as any).then(res => {
                 this.userRecords = [];
                 for(var i=0; i<res.rows.length; i++) {
                     this.userRecords.push({rowid:res.rows.item(i).rowid, firstName:res.rows.item(i).firstName, pin:res.rows.item(i).pin, securityQuestion:res.rows.item(i).securityQuestion, securityAnswer:res.rows.item(i).securityAnswer})

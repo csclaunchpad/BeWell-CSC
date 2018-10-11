@@ -191,7 +191,7 @@ export class Dashboard {
 
             // ----------- Query DB and build graph objects ----------- //
 
-            this.openDatabase.executeSql(query, {}).then(res => {
+            this.openDatabase.executeSql(query, {} as any).then(res => {
 
                 // Our Graph Data
                 var graphDataSets = [];
@@ -324,11 +324,11 @@ export class Dashboard {
 
             this.openDatabase = db;
 
-            this.openDatabase.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, entryNote TEXT)', {})
+            this.openDatabase.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, entryNote TEXT)', {} as any)
             .then(res => console.log('Executed SQL'))
             .catch(e => console.log(e));
 
-            this.openDatabase.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {}).then(res => {
+            this.openDatabase.executeSql('SELECT * FROM wellness ORDER BY rowid DESC', {} as any).then(res => {
 				this.userRecords = [];
 				for(var i=0; i<res.rows.length; i++) {
 					this.userRecords.push({rowid:res.rows.item(i).rowid,date:res.rows.item(i).date,moodScore:res.rows.item(i).moodScore,dietScore:res.rows.item(i).dietScore,sleepScore:res.rows.item(i).sleepScore,entryNote:res.rows.item(i).entryNote})

@@ -91,7 +91,7 @@ export class DailyEntry {
             name: this.userID +".db",
             location: 'default'
         }).then((db: SQLiteObject) => {
-            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {})
+            db.executeSql('CREATE TABLE IF NOT EXISTS wellness(rowid INTEGER PRIMARY KEY, userID INT, date TEXT, moodScore INT, dietScore INT, sleepScore INT, stressScore INT, entryNote TEXT)', {} as any)
             .then(res => {
                 console.log('Executed Create Table Wellness Query');
                 this.openDatabase = db;
