@@ -2,7 +2,7 @@
   "cordova-sqlite-storage": {
     "source": {
       "type": "registry",
-      "id": "cordova-sqlite-storage"
+      "id": "cordova-sqlite-storage@^2.2.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -10,7 +10,7 @@
   "cordova-plugin-x-toast": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-x-toast"
+      "id": "cordova-plugin-x-toast@^2.6.0"
     },
     "is_top_level": true,
     "variables": {}
@@ -51,6 +51,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-ionic-keyboard@^2.0.5"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@2.4.2"
     },
     "is_top_level": true,
     "variables": {}
